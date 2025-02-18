@@ -183,6 +183,10 @@
 \newcommand{\BX}{\mathbf{B}(X)}
 \newcommand{\A}{\mathcal{A}}
 \DeclareMathOperator{\pf}{Pf}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\bu}{\bullet}
+\newcommand{\cF}{\mathcal{F}}
+\renewcommand{\AA}{\mathbb{A}}
 
 \newcommand{\Gui}[1]{(\textcolor{red}{ZG: #1})}
 
@@ -225,33 +229,38 @@
 
 
 \item We will denote by $\overrightarrow{\mathbf{fSet}}$ be the category of non-empty finite totally ordered sets and we only allow surjective morphisms that are compatible with the order. We have the forgetful functor $\overrightarrow{\mathbf{fSet}}\rightarrow \mathbf{fSet}$, where $\mathbf{fSet}$ is the category of non-empty finite sets with surjective morphisms. For $\vec{I}\in \overrightarrow{\mathbf{fSet}}$, write $I\in \mathbf{fSet}$ be its image under the forgetful functor.
-\item For $\vec{I}\in \overrightarrow{\mathbf{fSet}}$ which isomorphic to the totally ordered set $\{1<\cdots<n\}$ and a variety $X$, we write $X^{\vec{I}}$ for $X_1\times \cdots \times X_n$ where $X_i$ is a copy of $X$. Suppose that $M$ is a quasi-coherent sheaf over $X$, we will denote $M^{\boxtimes\vec{I}}$ the exterior product $M_1\boxtimes \cdots \boxtimes M_n$ over $X^{\vec{I}}$ where $M_i$ over $X_i=X$ is the sheaf $M$.
-\item A graded vector space $V$ is a direct sum of vector spaces $V=\mathop{\bigoplus}\limits_{i\in\mathbb{Z}}V_i$. We will use the $k$-th shift notation $V[k],k\in \mathbb{Z}$ as well as the suspension notation $s^{-k}V,k\in\mathbb{Z}$
+  \item Let $\vec{I}\in \overrightarrow{\mathbf{fSet}}$ be the totally ordered set $\{1<\cdots<n\}$.
+        We write $X^{\vec{I}}$ for the $n$-fold product $X \times \cdots \times X$. Suppose that $M$ is a quasi-coherent sheaf over $X$, we will denote $M^{\boxtimes\vec{I}}$ the exterior product $M \boxtimes \cdots \boxtimes M$ over $X^{\vec{I}}$.
+  \item A graded vector space $V$ is a direct sum of vector spaces $V=\mathop{\bigoplus}\limits_{i\in\mathbb{Z}}V_i$ and we say that $V_{i}$ is in degree $i$.
+        We will use the $k$-th shift notation $V[k],k\in \mathbb{Z}$ as well as the suspension notation $s^{-k}V,k\in\mathbb{Z}$
 $$
 (V[k])_i=V_{i+k}.$$
 We also use $|a|$ for the degree of a homogeneous element $a\in V.$
-\item Given a manifold $M$, we use $\mathcal{A}^{*}(M)$ to denote the space
-    of differential forms on $M$. If $M$ is a
+\item Given a manifold $M$, we use $\mathcal{A}^{\bu}(M)$ to denote the space
+        of complex-valued differential forms on $M$.
+        If $M$ is a
     complex manifold, to emphasize their bi-graded nature, we will use
-    $\mathcal{A}^{*, *} (M)$ instead.
+    $\mathcal{A}^{\bu,\bu} (M)$ instead.
 \item We use the following Koszul sign rules for integrals: If $M, N$ are manifolds whose dimensions are $m, n$ respectively. Let $\alpha \in \mathcal{A}^{i}(M),     \beta \in \mathcal{A}^{j}(N)$, then 
 $$
 \int_M \int_N \alpha \wedge\beta = (- 1)^{n i} \int_M \alpha \int_N \beta . 
 $$
 \end{itemize}
 \section{The Jouanolou model and the unit chiral algebra}
-
 \subsection{The Jouanolou model for configuration space}
-The reference is \cite[Section 4.1.3, pp279]{beilinson2004chiral}. Suppose $\pi:Y\rightarrow X$ is a Juanolou map; i.e., $Y$ is a torsor over $X$ with respect to an action of some vector bundles such that $Y$ is an affine scheme. Then for any quasi-coherent sheaf $\mathcal{F}$ on $X$, the global relative de Rham complex
-$$
-\Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})
-$$
-is a model of $R\Gamma(X,\mathcal{F})$. In fact, we have quasi-isomorphisms
-$$
-\Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})\sim R\Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})\sim R\Gamma(X,R\pi_*(\Omega_{Y/X}\otimes\pi^*\mathcal{F})).
-$$
 
-
+The reference is \cite[Section 4.1.3, pp279]{beilinson2004chiral}.
+Recall that $\pi \colon Y\rightarrow X$ is a Juanolou map if $Y$ is a torsor over $X$ with respect to an action of some vector bundles and that $Y$ is an affine scheme.
+It follows that for any quasi-coherent sheaf $\mathcal{F}$ on $X$, the global relative de Rham complex
+$$
+\Gamma(Y,\Omega^{\bu}_{Y/X}\otimes\pi^*\mathcal{F})
+$$
+is a model for its derived global sections $\R\Gamma(X,\mathcal{F})$ over $X$.
+We will denote the relative de Rham differential in this model by $\mathbf{d}$.
+The fact that this is a model for derived global sections of $\cF$ follows from the quasi-isomorphisms
+$$
+\Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})\simeq \R\Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})\simeq \R\Gamma(X,R\pi_*(\Omega_{Y/X}\otimes\pi^*\mathcal{F})).
+$$
 
 
 Because $\pi$ is a Zariski locally trivial fibration with fiber $\mathbb{A}^N$, the Poincare lemma for differenitial forms on $\mathbb{A}^N$ implies that the embeddings
@@ -277,27 +286,29 @@ $$
 \end{lem}
 
 \begin{proof}
-This follows from a standard fact in algebraic geometry. Since $j_{\vec{I}}: \mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)\hookrightarrow (\mathbb{A}^d)^{\vec{I}}$ is an open immersion, the sheaf of relative differential $\Omega^1_{\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)/(\mathbb{A}^d)^{\vec{I}}}=0$. The sequence of maps $\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}\xrightarrow{p_{\vec{I}}}\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)\xrightarrow{j_{\vec{I}}}(\mathbb{A}^d)^{\vec{I}}$ induces an exact sequence
+The sequence of maps $\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}\xrightarrow{p_{\vec{I}}}\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)\xrightarrow{j_{\vec{I}}}(\mathbb{A}^d)^{\vec{I}}$ induces an exact sequence
 $$
 p^*_{\vec{I}}\Omega^1_{\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)/(\mathbb{A}^d)^{\vec{I}}}\rightarrow\Omega^{1}_{\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}/(\mathbb{A}^d)^{\vec{I}}}\rightarrow  \Omega^{1}_{\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)}\rightarrow 0.
 $$
+Since $j_{\vec{I}}: \mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)\hookrightarrow (\mathbb{A}^d)^{\vec{I}}$ is an open immersion, the sheaf of relative differentials $\Omega^1_{\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)/(\mathbb{A}^d)^{\vec{I}}}=0$ is trivial.
 The lemma follows.
-
 \end{proof}
 
-From the above lemma, we have the following explicit description of $\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}$
-
+The Jouanolou model is defined as
+\begin{equation}
+  \mathbf{J}^{\mathbb{A}^{d}}_{\vec{I}} := \Omega^{\bullet}_{\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)} .
+\end{equation}
+This is a commutative dg algebra; the differential is the relative de Rham differential, denoted $\mathbf{d}$, and the product is simply wedge product of relative forms.
+From the lemma, we have the following explicit description
 $$
 \mathbf{J}^{\mathbb{A}^d}_{\vec{I}}=\frac{k[z^s_i,x^s_{kl},\mathbf{d}x^s_{kl}]^{s=1,\dots,d}_{i\in \vec{I},k<l\in \vec{I}}}{\langle \sum\limits_{s=1}^dx^s_{kl}(z^s_k-z^s_l)-1,\ \sum\limits_{s=1}^d\mathbf{d}x^s_{kl}(z^s_k-z^s_l) \rangle^{s=1,\dots,d}_{k<l\in \vec{I}}}\quad .
 $$
-
-We also use the variable $x^s_{kl}$ for $k>l$ and declare that $x^s_{kl}=-x^s_{lk}$.
-
+We also use the variables $x^s_{kl}$ for $k>l$ by declaring that $x^s_{kl}=-x^s_{lk}$.
 
 Given $\vec{I}\in \overrightarrow{\mathbf{fSet}}$, let us denote by $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}$ the sheaf of differential operators on $(\mathbb{A}^d)^{\vec{I}}$. The space of global sections $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}[(\mathbb{A}^d)^{\vec{I}}]$ is generated by $z^s_{i}$ and $ \partial_{z^s_{i}}$ subject to the usual relations $[\partial_{z^s_{i}},z^s_{i}]=1$.
 
 \begin{prop}
-    The Jouanolou model $\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}$ has a left $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}[(\mathbb{A}^d)^{\vec{I}}]$-module structure such that $z^s_i$ is acting by multiplication and
+    The Jouanolou model $\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}$ has a left dg $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}[(\mathbb{A}^d)^{\vec{I}}]$-module structure such that $z^s_i$ is acting by multiplication and
     $$
    [\partial_{z^t_k},\mathbf{d}]=0, \partial_{z^t_k}x^s_{kl}=-x^t_{kl}\cdot x^s_{kl}, \quad \text{for}\  1\leq s,t\leq d,\quad i\in \vec{I},k<l\in \vec{I}.
     $$
@@ -313,7 +324,7 @@ We only need to show that $\partial_{z^t_k}$ preserves the ideal $\langle \sum\l
 
 \end{proof}
 \begin{rem}
-    The intuition behind this definition is that one can use the following coordinate transformation
+  The intuition behind the formula for $\partial_{z^{t}_{k}} x_{kl}$ is that one can use the following coordinate transformation
     $$
     x^s_{kl}=\frac{u^s_{kl}}{\sum\limits^d_{t=1}u^t_{kl}(z^t_k-z^t_l)}.
     $$
@@ -321,15 +332,15 @@ We only need to show that $\partial_{z^t_k}$ preserves the ideal $\langle \sum\l
 
 
 \begin{defn}
-Given a ordered finite set $\vec{I}$ and an $\mathcal{O}_{(\mathbb{A}^d)^{\vec{I}}}$-module $M_{\vec{I}}$, the Jouanolou model of $M_{\vec{I}}$ is the following dg vector space
+Given a ordered finite set $\vec{I}$ and an $\mathcal{O}_{(\mathbb{A}^d)^{\vec{I}}}$-module $M_{\vec{I}}$, the Jouanolou model of $M_{\vec{I}}$ is the following cochain complex
 $$
 \mathbf{J}^{\mathbb{A}^d}_{\vec{I}}(M_{\vec{I}}):=\Gamma\left(\mathbb{J}^{\mathbb{A}^d}_{\vec{I}},\Omega^{\bullet}_{\mathbb{J}^{\mathbb{A}^d}_{\vec{I}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)}\otimes p^*_{\vec{I}}j^*_{\vec{I}}M_{\vec{I}} \right)=\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}\otimes_{\mathcal{O}[(\mathbb{A}^d)^{\vec{I}}]}M_{\vec{I}}[(\mathbb{A}^d)^{\vec{I}}].
 $$
-
-If $M_{\vec{I}}$ is a right $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}$-module, then $\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}(M_{\vec{I}})$ is a right $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}[(\mathbb{A}^d)^{\vec{I}}]$-module.
+Note that if $M_{\vec{I}}$ is a right $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}$-module, then $\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}(M_{\vec{I}})$ is a right $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}[(\mathbb{A}^d)^{\vec{I}}]$-module.
 \end{defn}
 
 \begin{rem}
+  We motivate the Jouanolou model with an eye towards chiral operations.
     We have quasi-isomorphisms
     $$
 \Gamma\left((\mathbb{A}^d)^{\vec{I}},Rj_{\vec{I}*}j^*_{\vec{I}}M_{\vec{I}}\right)\sim R\Gamma\left((\mathbb{A}^d)^{\vec{I}},Rj_{\vec{I}*}j^*_{\vec{I}}M_{\vec{I}}\right)\sim R\Gamma\left(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d),j^*_{\vec{I}}M_{\vec{I}}\right)
@@ -352,16 +363,17 @@ If $M_{\vec{I}}$ is a right $\mathcal{D}_{(\mathbb{A}^d)^{\vec{I}}}$-module, the
 \end{rem}
 
 \begin{defn}
-Let $\vec{I}=\vec{I'}\bigsqcup\vec{I''}$, we define a Jouanolou torsor
+Let $\vec{I}=\vec{I'}\bigsqcup\vec{I''}$ and define
 $$
 \mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}:=\{\sum_{s=1}^d x_{ij}^s(z^s_i-z^s_j)=1|i,j\in I''\ \text{or}\  i\in I', j\in I''\}\subset (\mathbb{A}^d)^{\vec{I}}\times (\mathbb{A}^d)^{\binom{|I''|}{2}+|I'|\cdot |I''|}.
 $$
-The corresponding Jouanolou model $\mathbf{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}=\Gamma(\mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}},\Omega^{\bullet}_{\mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)})$ has the following property
+\end{defn}
+The variety $\mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}$ is naturally a Jouanolou torsor over $\mathrm{Conf}_{\vec{I}}(\AA^{d})$.
+The corresponding Jouanolou model $\mathbf{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}=\Gamma(\mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}},\Omega^{\bullet}_{\mathbb{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)})$ has the following useful property
 
 $$
 \mathbf{J}^{\mathbb{A}^d}_{\vec{I}}=\mathbf{J}^{\mathbb{A}^d}_{\vec{I'}}\otimes_{k[(\mathbb{A}^d)^{\vec{I'}}]} \mathbf{J}^{\mathbb{A}^d}_{(\vec{I'}),\vec{I''}}.
 $$
-\end{defn}
 
 \subsection{The definition of chiral algebras}
 
@@ -512,9 +524,10 @@ $$
 \end{defn}
 
 \begin{prop}
-The cohomology $\left(H(\mathcal{A}),0\right)$ is again a $L_{\infty}$-chiral algebra.
+The cohomology $\left(H(\mathcal{A}),0\right)$ is (again) an $L_{\infty}$-chiral algebra.
 \end{prop}
-\begin{exa}
+
+
 When $d=1$, the Jouanolou model can be identified with the Laurent polynomials
 $$
 \mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}})=\{f(z_1,z_2)\cdot dz_1\boxtimes dz_2|f\in k[z_1,z_2,(z_1-z_2)^{-1}]\}.
@@ -523,31 +536,34 @@ The map
 $$
 \tau_{\sigma_{12}}:f(z_1,z_2)\cdot dz_1\boxtimes dz_2\mapsto f(z_1,z_2)\cdot dz_2\boxtimes dz_1.
 $$
-The canonical 2-operation is given by the formula
+The canonical two-ary operation is given by the formula
 $$
 \mu_{\{1<2\}}\left(\frac{dz_1\boxtimes dz_2}{(z_1-z_2)^{k+1}}\right)=dw\otimes_{k[\lambda_{\bullet}]}\frac{(\lambda_1)^k}{k!}.
 $$
-Switching the order, we have
-$$
-\mu_{\{2<1\}}\left(\frac{dz_2\boxtimes dz_1}{(z_1-z_2)^{k+1}}\right)=(-1)^{k+1}dw\otimes_{k[\lambda_{\bullet}]}\frac{(\lambda_2)^k}{k!}.
-$$
-Using the relation $\lambda_{\bullet}=\lambda_1+\lambda_2$ and $dw\cdot \lambda_{\bullet}=0$, we have
-\begin{align*}
-   & \mu_{\{1<2\}}\left(\frac{dz_1\boxtimes dz_2}{(z_1-z_2)^{k+1}}\right)\\
-   & =dw\otimes_{k[\lambda_{\bullet}]}\frac{(\lambda_1)^k}{k!}\\
-   &=dw\otimes_{k[\lambda_{\bullet}]}\frac{(-\lambda_2)^k}{k!}\\
-   &=-\mu_{\{2<1\}}\left(\frac{dz_2\boxtimes dz_1}{(z_1-z_2)^{k+1}}\right)\\
-   &=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}\left(\frac{dz_1\boxtimes dz_2}{(z_1-z_2)^{k+1}}\right).
-\end{align*}
-We have verified that the chiral operation is antisymmetric, i.e., the following diagram commutes
-  $$
-  % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2AApAL4A9YJx78BA4AEEpARnEB9Ge2CqAPACZO48QApOELjADmdLbN6DFKyeumcBEAB54rcTrqGxuIAlCDipOiYuPiEKKrkVLSMLGwWVrb23I4KymriyA7yzmoUFr7wWgDWhewMdFwCUHbaAkwMDDA44hTiNZz1jc0aCQMNTXYGFOGRIBjYeARECapJ9MysiBzsljYtRU55rgUHuS6r5Vh+1bWDE1ltHV09fbfjw6N175PTEVELsSIZFW1HWqS2pxEEnc2WKR3UWWABj0qmC5h2GX2sMO5ykrW8FX8OmRqPYJjCPWoMCg1ngRFAQgATpYkGQQDgIEgEskNmluExEfojGTxDMGcyuFzqBykAZqAwsGBNiAoBAmAJOiBqHwYHQoGxIEqtey6FgGAaCKw-iAmSzEGyZYgAMzyugCGAMAAK0UWcRAjKw1j4OGNYOVAFpODg6ALtNhrDwtKoDCYxTaJUgXezOYg5TzwdsuLGAkLguFekA
-\begin{tikzcd}
-\mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}}) \arrow[r, "\mu_{\{1<2\}}"] \arrow[d, "-\tau_{\sigma_{12}}"'] & {\omega_{\mathbb{A}^1}[\mathbb{A}^1]\otimes_{k[\lambda_{\bullet}]}k[\lambda_1,\lambda_2]} \arrow[d,Rightarrow, no head] \\
-\mathbf{J}^{\mathbb{A}^1}_{\{2<1\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{2<1\}}) \arrow[r, "\mu_{\{2<1\}}"]                                   & {\omega_{\mathbb{A}^1}[\mathbb{A}^1]\otimes_{k[\lambda_{\bullet}]}k[\lambda_1,\lambda_2]}
-\end{tikzcd}
-  $$
-\end{exa}
+In section \ref{s:feynman1d} we will verify, explicitly, that this is a chiral operation.
+In fact, as is expected, in the one-dimensional case there are no higher operations in the unit chiral algebra.
+
+%Switching the order, we have
+
+%mu_{\{2<1\}}\left(\frac{dz_2\boxtimes dz_1}{(z_1-z_2)^{k+1}}\right)=(-1)^{k+1}dw\otimes_{k[\lambda_{\bullet}]}\frac{(\lambda_2)^k}{k!}.
+
+%sing the relation $\lambda_{\bullet}=\lambda_1+\lambda_2$ and $dw\cdot \lambda_{\bullet}=0$, we have
+%begin{align*}
+%\mu_{\{1<2\}}\left(\frac{dz_1\boxtimes dz_2}{(z_1-z_2)^{k+1}}\right)\\
+%=dw\otimes_{k[\lambda_{\bullet}]}\frac{(\lambda_1)^k}{k!}\\
+%=dw\otimes_{k[\lambda_{\bullet}]}\frac{(-\lambda_2)^k}{k!}\\
+%=-\mu_{\{2<1\}}\left(\frac{dz_2\boxtimes dz_1}{(z_1-z_2)^{k+1}}\right)\\
+%=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}\left(\frac{dz_1\boxtimes dz_2}{(z_1-z_2)^{k+1}}\right).
+%end{align*}
+%We have verified that the chiral operation is antisymmetric, i.e., the following diagram commutes
+
+%https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2AApAL4A9YJx78BA4AEEpARnEB9Ge2CqAPACZO48QApOELjADmdLbN6DFKyeumcBEAB54rcTrqGxuIAlCDipOiYuPiEKKrkVLSMLGwWVrb23I4KymriyA7yzmoUFr7wWgDWhewMdFwCUHbaAkwMDDA44hTiNZz1jc0aCQMNTXYGFOGRIBjYeARECapJ9MysiBzsljYtRU55rgUHuS6r5Vh+1bWDE1ltHV09fbfjw6N175PTEVELsSIZFW1HWqS2pxEEnc2WKR3UWWABj0qmC5h2GX2sMO5ykrW8FX8OmRqPYJjCPWoMCg1ngRFAQgATpYkGQQDgIEgEskNmluExEfojGTxDMGcyuFzqBykAZqAwsGBNiAoBAmAJOiBqHwYHQoGxIEqtey6FgGAaCKw-iAmSzEGyZYgAMzyugCGAMAAK0UWcRAjKw1j4OGNYOVAFpODg6ALtNhrDwtKoDCYxTaJUgXezOYg5TzwdsuLGAkLguFekA
+%begin{tikzcd}
+%mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}}) \arrow[r, "\mu_{\{1<2\}}"] \arrow[d, "-\tau_{\sigma_{12}}"'] & {\omega_{\mathbb{A}^1}[\mathbb{A}^1]\otimes_{k[\lambda_{\bullet}]}k[\lambda_1,\lambda_2]} \arrow[d,Rightarrow, no head] \\
+%mathbf{J}^{\mathbb{A}^1}_{\{2<1\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{2<1\}}) \arrow[r, "\mu_{\{2<1\}}"]                                   & {\omega_{\mathbb{A}^1}[\mathbb{A}^1]\otimes_{k[\lambda_{\bullet}]}k[\lambda_1,\lambda_2]}
+%end{tikzcd}
+
+%end{exa}
 
 
 \iffalse
@@ -561,12 +577,14 @@ $$
 \section{Feynman graph integral construction}
 
 In this section, we will use Feynman graph integrals from holomorphic field theories to construct unit $L_{\infty}$ chiral algebras. We use the techniques developed in \cite{wang2024feynman}.
-\subsection{$d=1$: the unit chiral algebra on $\mathbb{A}^1$}
-In this subsection, we review the unit chiral algebra on $\omega_{\mathbb{A}^1}$. We will provide a new viewpoint of the unit chiral algebra structure by using Schwinger space integrals (see Appendix \ref{Schwinger spaces}). This new viewpoint will help us to construct unit chiral algebras on higher dimensional affine spaces.
 
-When $d=1$,
+\subsection{$d=1$: the unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
+In this subsection, we review the one-dimensional unit chiral algebra $\omega_{\mathbb{A}^1}$.
+We will provide a new viewpoint of the unit chiral algebra structure by using Schwinger space integrals (see Appendix \ref{Schwinger spaces}). This new viewpoint will help us to construct unit chiral algebras on higher dimensional affine spaces.
+
+When $d=1$, we have seen that
 $$
-\mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}})=\{f(z_{1},z_{2})dz_{1}\boxtimes dz_{2}|f\in k[z_{1},z_{2},\frac{1}{z_{1}-z_{2}}]\}.
+\mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}})=\left\{f(z_{1},z_{2})dz_{1}\boxtimes dz_{2} \; | \; f\in k\left[z_{1},z_{2},\frac{1}{z_{1}-z_{2}}\right]\right\}.
 $$
 
 \begin{defn}
@@ -582,12 +600,13 @@ $$
     $$
 \end{prop}
 \begin{proof}
+We prove that $\mu_{\{1<2\}}$ is a $\mathcal{D}_{(\mathbb{A}^{1})^{\{1<2\}}}[(\mathbb{A}^{1})^{\{1<2\}}]$-module morphism.
+
     Let 
 $$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}}),
 $$
 where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$.
-
-We have
+Expanding, we find that
 \begin{align*}
  \mu_{\{1<2\}}(\alpha)
  &=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
@@ -598,14 +617,12 @@ We have
 \end{align*}
 so $\mu_{\{1<2\}}(\alpha)\in \omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}].$
 
-Now we prove $\mu_{\{1<2\}}$ is a $\mathcal{D}_{(\mathbb{A}^{1})^{\{1<2\}}}[(\mathbb{A}^{1})^{\{1<2\}}]$-module morphism.
-
-Recall that
+Recall that the $D$-module structure is determined by the rules
 $$
 \alpha \cdot z_{i}=z_{i}\alpha,\quad
-\alpha\cdot \partial_{z_{i}}=-\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)dz_{1}\boxtimes dz_{2},
+\alpha\cdot \partial_{z_{i}}=-\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)dz_{1}\boxtimes dz_{2} .
 $$
-we have
+Thus, we can directly compute:
 \begin{align*}
 \mu_{\{1<2\}}(\alpha \cdot z_{i})&=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{z_{i}g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\partial_{\lambda_{i}}\left(e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
@@ -620,6 +637,9 @@ we have
 &=\mu_{\{1<2\}}(\alpha )\cdot \partial_{z_{i}}.
 \end{align*}
 \end{proof}
+
+The special feature in dimension one is that the unit chiral algebra has no higher operations.
+
 \begin{prop}
 Let $\mu_{\vec{I}}=0$ for $|\vec{I}|\geq3$. Then $\{\mu_{\vec{I}}\}$ defines an $L_{\infty}$-chiral algebra structure on $\omega_{\mathbb{A}^{1}}$.
 \end{prop}
@@ -669,10 +689,7 @@ and the second term equals
      \frac{\lambda_{\bullet}dw}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k-1}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\right)\cdot g(z_{1},z_{2}).
 \end{align*}
 
-We note $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}]$, the second term equals zero. So we proved 
-$$
-\mu_{\{1<2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.
-$$
+We note $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}]$, the second term equals zero. So we proved that the two-ary operation is anti-symmetric $\mu_{\{1<2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
 
 Now we prove the $L_{\infty}$ relations.
 
