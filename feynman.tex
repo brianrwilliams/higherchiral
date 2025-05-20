@@ -1,0 +1,1462 @@
+% ----------------------------------------------------------------
+% AMS-LaTeX Paper ************************************************
+% **** -----------------------------------------------------------
+\documentclass[11pt]{amsart}
+\usepackage{graphicx}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{mathrsfs}
+\usepackage{mathpple}
+\usepackage{tikz-cd}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+
+\newcommand{\lineW}{
+  \mathbf{W}_{\tikz[baseline=-0.5ex]{\draw (0,0) -- (4mm,0);
+      \fill (0,0) circle (0.5mm);
+      \fill (4mm,0) circle (0.5mm);}}
+}
+
+\newcommand{\bgraphG}{
+  \mathbf{G}_{\tikz[baseline=-0.5ex]{
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (4mm,0);
+      \coordinate (C) at (5mm,2mm);
+      \coordinate (D) at (2.5mm,4mm);
+      \coordinate (E) at (-1mm,2mm);
+
+      \fill (A) circle (0.5mm);
+      \fill (B) circle (0.5mm);
+      \fill (C) circle (0.5mm);
+      \fill (D) circle (0.5mm);
+      \fill (E) circle (0.5mm);
+
+      \draw (A) -- (B);
+      \draw (B) -- (C);
+      \draw (C) -- (D);
+      \draw (D) -- (E);
+      \draw (E) -- (A);
+
+      \draw (E) -- (A);
+      \draw (E) -- (B);
+      \draw (E) -- (C);
+      \draw (E) -- (D);
+  }}
+}
+\newcommand{\bgraphW}{
+  \mathbf{W}_{\tikz[baseline=-0.5ex]{
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (4mm,0);
+      \coordinate (C) at (5mm,2mm);
+      \coordinate (D) at (2.5mm,4mm);
+      \coordinate (E) at (-1mm,2mm);
+
+      \fill (A) circle (0.5mm);
+      \fill (B) circle (0.5mm);
+      \fill (C) circle (0.5mm);
+      \fill (D) circle (0.5mm);
+      \fill (E) circle (0.5mm);
+
+      \draw (A) -- (B);
+      \draw (B) -- (C);
+      \draw (C) -- (D);
+      \draw (D) -- (E);
+      \draw (E) -- (A);
+
+      \draw (E) -- (A);
+      \draw (E) -- (B);
+      \draw (E) -- (C);
+      \draw (E) -- (D);
+  }}
+}
+\newcommand{\agraphG}{
+  \mathbf{G}_{\tikz[baseline=-0.5ex]{
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (4mm,0);
+      \coordinate (C) at (2mm,2mm);
+      \coordinate (D) at (2mm,-2mm);
+
+      \fill (A) circle (0.5mm);
+      \fill (B) circle (0.5mm);
+      \fill (C) circle (0.5mm);
+      \fill (D) circle (0.5mm);
+
+      \draw (A) -- (C);
+      \draw (A) -- (D);
+      \draw (C) -- (D);
+      \draw (B) -- (C);
+      \draw (B) -- (D);
+  }}
+}
+\newcommand{\agraphW}{
+  \mathbf{W}_{\tikz[baseline=-0.5ex]{
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (4mm,0);
+      \coordinate (C) at (2mm,2mm);
+      \coordinate (D) at (2mm,-2mm);
+
+      \fill (A) circle (0.5mm);
+      \fill (B) circle (0.5mm);
+      \fill (C) circle (0.5mm);
+      \fill (D) circle (0.5mm);
+
+      \draw (A) -- (C);
+      \draw (A) -- (D);
+      \draw (C) -- (D);
+      \draw (B) -- (C);
+      \draw (B) -- (D);
+  }}
+}
+\newcommand{\triangleG}{
+  \mathbf{G}_{\tikz[baseline=-0.5ex]{\node[regular polygon, regular polygon sides=3, inner sep=0pt, draw, minimum size=4mm] (triangle) {};
+      \fill (triangle.corner 1) circle (0.5mm);
+      \fill (triangle.corner 2) circle (0.5mm);
+      \fill (triangle.corner 3) circle (0.5mm);}}
+}
+\newcommand{\triangleW}{
+  \mathbf{W}_{\tikz[baseline=-0.5ex]{\node[regular polygon, regular polygon sides=3, inner sep=0pt, draw, minimum size=4mm] (triangle) {};
+      \fill (triangle.corner 1) circle (0.5mm);
+      \fill (triangle.corner 2) circle (0.5mm);
+      \fill (triangle.corner 3) circle (0.5mm);}}
+}
+\newcommand{\trianglel}{
+  l^{\tikz[baseline=-0.5ex]{\node[regular polygon, regular polygon sides=3, inner sep=0pt, draw, minimum size=2mm] (triangle) {};
+      \fill (triangle.corner 1) circle (0.4mm);
+      \fill (triangle.corner 2) circle (0.4mm);
+      \fill (triangle.corner 3) circle (0.4mm);}}
+}
+
+\usepackage{hyperref,xcolor}% http://ctan.org/pkg/{hyperref,xcolor}
+\definecolor{wine-stain}{rgb}{0.5,0,0}
+\hypersetup{
+  colorlinks,
+  linkcolor=wine-stain,
+  linktoc=all
+}
+
+\usepackage{latexsym,bm,amsmath,amssymb}
+
+\parskip=5pt
+\usetikzlibrary{arrows}
+\linespread{1.2}
+\textwidth15cm \oddsidemargin=1cm \evensidemargin=1cm
+\setlength{\headsep}{10pt}
+
+
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exe}[thm]{Exercise}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\DeclareMathOperator{\pf}{Pf}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\bu}{\bullet}
+\newcommand{\cF}{\mathcal{F}}
+\renewcommand{\AA}{\mathbb{A}}
+
+\newcommand{\Gui}[1]{(\textcolor{red}{ZG: #1})}
+
+\newcommand{\gui}[1]{(\textcolor{blue}{Note: #1})}
+\def\BW#1{{\textcolor{purple}{{\tt {\bf BW:} #1}}}}
+
+% ----------------------------------------------------------------
+
+\begin{document}
+
+\section{Feynman graph integral construction}
+In this section, we will use Feynman graph integrals in holomorphic quantum field theory to construct the unit
+$L_{\infty}$ chiral operations in any dimension. 
+We largely use the techniques developed in \cite{wang2024feynman}.
+
+\subsection{$d=1$: the unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
+We begin by reviewing the one-dimensional unit chiral algebra $\omega_{\mathbb{A}^1}$ and how Feynman graph integrals
+can be used to repackage the chiral operations.
+Our most novel viewpoint is the utility of Schwinger space integrals (see appendix \ref{Schwinger spaces}) to express
+these operations. 
+This approach will apply more generally and allow us to construct the unit chiral operations in higher dimensions.
+
+When $d=1$, we have seen that
+$$
+\mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}})=\left\{f(z_{1},z_{2})dz_{1}\boxtimes dz_{2} \; | \; f\in k\left[z_{1},z_{2},\frac{1}{z_{1}-z_{2}}\right]\right\}.
+$$
+
+\begin{defn}
+    We define the 2-operation $\mu_{\{1<2\}}$ by the following formula:
+    $$
+    \mu_{\{1<2\}}(f(z_{1},z_{2})dz_{1}\boxtimes dz_{2})=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}f(z_{1},z_{2})e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w},
+    $$
+    where $\oint_{z_{1}=z_{2}}$ is the contour integral of variable $z_{1}$ over a simple loop around $z_{2}$.
+  \end{defn}
+
+
+  We unpack the definition to obtain a more familiar expression.
+  Suppose that
+$$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}}),
+$$
+where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$.
+Expanding, we find that
+\begin{align*}
+ \mu_{\{1<2\}}(\alpha)
+ &=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+ &= e^{-(\lambda_{1}+\lambda_{2})w}\frac{1}{(n-1)!}\left.\left(\partial_{z_{1}}^{n-1}\left(g(z_{1},w)e^{\lambda_{1}z_{1}+\lambda_{2}w}\right)\right)\right|_{z_{1}=w}dw
+ \\
+ &=\frac{1}{(n-1)!}
+\left.\left((\partial_{z_{1}}+\lambda_{1})^{n-1}g(z_{1},w)\right)\right|_{z_{1}=w}dw,
+\end{align*}
+so $\mu_{\{1<2\}}(\alpha)\in \omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}].$
+For example, when $g = 1$ this reduces to
+\begin{equation}
+\mu_{1<2}\left(\frac{d z_{1} \boxtimes d z_{2}}{(z_{1}-z_{2})^{n}}\right) = \frac{\lambda_{1}^{n-1}}{(n-1)!} \otimes d w
+\end{equation}
+
+The following proposition is well-known 
+%can be found in \cite{??} 
+and summarizes the chiral operation in the usual, one-dimensional,
+context.
+\begin{prop}[\cite{??}]
+    $\mu_{\{1<2\}}$ defines a chiral operation, i.e., 
+    $$    \mu_{\{1<2\}}\in {Hom}^{ch}(\omega_{\mathbb{A}^{1}}^{\boxtimes \{1<2\}},\omega_{\mathbb{A}^{1}}).
+    $$
+    and defines a chiral algebra structure on $\omega_{\mathbb{A}^1}$.
+\end{prop}
+%\begin{proof}
+%We prove that $\mu_{\{1<2\}}$ is a $\mathcal{D}_{(\mathbb{A}^{1})^{\{1<2\}}}[(\mathbb{A}^{1})^{\{1<2\}}]$-module morphism.
+%
+%
+%Recall that the $D$-module structure is determined by the rules
+%$$
+%\alpha \cdot z_{i}=z_{i}\alpha,\quad
+%\alpha\cdot \partial_{z_{i}}=-\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)dz_{1}\boxtimes dz_{2} .
+%$$
+%Thus, we can directly compute:
+%\begin{align*}
+%\mu_{\{1<2\}}(\alpha \cdot z_{i})&=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{z_{i}g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\partial_{\lambda_{i}}\left(e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&=\frac{1}{2\pi i}(w+\partial_{\lambda_{i}})\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\\
+%&=\mu_{\{1<2\}}(\alpha )\cdot z_{i},
+%\end{align*}
+%\begin{align*}
+%\mu_{\{1<2\}}(\alpha \cdot \partial_{z_{i}})&=-\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&=-\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&+\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\partial_{z_{i}}\left(e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&=0+\frac{\lambda_{i}}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+%&=\mu_{\{1<2\}}(\alpha )\cdot \partial_{z_{i}}.
+%\end{align*}
+%\end{proof}
+%
+%The special feature in dimension one is that the unit chiral algebra has trivial higher operations.
+%
+%\begin{prop}
+%Let $\mu_{\vec{I}}=0$ for $|\vec{I}|\geq3$. Then $\{\mu_{\vec{I}}\}$ defines an $L_{\infty}$-chiral algebra structure on~$\omega_{\mathbb{A}^{1}}$.
+%\end{prop}
+%\begin{proof}
+%    We first verify $\mu_{\{1<2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}$.
+%    
+%    Let 
+%$$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1<2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2\}}),
+%$$
+%where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$. 
+%
+%We have
+%\begin{align*}
+%    \mu_{\{1<2\}}(\alpha)
+%    &=
+%    \mu_{\{1<2\}}(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\\
+%    &=
+%    \mu_{\{1<2\}}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})\\
+%    &=
+%    \frac{1}{2\pi i}\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{1}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\cdot g(z_{1},z_{2})\\
+%    &=
+%     \frac{1}{2\pi i}\left(\oint_{z_{1}=w}\frac{1}{(z_{1}-w)^{n}}e^{\lambda_{1}(z_{1}-w)}dz_{1}\boxtimes dw\right)\cdot g(z_{1},z_{2}).
+%\end{align*}
+%
+%Let $z_{1}=2w-\tilde{z}_2$, we get
+%\begin{align*}
+%    \mu_{\{1<2\}}(\alpha)
+%    &=
+%    -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}e^{\lambda_{\bullet}(w-\tilde{z}_{2})}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%    &=
+%     -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=0}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%     &=
+%      -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%      &-
+%     \frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=1}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2}),
+%\end{align*}
+%where $\lambda_{\bullet}=\lambda_{1}+\lambda_{2}$.
+%
+%The first term equals
+%$$
+%-\mu_{\{2<1\}}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})=-\mu_{\{2<1\}}\circ\tau_{\sigma_{12}}(\alpha),
+%$$
+%and the second term equals
+%\begin{align*}
+%    &-\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%     &=
+%     \frac{\lambda_{\bullet}dw}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k-1}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\right)\cdot g(z_{1},z_{2}).
+%\end{align*}
+%
+%We note $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}]$, the second term equals zero. So we proved that the two-ary operation is anti-symmetric $\mu_{\{1<2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
+%
+%Now we prove the $L_{\infty}$ relations.
+%
+%Let $\beta\in \mathbf{J}^{\mathbb{A}^1}_{\{1<2<3\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1<2<3\}})$. Consider the $3$-chain
+%\begin{align*} 
+%M_{w}=&\{(z_{1},z_{2},z_{3})\in (\mathbb{A}^1)^{1<2<3}|z_{1}+z_{2}+z_{3}=w,|z_{i}-z_{j}|\geq 1,\;i\neq j;\\
+%&\sum_{k=1}^{3}|z_{k}-w|^{2}=100\}.
+%\end{align*}
+%Since $\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}$ is a closed differential form on $M_{w}$, we can use Stokes theorem to get the following result:
+%\begin{equation}
+%\begin{aligned}
+%\label{stokes thm1}
+%    0 &= 
+%    \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{M_{w}}d\left(\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\\
+%    &=
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3},
+%\end{aligned}
+%\end{equation}
+%where $\lambda_{\blacksquare}=\sum_{k=1}^3\lambda_{k}$.
+%The boundary of the $3$-chain $M_{w}$ ??
+%The right hand side of $(\ref{stokes thm1})$ is
+%\begin{align*}
+%     &
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\\
+%     &=
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{2}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &-
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &+
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{1}=z_{2}}\oint_{z_{2}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &=
+%     \mu_{\{\bullet<3\}}\circ \mu_{\{1<2\}\subset\{1<2<3\}}(\beta)\\
+%     &-
+%     \mu_{\{\bullet<2\}}\circ \mu_{\{1<3\}\subset\{1<2<3\}}(\beta)\\
+%     &+
+%     \mu_{\{\bullet<1\}}\circ \mu_{\{2<3\}\subset\{1<2<3\}}(\beta)\\
+%     &=  
+%     \sum_{\vec{I'}\subset\{1<2<3\}}\mathrm{sgn}(\sigma_{\vec{I'}\subset\vec{I}})(-1)^{|I'|(|I|-|I'|)}\mu_{\{\bullet\}\cup\vec{I}-\vec{I'}}\circ \mu_{\vec{I'}\subset\vec{I}}(\beta).
+%\end{align*}
+%
+%We verified the $L_{\infty }$ relations.
+%\end{proof}
+
+In the construction of chiral algebra structure on $\omega_{\mathbb{A}^{1}}$, we used the concept of residue. Now we
+introduce another method to define residues, which we will use to construct chiral operations in higher dimensions.
+We begin with the following presentation of the Cauchy kernel.
+\begin{lem}
+    $$
+    \frac{1}{z}=-\int_{0}^{+\infty}e^{-zy}dy,
+    $$
+    where $y=\frac{\bar{z}}{t}$, and $dy$ is viewed as the differential form $$dy=\frac{1}{t} d\bar{z}-\frac{\bar{z}}{t^2} d t.$$
+    The integration is over $t$. We call $t$ the Schwinger parameter.
+\end{lem}
+\begin{proof}
+  \begin{equation}
+        \frac{1}{z} =\frac{\bar{z}}{z\bar{z}}\\
+    =
+\int_{0}^{+\infty}\bar{z}e^{-z\bar{z}t}dt\\
+        =
+        -\int_{0}^{+\infty}e^{-\frac{z\bar{z}}{t}}\bar{z}d\left(\frac{1}{t}\right)\\
+        =
+-\int_{0}^{+\infty}e^{-zy}dy.
+\end{equation}
+\end{proof}
+
+We can use above lemma to rephrase the residue of a one-form $\alpha=\frac{g(z)}{z^{n}}dz$:
+\begin{align*}
+\oint_{z=0}\alpha 
+&=
+\oint_{z=0}\frac{g(z)}{z^{n}}dz \\
+&=
+\int_{(0,+\infty)^{n}}\int_{S^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz,
+\end{align*}
+where $S^{1}$ is the set of unit length complex numbers and $y_{k}=\frac{\bar{z}}{t_{k}}$.
+
+Let $d_{\mathbb{A}^{1}}$, $d_{t}$ be the de Rham differential on $\mathbb{A}^{1}$ and $(0,+\infty)^{n}$ respectively.
+Then, the differential form appearing in the above formula is $(d_{\AA^{1}} + d_{t})$-closed:
+$$
+(d_{\mathbb{A}^{1}}+d_{t}) \left(e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz\right)=0.
+$$
+We will find an equivalent way to express the residue $\oint_{z=0} \alpha$ in terms of a homologous integration cycle.
+
+Let 
+$$S^{+}((0,+\infty)^n)=\{(t_{1},\cdots,t_{n})\in(0,+\infty)^{n}|\sum_{k=1}^{n}t_{k}^{2}=1\} \subset (0,+\infty)^{n},
+$$ 
+By Stokes' theorem, we obtain the following presentation for the residue  
+\begin{align*}
+\oint_{z=0}\alpha
+&=\int_{(0,+\infty)^{n}}\int_{S^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz\\
+&=\int_{S^{+}((0,+\infty)^n)}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz.
+\end{align*}
+(In fact, the integration cycles $(0,\infty) \times S^1$ and $S^+((0,\infty)) \times \mathbb{A}^1$ are homologous.
+This direct computation provides an explicit homotopy).
+As a consequence, we have:
+\begin{prop}
+    Let $\alpha=\frac{g(z)}{z^{n}}dz$, we have
+    $$
+    \frac{1}{2\pi i}\int_{S^{+}((0,+\infty)^n)}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz=\frac{\partial_{z}^{n-1}g(0)}{(n-1)!}.
+    $$
+\end{prop}
+\begin{proof}
+    %Let's first compute
+    %$$
+    %\frac{1}{2\pi %i}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\f%rac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}%dy_{k}dz.
+%    $$
+Noticing the integral of Gaussian type, we can apply Wick's theorem to obtain
+\begin{equation}
+    \frac{1}{2\pi i}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz
+   =(-1)^{n-1}\left.\frac{1}{\sum_{k=1}^{n}\frac{1}{t_{k}}}\iota_{\partial_{\bar{z}}}e^{\frac{1}{\sum_{k=1}^{n}\frac{1}{t_{k}}}\partial_{z}\partial_{\bar{z}}}\left(g(z)\prod_{k=1}^{n}dy_{k}\right)\right|_{z=0},
+\end{equation}
+where $\iota_{\partial_{\bar{z}}}$ denotes the operation of taking the interior product of the vector field $\partial_{\bar{z}}$ with a differential form.
+
+Notice that as operators acting on differential forms, we have the following relation
+\begin{align*}
+    e^{\frac{1}{\sum_{k=1}^{n}\frac{1}{t_{k}}}\partial_{z}\partial_{\bar{z}}}\circ \left(dy_{i} \wedge - \right) \circ e^{\frac{-1}{\sum_{k=1}^{n}\frac{1}{t_{k}}}\partial_{z}\partial_{\bar{z}}}=dy_{i} \wedge +d(\frac{\frac{1}{t_{i}}}{\sum_{k=1}^{n}\frac{1}{t_{k}}})\partial_{z}.
+\end{align*}
+So, we can express the Gaussian integration as
+\begin{align*}
+    &\frac{1}{2\pi i}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz\\
+    &=
+    (-1)^{n-1}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)\partial_{z}^{n-1}g(0).
+\end{align*}
+
+Therefore, 
+\begin{align*}
+     &\frac{1}{2\pi i}\int_{S^{+}((0,+\infty)^n)}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz\\
+     &=
+     (-1)^{n-1}\partial_{z}^{n-1}g(0)\int_{S^{+}((0,+\infty)^n)}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right).
+\end{align*}
+
+To compute the integral over $S^{+}((0,+\infty)^n)$, we apply localization to the following $\mathbb{R}^{+} = (0,+\infty)$-action on $(0,+\infty)^n$:
+$$
+\lambda\cdot (t_{1},\cdots,t_{n})=(\lambda t_{1},\cdots,\lambda t_{n}),\quad \lambda\in \mathbb{R}^{+}.
+$$
+
+We notice that
+$$
+\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)
+$$
+induces a well-defined differential form on $(0,+\infty)^{n}/\mathbb{R}^{+}$, so we have
+\begin{align*}
+&(-1)^{n-1}\int_{S^{+}((0,+\infty)^n)}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)\\
+&=
+(-1)^{n-1}\int_{\{(t_{1},\cdots,t_{n})\in((0,+\infty)^n)|\sum_{k=1}^{n}\frac{1}{t_{k}}=1\}}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)\\
+&=
+\int_{\{(u_{1},\cdots,u_{n})\in((0,+\infty)^n)|\sum_{k=1}^{n}u_{k}=1\}}\sum_{k=1}^{n}\left((-1)^{k-1}u_{k}\prod_{k'\neq k}du_{k'}\right)\\
+&=\frac{1}{(n-1)!}.
+\end{align*}
+
+Thus, the conclusion follows.
+\end{proof}
+
+Although the expression
+$$
+\frac{1}{2\pi i}\int_{S^{+}((0,+\infty)^n)}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz
+$$
+is more complicate than the contour integral
+$$
+\frac{1}{2\pi i}\oint_{z=0}\frac{g(z)}{z^{n}}dz,
+$$
+we will show that it can be extended to higher dimensional affine spaces in next subsection.
+
+\subsection{Higher residues.}
+
+In this subsection, we generalize the concept of residues to the Jouanolou model of $(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes \vec{I}}$, where $d\geq1$ is the dimension of the affine space, $\vec{I}=\{1<2<\cdots<n\}$ is an ordered set with $n$ elements.
+
+Let $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d))$ be the (algebraic) Dolbeault complex of the structure sheaf $\mathcal{O}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^{d}))$. Define the map
+$$
+i:\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\rightarrow\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d))
+$$
+$$
+i(z_{i}^{s}) = z_{i}^{s},\quad i(x_{ij}^{s}) = \frac{\bar{z}_{i}^{s} - \bar{z}_{j}^{s}}{|z_{i} - z_{j}|^{2}},\quad i(\mathbf{d}x_{ij}^{s}) = \bar{\partial}\left(\frac{\bar{z}_{i}^{s} - \bar{z}_{j}^{s}}{|z_{i} - z_{j}|^{2}}\right).
+$$
+Here:
+\begin{itemize}
+    \item \(s \in \{1,2,\dots,d\}\) is the coordinate index.
+    \item \(i, j \in \vec{I}\) are elements in the ordered set.
+    \item \(|z_{i} - z_{j}|^{2} = \sum_{t=1}^{d}(z_{i}^{t} - z_{j}^{t})(\bar{z}_{i}^{t} - \bar{z}_{j}^{t})\) is the squared norm.
+    \item \(\bar{\partial}\) is the Dolbeault differential.
+\end{itemize}
+
+It is easily checked that this map is well-defined and preserves the product of differential forms.
+By construction, it is a cochain map.
+Thus, $i$ is a morphism of commutative dg algebras.
+(In fact, $i$ is injective, but this is not obvious and we will not make use of this fact).
+
+We also point out that $i$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]$-module morphism.
+Similarly, we can define a natural dg $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]$-module morphism from $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ to $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+
+In the following discussion, we identify the elements of $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ with the corresponding elements in $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$. 
+
+In our previous discussion of residues when $d=1$, we represented the residue kernel $\frac{1}{z}$ as an integral over Schwinger parameters.
+Now our goal is to represent $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$ as integrals over Schwinger parameters:
+
+\begin{lem}
+    We have the following equalities:
+    \begin{enumerate}
+        \item 
+        $$
+        i(x_{ij}^{s})=-\int_{0}^{+\infty}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s}
+        $$
+        \item 
+        $$
+        i(\mathbf{d}x_{ij}^{s})=-\int_{0}^{+\infty}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s}
+        $$
+    \end{enumerate}
+    Here:
+        \begin{itemize}
+            \item $y_{ij}^{s}=\frac{\bar{z}_{i}^{s}-\bar{z}_{j}^{s}}{t}$, where $t$ is called the Schwinger parameter.
+            \item $z_{ij}^{s}=z_{i}^{s}-z_{j}^{s}$.
+            \item 
+            $z_{ij}\cdot y_{ij}=\sum_{s=1}^{d}z_{ij}^{s}y_{ij}^{s}$ is the dot product.
+            \item $dy_{ij}^{s}$ is the differential form
+            $$
+            dy_{ij}^{s}=\frac{d\bar{z}_{i}^{s}-d\bar{z}_{j}^{s}}{t}-\frac{(\bar{z}_{i}^{s}-\bar{z}_{j}^{s})dt}{t^{2}}.
+            $$
+            \item the integrations are both with respect to the Schwinger parameter $t$.
+        \end{itemize}
+\end{lem}
+\begin{proof}
+    We note
+    \begin{align*}
+        i(x_{ij}^{s})
+        &=
+        \frac{\bar{z}_{i}^{s} - \bar{z}_{j}^{s}}{|z_{i} - z_{j}|^{2}}\\
+        &=
+        (\bar{z}_{i}^{s} - \bar{z}_{j}^{s})\int_{0}^{+\infty}e^{-|z_{i} - z_{j}|^{2}u}du\\
+        &=
+        -(\bar{z}_{i}^{s} - \bar{z}_{j}^{s})\int_{0}^{+\infty}e^{-\frac{|z_{i} - z_{j}|^{2}}{t}}d\left(\frac{1}{t}\right)\\
+        &=
+        -\int_{0}^{+\infty}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s}.
+    \end{align*}
+    In the last line we have used the fact that only the $d t$ component contributes to the integral.
+
+    By using dominated convergence theorem for derivatives, We can interchange the order of integration and differentiation when $z_{i}\neq z_{j}$. So
+    \begin{align*}
+        i(\mathbf{d}x_{ij}^{s})
+        &=
+        -\bar{\partial}\left(\int_{0}^{+\infty}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s}\right)\\
+        &=
+        \int_{0}^{+\infty}\bar{\partial}\left(e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s}\right)\\
+        &=
+        \int_{0}^{+\infty}(\bar{\partial}+d_{t})\left(e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s}\right)\\
+        &=
+        -\int_{0}^{+\infty}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s},
+    \end{align*}
+    where $d_t$ is the de Rham differential over the Schwinger parameter space.
+    Again, we emphasize that only the term proportional to $dt$ will contribute to the integral.
+\end{proof}
+
+The following proposition is useful and is a direct computation.
+
+\begin{prop}\label{Lie and interior product}
+    For $i,j \in \vec{I}$ define the vector field
+    $$ V_{ij}=\sum_{s=1}^{d}(\bar{z}_i^s\partial_{\bar{z}_{i}^{s}}+\bar{z}_j^s\partial_{\bar{z}_{j}^{s}})+t\partial_{t}.
+    $$
+    If $L_{\vec{V_{ij}}}$ and $\iota_{\vec{V_{ij}}}$ denote the Lie derivative and interior product operator, respectively, then we have the following identities:
+$$
+\left\{
+\begin{array}{cc}
+     L_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,  \\
+      L_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0,\\
+      \iota_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,\\
+      \iota_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0.
+\end{array}
+\right.
+$$
+\end{prop}
+%\begin{proof}
+%    These identities follow from direct computations.
+%\end{proof}
+
+%With these prelimilinary computations in order, we can now explain our strategy for developing residue theory based on Jouanolou’s model of higher-dimensional affine spaces.
+%Let
+%$$
+%\alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}((\mathbb{A}^{d})^{\vec{I}})}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]\cong\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
+%$$
+%where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a polynomial with variables $\{x_{ij}^{s},\mathbf{d}x_{ij}^{s}\}_{i<j\in\vec{I},1\leq s\leq d}$.
+%Recall that $\mathbf{d} x_{ij}^{s}$ are odd variables with respect to the Koszul rule of sign, so they anti-commute with one another.
+%We take $p$ to be homogenous of total degree $l$.
+%We want to define the residue by the following formula:
+%\begin{align*}
+%    &\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\\
+%    &=\pm\int_{S^{+}((0,+\infty)^l)}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta,
+%\end{align*}
+%where 
+%$$
+%S^{+}((0,+\infty)^l)=\{(t_1,\dots,t_{l})\in(0,+\infty)^l|\sum_{i=1}^{l}t_{i}^{2}=1\}.
+%$$
+%
+%In this subsection, we will prove the following facts (some in their stronger forms):
+%\begin{enumerate}
+%    \item When $t_{l'}\in(0,+\infty)$ for $l'\in\{1,2,\dots,l\}$,
+%    $$
+%    p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
+%    $$
+%    is integrable over $(\mathbb{A}^{d})^{\vec{I}-\{n\}}$.
+%    \item 
+%    $$\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
+%    $$
+%    is integrable over $S^{+}((0,+\infty)^l)$. So $\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta$ is well-defined as an integral.
+%    \item If 
+%    $$
+%    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
+%    $$
+%    we have
+%    $$
+%    \oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=\oint_{z_1,\dots,z_{n-1}=z_n}p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'.
+%    $$
+%    So the residues are well-defined on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+%    \item Let $s\in\{1,\dots,d\}$, $i\in\{1<2<\cdots<n\}$,
+%    $$
+%    \oint_{z_1,\dots,z_{n-1}=z_n}\alpha\cdot \partial_{z_{i}^{s}}=
+%    \begin{cases}
+%        0, &\text{when  }i\neq n,\\
+%    \left(\oint_{z_1,\dots,z_{n-1}=z_n}\alpha\right)\cdot \partial_{z_{i}^{s}}, &\text{when  }i=n.
+%    \end{cases}
+%    $$
+%    This result generalizes the corresponding result of ordinary residues.
+%\end{enumerate}
+
+We introduce a graphical description for elements in $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+\begin{defn}
+  A \textit{directed graph} $\vec{\Gamma}$ consists of the following data:
+    \begin{enumerate}
+        \item An ordered set $\vec{\Gamma}_{0}$ of vertices. We use $|\Gamma_{0}|$ to denote the number of vertices.
+        \item An ordered set $\vec{\Gamma}_{0}$ of directed edges. We use $|\Gamma_{1}|$ to denote the number of directed edges.
+        \item Two maps
+        $$
+        t,h\colon \Gamma_{1}\rightarrow\Gamma_{0},
+        $$
+        which are assignments of tail and head to each directed edge. We require that 
+        $$
+        t(e)\neq h(e)
+        $$
+        for any $e\in\vec{\Gamma}_{1}$, i.e., the graph $\vec{\Gamma}$ has no self-loops.
+    \end{enumerate}
+    A \textit{decoration} on a directed graph $\vec{\Gamma}$ is the choice of a special edge $e_{l}\in \vec{\Gamma}_{1}$ and a map 
+    $$
+    m\colon \Gamma_{1}\rightarrow\{1,2,\dots,d\}.
+    $$
+\end{defn}
+
+We will use $(\vec{\Gamma},m,l)$ to denote a decorated directed graph. 
+We refer to a decorated directed graph as a \textit{Feynman graph} in what follows.
+
+For a directed graph $\vec{\Gamma}$, we use the following notations to describe $\vec{\Gamma}_{0}$ and $\vec{\Gamma}_{1}$:
+$$
+\begin{cases}
+    \vec{\Gamma}_{0}=\{1<\cdots<n=|\Gamma_{0}|\},\\
+    \vec{\Gamma}_{1}=\{e_{1}<\cdots<e_{|\Gamma_{1}|}\}.
+\end{cases}
+$$
+\begin{defn}
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph. 
+    Define
+    $$
+    p_{(\vec{\Gamma},m,l)}(x_{e}^{m(e)},\mathbf{d}x_{e}^{m(e)})=\prod_{e<e_{l}\in\vec{\Gamma}_{1}}x_{e}^{m(e)}\prod_{e_l\leq e'\in\vec{\Gamma}_{1}}\mathbf{d}x_{e'}^{m(e')}\in k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d},
+    $$
+    where the order of the factors is determined by the order of $\vec{\Gamma}_{1}$. We have used the convention
+    $$
+    x_{e}^{m(e)}=x_{t(e)h(e)}^{m(e)}=-x_{h(e)t(e)}^{m(e)}.
+    $$
+    We call $p_{(\vec{\Gamma},m,l)}$ the \textit{monomial corresponding to} $(\vec{\Gamma},m,l)$.
+\end{defn}
+
+\begin{rem}
+    $\{p_{(\vec{\Gamma},m,l)}\}$ spans $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$, so we can use Feynman graphs to represent elements in $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$.
+\end{rem}
+
+We now introduce some concepts from graph theory.
+See appendix \ref{graph theory} for more details and explanation.
+
+\begin{defn}
+    Let $\vec{\Gamma}$ be a directed graph. The incidence matrix $\rho=(\rho_{ei})_{e\in\vec{\Gamma}_{1},i\in\vec{\Gamma}_{0}}$ is given by
+    $$
+    \rho_{ei}=
+    \begin{cases}
+        1, &\text{if }t(e)=i,\\
+        -1, &\text{if }s(e)=i,\\
+        0, &\text{otherwise.}
+    \end{cases}
+    $$
+\end{defn}
+\begin{defn}
+    Let $\vec{\Gamma}$ be a directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_{e}\in(0,+\infty)$. The weighted Laplacian matrix is given by
+    $$
+    M_{\vec{\Gamma}}(t)_{ij}=
+    \sum_{e\in\vec{\Gamma}_{1}}\rho_{ei}\frac{1}{t_{e}}\rho_{ej}.
+    $$
+\end{defn}
+\begin{prop}\label{Minverse}
+    Let $\vec{\Gamma}$ be a directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_e\in(0,+\infty)$. If $\vec{\Gamma}$ is a connected graph, then the matrix $M_{\vec{\Gamma}}(t)=(M_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ is invertible. We use $M^{-1}_{\vec{\Gamma}}(t)=(M^{-1}_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ to denote the inverse matrix.
+\end{prop}
+\begin{proof}
+    See corollary \ref{det of laplacian}.
+\end{proof}
+\begin{defn}
+    Let $\vec{\Gamma}$ be a connected directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_e\in(0,+\infty)$. The graphic Green's function $d^{-1}_{\vec{\Gamma}}(t)=(d^{-1}_{\vec{\Gamma}}(t)_{ei})_{e\in\vec{\Gamma}_{1},i\in\vec{\Gamma}_{0}-\{n\}}$ is given by
+    $$
+    d^{-1}_{\vec{\Gamma}}(t)_{ei}=\sum_{j=1}^{n-1}\frac{1}{t_{e}}\rho_{ej}M^{-1}_{\vec{\Gamma}}(t)_{ji}.
+    $$
+\end{defn}
+
+%We collect some facts in graph theory in appendix \ref{graph theory}.
+
+We define the class of integrals which interested us.
+
+\begin{defn}
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    $$
+    \beta\in (\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    $$
+    and
+    $$
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    $$
+    the \textit{Feynman graph integrand} is defined by 
+    \begin{align*}
+        &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=
+        \int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta,
+    \end{align*}
+    where $z_{e}=z_{t(e)}-z_{h(e)}$, $y_{e}=\frac{\bar{z}_{t(e)}-\bar{z}_{h(e)}}{t_{e}}$.
+\end{defn}
+
+We introduce the following coordinates on $(\mathbb{A}^{d})^{\vec{I}}$:
+$$
+\begin{cases}
+    z_{i}=\tilde{z}_{i}+\tilde{z}_{n}, &\text{if }i\neq n,\\
+    z_{n}=\tilde{z}_{n}.
+\end{cases}
+$$
+
+Now, we can get the following result:
+\begin{prop}\label{explicit formula}
+    When $t_{e}\in(0,+\infty)$ for $e\in\vec{\Gamma}_{1}$,
+    $$
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $$
+    is a convergent integral. Moreover,
+    \begin{enumerate}
+        \item If $\vec{\Gamma}$ is disconnected,
+        $$
+        W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=0.
+        $$
+        \item If $\vec{\Gamma}$ is connected, we have the following explicit formula:
+        \begin{align*}
+            &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+            &=(-2\pi i)^{d(n-1)}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\circ p_{(\vec{\Gamma},m,l)}(-d\hat{y}_{e}^{m(e)},-(\sum_{s=1}^{d}(\partial_{\lambda_{e}^{s}}+\tilde{z}_{e}^{s})\circ d\hat{y}_{e}^{s})\circ d\hat{y}_{e}^{m(e)})
+        \right.\\
+        &\left.\left.(1\otimes \beta)\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1} e^{\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}.
+        \end{align*}
+    \end{enumerate}
+  \end{prop}
+
+  The notations appearing in the above proposition are explained as follows:
+    \begin{itemize}
+        \item $\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}$: if $
+        \gamma\in \mathcal{A}^{d(n-1),d(n-1)}((\mathbb{A}^d)^{\vec{I}-\{n\}})
+        $ is a top form, there exists a unique
+        $
+        \gamma'\in C^{\infty}((\mathbb{A}^d)^{\vec{I}-\{n\}}),
+        $
+        such that
+        $
+        \gamma=\gamma'\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i}).
+        $
+        We define 
+        $$
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\gamma=\gamma'.
+        $$
+        If $\gamma$ is not a top form, we define
+        $$
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\gamma=0.
+        $$
+        \item $d\hat{y}_{e}^{s}$: it is an operator defined by
+        $$
+        d\hat{y}_{e}^{s}=\sum_{j=1}^{n-1}\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}d\bar{\tilde{z}}_{j}^{s}+d(d^{-1}_{\vec{\Gamma}}(t)_{ej})(\partial_{\tilde{z}_{j}^{s}}+\lambda_{j}^{s})\right),
+        $$
+        where $e\in \vec{\Gamma}_{1}$, $1\leq s\leq d$.
+    \end{itemize}
+
+    \begin{proof}[Proof of the proposition]
+    To simplify notations, we define
+    $$
+    \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
+    $$
+
+    We first prove (1). If $\vec{\Gamma}$ is disconnected, let $\vec{\Gamma}'$ be a connected component of $\vec{\Gamma}$, such that $n\notin \vec{\Gamma}'$. Let $\vec{V}=\sum_{i\in\vec{\Gamma}'_{0}}\partial_{\bar{z}_{i}}$, $\iota_{\vec{V}}$ is the interior product operator of $\vec{V}$. We can check that
+    $$
+    \iota_{\vec{V}}(\tilde{W})=0,
+    $$
+    so $\tilde{W}$ is not a top form on $(\mathbb{A}^d)^{\vec{I}-\{n\}}$. Hence $$
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\tilde{W}=0.
+    $$
+
+    Now, let's prove (2).
+    We begin by using Wick's theorem to explicitly evaluate the Gaussian integrals.
+    If $\vec{\Gamma}$ is connected, by using coordinates $\{\tilde{z}_{i}\}$, we have
+    \begin{align*}
+        \tilde{W}&=e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta.
+    \end{align*}
+    Since $\vec{\Gamma}$ is connected, by Proposition \ref{Minverse}, $M_{\vec{\Gamma}}(t)$ is invertible. We notice that the integral over $(\mathbb{A}^d)^{\vec{I}-\{n\}}$ is a Gaussian type integral, so
+    \begin{align*}
+        &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=\int_{(\mathbb{A}^d)^{\vec{I}-\{n\}}}e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})\wedge \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\\
+        &\left(p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\\
+        &=(-2\pi i)^{d(n-1)}\frac{1}{(detM_{\vec{\Gamma}(t)})^{d}}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}
+        \circ
+        e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\sum_{j=1}^{n-1} M^{-1}_{\vec{\Gamma}}(t)_{ij}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{\tilde{z}}_{j}^{s}}}
+        \right.\\
+        &\left.\left.p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1}.
+    \end{align*}
+
+    Introduce the new basis for the space of one-forms:
+    $$
+    \begin{cases}
+        d\tilde{z}_{i}=d\tilde{z}_{i}&\text{for }1\leq i\leq n,\\
+        d\bar{\tilde{z}}_{i}=\sum_{j=1}^{n-1}d\left(
+        M^{-1}_{\vec{\Gamma}(t)_{ij}}\bar{z'}_{j}
+        \right)=\sum_{j=1}^{n-1}\left(
+        d(M^{-1}_{\vec{\Gamma}(t)_{ij}})\bar{z'}_{j}+M^{-1}_{\vec{\Gamma}(t)_{ij}}d\bar{z'}_{j}
+        \right) &\text{for }1\leq i\leq n-1,\\
+        d\bar{\tilde{z}}_{n}=d\bar{\tilde{z}}_{n}\\
+        dt_{e}=dt_{e}&\text{for }e\in\vec{\Gamma}_{1},
+    \end{cases}
+    $$
+    where $\bar{z'}_{i}$ is a smooth function defined by
+    $$
+    \bar{z'}_{i}=\sum_{j=1}^{n-1}M_{\vec{\Gamma}(t)_{ij}}\bar{z}_{j}.
+    $$
+    The dual basis for vectors transforms as follows:
+    $$
+    \begin{cases}
+        \partial_{\tilde{z}_{i}}\rightarrow \partial_{\tilde{z}_{i}}&\text{for }1\leq i\leq n,\\
+        \partial_{\bar{\tilde{z}}_{i}}\rightarrow \sum_{j=1}^{n-1}
+        M_{\vec{\Gamma}(t)_{ij}}\partial_{\bar{z'}_{j}}
+         &\text{for }1\leq i\leq n-1,\\
+        \partial_{\bar{\tilde{z}}_{n}}\rightarrow \partial_{\bar{\tilde{z}}_{n}}\\
+        \partial_{t_{e}}=\partial_{t_{e}}-\sum_{i,j,k\in \vec{I}-\{n\}}M_{\vec{\Gamma}(t)_{ik}}\partial_{t_{e}}(M^{-1}_{\vec{\Gamma}(t)_{kj}})\bar{z'}_{j}\partial_{\bar{z'}_{i}}&\text{for }e\in\vec{\Gamma}_{1}.
+        
+    \end{cases}
+    $$
+
+    Notice that 
+    $$
+    \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}=(\det M_{\vec{\Gamma}(t)})^{d}\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})},
+    $$
+    so the factors involving determinants cancel and the Feynman graph integrand becomes
+    \begin{align*}
+        &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=(-2\pi i)^{d(n-1)}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})}
+        \circ
+        e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}
+        \right.\\
+        &\left.\left.p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1}.
+    \end{align*}
+
+    Now, we have obtained a better formula for the Feynman graph integral. However, the appearance of exponential
+    functions $e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}$ and
+    $e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}$ make this formula
+    unsuitable for an algebraic setting and we must further simplify. 
+    We notice that
+    $$
+    \tilde{z}^{s}_{e}e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}=\partial_{\lambda_{e}^{s}}e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}
+    $$
+    Using this, we obtain  
+    \begin{align*}
+        &p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\\
+        &=
+        p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ dy_{e}^{s})\circ dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}.
+    \end{align*}
+    We also notice that
+    \begin{align*}
+        e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}\circ dy_{e}^{s}=d\tilde{y}_{e}^{s}\circ
+        e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}},
+    \end{align*}
+    where 
+    $$
+    d\tilde{y}_{e}^{s}=\sum_{j=1}^{n-1}\left(
+        d\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}\bar{z'}_{j}^{s}\right)+d\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}\right)\partial_{\tilde{z}_{j}^{s}}
+        \right)
+    $$
+    is an operator. So we have
+    \begin{align*}
+        &e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}\circ
+        p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ dy_{e}^{s})\circ dy_{e}^{m(e)})\\
+        &=
+        p_{(\vec{\Gamma},m,l)}(-d\tilde{y}_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ d\tilde{y}_{e}^{s})\circ d\tilde{y}_{e}^{m(e)})\circ 
+        e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}.
+    \end{align*}
+    The Feynman graph integrand becomes
+    \begin{align*}
+        &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=(-2\pi i)^{d(n-1)}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})}\circ p_{(\vec{\Gamma},m,l)}(-d\tilde{y}_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ d\tilde{y}_{e}^{s})\circ d\tilde{y}_{e}^{m(e)})
+        \right.\\
+        &\left.\left.\circ e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}(1\otimes \beta)\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1}.
+    \end{align*}
+    We further notice that
+    $$
+    d\tilde{y}_{e}^{s}\circ e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}=e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\circ d\tilde{\tilde{y}}_{e}^{s},
+    $$
+    where 
+    $$
+    d\tilde{\tilde{y}}_{e}^{s}=d\tilde{y}_{e}^{s}+\sum_{j=1}^{n-1}d\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}\right)\lambda_{j}^{s}.
+    $$
+    Then we have
+    \begin{align*}
+        &p_{(\vec{\Gamma},m,l)}(-d\tilde{y}_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ d\tilde{y}_{e}^{s})\circ d\tilde{y}_{e}^{m(e)})\circ e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\\
+        &=e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\circ p_{(\vec{\Gamma},m,l)}(-d\tilde{\tilde{y}}_{e}^{m(e)},-(\sum_{s=1}^{d}(\partial_{\lambda_{e}^{s}}+\tilde{z}_{e}^{s})\circ d\tilde{\tilde{y}}_{e}^{s})\circ d\tilde{\tilde{y}}_{e}^{m(e)}).
+    \end{align*}
+
+    Finally, we get
+    \begin{align*}
+        &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=(-2\pi i)^{d(n-1)}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})}\circ p_{(\vec{\Gamma},m,l)}(-d\tilde{\tilde{y}}_{e}^{m(e)},-(\sum_{s=1}^{d}(\partial_{\lambda_{e}^{s}}+\tilde{z}_{e}^{s})\circ d\tilde{\tilde{y}}_{e}^{s})\circ d\tilde{\tilde{y}}_{e}^{m(e)})
+        \right.\\
+        &\left.\left.(1\otimes \beta)\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1} e^{\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\\
+        &=(-2\pi i)^{d(n-1)}\left(
+        \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\circ p_{(\vec{\Gamma},m,l)}(-d\hat{y}_{e}^{m(e)},-(\sum_{s=1}^{d}(\partial_{\lambda_{e}^{s}}+\tilde{z}_{e}^{s})\circ d\hat{y}_{e}^{s})\circ d\hat{y}_{e}^{m(e)})
+        \right.\\
+        &\left.\left.(1\otimes \beta)\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1} e^{\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}.\\
+    \end{align*}
+\end{proof}
+
+Now, we want to prove the Feynman graph integrand is integrable over 
+$$
+S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})=\{(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in(0,+\infty)^{\vec{\Gamma}_{1}}|\sum_{i=1}^{|\Gamma_{1}|}t_{i}^{2}=1\}.
+$$
+We use the compactification technique of Schwinger spaces as developed in \cite{wang2024feynman}.
+For more details see appendix \ref{Schwinger spaces}.
+
+    Let $\vec{\Gamma}$ be a directed graph, $(0,+\infty)^{\vec{\Gamma}_{1}}$ is called the Schwinger space of
+    $\vec{\Gamma}$. The orientation on Schwinger space is determined by
+    $$
+    \int_{(0,L)^{\vec{\Gamma}_{1}}}\prod_{e\in\vec{\Gamma}_{1}}dt_{e}=L^{|\Gamma_{1}|},
+    $$
+    where $L>0$.
+
+There is a natural partial compactification of $(0,+\infty)^{\vec{\Gamma}_{1}}$, which is constructed by iterated real blow up along corners of $[0,+\infty)^{\vec{\Gamma}_{1}}$. We collect basic properties of the partially compactified Schwinger spaces in the Appendix \ref{Schwinger spaces}. We use $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$ to denote the partially compactified Schwinger space of $\vec{\Gamma}$.
+\begin{prop}
+    The closure of $S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})$ in $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$, which we denote by 
+    $$
+    \bar{S}^{+}((0,+\infty)^{\vec{\Gamma}_{1}}),
+    $$
+    is compact.
+\end{prop}
+%\begin{proof}
+ %   This follows from the construction of $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
+%\end{proof}
+
+Another important result that we will use pertaining to this compactification $\widetilde{[0,+\infty)}^{\vec{\Gamma}
+_{1}}$ is the following.
+
+\begin{lem}
+    Let $\vec{\Gamma}$ be a connected directed graph, then the graphic Green's function
+    $$
+    d^{-1}_{\vec{\Gamma}}(t)_{ei}, \quad i\in \vec{\Gamma}_{0}-\{n\},\quad e\in \vec{\Gamma}_{1}
+    $$
+    can be extended to a smooth function on $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
+\end{lem}
+%\begin{proof}
+%    See Lemma \ref{extended functions}.
+%\end{proof}
+
+As a consequence, we have
+\begin{cor}
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    $$
+    \beta\in (\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    $$ 
+    and
+    $$
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    $$
+    the Feynman graph integrand
+    $$
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $$
+    can be extended to a smooth differential form on $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$. In particular,
+    $$
+    \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $$
+    is convergent.
+\end{cor}
+\begin{proof}
+    By Proposition \ref{explicit formula}, we have an explicit formula for $
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $. Since $d^{-1}_{\vec{\Gamma}}(t)_{ei}$ is smooth on $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$, the operator $d\hat{y}_{e}^{s}$ is also smooth. So $
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $ can be extended to a smooth differential form. Finally, since $\bar{S}^{+}((0,+\infty)^{\vec{\Gamma}_{1}})$ is compact, the integral
+    $$
+    \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
+    \int_{\bar{S}^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+    $$
+    is convergent.
+\end{proof}
+
+Before we define residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, we state the following useful proposition:
+\begin{prop}\label{useful property}
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    $$
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    $$
+    and
+    $$
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    $$
+    then we have the following consequences:
+    \begin{enumerate}
+        \item The Feynman graph integrand
+        $$
+        W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+        $$
+        induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$. Here the $\mathbb{R}^{+}$ action is given by
+        $$
+        \lambda\cdot(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})=(\lambda\cdot t_{e_{1}},\dots,\lambda\cdot t_{e_{|\Gamma_{1}|}}),
+        $$
+        where $\lambda\in \mathbb{R}^{+}$, $(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in (0,+\infty)^{\vec{\Gamma}_{1}}$.
+        \item Let $S\subset(0,+\infty)^{\vec{\Gamma}_{1}}$ be a submanifold, such that the natural map $S\rightarrow(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$ is a diffeomorphism. Then we have
+        $$
+        \int_{S}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
+        \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
+        $$
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (2) is a direct consequence of (1). Let's prove (1).
+
+    Let $\vec{V}=\vec{V}_{1}+\vec{V}_{2}$, where $\vec{V}_{1}=\sum_{s=1}^{d}\sum_{i=1}^{n-1}\bar{\tilde{z}}_{i}^{s}\partial_{\bar{\tilde{z}}_{i}^{s}}$, $\vec{V}_{2}=\sum_{e\in\vec{\Gamma}_{1}}t_{e}\partial_{t_{e}}$. To simplify notations, we define
+    $$
+    \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
+    $$
+    By Proposition \ref{Lie and interior product}, we have
+    $$
+    \begin{cases}
+        L_{\vec{V}}\tilde{W}=0,\\
+        \iota_{\vec{V}}\tilde{W}=0.
+    \end{cases}
+    $$
+    So we can get 
+    \begin{align*}
+        L_{\vec{V}_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}L_{\vec{V}_{2}}\tilde{W}=-\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}L_{\vec{V}_{1}}\tilde{W}=0.
+    \end{align*}
+    Similarly,
+    $$
+    \iota_{\vec{V}_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\pm\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\iota_{\vec{V}_{1}}\tilde{W}=0.
+    $$
+    We notice that $\vec{V}_{2}$ is the infinitesimal generator of $\mathbb{R}^{+}$ action, so $W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$.
+\end{proof}
+
+Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ on the Feynman graph $(\vec{\Gamma},m,l)$. We have the following result:
+\begin{prop}\label{well-defineness}
+        Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    $$
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    $$
+    and
+    $$
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    $$
+    then we have the following consequences:
+    \begin{enumerate}
+        \item Let $1\leq l_{1},l_{2}< l$, $l\leq l'_{1},l'_{2}\leq |\Gamma_{1}|$, we use $\sigma_{l_{1}l_{2}}(\vec{\Gamma})$ ($\sigma_{l'_{1}l'_{2}}(\vec{\Gamma})$) to denote the Feynman graph $\vec{\Gamma}$ with the order of $e_{l_{1}},e_{l_{2}}\in\vec{\Gamma}_{1}$ ($e_{l'_{1}},e_{l'_{2}}\in\vec{\Gamma}_{1}$) interchanged. Then we have
+        $$
+        \begin{cases}
+            \int_{S^{+}((0,+\infty)^{\sigma_{l_{1}l_{2}}(\vec{\Gamma}_{1})}}W((\sigma_{l_{1}l_{2}}(\vec{\Gamma}),m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
+        \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        \int_{S^{+}((0,+\infty)^{\sigma_{l'_{1}l'_{2}}(\vec{\Gamma}_{1})}}W((\sigma_{l'_{1}l'_{2}}(\vec{\Gamma}),m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
+        -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+        \end{cases}
+        $$
+        \item For $1\leq s\leq d$, $i,j\in \vec{\Gamma}_{0}$, let $(\vec{\Gamma}',m^{s},l)$ be the Feynman graph which satisfies the following:
+        \begin{itemize}
+            \item $\vec{\Gamma}\subset\vec{\Gamma}'$ is a directed subgraph.
+            \item $\vec{\Gamma}'_{0}=\vec{\Gamma}_{0}$.
+            \item $\vec{\Gamma}'_{1}=\{e_{0}\}\cup\vec{\Gamma}_{1}$, where $t(e_{0})=i$, $h(e_{0})=j$.
+            \item $m(e_{0})=s$.
+        \end{itemize}
+        Then we have
+        \begin{align}\label{well-defined formula}
+        \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
+        \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).    
+        \end{align}
+        \item For $1\leq s\leq d$, $i,j\in \vec{\Gamma}_{0}$, let $(\vec{\Gamma}'',m^{s},l)$ be the Feynman graph which satisfies the following:
+        \begin{itemize}
+            \item $\vec{\Gamma}\subset\vec{\Gamma}''$ is a directed subgraph.
+            \item $\vec{\Gamma}''_{0}=\vec{\Gamma}_{0}$.
+            \item $\vec{\Gamma}''_{1}=\vec{\Gamma}_{1}\cup\{e_{|\vec{\Gamma}_{1}|+1}\}$, where $t(e_{|\vec{\Gamma}_{1}|+1})=i$, $h(e_{|\vec{\Gamma}_{1}|+1})=j$.
+            \item $m(e_{|\vec{\Gamma}_{1}|+1})=s$.
+        \end{itemize}
+        Then we have
+        $$
+        \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}''_{1}})}W((\vec{\Gamma}'',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=0.
+        $$
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (1) can be verified directly. Let's prove (2). Let's first assume $\vec{\Gamma}_{1}\neq\emptyset$. To simplify notations, we define
+    $$
+    \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
+    $$
+    Let's consider a submanifold
+    $$
+    S=S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})\times(0,+\infty)\subset S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}}).
+    $$
+    We notice that the natural map from $S$ to $(0,+\infty)^{\vec{\Gamma}'_{1}}/\mathbb{R}^{+}$ is a diffeomophism, so
+    \begin{align*}
+        &\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=
+        \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(0,+\infty)}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}z_{ij}^{s}x_{ij}^{s}\tilde{W}\\
+        &=
+        \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
+    \end{align*}
+    When $\vec{\Gamma}_{1}=\emptyset$, $|\Gamma_{0}|\geq3$, $\vec{\Gamma}$ and $\vec{\Gamma}'$ are disconnected, so both sides of formula $(\ref{well-defined formula})$ is zero. When $\vec{\Gamma}_{1}=\emptyset$, $i=1$, $j=2$, $\vec{\Gamma}_{0}=\{1<2\}$, we have
+    \begin{align*}
+        &\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=
+        \left.\left(
+        -\int_{\mathbb{A}^{d}}e^{-z_{12}\cdot y_{12}}(z_{12}\cdot dy_{12})\beta e^{z_{1}\cdot \lambda_{1}+z_{2}\cdot \lambda_{2}}
+        \right)\right|_{t_{12}=1}\\
+        &=
+        \left.\left(
+        \int_{\mathbb{A}^{d}}\bar{\partial}\left(e^{-z_{12}\cdot y_{12}}\beta e^{z_{1}\cdot \lambda_{1}+z_{2}\cdot \lambda_{2}}
+        \right)\right)\right|_{t_{12}=1}\\
+        &=0.
+    \end{align*}
+    Since $\vec{\Gamma}$ is disconnected, 
+    \begin{align*}
+        &\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
+        &=0\\
+        &=
+        \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
+    \end{align*}
+    (3) can be proved by similar arguments.
+\end{proof}
+
+Now, we can define residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+
+\begin{defn}
+    Let
+    $$
+    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes\beta\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
+    $$
+    where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a monomial with coefficient equals $1$. Let
+    $$
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    $$
+    then the residue of $\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}$ is defined by
+    \begin{align*}
+        &\frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\\
+        &=\frac{(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)+1}}{(-2\pi i)^{d(n-1)}}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}),
+    \end{align*}
+    where $(\vec{\Gamma},m,l)$ is a Feynman graph whose corresponding polynomial $p_{(\vec{\Gamma},m,l)}=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$. We can define residues for general elements in $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ by linear extension. By Proposition \ref{well-defineness}, residues are well-defined.
+\end{defn}
+
+Finally, let's prove a useful property for residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+\begin{prop}\label{residue 0}
+    Let $\alpha\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, $e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}})$, and $1\leq s\leq d$. We have
+    
+    \begin{enumerate}
+        \item If $i\in\vec{I}-\{n\}$, then
+        $$
+        \frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\left(\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\right)\cdot \partial_{z_{i}^{s}}=0.
+        $$
+        \item If $i=n$, then
+        \begin{align*}
+            &\frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\left(\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\right)\cdot \partial_{z_{i}^{s}}\\
+            &=\left(\frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\right)\cdot \partial_{z_{n}^{s}}.
+        \end{align*}
+    \end{enumerate}
+    \begin{proof}
+        Without loss of generality, we assume $\alpha=p_{(\vec{\Gamma},m,l)}\otimes\beta$, where $(\vec{\Gamma},m,l)$ is a Feynman graph. We can also assume $\vec{\Gamma}_{1}\neq\emptyset$, $t(e_{1})=i$. 
+        
+        Let $\vec{\Gamma}'\subset\vec{\Gamma}$ be a subgraph, such that $\vec{\Gamma}_{0}'=\vec{\Gamma}_{0}$, $\vec{\Gamma}_{1}'=\vec{\Gamma}_{1}-\{e_{1}\}$. Let
+        $$
+        \tilde{W}'=p_{(\vec{\Gamma}',m|_{\vec{\Gamma}'},l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
+        $$
+        When $1<l$, we have 
+        $$
+        \partial_{z_{i}^{s}}x_{e_{1}}^{m(e_{1})}=-x_{e_{1}}^{s}x_{e_{1}}^{m(e_{1})}.
+        $$
+        Let's prove
+        \begin{align*}
+            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}
+            e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{0}}}}d(\frac{\bar{z}_{e_{1}}^{s}}{t_{e_{0}}})e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\tilde{W}'\\
+            &=
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
+        \end{align*}
+        In other words, the formal $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module structure on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}$ coincide with the actual derivative when we compute residues. 
+
+        When $\vec{\Gamma}_{1}'\neq\emptyset$, let
+        $$
+        S=S^{+}((0,+\infty)^{\vec{\Gamma}_{1}'})\times(0,+\infty)^{2}\subset(0,+\infty)^{|\Gamma_{1}|+1}.
+        $$
+        Note the natural map from $S$ to $(0,+\infty)^{|\Gamma_{1}|+1}/\mathbb{R}^{+}$ is a diffeomorphism, we have
+        \begin{align*}
+            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}
+            e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{0}}}}d(\frac{\bar{z}_{e_{1}}^{s}}{t_{e_{0}}})e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\tilde{W}'\\
+            &=
+            \int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}i(x_{e_{1}}^{s})i(x_{e_{1}}^{m(e_{1})})\tilde{W}'\\
+            &=
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}(i(x_{e_{1}}^{m(e_{1})}))\tilde{W}'\\
+            &=
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
+        \end{align*}
+        When $\vec{\Gamma}_{1}'=\emptyset$, this can be proved by directed computation.
+
+        We can use similar arguments to prove the case when $l=1$.
+
+        Now, (1) follows from the fact that the integral of a total derivative is zero. By dominated convergence theorem for derivatives, we can interchange the order of taking derivative and integration. So we proved (2).
+    \end{proof}
+\end{prop}
+\subsection{Construction of the unit chiral algebra on $\omega_{\mathbb{A}^{d}}[d-1]$}.
+
+In this subsection, we will construct the $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ by using residues.
+
+We first introduce the following definition:
+\begin{defn}
+    Let $\alpha\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, the shifted $n$ operation
+    $$
+    \tilde{\mu}_{\vec{I}}:\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})\rightarrow \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]
+    $$
+    is given by
+    $$
+    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
+    $$
+    where $\lambda_{\bullet}=\sum_{i=1}^{n}\lambda_{i}$.
+\end{defn}
+\begin{rem}
+    By Proposition \ref{explicit formula}, we know $\tilde{\mu}_{\vec{I}}(\alpha)$ is indeed an element of $\omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]$, i.e., $\tilde{\mu}_{\vec{I}}(\alpha)$ is a polynomial with respect to $\{\lambda_{i}\}_{i\in\vec{I}}$.
+\end{rem}
+\begin{prop}
+    $\tilde{\mu}_{\vec{I}}(\alpha)$ is a homological degree $1$ element in $\mathrm{Hom}^{ch}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}},\omega_{\mathbb{A}^{d}}[d])$.
+\end{prop}
+\begin{proof}
+    We first prove $\tilde{\mu}$ is of homological degree $1$. Assume
+    $$
+    \alpha=p\otimes\beta\in\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}],
+    $$
+    we use $|p|$ and $|\beta|$ to denote the homological degree of $p$ and $\beta$ respectively. To make sure the integral
+    $$
+    \oint_{z_{1},\cdots z_{n-1}=z_{n}}p\otimes\beta e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}
+    $$
+    is non-zero, we have
+    $$
+    \begin{cases}
+        |\Gamma_{1}|+|p|=d(|\Gamma_{0}|-1)+|\Gamma_{1}|-1\\
+        |\beta|=-d|\Gamma_{0}|
+    \end{cases}.
+    $$
+    So $|\tilde{\mu}_{\vec{I}}(\alpha)|=-d=|p|+|\beta|+1=|\alpha|+1$.
+
+    Now, let's prove $\tilde{\mu}_{\vec{I}}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module map. This follows from the following computations:
+    \begin{align*}
+        &\tilde{\mu}_{\vec{I}}(\alpha\cdot z_{i}^{s})\\
+        &=
+        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}z_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha \partial_{\lambda_{i}^{s}}e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=(w+\partial_{\lambda_{i}^{s}})\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \tilde{\mu}_{\vec{I}}(\alpha)\cdot z_{i}^{s},
+    \end{align*}
+    \begin{align*}
+        &\tilde{\mu}_{\vec{I}}(\alpha\cdot \partial_{z_{i}^{s}})\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha) e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}\\
+        &-
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\lambda_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}+
+        \tilde{\mu}_{\vec{I}}(\alpha)\cdot \partial_{\lambda_{i}^{s}}.
+    \end{align*}
+    Using Proposition \ref{residue 0}, the first term is $0$ when $i\neq n$. When $i=n$, the first term is
+    $$
+    (-\lambda_{\bullet}+\partial_{w})\frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
+    $$
+    which is zero as an element in
+    $$
+    \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}].
+    $$
+\end{proof}
+
+Let's prove $\tilde{\mu}_{\vec{I}}$ satisfy the following shifted $L_{\infty}$ relations:
+\begin{thm}
+    $\{\tilde{\mu}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$ satisfies the following properties:
+    \begin{enumerate}
+        \item $\tilde{\mu}_{\vec{I}}=\tilde{\mu}_{\vec{I}_{\sigma_{ii'}}}\circ\tau_{\sigma_{ii'}}$, where $\sigma_{ii'}$ is the permutation of $i\neq i'\in\vec{I}$.
+        \item 
+        $$
+        -\tilde{\mu}_{\vec{I}}\circ \mathbf{d}=\sum_{\vec{I}'\subset\vec{I}}\tilde{\mu}_{\{\bullet\}\cup\vec{I}-\vec{I}'}\circ \tilde{\mu}_{\vec{I}'\subset\vec{I}}
+        $$
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Let's prove (1) first. When $i,i'\neq n$, it is trivial. Let's assume $i<i'=n$. Since $\tilde{\mu}_{\vec{I}}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module morphism, we only need to prove this in the case when 
+    $$
+    \alpha=p(x_{i}^{s},\mathbf{d}x_{i}^{s})\otimes\prod_{i=1}^{n}d^{d}z_{i}.
+    $$
+    In this case,
+    $$
+    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_{n}=w}.
+    $$
+    By using the coordinate transform
+    $$
+    z_{j}=z'_{j}+2w-z'_{n}-z'_{i},
+    $$
+    we have 
+    $$
+    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}(-1)^{d^2}\alpha e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}+\lambda_{\bullet}\cdot(z'_i-z'_n)}\right)\right|_{z'_{i}=w}.
+    $$
+    By Proposition \ref{explicit formula} and the fact that $d^{d}w\cdot\lambda_{\bullet}^{s}=0$, we have
+    $$
+    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}\tau_{\sigma_{in}}(\alpha) e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}}\right)\right|_{z'_{i}=w}=\tilde{\mu}_{\vec{I}_{\sigma_{in}}}\circ\tau_{\sigma_{in}}(\alpha).
+    $$
+
+    Now, let's prove (2). Assume $\alpha=p_{(\vec{\Gamma},m,l)}\otimes\beta$, where $(\vec{\Gamma},m,l)$ is a Feynman graph. Let
+    $$
+    \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{j=1}^{n}z_{j}\cdot\lambda_{j}}\otimes\beta.
+    $$
+    By Stokes' theorem and Proposition \ref{boundary description},
+    \begin{align*}
+        &-\tilde{\mu}_{\vec{I}}(\mathbf{d}\alpha)\\
+        &=\frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}(\bar{\partial}+d_t)\tilde{W}\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}d_{t}\left(\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\tilde{W}\right)\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left(\sum_{\vec{\Gamma}'\subset \vec{\Gamma}}\mathrm{sgn}(\sigma_{\vec{\Gamma}'_{1}\subset \vec{\Gamma}_{1}})\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}- \vec{\Gamma}'_{1}})}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}\right.\\
+        &
+        \left.\left.\int_{(\mathbb{A}^{d})^{\{\bullet\}\cup\vec{\Gamma}_{0}-\vec{\Gamma}'_{0}-\{n\}}}\int_{(\mathbb{A}^{d})^{|\Gamma'_{0}|-1}}\tilde{W}\right)\right|_{z_n=w}\\
+        &=
+        \sum_{\vec{I}'\subset\vec{I}}\tilde{\mu}_{\{\bullet\}\cup\vec{I}-\vec{I}'}\circ \tilde{\mu}_{\vec{I}'\subset\vec{I}}(\alpha).
+    \end{align*}
+\end{proof}
+
+We use the canonical décalage isomorphism
+$$
+\mathrm{Sym}^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d])\cong \wedge^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d-1])[n],
+$$
+the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
+\begin{defn}
+    The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the unit $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$.
+\end{defn}
+\subsection{d=2}
+In this subsection, we compute the 2-operation on a special element called propagator. We assume $d=2$ in this subsection.
+\begin{defn}
+    The propagator $P_{12}$ is an element of $\mathbf{J}_{\{1<2\}}^{\mathbb{A}^{2}}$, which is given by 
+    $$
+    P_{12}=x_{12}^1\mathbf{d}x_{12}^{2}-x_{12}^2\mathbf{d}x_{12}^{1}.
+    $$
+    \begin{prop}
+        We have the following identity:
+        $$
+        \mu^{\mathbf{Unit}}_{\{1<2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})=d^{2}w.
+        $$
+    \end{prop}
+    \begin{proof}
+    Note $P_{12}$ contains two terms. We first find the Feynman graphs which correspond to these two monomials. Let $\vec{\Gamma}$ be the directed graph constructed as follows:
+        \begin{itemize}
+            \item $\vec{\Gamma}_{0}=\{1<2\}$ and $\vec{\Gamma}_{1}=\{e_{1},e_{2}\}$.
+            \item $t(e_{1})=t(e_{2})=1$ and $h(e_{1})=h(e_{2})=2$.
+        \end{itemize}
+        We consider two Feynman graphs $(\vec{\Gamma},m_{1},2)$ and $(\vec{\Gamma},m_{2},2)$, where $m_{1}$ and $m_{2}$ is defined by
+        $$
+        \begin{cases}
+            m_{1}(e_{1})=1, m_{1}(e_{2})=2.\\
+            m_{2}(e_{1})=2, m_{2}(e_{2})=1.
+        \end{cases}
+        $$
+        Then we have $p_{(\vec{\Gamma},m_{1},2)}=x_{12}^1\mathbf{d}x_{12}^{2}$ and $p_{(\vec{\Gamma},m_{2},2)}=x_{12}^{2}\mathbf{d}x_{12}^{1}$. The graphic Green's function can be obtained by Corollary \ref{boundness}:
+        $$
+        \begin{cases}
+            d^{-1}_{\vec{\Gamma}}(t)_{e_{1}1}=\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}},\\
+            d^{-1}_{\vec{\Gamma}}(t)_{e_{2}1}=\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}.
+        \end{cases}
+        $$
+        
+        Let's compute $\mu^{\mathbf{Unit}}_{\{1<2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By Proposition \ref{explicit formula}, we have
+        \begin{align*}
+            &\mu^{\mathbf{Unit}}_{\{1<2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &=\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}
+        \iota_{d^{2}\tilde{z}_{1}d^{2}\bar{\tilde{z}}_{1}}\right.\\
+        &\left.\left.\circ (-d\hat{y}_{e_{1}}^{1})\circ(-(\sum_{s=1}^{2}(\partial_{\lambda_{e_{2}}^{s}}+\tilde{z}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{2})
+        (d^{2}z_{1}\boxtimes d^{2}z_{2})\right)\right|_{\tilde{z}_{1}=0,\tilde{z}_{2}=w}\\
+        &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
+        \end{align*}
+        Similarly, we have
+        \begin{align*}
+            &\mu^{\mathbf{Unit}}_{\{1<2\}}(-p_{(\vec{\Gamma},m_{2},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
+        \end{align*}
+        By Proposition \ref{useful property}, we can get
+        \begin{align*}
+            &\mu^{\mathbf{Unit}}_{\{1<2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
+        &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
+        &=d^{2}w.
+        \end{align*}
+    \end{proof}
+\end{defn}
+\iffalse
+\subsection{Trace map on the compacted supported chiral chain complex}
+
+\begin{thm}
+    There exist a trace map on the compacted supported unit chiral chain complex
+    $$
+    \mathbf{Tr}:C^{ch}_c(\mathbb{A}^d,\omega_{\mathbb{A}^d}[d-1])\rightarrow\mathbb{C}
+    $$
+    $$
+    \mathbf{Tr}\left((\bar{\partial}+\mathbf{d}+d_{\mu_2}+d_{\mu_3}+\cdots)(-)\right)=0.
+    $$
+\end{thm}
+
+\fi
+
+\end{document}
