@@ -467,7 +467,7 @@ We introduce a partial Jouanolou torsor
 $$
 \mathbb{J}_{\mathbb{A}^d}^{({I'}),{I''}}:=\{\sum_{s=1}^d x_{ij}^s(z^s_i-z^s_j)=1|i,j\in I''\ \text{or}\  i\in I', j\in I''\}\subset (\mathbb{A}^d)^{{I}}\times (\mathbb{A}^d)^{\binom{|I''|}{2}+|I'|\cdot |I''|}.
 $$
-The corresponding Jouanolou model $\mathbf{J}_{\mathbb{A}^d}^{({I'}),{I''}}=\Gamma(\mathbb{J}_{\mathbb{A}^d}^{({I'}),{I''}},\Omega^{\bullet}_{\mathbb{J}_{\mathbb{A}^d}^{({I'}),{I''}}/\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d)})$ has the following property
+The corresponding Jouanolou model $\mathbf{J}_{\mathbb{A}^d}^{({I'}),{I''}}=\Gamma(\mathbb{J}_{\mathbb{A}^d}^{({I'}),{I''}},\Omega^{\bullet}_{\mathbb{J}_{\mathbb{A}^d}^{({I'}),{I''}}/\mathrm{Conf}_{ I}(\mathbb{A}^d)})$ has the following property
 
 $$
 \mathbf{J}_{\mathbb{A}^d}^{{I}}=\mathbf{J}_{\mathbb{A}^d}^{{I'}}\otimes_{\mathcal{O}_{(\mathbb{A}^d)^{{I'}}}} \mathbf{J}_{\mathbb{A}^d}^{({I'}),{I''}}.
@@ -513,7 +513,7 @@ To summarize, we have
 $$
 \mu_{{I'}\subset {I}}:\mathbf{J}^{{I}}_{\mathbb{A}^d}(M^{\boxtimes{I}})=\mathbf{J}^{{I'}\bigsqcup {I''}}_{\mathbb{A}^d}(M^{\boxtimes{I'}\bigsqcup {I''}})\xrightarrow{\mu_{{I'}}\boxtimes \mathrm{Id}} \mathbf{J}^{({I'}),{{I''}}}_{\mathbb{A}^d}(\Delta^{I'}_*M\boxtimes M^{\boxtimes{I''}})\xrightarrow{c^{(I')}\circ v^{(I')}} \mathbf{J}^{\{\bullet\}\sqcup{{I''}}}_{\mathbb{A}^d}(M\boxtimes M^{\boxtimes{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}].
 $$
-We can further compose $\mu_{\vec{I'}\subset \vec{I}}$ with an another chiral operation $\mu_{\bullet \bigsqcup \vec{I''}}\in \mathrm{Hom}^{ch}(N^{\boxtimes \bullet \bigsqcup \vec{I''}},N)$
+We can further compose $\mu_{ I'\subset  I}$ with an another chiral operation $\mu_{\bullet \bigsqcup \vec{I''}}\in \mathrm{Hom}^{ch}(N^{\boxtimes \bullet \bigsqcup \vec{I''}},N)$
 \[
 \mu_{\bullet \bigsqcup {I''}}\circ\mu_{{I'}\subset {I}}:\mathbf{J}^{{I}}_{\mathbb{A}^d}(M^{\boxtimes{I}})\xrightarrow{\mu_{{I'}\subset {I}}}  \mathbf{J}^{\{\bullet\}\sqcup{{I''}}}_{\mathbb{A}^d}(M\boxtimes M^{\boxtimes{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]\xrightarrow{\mu_{\bullet \bigsqcup {I''}}}M\otimes_{\mathbf{k}[\lambda_{\star}]}\mathbf{k}[\lambda_{\{\bullet\}\cup I''}]\otimes_{\mathbf{k}[\lambda_{\bullet}]}\mathbf{k}[\lambda_{I'}]
 \]
@@ -536,9 +536,11 @@ where $\mathcal{L}\!\op{ie}_{\infty}$ is the dg operad controlling $L_\infty$ al
 
 \section{Feynman graph integral construction}
 
-In this section, we will use Feynman graph integrals in holomorphic quantum field theory to construct the unit
-$L_{\infty}$ chiral operations in any dimension. 
-We largely use the techniques developed in \cite{wang2024feynman}.
+In this section, we will use Feynman graph integrals in the setting of holomorphic quantum field theory to construct the unit
+$L_{\infty}$ chiral operations in any dimension.
+In section \ref{s:feynman1d}, we recall the standard chiral operation in dimension $d=1$.
+Of course, here, the chiral operations of the unit chiral algebra are strict in the $L_\infty$ sense.
+In higher dimensions, we largely use the techniques developed in \cite{wang2024feynman}.
 
 \subsection{$d=1$: the unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
 We begin by reviewing the one-dimensional unit chiral algebra $\omega_{\mathbb{A}^1}$ and how Feynman graph integrals
@@ -558,9 +560,9 @@ while the target for the two-ary chiral operations is
 where $\lambda_\bu$ acts on $\omega_{\AA^1}$ by $\del_z$ and, on the left, acts by $\lambda_\bu = \lambda_1 +
 \lambda_2$.
 \begin{defn}
-  We define the chiral operation $\mu_{\{1,2\}}$ for the unit $\omega_{\mathbb{A}^1}$ by the following formula:
+  We define the chiral operation $\mu_2 = \mu_{\{1,2\}}$ for the unit $\omega_{\mathbb{A}^1}$ by the following formula:
     $$
-    \mu_{\{1,2\}}(f(z_{1},z_{2})dz_{1}\boxtimes dz_{2})=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}f(z_{1},z_{2})e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w},
+    \mu_2(f(z_{1},z_{2})dz_{1}\boxtimes dz_{2})=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}f(z_{1},z_{2})e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w},
     $$
     where $\oint_{z_{1}=z_{2}}$ is the contour integral of variable $z_{1}$ over a simple loop around $z_{2}$.
   \end{defn}
@@ -573,26 +575,26 @@ $$
 where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$.
 Expanding, we find that
 \begin{align*}
- \mu_{\{1,2\}}(\alpha)
+ \mu_2(\alpha)
  &=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
  &= e^{-(\lambda_{1}+\lambda_{2})w}\frac{1}{(n-1)!}\left.\left(\partial_{z_{1}}^{n-1}\left(g(z_{1},w)e^{\lambda_{1}z_{1}+\lambda_{2}w}\right)\right)\right|_{z_{1}=w}dw
  \\
  &=\frac{1}{(n-1)!}
 \left.\left((\partial_{z_{1}}+\lambda_{1})^{n-1}g(z_{1},w)\right)\right|_{z_{1}=w}dw,
 \end{align*}
-so $\mu_{\{1,2\}}(\alpha)\in \omega_{\mathbb{A}^{1}}\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}].$
+so $\mu_2(\alpha)\in \omega_{\mathbb{A}^{1}}\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}].$
 For example, when $g = 1$ this reduces to
 \begin{equation}
-  \mu_{\{1,2\}}\left(\frac{d z_{1} \boxtimes d z_{2}}{(z_{1}-z_{2})^{n}}\right) = \frac{\lambda_{1}^{n-1}}{(n-1)!} \otimes d w
+  \mu_2\left(\frac{d z_{1} \boxtimes d z_{2}}{(z_{1}-z_{2})^{n}}\right) = \frac{\lambda_{1}^{n-1}}{(n-1)!} \otimes d w
 \end{equation}
 
 \begin{prop}
-    $\mu_{\{1,2\}}$ defines a chiral operation, i.e., 
-    $$    \mu_{\{1,2\}}\in \cP^{ch}_{\AA^1}[\omega_{\AA^1}](2) 
+    $\mu_2$ defines a chiral operation, i.e., 
+    $$    \mu_2\in \cP^{ch}_{\AA^1}[\omega_{\AA^1}](2) 
     $$
 \end{prop}
 \begin{proof}
-We prove that $\mu_{\{1,2\}}$ is a $\mathcal{D}_{(\mathbb{A}^{1})^{\{1,2\}}}[(\mathbb{A}^{1})^{\{1,2\}}]$-module morphism.
+  We prove that $\mu_2$ is a $\mathcal{D}_{(\mathbb{A}^{1})^{2}}[(\mathbb{A}^{1})^{2}]$-module morphism.
 
 
 Recall that the $D$-module structure is determined by the rules
@@ -602,24 +604,24 @@ $$
 $$
 Thus, we can directly compute:
 \begin{align*}
-\mu_{\{1,2\}}(\alpha \cdot z_{i})&=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{z_{i}g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+  \mu_{2}(\alpha \cdot z_{i})&=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{z_{i}g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &=\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\partial_{\lambda_{i}}\left(e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &=\frac{1}{2\pi i}(w+\partial_{\lambda_{i}})\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\\
-&=\mu_{\{1,2\}}(\alpha )\cdot z_{i},
+&=\mu_{2}(\alpha )\cdot z_{i},
 \end{align*}
 \begin{align*}
-\mu_{\{1,2\}}(\alpha \cdot \partial_{z_{i}})&=-\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
+  \mu_{2}(\alpha \cdot \partial_{z_{i}})&=-\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\right)e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &=-\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\partial_{z_{i}}\left(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &+\frac{1}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}\partial_{z_{i}}\left(e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}\right)dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
 &=0+\frac{\lambda_{i}}{2\pi i}e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\\
-&=\mu_{\{1,2\}}(\alpha )\cdot \partial_{z_{i}}.
+&=\mu_{2}(\alpha )\cdot \partial_{z_{i}}.
 \end{align*}
 \end{proof}
 
 The special feature in dimension one is that the unit chiral algebra has trivial higher operations.
 
 \begin{prop}
-Let $\mu_{\vec{I}}=0$ for $|\vec{I}|\geq3$. Then $\{\mu_{\vec{I}}\}$ defines an $L_{\infty}$-chiral algebra structure on~$\omega_{\mathbb{A}^{1}}$.
+Let $\mu_{ I}=0$ for $| I|\geq3$. Then $\{\mu_{ I}\}$ defines an $L_{\infty}$-chiral algebra structure on~$\omega_{\mathbb{A}^{1}}$.
 \end{prop}
 \begin{proof}
   By degree reasons there can be no higher operations in dimension one.
@@ -627,18 +629,18 @@ Let $\mu_{\vec{I}}=0$ for $|\vec{I}|\geq3$. Then $\{\mu_{\vec{I}}\}$ defines an 
   These results are standard, see \cite{YiZhiHuang?} for example. 
   We give a self-contained argument here.
 
-  We first verify $\mu_{\{1,2\}}=-\sigma_{12} \cdot \mu_{\{1,2\}}$.   
+  We first verify $\mu_{2}=-\sigma_{12} \cdot \mu_{2}$.   
     Let 
 $$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2\}}),
 $$
 where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$. 
 Applying the definition, we have
 \begin{align*}
-    \mu_{\{1,2\}}(\alpha)
+  \mu_{2}(\alpha)
     &=
-    \mu_{\{1,2\}}(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\\
+    \mu_{2}(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\\
     &=
-    \mu_{\{1,2\}}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})\\
+    \mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})\\
     &=
     \frac{1}{2\pi i}\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{1}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\cdot g(z_{1},z_{2})\\
     &=
@@ -647,7 +649,7 @@ Applying the definition, we have
 
 Let $z_{1}=2w-\tilde{z}_2$, we get
 \begin{align*}
-    \mu_{\{1,2\}}(\alpha)
+  \mu_{2}(\alpha)
     &=
     -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(w-\tilde{z}_{2})}e^{\lambda_{\bullet}(w-\tilde{z}_{2})}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
     &=
@@ -661,20 +663,22 @@ where $\lambda_{\bullet}=\lambda_{1}+\lambda_{2}$.
 
 The first term equals
 $$
--\mu_{\{2<1\}}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})=-\mu_{\{2<1\}}\circ\tau_{\sigma_{12}}(\alpha),
+-\sigma_{12}\mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})=-\mu_{\{2<1\}}
+\circ\tau_{\sigma_{12}}(\alpha).
 $$
-and the second term equals
+
+On the other hand, the second term is
 \begin{align*}
     &-\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
      &=
      \frac{\lambda_{\bullet}dw}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k-1}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\right)\cdot g(z_{1},z_{2}).
 \end{align*}
+Note that $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}
+k[\lambda_{1},\lambda_{2}]$, so that this equals zero. 
+So, we proved that the two-ary operation is anti-symmetric $\mu_{\{1,2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
 
-We note $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\lambda_{2}]$, the second term equals zero. So we proved that the two-ary operation is anti-symmetric $\mu_{\{1,2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
-
-Now we prove the $L_{\infty}$ relations.
-
-Let $\beta\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2<3\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2<3\}})$. Consider the $3$-chain
+We next verify the Jacobi identity.
+Let $\beta\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2<3\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2,3\}})$. Consider the $3$-chain
 \begin{align*} 
 M_{w}=&\{(z_{1},z_{2},z_{3})\in (\mathbb{A}^1)^{1,2<3}|z_{1}+z_{2}+z_{3}=w,|z_{i}-z_{j}|\geq 1,\;i\neq j;\\
 &\sum_{k=1}^{3}|z_{k}-w|^{2}=100\}.
@@ -690,7 +694,6 @@ Since $\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes d
 \end{aligned}
 \end{equation}
 where $\lambda_{\blacksquare}=\sum_{k=1}^3\lambda_{k}$.
-The boundary of the $3$-chain $M_{w}$ ??
 The right hand side of $(\ref{stokes thm1})$ is
 \begin{align*}
      &
@@ -708,10 +711,10 @@ The right hand side of $(\ref{stokes thm1})$ is
      &+
      \mu_{\{\bullet<1\}}\circ \mu_{\{2<3\}\subset\{1,2<3\}}(\beta)\\
      &=  
-     \sum_{\vec{I'}\subset\{1,2<3\}}\mathrm{sgn}(\sigma_{\vec{I'}\subset\vec{I}})(-1)^{|I'|(|I|-|I'|)}\mu_{\{\bullet\}\cup\vec{I}-\vec{I'}}\circ \mu_{\vec{I'}\subset\vec{I}}(\beta).
+     \sum_{ I'\subset\{1,2<3\}}\mathrm{sgn}(\sigma_{ I'\subset I})(-1)^{|I'|(|I|-|I'|)}\mu_{\{\bullet\}
+     \cup I- I'}\circ \mu_{ I'\subset I}(\beta).
 \end{align*}
-
-We verified the $L_{\infty }$ relations.
+Thus, $\mu_2$ satisfies the Jacobi identity.
 \end{proof}
 In the construction of chiral algebra structure on $\omega_{\mathbb{A}^{1}}$, we used the concept of residue. Now we introduce another method to define residues, which can be extended to construct $L_{\infty}$-chiral algebra structure on the canonical bundle of higher dimensional affine spaces.
 \begin{lem}
@@ -822,7 +825,7 @@ Although the expression
 $$
 \frac{1}{2\pi i}\int_{S^{+}((0,+\infty)^n)}\int_{\mathbb{A}^{1}}e^{-\left(\sum_{k=1}^{n}\frac{1}{t_{k}}\right)z\bar{z}}g(z)\prod_{k=1}^{n}dy_{k}dz
 $$
-is more complicate than the contour integral
+appears to be more complicated than the purely holomorphic contour integral
 $$
 \frac{1}{2\pi i}\oint_{z=0}\frac{g(z)}{z^{n}}dz,
 $$
@@ -830,11 +833,11 @@ we will show that it can be extended to higher dimensional affine spaces in next
 
 \subsection{Higher residues}
 
-In this subsection, we generalize the concept of residues to the Jouanolou model of $(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes \vec{I}}$, where $d\geq1$ is the dimension of the affine space, $\vec{I}=\{1,2<\cdots<n\}$ is an ordered set with $n$ elements.
+In this subsection, we generalize the concept of residues to the Jouanolou model of $(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes  I}$, where $d\geq1$ is the dimension of the affine space, $ I=\{1,2<\cdots<n\}$ is an ordered set with $n$ elements.
 
-Let $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d))$ be the (algebraic) Dolbeault complex of the structure sheaf $\mathcal{O}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^{d}))$. Define the map
+Let $\mathcal{A}^{0,*}(\mathrm{Conf}_{ I}(\mathbb{A}^d))$ be the Dolbeault complex of the structure sheaf $\mathcal{O}(\mathrm{Conf}_{ I}(\mathbb{A}^{d}))$. Define the map
 $$
-i:\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\rightarrow\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d))
+i:\mathbf{J}_{ I}^{\mathbb{A}^{d}}\rightarrow\mathcal{A}^{0,*}(\mathrm{Conf}_{ I}(\mathbb{A}^d))
 $$
 $$
 i(z_{i}^{s}) = z_{i}^{s},\quad i(x_{ij}^{s}) = \frac{\bar{z}_{i}^{s} - \bar{z}_{j}^{s}}{|z_{i} - z_{j}|^{2}},\quad i(\mathbf{d}x_{ij}^{s}) = \bar{\partial}\left(\frac{\bar{z}_{i}^{s} - \bar{z}_{j}^{s}}{|z_{i} - z_{j}|^{2}}\right).
@@ -842,22 +845,23 @@ $$
 Here:
 \begin{itemize}
     \item \(s \in \{1,2,\dots,d\}\) is the coordinate index.
-    \item \(i, j \in \vec{I}\) are elements in the ordered set.
+    \item \(i, j \in  I\) are elements in the ordered set.
     \item \(|z_{i} - z_{j}|^{2} = \sum_{t=1}^{d}(z_{i}^{t} - z_{j}^{t})(\bar{z}_{i}^{t} - \bar{z}_{j}^{t})\) is the squared norm.
     \item \(\bar{\partial}\) is the Dolbeault differential.
 \end{itemize}
+It is easily checked that this map is well-defined and is a morphism of commutative dg algebras.
+The map $i$ is dense in cohomology.\footnote{In fact, $i$
+is injective, but we will not need that.}
 
-It is easily checked that this map is well-defined and preserves the product of differential forms.
-By construction, it is a cochain map.
-Thus, $i$ is a morphism of commutative dg algebras.
-Both the Jouanolou model and $\mathcal{A}^{0,\bu}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^{d}))$ are models for global derived sections of the structure sheaf of $\mathrm{Conf}_{\vec{I}}(\mathbb{A}^{d})$.
-The map $i$ is an explicit quasi-isomorphism between these models.
-\BW{Can we show this?}
+We also point out that $i$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}[(\mathbb{A}^{d})^{ I}]$-module morphism.
+Similarly, we can define a natural dg $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}[(\mathbb{A}^{d})^{ I}]$-module
+morphism
+\[
+  \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}) \to \mathcal{A}^{0,*}
+  (\mathrm{Conf}_{ I}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}) . 
+\]
 
-We also point out that $i$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]$-module morphism.
-Similarly, we can define a natural dg $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]$-module morphism from $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ to $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
-
-In the following discussion, we identify the elements of $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ with the corresponding elements in $\mathcal{A}^{0,*}(\mathrm{Conf}_{\vec{I}}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$. 
+In the following discussion, we identify the elements of $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$ with the corresponding elements in $\mathcal{A}^{0,*}(\mathrm{Conf}_{ I}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$. 
 
 In our previous discussion of residues when $d=1$, we represented the residue kernel $\frac{1}{z}$ as an integral over Schwinger parameters.
 Now our goal is to represent $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$ as integrals over Schwinger parameters:
@@ -921,17 +925,17 @@ Now our goal is to represent $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$ as in
 The following proposition is useful and is a direct computation.
 
 \begin{prop}\label{Lie and interior product}
-    For $i,j \in \vec{I}$ define the vector field
+    For $i,j \in  I$ define the vector field
     $$ V_{ij}=\sum_{s=1}^{d}(\bar{z}_i^s\partial_{\bar{z}_{i}^{s}}+\bar{z}_j^s\partial_{\bar{z}_{j}^{s}})+t\partial_{t}.
     $$
     If $L_{\vec{V_{ij}}}$ and $\iota_{\vec{V_{ij}}}$ denote the Lie derivative and interior product operator, respectively, then we have the following identities:
 $$
 \left\{
 \begin{array}{cc}
-     L_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,  \\
-      L_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0,\\
-      \iota_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,\\
-      \iota_{\vec{V}_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0.
+     L_{V_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,  \\
+      L_{ V_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0,\\
+      \iota_{ V_{ij}}e^{-z_{ij}\cdot y_{ij}}dy_{ij}^s & =0,\\
+      \iota_{ V_{ij}}e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot y_{ij})dy_{ij}^s & =0.
 \end{array}
 \right.
 $$
@@ -940,56 +944,58 @@ $$
 %    These identities follow from direct computations.
 %\end{proof}
 
-With these prelimilinary computations in order, we can now explain our strategy for developing residue theory based on Jouanolou’s model of higher-dimensional affine spaces.
-Let
-$$
-\alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}((\mathbb{A}^{d})^{\vec{I}})}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]\cong\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
-$$
-where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a polynomial with variables $\{x_{ij}^{s},\mathbf{d}x_{ij}^{s}\}_{i<j\in\vec{I},1\leq s\leq d}$.
-Recall that $\mathbf{d} x_{ij}^{s}$ are odd variables with respect to the Koszul rule of sign, so they anti-commute with one another.
-We take $p$ to be homogenous of total degree $l$.
-We want to define the residue by the following formula:
-\begin{align*}
-    &\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\\
-    &=\pm\int_{S^{+}((0,+\infty)^l)}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta,
-\end{align*}
-where 
-$$
-S^{+}((0,+\infty)^l)=\{(t_1,\dots,t_{l})\in(0,+\infty)^l|\sum_{i=1}^{l}t_{i}^{2}=1\}.
-$$
-
-In this subsection, we will prove the following facts (some in their stronger forms):
-\begin{enumerate}
-    \item When $t_{l'}\in(0,+\infty)$ for $l'\in\{1,2,\dots,l\}$,
-    $$
-    p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
-    $$
-    is integrable over $(\mathbb{A}^{d})^{\vec{I}-\{n\}}$.
-    \item 
-    $$\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
-    $$
-    is integrable over $S^{+}((0,+\infty)^l)$. So $\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta$ is well-defined as an integral.
-    \item If 
-    $$
-    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
-    $$
-    we have
-    $$
-    \oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=\oint_{z_1,\dots,z_{n-1}=z_n}p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'.
-    $$
-    So the residues are well-defined on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
-    \item Let $s\in\{1,\dots,d\}$, $i\in\{1,2<\cdots<n\}$,
-    $$
-    \oint_{z_1,\dots,z_{n-1}=z_n}\alpha\cdot \partial_{z_{i}^{s}}=
-    \begin{cases}
-        0, &\text{when  }i\neq n,\\
-    \left(\oint_{z_1,\dots,z_{n-1}=z_n}\alpha\right)\cdot \partial_{z_{i}^{s}}, &\text{when  }i=n.
-    \end{cases}
-    $$
-    This result generalizes the corresponding result of ordinary residues.
-\end{enumerate}
-
-Now, we introduce a graphic description of elements in $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+Next, we introduce a graphical language to encode elements in the Jouanolou model.
+To this end, we introduce some concepts from graph theory.
+%explain our strategy for developing residue theory based on Jouanolou’s model of higher-dimensional affine spaces.
+%Let
+%$$
+%\alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}((\mathbb{A}^{d})^{ I})}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]\cong\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}),
+%$$
+%where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a polynomial with variables $\{x_{ij}^{s},\mathbf{d}x_{ij}^{s}\}_{i<j\in I,1\leq s\leq d}$.
+%Recall that $\mathbf{d} x_{ij}^{s}$ are odd variables with respect to the Koszul rule of sign, so they anti-commute with one another.
+%We take $p$ to be homogenous of total degree $l$.
+%We want to define the residue by the following formula:
+%\begin{align*}
+%    &\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta\\
+%    &=\pm\int_{S^{+}((0,+\infty)^l)}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta,
+%\end{align*}
+%where 
+%$$
+%S^{+}((0,+\infty)^l)=\{(t_1,\dots,t_{l})\in(0,+\infty)^l|\sum_{i=1}^{l}t_{i}^{2}=1\}.
+%$$
+%
+%In this subsection, we will prove the following facts (some in their stronger forms):
+%\begin{enumerate}
+%    \item When $t_{l'}\in(0,+\infty)$ for $l'\in\{1,2,\dots,l\}$,
+%    $$
+%    p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
+%    $$
+%    is integrable over $(\mathbb{A}^{d})^{ I-\{n\}}$.
+%    \item 
+%    $$\int_{(\mathbb{A}^{d})^{ I-\{n\}}}p(-e^{-z_{ij}\cdot y_{ij}}dy_{ij}^{s},-e^{-z_{ij}\cdot y_{ij}}(z_{ij}\cdot dy_{ij})dy_{ij}^{s})\otimes \beta
+%    $$
+%    is integrable over $S^{+}((0,+\infty)^l)$. So $\oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta$ is well-defined as an integral.
+%    \item If 
+%    $$
+%    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}),
+%    $$
+%    we have
+%    $$
+%    \oint_{z_1,\dots,z_{n-1}=z_n}p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta=\oint_{z_1,\dots,z_{n-1}=z_n}p'(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes \beta'.
+%    $$
+%    So the residues are well-defined on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
+%    \item Let $s\in\{1,\dots,d\}$, $i\in\{1,2<\cdots<n\}$,
+%    $$
+%    \oint_{z_1,\dots,z_{n-1}=z_n}\alpha\cdot \partial_{z_{i}^{s}}=
+%    \begin{cases}
+%        0, &\text{when  }i\neq n,\\
+%    \left(\oint_{z_1,\dots,z_{n-1}=z_n}\alpha\right)\cdot \partial_{z_{i}^{s}}, &\text{when  }i=n.
+%    \end{cases}
+%    $$
+%    This result generalizes the corresponding result of ordinary residues.
+%\end{enumerate}
+%
+%Now, we introduce a graphic description of elements in $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
 \begin{defn}
     A directed graph $\vec{\Gamma}$ consists of the following data:
     \begin{enumerate}
@@ -1031,13 +1037,13 @@ $$
     $$
     We call $p_{(\vec{\Gamma},m,l)}$ the corresponding monomial of $(\vec{\Gamma},m,l)$.
 \end{defn}
-\begin{rem}
-    $\{p_{(\vec{\Gamma},m,l)}\}$ spans $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$, so we can use Feynman graphs to represent elements in $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$.
-\end{rem}
 
-Let's introduce some concepts from graph theory.
+As we vary over all Feynman graphs $\{p_{(\vec{\Gamma},m,l)}\}$ spans $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$, so we can use Feynman graphs to represent elements in $k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d}$.
+
+
 \begin{defn}
-    Let $\vec{\Gamma}$ be a directed graph. The incidence matrix $\rho=(\rho_{ei})_{e\in\vec{\Gamma}_{1},i\in\vec{\Gamma}_{0}}$ is given by
+  Let $\vec{\Gamma}$ be a directed graph. The \textit{incidence matrix} $\rho=(\rho_{ei})_{e\in\vec{\Gamma}_{1},
+  i\in\vec{\Gamma}_{0}}$ is
     $$
     \rho_{ei}=
     \begin{cases}
@@ -1046,49 +1052,50 @@ Let's introduce some concepts from graph theory.
         0, &\text{otherwise.}
     \end{cases}
     $$
-\end{defn}
-\begin{defn}
-    Let $\vec{\Gamma}$ be a directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_{e}\in(0,+\infty)$. The weighted Laplacian matrix is given by
+    The \textit{weighted Laplacian matrix} is the $\Gamma_0 \times \Gamma_0$ matrix defined by
     $$
     M_{\vec{\Gamma}}(t)_{ij}=
-    \sum_{e\in\vec{\Gamma}_{1}}\rho_{ei}\frac{1}{t_{e}}\rho_{ej}.
+    \sum_{e\in\vec{\Gamma}_{1}}\rho_{ei}\frac{1}{t_{e}}\rho_{ej}
     $$
+    which is defined for $t = (t_e) \in (0,+\infty)^{\Gamma_1}$.
 \end{defn}
 \begin{prop}\label{Minverse}
-    Let $\vec{\Gamma}$ be a directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_e\in(0,+\infty)$. If $\vec{\Gamma}$ is a connected graph, then the matrix $M_{\vec{\Gamma}}(t)=(M_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ is invertible. We use $M^{-1}_{\vec{\Gamma}}(t)=(M^{-1}_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ to denote the inverse matrix.
+    Let $\vec{\Gamma}$ be a connected directed graph. 
+    Then the matrix $M_{\vec{\Gamma}}(t)=(M_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ is invertible. We use $M^{-1}_{\vec{\Gamma}}(t)=(M^{-1}_{\vec{\Gamma}}(t)_{ij})_{i,j\in\vec{\Gamma}_{0}-\{n\}}$ to denote the inverse matrix.
 \end{prop}
 \begin{proof}
-    See Corollary \ref{det of laplacian}.
+    See Corollary \ref{det of laplacian} for an explicit description of its inverse.
 \end{proof}
-\begin{defn}
-    Let $\vec{\Gamma}$ be a connected directed graph. For any $e\in\vec{\Gamma}_{1}$, $t_e\in(0,+\infty)$. The graphic Green's function $d^{-1}_{\vec{\Gamma}}(t)=(d^{-1}_{\vec{\Gamma}}(t)_{ei})_{e\in\vec{\Gamma}_{1},i\in\vec{\Gamma}_{0}-\{n\}}$ is given by
+
+    Thus, we can define the following graphical Green's function $d^{-1}_{\vec{\Gamma}}(t)=(d^{-1}_{\vec{\Gamma}}(t)
+    _{ei})_{e\in\vec{\Gamma}_{1},i\in\vec{\Gamma}_{0}-\{n\}}$ by the formula
     $$
     d^{-1}_{\vec{\Gamma}}(t)_{ei}=\sum_{j=1}^{n-1}\frac{1}{t_{e}}\rho_{ej}M^{-1}_{\vec{\Gamma}}(t)_{ji}.
     $$
-\end{defn}
+    which is defined for $t \in (0,+\infty)^{\Gamma_1}$.
 
-We collect some facts in graph theory in Appendix \ref{graph theory}.
+%We collect some facts in graph theory in Appendix \ref{graph theory}.
 
-Let's define the integrals we interested in:
+We now describe the type of integrals that we are interested in.
 \begin{defn}
-    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\Gamma_{0}= I$. Given 
     $$
-    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
     and
     $$
-    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
     the Feynman graph integrand is defined by 
     \begin{align*}
         &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
         &=
-        \int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta,
+        \int_{(\mathbb{A}^{d})^{ I-\{n\}}}p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta,
     \end{align*}
     where $z_{e}=z_{t(e)}-z_{h(e)}$, $y_{e}=\frac{\bar{z}_{t(e)}-\bar{z}_{h(e)}}{t_{e}}$.
 \end{defn}
 
-We introduce the following coordinates on $(\mathbb{A}^{d})^{\vec{I}}$:
+We introduce the following coordinates on $(\mathbb{A}^{d})^{ I}$:
 $$
 \begin{cases}
     z_{i}=\tilde{z}_{i}+\tilde{z}_{n}, &\text{if }i\neq n,\\
@@ -1120,10 +1127,10 @@ Now, we can get the following result:
     The notations are explained as follows:
     \begin{itemize}
         \item $\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}$: if $
-        \gamma\in \mathcal{A}^{d(n-1),d(n-1)}((\mathbb{A}^d)^{\vec{I}-\{n\}})
+        \gamma\in \mathcal{A}^{d(n-1),d(n-1)}((\mathbb{A}^d)^{ I-\{n\}})
         $ is a top form, there exists a unique
         $
-        \gamma'\in C^{\infty}((\mathbb{A}^d)^{\vec{I}-\{n\}}),
+        \gamma'\in C^{\infty}((\mathbb{A}^d)^{ I-\{n\}}),
         $
         such that
         $
@@ -1150,12 +1157,12 @@ Now, we can get the following result:
     \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
     $$
 
-    We first prove (1). If $\vec{\Gamma}$ is disconnected, let $\vec{\Gamma}'$ be a connected component of $\vec{\Gamma}$, such that $n\notin \vec{\Gamma}'$. Let $\vec{V}=\sum_{i\in\vec{\Gamma}'_{0}}\partial_{\bar{z}_{i}}$, $\iota_{\vec{V}}$ is the interior product operator of $\vec{V}$. We can check that
+    We first prove (1). If $\vec{\Gamma}$ is disconnected, let $\vec{\Gamma}'$ be a connected component of $\vec{\Gamma}$, such that $n\notin \vec{\Gamma}'$. Let $ V=\sum_{i\in\vec{\Gamma}'_{0}}\partial_{\bar{z}_{i}}$, $\iota_{ V}$ is the interior product operator of $ V$. We can check that
     $$
-    \iota_{\vec{V}}(\tilde{W})=0,
+    \iota_{ V}(\tilde{W})=0,
     $$
-    so $\tilde{W}$ is not a top form on $(\mathbb{A}^d)^{\vec{I}-\{n\}}$. Hence $$
-    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\tilde{W}=0.
+    so $\tilde{W}$ is not a top form on $(\mathbb{A}^d)^{ I-\{n\}}$. Hence $$
+    W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\tilde{W}=0.
     $$
 
     Now, let's prove (2). If $\vec{\Gamma}$ is connected, by using coordinates $\{\tilde{z}_{i}\}$, we have
@@ -1163,10 +1170,10 @@ Now, we can get the following result:
         \tilde{W}&=e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta.
     \end{align*}
 
-    Since $\vec{\Gamma}$ is connected, by Proposition \ref{Minverse}, $M_{\vec{\Gamma}}(t)$ is invertible. We notice that the integral over $(\mathbb{A}^d)^{\vec{I}-\{n\}}$ is a Gaussian type integral, so
+    Since $\vec{\Gamma}$ is connected, by Proposition \ref{Minverse}, $M_{\vec{\Gamma}}(t)$ is invertible. We notice that the integral over $(\mathbb{A}^d)^{ I-\{n\}}$ is a Gaussian type integral, so
     \begin{align*}
         &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
-        &=\int_{(\mathbb{A}^d)^{\vec{I}-\{n\}}}e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})\wedge \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\\
+        &=\int_{(\mathbb{A}^d)^{ I-\{n\}}}e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})\wedge \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\\
         &\left(p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\\
         &=(-2\pi i)^{d(n-1)}\frac{1}{(detM_{\vec{\Gamma}(t)})^{d}}\left(
         \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}
@@ -1201,7 +1208,7 @@ Now, we can get the following result:
         M_{\vec{\Gamma}(t)_{ij}}\partial_{\bar{z'}_{j}}
          &\text{for }1\leq i\leq n-1,\\
         \partial_{\bar{\tilde{z}}_{n}}\rightarrow \partial_{\bar{\tilde{z}}_{n}}\\
-        \partial_{t_{e}}=\partial_{t_{e}}-\sum_{i,j,k\in \vec{I}-\{n\}}M_{\vec{\Gamma}(t)_{ik}}\partial_{t_{e}}(M^{-1}_{\vec{\Gamma}(t)_{kj}})\bar{z'}_{j}\partial_{\bar{z'}_{i}}&\text{for }e\in\vec{\Gamma}_{1}.
+        \partial_{t_{e}}=\partial_{t_{e}}-\sum_{i,j,k\in  I-\{n\}}M_{\vec{\Gamma}(t)_{ik}}\partial_{t_{e}}(M^{-1}_{\vec{\Gamma}(t)_{kj}})\bar{z'}_{j}\partial_{\bar{z'}_{i}}&\text{for }e\in\vec{\Gamma}_{1}.
         
     \end{cases}
     $$
@@ -1325,13 +1332,13 @@ One of the most important lemma about $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}
 
 As a consequence, we have
 \begin{cor}
-    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
     $$
-    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
     and
     $$
-    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
     the Feynman graph integrand
     $$
@@ -1356,15 +1363,15 @@ As a consequence, we have
     is convergent.
 \end{proof}
 
-Before we define residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, we state the following useful proposition:
+Before we define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, we state the following useful proposition:
 \begin{prop}\label{useful property}
-    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
     $$
-    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
     and
     $$
-    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
     then we have the following consequences:
     \begin{enumerate}
@@ -1387,37 +1394,37 @@ Before we define residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\ma
 \begin{proof}
     (2) is a direct consequence of (1). Let's prove (1).
 
-    Let $\vec{V}=\vec{V}_{1}+\vec{V}_{2}$, where $\vec{V}_{1}=\sum_{s=1}^{d}\sum_{i=1}^{n-1}\bar{\tilde{z}}_{i}^{s}\partial_{\bar{\tilde{z}}_{i}^{s}}$, $\vec{V}_{2}=\sum_{e\in\vec{\Gamma}_{1}}t_{e}\partial_{t_{e}}$. To simplify notations, we define
+    Let $ V= V_{1}+ V_{2}$, where $ V_{1}=\sum_{s=1}^{d}\sum_{i=1}^{n-1}\bar{\tilde{z}}_{i}^{s}\partial_{\bar{\tilde{z}}_{i}^{s}}$, $ V_{2}=\sum_{e\in\vec{\Gamma}_{1}}t_{e}\partial_{t_{e}}$. To simplify notations, we define
     $$
     \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
     $$
     By Proposition \ref{Lie and interior product}, we have
     $$
     \begin{cases}
-        L_{\vec{V}}\tilde{W}=0,\\
-        \iota_{\vec{V}}\tilde{W}=0.
+        L_{ V}\tilde{W}=0,\\
+        \iota_{ V}\tilde{W}=0.
     \end{cases}
     $$
     So we can get 
     \begin{align*}
-        L_{\vec{V}_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}L_{\vec{V}_{2}}\tilde{W}=-\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}L_{\vec{V}_{1}}\tilde{W}=0.
+        L_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{2}}\tilde{W}=-\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{1}}\tilde{W}=0.
     \end{align*}
     Similarly,
     $$
-    \iota_{\vec{V}_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\pm\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\iota_{\vec{V}_{1}}\tilde{W}=0.
+    \iota_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\pm\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\iota_{ V_{1}}\tilde{W}=0.
     $$
-    We notice that $\vec{V}_{2}$ is the infinitesimal generator of $\mathbb{R}^{+}$ action, so $W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$.
+    We notice that $ V_{2}$ is the infinitesimal generator of $\mathbb{R}^{+}$ action, so $W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$.
 \end{proof}
 
 Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ on the Feynman graph $(\vec{\Gamma},m,l)$. We have the following result:
 \begin{prop}\label{well-defineness}
-        Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}=\vec{I}$. Given 
+        Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
     $$
-    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}]
+    \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
     and
     $$
-    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
     then we have the following consequences:
     \begin{enumerate}
@@ -1469,7 +1476,7 @@ Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((
         &\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
         &=
         \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(0,+\infty)}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
-        &=\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}z_{ij}^{s}x_{ij}^{s}\tilde{W}\\
+        &=\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}z_{ij}^{s}x_{ij}^{s}\tilde{W}\\
         &=
         \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
     \end{align*}
@@ -1496,31 +1503,31 @@ Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((
     (3) can be proved by similar arguments.
 \end{proof}
 
-Now, we can define residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+Now, we can define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
 
 \begin{defn}
     Let
     $$
-    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes\beta\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}),
+    \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes\beta\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}),
     $$
     where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a monomial with coefficient equals $1$. Let
     $$
-    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}}),
+    e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
     then the residue of $\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}$ is defined by
     \begin{align*}
         &\frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\\
         &=\frac{(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)+1}}{(-2\pi i)^{d(n-1)}}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}),
     \end{align*}
-    where $(\vec{\Gamma},m,l)$ is a Feynman graph whose corresponding polynomial $p_{(\vec{\Gamma},m,l)}=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$. We can define residues for general elements in $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$ by linear extension. By Proposition \ref{well-defineness}, residues are well-defined.
+    where $(\vec{\Gamma},m,l)$ is a Feynman graph whose corresponding polynomial $p_{(\vec{\Gamma},m,l)}=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$. We can define residues for general elements in $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$ by linear extension. By Proposition \ref{well-defineness}, residues are well-defined.
 \end{defn}
 
-Finally, let's prove a useful property for residues on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$.
+Finally, let's prove a useful property for residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
 \begin{prop}\label{residue 0}
-    Let $\alpha\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, $e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\in C^{\infty}((\mathbb{A}^{d})^{\vec{I}}\times (\mathbb{A}^{d})^{\vec{I}})$, and $1\leq s\leq d$. We have
+    Let $\alpha\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, $e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I})$, and $1\leq s\leq d$. We have
     
     \begin{enumerate}
-        \item If $i\in\vec{I}-\{n\}$, then
+        \item If $i\in I-\{n\}$, then
         $$
         \frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\left(\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\right)\cdot \partial_{z_{i}^{s}}=0.
         $$
@@ -1543,12 +1550,12 @@ Finally, let's prove a useful property for residues on $\mathbf{J}_{\vec{I}}^{\m
         $$
         Let's prove
         \begin{align*}
-            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}
+            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}
             e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{0}}}}d(\frac{\bar{z}_{e_{1}}^{s}}{t_{e_{0}}})e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\tilde{W}'\\
             &=
-            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
         \end{align*}
-        In other words, the formal $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module structure on $\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}$ coincide with the actual derivative when we compute residues. 
+        In other words, the formal $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module structure on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}$ coincide with the actual derivative when we compute residues. 
 
         When $\vec{\Gamma}_{1}'\neq\emptyset$, let
         $$
@@ -1556,14 +1563,14 @@ Finally, let's prove a useful property for residues on $\mathbf{J}_{\vec{I}}^{\m
         $$
         Note the natural map from $S$ to $(0,+\infty)^{|\Gamma_{1}|+1}/\mathbb{R}^{+}$ is a diffeomorphism, we have
         \begin{align*}
-            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}
+            &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}
             e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{0}}}}d(\frac{\bar{z}_{e_{1}}^{s}}{t_{e_{0}}})e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\tilde{W}'\\
             &=
-            \int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}i(x_{e_{1}}^{s})i(x_{e_{1}}^{m(e_{1})})\tilde{W}'\\
+            \int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}i(x_{e_{1}}^{s})i(x_{e_{1}}^{m(e_{1})})\tilde{W}'\\
             &=
-            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}(i(x_{e_{1}}^{m(e_{1})}))\tilde{W}'\\
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{_{1}}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\partial_{z_{i}^{s}}(i(x_{e_{1}}^{m(e_{1})}))\tilde{W}'\\
             &=
-            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
+            -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
         \end{align*}
         When $\vec{\Gamma}_{1}'=\emptyset$, this can be proved by directed computation.
 
@@ -1578,26 +1585,26 @@ In this subsection, we will construct the $L_{\infty}$ chiral algebra structure 
 
 We first introduce the following definition:
 \begin{defn}
-    Let $\alpha\in \mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})$, the shifted $n$ operation
+    Let $\alpha\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, the shifted $n$ operation
     $$
-    \tilde{\mu}_{\vec{I}}:\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}})\rightarrow \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]
+    \tilde{\mu}_{ I}:\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})\rightarrow \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]
     $$
     is given by
     $$
-    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
+    \tilde{\mu}_{ I}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
     $$
     where $\lambda_{\bullet}=\sum_{i=1}^{n}\lambda_{i}$.
 \end{defn}
 \begin{rem}
-    By Proposition \ref{explicit formula}, we know $\tilde{\mu}_{\vec{I}}(\alpha)$ is indeed an element of $\omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]$, i.e., $\tilde{\mu}_{\vec{I}}(\alpha)$ is a polynomial with respect to $\{\lambda_{i}\}_{i\in\vec{I}}$.
+    By Proposition \ref{explicit formula}, we know $\tilde{\mu}_{ I}(\alpha)$ is indeed an element of $\omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]$, i.e., $\tilde{\mu}_{ I}(\alpha)$ is a polynomial with respect to $\{\lambda_{i}\}_{i\in I}$.
 \end{rem}
 \begin{prop}
-    $\tilde{\mu}_{\vec{I}}(\alpha)$ is a homological degree $1$ element in $\mathrm{Hom}^{ch}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}},\omega_{\mathbb{A}^{d}}[d])$.
+    $\tilde{\mu}_{ I}(\alpha)$ is a homological degree $1$ element in $\mathrm{Hom}^{ch}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I},\omega_{\mathbb{A}^{d}}[d])$.
 \end{prop}
 \begin{proof}
     We first prove $\tilde{\mu}$ is of homological degree $1$. Assume
     $$
-    \alpha=p\otimes\beta\in\mathbf{J}_{\vec{I}}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}_{(\mathbb{A}^{d})^{\vec{I}}}[(\mathbb{A}^{d})^{\vec{I}}]}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes\vec{I}}[(\mathbb{A}^{d})^{\vec{I}}],
+    \alpha=p\otimes\beta\in\mathbf{J}_{ I}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}_{(\mathbb{A}^{d})^{ I}}[(\mathbb{A}^{d})^{ I}]}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}],
     $$
     we use $|p|$ and $|\beta|$ to denote the homological degree of $p$ and $\beta$ respectively. To make sure the integral
     $$
@@ -1610,21 +1617,21 @@ We first introduce the following definition:
         |\beta|=-d|\Gamma_{0}|
     \end{cases}.
     $$
-    So $|\tilde{\mu}_{\vec{I}}(\alpha)|=-d=|p|+|\beta|+1=|\alpha|+1$.
+    So $|\tilde{\mu}_{ I}(\alpha)|=-d=|p|+|\beta|+1=|\alpha|+1$.
 
-    Now, let's prove $\tilde{\mu}_{\vec{I}}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module map. This follows from the following computations:
+    Now, let's prove $\tilde{\mu}_{ I}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module map. This follows from the following computations:
     \begin{align*}
-        &\tilde{\mu}_{\vec{I}}(\alpha\cdot z_{i}^{s})\\
+        &\tilde{\mu}_{ I}(\alpha\cdot z_{i}^{s})\\
         &=
         \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}z_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
         &=
         \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha \partial_{\lambda_{i}^{s}}e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
         &=(w+\partial_{\lambda_{i}^{s}})\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
         &=
-        \tilde{\mu}_{\vec{I}}(\alpha)\cdot z_{i}^{s},
+        \tilde{\mu}_{ I}(\alpha)\cdot z_{i}^{s},
     \end{align*}
     \begin{align*}
-        &\tilde{\mu}_{\vec{I}}(\alpha\cdot \partial_{z_{i}^{s}})\\
+        &\tilde{\mu}_{ I}(\alpha\cdot \partial_{z_{i}^{s}})\\
         &=
         \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha) e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
         &=
@@ -1633,7 +1640,7 @@ We first introduce the following definition:
         \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\lambda_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
         &=
         \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}+
-        \tilde{\mu}_{\vec{I}}(\alpha)\cdot \partial_{\lambda_{i}^{s}}.
+        \tilde{\mu}_{ I}(\alpha)\cdot \partial_{\lambda_{i}^{s}}.
     \end{align*}
     Using Proposition \ref{residue 0}, the first term is $0$ when $i\neq n$. When $i=n$, the first term is
     $$
@@ -1645,25 +1652,25 @@ We first introduce the following definition:
     $$
 \end{proof}
 
-Let's prove $\tilde{\mu}_{\vec{I}}$ satisfy the following shifted $L_{\infty}$ relations:
+Let's prove $\tilde{\mu}_{ I}$ satisfy the following shifted $L_{\infty}$ relations:
 \begin{thm}
-    $\{\tilde{\mu}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$ satisfies the following properties:
+    $\{\tilde{\mu}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$ satisfies the following properties:
     \begin{enumerate}
-        \item $\tilde{\mu}_{\vec{I}}=\tilde{\mu}_{\vec{I}_{\sigma_{ii'}}}\circ\tau_{\sigma_{ii'}}$, where $\sigma_{ii'}$ is the permutation of $i\neq i'\in\vec{I}$.
+        \item $\tilde{\mu}_{ I}=\tilde{\mu}_{ I_{\sigma_{ii'}}}\circ\tau_{\sigma_{ii'}}$, where $\sigma_{ii'}$ is the permutation of $i\neq i'\in I$.
         \item 
         $$
-        -\tilde{\mu}_{\vec{I}}\circ \mathbf{d}=\sum_{\vec{I}'\subset\vec{I}}\tilde{\mu}_{\{\bullet\}\cup\vec{I}-\vec{I}'}\circ \tilde{\mu}_{\vec{I}'\subset\vec{I}}
+        -\tilde{\mu}_{ I}\circ \mathbf{d}=\sum_{ I'\subset I}\tilde{\mu}_{\{\bullet\}\cup I- I'}\circ \tilde{\mu}_{ I'\subset I}
         $$
     \end{enumerate}
 \end{thm}
 \begin{proof}
-    Let's prove (1) first. When $i,i'\neq n$, it is trivial. Let's assume $i<i'=n$. Since $\tilde{\mu}_{\vec{I}}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{\vec{I}}}$-module morphism, we only need to prove this in the case when 
+    Let's prove (1) first. When $i,i'\neq n$, it is trivial. Let's assume $i<i'=n$. Since $\tilde{\mu}_{ I}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module morphism, we only need to prove this in the case when 
     $$
     \alpha=p(x_{i}^{s},\mathbf{d}x_{i}^{s})\otimes\prod_{i=1}^{n}d^{d}z_{i}.
     $$
     In this case,
     $$
-    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_{n}=w}.
+    \tilde{\mu}_{ I}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_{n}=w}.
     $$
     By using the coordinate transform
     $$
@@ -1671,11 +1678,11 @@ Let's prove $\tilde{\mu}_{\vec{I}}$ satisfy the following shifted $L_{\infty}$ r
     $$
     we have 
     $$
-    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}(-1)^{d^2}\alpha e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}+\lambda_{\bullet}\cdot(z'_i-z'_n)}\right)\right|_{z'_{i}=w}.
+    \tilde{\mu}_{ I}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}(-1)^{d^2}\alpha e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}+\lambda_{\bullet}\cdot(z'_i-z'_n)}\right)\right|_{z'_{i}=w}.
     $$
     By Proposition \ref{explicit formula} and the fact that $d^{d}w\cdot\lambda_{\bullet}^{s}=0$, we have
     $$
-    \tilde{\mu}_{\vec{I}}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}\tau_{\sigma_{in}}(\alpha) e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}}\right)\right|_{z'_{i}=w}=\tilde{\mu}_{\vec{I}_{\sigma_{in}}}\circ\tau_{\sigma_{in}}(\alpha).
+    \tilde{\mu}_{ I}(\alpha)=\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z'_{1},\cdots, z'_{i-1},z'_{n}, z'_{i+1},\cdots, z'_{n-1}=z'_{i}}\tau_{\sigma_{in}}(\alpha) e^{\sum_{j=1}^{n}z'_{j}\cdot \lambda_{j}}\right)\right|_{z'_{i}=w}=\tilde{\mu}_{ I_{\sigma_{in}}}\circ\tau_{\sigma_{in}}(\alpha).
     $$
 
     Now, let's prove (2). Assume $\alpha=p_{(\vec{\Gamma},m,l)}\otimes\beta$, where $(\vec{\Gamma},m,l)$ is a Feynman graph. Let
@@ -1684,16 +1691,16 @@ Let's prove $\tilde{\mu}_{\vec{I}}$ satisfy the following shifted $L_{\infty}$ r
     $$
     By Stokes' theorem and Proposition \ref{boundary description},
     \begin{align*}
-        &-\tilde{\mu}_{\vec{I}}(\mathbf{d}\alpha)\\
-        &=\frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}(\bar{\partial}+d_t)\tilde{W}\right)\right|_{z_n=w}\\
+        &-\tilde{\mu}_{ I}(\mathbf{d}\alpha)\\
+        &=\frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}(\bar{\partial}+d_t)\tilde{W}\right)\right|_{z_n=w}\\
         &=
-        \frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}d_{t}\left(\int_{(\mathbb{A}^{d})^{\vec{I}-\{n\}}}\tilde{W}\right)\right)\right|_{z_n=w}\\
+        \frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left.\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}d_{t}\left(\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\tilde{W}\right)\right)\right|_{z_n=w}\\
         &=
         \frac{e^{-\lambda_{\bullet}\cdot w}(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)}}{(-2\pi i)^{d(n-1)}}\left(\sum_{\vec{\Gamma}'\subset \vec{\Gamma}}\mathrm{sgn}(\sigma_{\vec{\Gamma}'_{1}\subset \vec{\Gamma}_{1}})\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}- \vec{\Gamma}'_{1}})}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}\right.\\
         &
         \left.\left.\int_{(\mathbb{A}^{d})^{\{\bullet\}\cup\vec{\Gamma}_{0}-\vec{\Gamma}'_{0}-\{n\}}}\int_{(\mathbb{A}^{d})^{|\Gamma'_{0}|-1}}\tilde{W}\right)\right|_{z_n=w}\\
         &=
-        \sum_{\vec{I}'\subset\vec{I}}\tilde{\mu}_{\{\bullet\}\cup\vec{I}-\vec{I}'}\circ \tilde{\mu}_{\vec{I}'\subset\vec{I}}(\alpha).
+        \sum_{ I'\subset I}\tilde{\mu}_{\{\bullet\}\cup I- I'}\circ \tilde{\mu}_{ I'\subset I}(\alpha).
     \end{align*}
 \end{proof}
 
@@ -1701,9 +1708,9 @@ We use the canonical décalage isomorphism
 $$
 \mathrm{Sym}^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d])\cong \wedge^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d-1])[n],
 $$
-the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
+the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
 \begin{defn}
-    The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the unit $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{\vec{I}}\}_{\vec{I}\in \overrightarrow{\mathbf{fSet}}}$.
+    The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the unit $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$.
 \end{defn}
 \subsection{d=2}
 In this subsection, we compute the 2-operation on a special element called propagator. We assume $d=2$ in this subsection.
@@ -1784,7 +1791,7 @@ In this subsection, we compute the 2-operation on a special element called propa
 \begin{defn}
    Let $\mathcal{A}$ be a chiral algebra on $\mathbb{A}^d$. We say that $\mathcal{A}$ is commutative if the composition
 $$
-\Gamma\left((\mathbb{A}^d)^{\vec{I}},\mathcal{A}^{\boxtimes \vec{I}}\right)\hookrightarrow \mathbf{J}_{\vec{I}}^{\mathbb{A}^d}(\mathcal{A})\xrightarrow{\mu_{\vec{I}}}\mathcal{A}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_I]
+\Gamma\left((\mathbb{A}^d)^{ I},\mathcal{A}^{\boxtimes  I}\right)\hookrightarrow \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{A})\xrightarrow{\mu_{ I}}\mathcal{A}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_I]
 $$
     vanishes for all $I$ with $|I|\geq 2$.
 \end{defn}
@@ -1802,17 +1809,17 @@ It is a left differential $k[\lambda]$-module which $\lambda^s$ acts on $k[\lamb
 \begin{proof}
   We define
   $$
-  \mu^{\mathcal{B}}_{\vec{I}}:\mathbf{J}_{\vec{I}}^{\mathbb{A}^d}(\mathcal{B})\rightarrow \mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]
+  \mu^{\mathcal{B}}_{ I}:\mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{B})\rightarrow \mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]
   $$
   to be the composition of the following sequence of maps
   $$
-  \mathbf{J}_{\vec{I}}^{\mathbb{A}^d}(\mathcal{B})=  \mathbf{J}_{\vec{I}}^{\mathbb{A}^d}(\mathbf{Unit})\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes\vec{I}}\xrightarrow{\mu^{\mathbf{Unit}}_{\vec{I}}\otimes \mathrm{Id}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes\vec{I}}
+  \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{B})=  \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathbf{Unit})\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\xrightarrow{\mu^{\mathbf{Unit}}_{ I}\otimes \mathrm{Id}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}
   $$
   $$
-  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes_{k[\lambda_{I}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes\vec{I}}\otimes k[\lambda_{I}]\right)  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes\vec{I}}\otimes k[\lambda_{I}]\right)
+  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes_{k[\lambda_{I}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\otimes k[\lambda_{I}]\right)  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\otimes k[\lambda_{I}]\right)
   $$
   $$
-  \xrightarrow{\mathbf{\Delta}^{(\vec{I})}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda_{\bullet}]\otimes L)\otimes k[\lambda_{I}]\right)\xrightarrow{\sim}\mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}].
+  \xrightarrow{\mathbf{\Delta}^{( I)}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda_{\bullet}]\otimes L)\otimes k[\lambda_{I}]\right)\xrightarrow{\sim}\mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}].
   $$
 \end{proof}
 \subsection{Free ghost chiral algebras}
@@ -1876,30 +1883,30 @@ $$
 $$
 \fi
 \begin{lem}
-    Let $\alpha_{\vec{I'}}\in \mathbf{J}^{\mathbb{A}^d}_{\vec{I'}}(\mathbf{Unit}^{\boxtimes \vec{I'}}) $, $b'\in \mathcal{B}^{l\boxtimes \vec{I'}}[(\mathbb{A}^d)^{\vec{I'}}] $ and $b''\in \mathcal{B}^{l\boxtimes \vec{I''}}[(\mathbb{A}^d)^{\vec{I''}}] $. We have
+    Let $\alpha_{ I'}\in \mathbf{J}^{\mathbb{A}^d}_{ I'}(\mathbf{Unit}^{\boxtimes  I'}) $, $b'\in \mathcal{B}^{l\boxtimes  I'}[(\mathbb{A}^d)^{ I'}] $ and $b''\in \mathcal{B}^{l\boxtimes \vec{I''}}[(\mathbb{A}^d)^{\vec{I''}}] $. We have
     $$
-    \mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{\vec{I'}}(\alpha_{\vec{I'}})(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}})\right)=e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}\mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{\vec{I'}}(\alpha_{\vec{I'}})b'\boxtimes b''\cdot f \right)\in \mathbf{J}_{\bullet\bigsqcup\vec{I''}}^{\mathbb{A}^d}(\mathcal{B}\boxtimes \mathcal{B}^{\boxtimes\vec{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]
+    \mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{ I'}(\alpha_{ I'})(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}})\right)=e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}\mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{ I'}(\alpha_{ I'})b'\boxtimes b''\cdot f \right)\in \mathbf{J}_{\bullet\bigsqcup\vec{I''}}^{\mathbb{A}^d}(\mathcal{B}\boxtimes \mathcal{B}^{\boxtimes\vec{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]
     $$
-    where $f\in \mathbf{J}_{(\vec{I'}),\vec{{I''}}}^{\mathbb{A}^d}(\mathcal{O}_{\mathbb{A}^d}^{\boxtimes\overrightarrow{I'}}\boxtimes\mathbf{Unit}^{\boxtimes\vec{I''}}).
+    where $f\in \mathbf{J}_{( I'),\vec{{I''}}}^{\mathbb{A}^d}(\mathcal{O}_{\mathbb{A}^d}^{\boxtimes\overrightarrow{I'}}\boxtimes\mathbf{Unit}^{\boxtimes\vec{I''}}).
 $
 \end{lem}
 \begin{proof}
     This follows from the following observation
     $$
-    \lambda^s_{i'}\cdot \left(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}\right)=\partial_{z^s_{i'}}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}+b'\boxtimes b''\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}\cdot \lambda^s_{i'} \cdot f.
+    \lambda^s_{i'}\cdot \left(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}\right)=\partial_{z^s_{i'}}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}+b'\boxtimes b''\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}\cdot \lambda^s_{i'} \cdot f.
     $$
 \end{proof}
 \begin{thm}
-    The chiral operations $\{\mu^{\mathcal{A}}_{\vec{I}}\}$ defines a $L_{\infty}$-chiral algebra structure on $\mathcal{A}$.
+    The chiral operations $\{\mu^{\mathcal{A}}_{ I}\}$ defines a $L_{\infty}$-chiral algebra structure on $\mathcal{A}$.
 \end{thm}
 \begin{proof}
 \begin{align*}
-&\mu^{\mathcal{A}}_{\vec{I}}\left(\mathbf{d}(\alpha_{\vec{I'}}b'\boxtimes b''\cdot f)\right)\\
-&=\mu^{\mathcal{B}}_{\vec{I}}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\mathbf{d}(\alpha_{\vec{I'}}b'\boxtimes b''\cdot f)\right)=\mu^{\mathcal{B}}_{\vec{I}}\left(\mathbf{d}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{\vec{I'}}b'\boxtimes b''\cdot f)\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup \vec{I}-\vec{I'}}\circ \mu^{\mathcal{B}}_{\vec{I'}\subset \vec{I}}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{\vec{I'}}b'\boxtimes b''\cdot f\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup \vec{I}-\vec{I'}}\circ \mu^{\mathcal{B}}_{\vec{I'}\subset \vec{I}}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{\vec{I'}}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I'}\overrightarrow{I''}}}e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I''}}}\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup \vec{I}-\vec{I'}}\circ \left(e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I''}}} \mu^{\mathcal{B}}_{\vec{I'}\subset \vec{I}}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{\vec{I'}}b'\boxtimes b''\cdot f)\right)\\
-&=\sum \mu^{\mathcal{A}}_{\bullet\bigsqcup \vec{I}-\vec{I'}}\circ \mu^{\mathcal{A}}_{\vec{I'}\subset \vec{I}}\left(\alpha_{\vec{I'}}b'\boxtimes b''\cdot f\right).
+&\mu^{\mathcal{A}}_{ I}\left(\mathbf{d}(\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
+&=\mu^{\mathcal{B}}_{ I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\mathbf{d}(\alpha_{ I'}b'\boxtimes b''\cdot f)\right)=\mu^{\mathcal{B}}_{ I}\left(\mathbf{d}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
+&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{B}}_{ I'\subset  I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{ I'}b'\boxtimes b''\cdot f\right)\\
+&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{B}}_{ I'\subset  I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{ I'}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I'}\overrightarrow{I''}}}e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I''}}}\right)\\
+&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \left(e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I''}}} \mu^{\mathcal{B}}_{ I'\subset  I}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
+&=\sum \mu^{\mathcal{A}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{A}}_{ I'\subset  I}\left(\alpha_{ I'}b'\boxtimes b''\cdot f\right).
 \end{align*}
 
 
@@ -1907,18 +1914,18 @@ $
 \subsection{From Lie*-algebra to chiral algebra}
 From a Lie*-algebra $L$, we can define the factorization algebra
 $$
-\mathbf{U}(L)_{(\mathbb{A}^d)^{\vec{I}}}
+\mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}
 $$
-its fiber over $(z_i)_{i\in\vec{I}}\in (\mathbb{A}^d)^{\vec{I}}$ is the universal enveloping algebra
+its fiber over $(z_i)_{i\in I}\in (\mathbb{A}^d)^{ I}$ is the universal enveloping algebra
 $$
-\left(\mathbf{U}(L)_{(\mathbb{A}^d)^{\vec{I}}}\right)_{(z_i)_{i\in\vec{I}}}=U\left(H^{\bullet}(\mathbb{A}^d-(z_i)_{i\in\vec{I}},h(L))\right)/U\left(h(L)[\mathbb{A}^d]\right).
+\left(\mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\right)_{(z_i)_{i\in I}}=U\left(H^{\bullet}(\mathbb{A}^d-(z_i)_{i\in I},h(L))\right)/U\left(h(L)[\mathbb{A}^d]\right).
 $$
 The right $\mathcal{D}$-module $\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit}$ is a chiral algebra. The (strict) factorization property gives the isomorphism of $\mathcal{D}$-modules
-$$ \mathbf{J}^{\mathbb{A}^d}_{\vec{I}}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{\vec{I}}}\xrightarrow{\sim}\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}\left(\mathbf{U}(L)_{\mathbb{A}^d}^{\boxtimes\vec{I}}\right).
+$$ \mathbf{J}^{\mathbb{A}^d}_{ I}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\xrightarrow{\sim}\mathbf{J}^{\mathbb{A}^d}_{ I}\left(\mathbf{U}(L)_{\mathbb{A}^d}^{\boxtimes I}\right).
 $$
 The chiral operation then is the composition
 $$
-\mu:\mathbf{J}^{\mathbb{A}^d}_{\vec{I}}\left((\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit})^{\boxtimes\vec{I}}\right)\xrightarrow{\sim} \mathbf{J}^{\mathbb{A}^d}_{\vec{I}}(\mathbf{Unit}^{\boxtimes\vec{I}})\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{\vec{I}}}\xrightarrow{\mu^{\mathbf{Unit}}}\Delta_*\mathbf{Unit}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{\vec{I}}}
+\mu:\mathbf{J}^{\mathbb{A}^d}_{ I}\left((\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit})^{\boxtimes I}\right)\xrightarrow{\sim} \mathbf{J}^{\mathbb{A}^d}_{ I}(\mathbf{Unit}^{\boxtimes I})\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\xrightarrow{\mu^{\mathbf{Unit}}}\Delta_*\mathbf{Unit}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}
 $$
 $$
 \xrightarrow{\text{factorization}}\Delta_*\left(\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit}\right).
@@ -1942,7 +1949,7 @@ and
 $$
 \lambda\wedge x=\lambda^1x^2-\lambda^2x^1=x^2\lambda^1+x^1x^2-x^1\lambda^2-x^1x^2=-x\wedge\lambda.
 $$
-We will denote by $\boldsymbol{\theta}_i,i\in \vec{I}$ the shifted top form
+We will denote by $\boldsymbol{\theta}_i,i\in  I$ the shifted top form
 $$
 \boldsymbol{\theta}_i=dz_i^1\wedge dz^2_i[1].
 $$
