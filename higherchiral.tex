@@ -152,7 +152,7 @@
 \usepackage{latexsym,bm,amsmath,amssymb}
 
 \parskip=5pt
-\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta, positioning}
 \linespread{1.2}
 \textwidth15cm \oddsidemargin=1cm \evensidemargin=1cm
 \setlength{\headsep}{10pt}
@@ -341,7 +341,7 @@ We only need to show that $\partial_{z^t_j}$ preserves the ideal $\langle \sum\l
 Given a finite set ${I}$ and an $\mathcal{O}_{(\mathbb{A}^d)^{{I}}}$-module $M_{{I}}$, the \textit{Jouanolou model of
 $M_{{I}}$} is the following dg $\mathcal{O}_{(\mathbb{A}^d)^{{I}}}$-module
 \[
-\mathbf{J}^{\mathbb{A}^d}_{{I}}(M_{{I}}):=\Gamma\left(\mathbb{J}_{\mathbb{A}^d}^{{I}},\Omega^{\bullet}_{\mathbb{J}_{\mathbb{A}^d}^{{I}}/\mathrm{Conf}_{{I}}(\mathbb{A}^d)}\otimes p^*_{{I}}j^*_{{I}}M_{{I}} \right)=M_{{I}}\otimes_{\mathcal{O}_{(\mathbb{A}^d)^{{I}}}}\mathbf{J}_{\mathbb{A}^d}^{{I}}.
+\mathbf{J}_{\mathbb{A}^d}^{{I}}(M_{{I}}):=\Gamma\left(\mathbb{J}_{\mathbb{A}^d}^{{I}},\Omega^{\bullet}_{\mathbb{J}_{\mathbb{A}^d}^{{I}}/\mathrm{Conf}_{{I}}(\mathbb{A}^d)}\otimes p^*_{{I}}j^*_{{I}}M_{{I}} \right)=M_{{I}}\otimes_{\mathcal{O}_{(\mathbb{A}^d)^{{I}}}}\mathbf{J}_{\mathbb{A}^d}^{{I}}.
 \]
 
 Note that if $M_{{I}}$ is a right (respectively, left )$\mathcal{D}_{(\mathbb{A}^d)^{{I}}}$-module, then $\mathbf{J}
@@ -534,7 +534,7 @@ where $\mathcal{L}\!\op{ie}_{\infty}$ is the dg operad controlling $L_\infty$ al
 \end{defn}
 
 
-\section{Feynman graph integral construction}
+\section{Feynman graph integral construction}\label{s:feynman}
 
 In this section, we will use Feynman graph integrals in the setting of holomorphic quantum field theory to construct the unit
 $L_{\infty}$ chiral operations in any dimension.
@@ -542,10 +542,10 @@ In section \ref{s:feynman1d}, we recall the standard chiral operation in dimensi
 Of course, here, the chiral operations of the unit chiral algebra are strict in the $L_\infty$ sense.
 In higher dimensions, we largely use the techniques developed in \cite{wang2024feynman}.
 
-\subsection{$d=1$: the unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
+\subsection{The unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
 We begin by reviewing the one-dimensional unit chiral algebra $\omega_{\mathbb{A}^1}$ and how Feynman graph integrals
 can be used to repackage the chiral operations.
-Our most novel viewpoint is the utility of Schwinger space integrals (see Appendix \ref{Schwinger spaces}) to express
+Our most novel viewpoint is the utility of Schwinger space integrals (see appendix \ref{Schwinger spaces}) to express
 these operations. 
 This approach will apply more generally and allow us to construct the unit chiral operations in higher dimensions.
 
@@ -799,16 +799,16 @@ Therefore,
      (-1)^{n-1}\partial_{z}^{n-1}g(0)\int_{S^{+}((0,+\infty)^n)}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right).
 \end{align*}
 
-To compute the integral over $S^{+}((0,+\infty)^n)$, we apply localization to the following $\mathbb{R}^{+} = (0,+\infty)$-action on $(0,+\infty)^n$:
+To compute the integral over $S^{+}((0,+\infty)^n)$, we apply localization to the following $\mathbb{R}_+ = (0,+\infty)$-action on $(0,+\infty)^n$:
 $$
-\lambda\cdot (t_{1},\cdots,t_{n})=(\lambda t_{1},\cdots,\lambda t_{n}),\quad \lambda\in \mathbb{R}^{+}.
+\lambda\cdot (t_{1},\cdots,t_{n})=(\lambda t_{1},\cdots,\lambda t_{n}),\quad \lambda\in \mathbb{R}_+.
 $$
 
 We notice that
 $$
 \sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)
 $$
-induces a well-defined differential form on $(0,+\infty)^{n}/\mathbb{R}^{+}$, so we have
+induces a well-defined differential form on $(0,+\infty)^{n}/\mathbb{R}_+$, so we have
 \begin{align*}
 &(-1)^{n-1}\int_{S^{+}((0,+\infty)^n)}\sum_{k=1}^{n}\left((-1)^{k-1}\frac{\frac{1}{t_{k}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}}\prod_{k'\neq k}d(\frac{\frac{1}{t_{k'}}}{\sum_{k''=1}^{n}\frac{1}{t_{k''}}})\right)\\
 &=
@@ -831,9 +831,10 @@ $$
 $$
 we will show that it can be extended to higher dimensional affine spaces in next subsection.
 
-\subsection{Higher residues}
+\subsection{Holomorphic Feynman graph integrals}
 
-In this subsection, we generalize the concept of residues to the Jouanolou model of $(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes  I}$, where $d\geq1$ is the dimension of the affine space, $ I=\{1,2<\cdots<n\}$ is an ordered set with $n$ elements.
+In this subsection, we lay out the prerequisite work on Feynman graph integrals which are central to the concept of
+residues that we develop for the Jouanolou model of $(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes  I}$.
 
 Let $\mathcal{A}^{0,*}(\mathrm{Conf}_{ I}(\mathbb{A}^d))$ be the Dolbeault complex of the structure sheaf $\mathcal{O}(\mathrm{Conf}_{ I}(\mathbb{A}^{d}))$. Define the map
 $$
@@ -862,6 +863,8 @@ morphism
 \]
 
 In the following discussion, we identify the elements of $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$ with the corresponding elements in $\mathcal{A}^{0,*}(\mathrm{Conf}_{ I}(\mathbb{A}^d),(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$. 
+
+\subsubsection{Schwinger space}
 
 In our previous discussion of residues when $d=1$, we represented the residue kernel $\frac{1}{z}$ as an integral over Schwinger parameters.
 Now our goal is to represent $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$ as integrals over Schwinger parameters:
@@ -944,6 +947,7 @@ $$
 %    These identities follow from direct computations.
 %\end{proof}
 
+\subsubsection{Feynman graph integrals}
 Next, we introduce a graphical language to encode elements in the Jouanolou model.
 To this end, we introduce some concepts from graph theory.
 %explain our strategy for developing residue theory based on Jouanolou’s model of higher-dimensional affine spaces.
@@ -997,9 +1001,9 @@ To this end, we introduce some concepts from graph theory.
 %
 %Now, we introduce a graphic description of elements in $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
 \begin{defn}
-    A directed graph $\vec{\Gamma}$ consists of the following data:
+  A \textit{directed graph} $\vec{\Gamma}$ consists of the following data:
     \begin{enumerate}
-        \item An ordered set $\vec{\Gamma}_{0}$ of vertices. We use $|\Gamma_{0}|$ to denote the number of vertices.
+        \item A set $\vec{\Gamma}_{0}$ of vertices. We use $|\Gamma_{0}|$ to denote the number of vertices.
         \item An ordered set $\vec{\Gamma}_{0}$ of directed edges. We use $|\Gamma_{1}|$ to denote the number of directed edges.
         \item Two maps
         $$
@@ -1011,13 +1015,14 @@ To this end, we introduce some concepts from graph theory.
         $$
         for any $e\in\vec{\Gamma}_{1}$, i.e., the graph $\vec{\Gamma}$ has no self-loops.
     \end{enumerate}
-    Furthermore, we say $\vec{\Gamma}$ is decorated if we have a special edge $e_{l}\in \vec{\Gamma}_{1}$ and a map 
+    Furthermore, we say that a directed graph $\vec{\Gamma}$ is \textit{decorated} if we have a special edge $e_{l}\in \vec{\Gamma}_{1}$ and a map 
     $$
-    m:\Gamma_{1}\rightarrow\{1,2,\dots,d\}.
+    m \colon \Gamma_{1}\rightarrow\{1,2,\dots,d\}.
     $$
 \end{defn}
 
-We will use $(\vec{\Gamma},m,l)$ to denote a decorated directed graph. For simplicity, we will also call a decorated directed graph a Feynman graph in this article.
+We will use $(\vec{\Gamma},m,l)$ to denote a decorated directed graph. For simplicity, we will also call a decorated
+directed graph a \textit{Feynman graph} in this article.
 
 If $\vec{\Gamma}$ is a directed graph, we may use the following notations to describe $\vec{\Gamma}_{0}$ and $\vec{\Gamma}_{1}$:
 $$
@@ -1026,7 +1031,7 @@ $$
     \vec{\Gamma}_{1}=\{e_{1}<\cdots<e_{|\Gamma_{1}|}\}.
 \end{cases}
 $$
-\begin{defn}
+\begin{defn}\label{dfn:poly}
     Let $(\vec{\Gamma},m,l)$ be a Feynman graph, we define
     $$
     p_{(\vec{\Gamma},m,l)}(x_{e}^{m(e)},\mathbf{d}x_{e}^{m(e)})=\prod_{e<e_{l}\in\vec{\Gamma}_{1}}x_{e}^{m(e)}\prod_{e_l\leq e'\in\vec{\Gamma}_{1}}\mathbf{d}x_{e'}^{m(e')}\in k[x_{ij}^{s},\mathbf{d}x_{ij}^{s}]_{i<j\in\vec{\Gamma}_{0}}^{1\leq s\leq d},
@@ -1076,9 +1081,9 @@ As we vary over all Feynman graphs $\{p_{(\vec{\Gamma},m,l)}\}$ spans $k[x_{ij}^
 
 %We collect some facts in graph theory in Appendix \ref{graph theory}.
 
-We now describe the type of integrals that we are interested in.
+Using these notations, we can finally describe the type of integrals that we are interested in.
 \begin{defn}
-    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\Gamma_{0}= I$. Given 
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph and denote $\Gamma_{0}= I$. Given 
     $$
     \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
@@ -1095,21 +1100,15 @@ We now describe the type of integrals that we are interested in.
     where $z_{e}=z_{t(e)}-z_{h(e)}$, $y_{e}=\frac{\bar{z}_{t(e)}-\bar{z}_{h(e)}}{t_{e}}$.
 \end{defn}
 
-We introduce the following coordinates on $(\mathbb{A}^{d})^{ I}$:
-$$
-\begin{cases}
-    z_{i}=\tilde{z}_{i}+\tilde{z}_{n}, &\text{if }i\neq n,\\
-    z_{n}=\tilde{z}_{n}.
-\end{cases}
-$$
+The following proposition is a result of Wick's formula for Gaussian integrals.
 
-Now, we can get the following result:
 \begin{prop}\label{explicit formula}
-    When $t_{e}\in(0,+\infty)$ for $e\in\vec{\Gamma}_{1}$,
+  For each $t = (t_{e})\in(0,+\infty)^{\Gamma_1}$ the integral
     $$
     W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
     $$
-    is a convergent integral. Moreover,
+    over $(\mathbb{A}^d)^{I-\{n\}}$ converges. 
+    Moreover,
     \begin{enumerate}
         \item If $\vec{\Gamma}$ is disconnected,
         $$
@@ -1124,8 +1123,16 @@ Now, we can get the following result:
         &\left.\left.(1\otimes \beta)\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1} e^{\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}.
         \end{align*}
     \end{enumerate}
-    The notations are explained as follows:
+  \end{prop}
+  In this proposition, we have introduced the following notations: 
     \begin{itemize}
+      \item We introduce the following coordinates on $(\mathbb{A}^{d})^{ I}=(\mathbb{A}^d)^n$:
+$$
+\begin{cases}
+    z_{i}=\tilde{z}_{i}+\tilde{z}_{n}, &\text{if }i\neq n,\\
+    z_{n}=\tilde{z}_{n}.
+\end{cases}
+$$
         \item $\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}$: if $
         \gamma\in \mathcal{A}^{d(n-1),d(n-1)}((\mathbb{A}^d)^{ I-\{n\}})
         $ is a top form, there exists a unique
@@ -1150,14 +1157,13 @@ Now, we can get the following result:
         $$
         where $e\in \vec{\Gamma}_{1}$, $1\leq s\leq d$.
     \end{itemize}
-\end{prop}
-\begin{proof}
+    \begin{proof}[Proof of propostion \ref{explicit formula}]
     To simplify notations, we define
-    $$
+    \[
     \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
-    $$
+  \]
 
-    We first prove (1). If $\vec{\Gamma}$ is disconnected, let $\vec{\Gamma}'$ be a connected component of $\vec{\Gamma}$, such that $n\notin \vec{\Gamma}'$. Let $ V=\sum_{i\in\vec{\Gamma}'_{0}}\partial_{\bar{z}_{i}}$, $\iota_{ V}$ is the interior product operator of $ V$. We can check that
+    We first prove part (1). If $\vec{\Gamma}$ is disconnected, let $\vec{\Gamma}'$ be a connected component of $\vec{\Gamma}$, such that $n\notin \vec{\Gamma}'$. Let $ V=\sum_{i\in\vec{\Gamma}'_{0}}\partial_{\bar{z}_{i}}$, $\iota_{ V}$ is the interior product operator of $ V$. We can check that
     $$
     \iota_{ V}(\tilde{W})=0,
     $$
@@ -1170,7 +1176,8 @@ Now, we can get the following result:
         \tilde{W}&=e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta.
     \end{align*}
 
-    Since $\vec{\Gamma}$ is connected, by Proposition \ref{Minverse}, $M_{\vec{\Gamma}}(t)$ is invertible. We notice that the integral over $(\mathbb{A}^d)^{ I-\{n\}}$ is a Gaussian type integral, so
+    Since $\vec{\Gamma}$ is connected, $M_{\vec{\Gamma}}(t)$ is invertible by proposition \ref{Minverse}. 
+    As our integral over $(\mathbb{A}^d)^{ I-\{n\}}$ is of Gaussian type, we can apply Wick's formula to get
     \begin{align*}
         &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
         &=\int_{(\mathbb{A}^d)^{ I-\{n\}}}e^{-\sum_{i=1}^{n-1}\sum_{j=1}^{n-1}\tilde{z}_{i}\cdot M_{\vec{\Gamma}}(t)_{ij}\bar{\tilde{z}}_{j}}\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})\wedge \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}\\
@@ -1183,7 +1190,7 @@ Now, we can get the following result:
         &\left.\left.p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1}.
     \end{align*}
 
-    We notice that above expression is comlicate, we can introduce a new basis of 1-forms to simplify it:
+To simplify the notation further, it is convenient to choose the following basis for one-forms:
     $$
     \begin{cases}
         d\tilde{z}_{i}=d\tilde{z}_{i}&\text{for }1\leq i\leq n,\\
@@ -1215,7 +1222,7 @@ Now, we can get the following result:
 
     We notice that
     $$
-    \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}=(detM_{\vec{\Gamma}(t)})^{d}\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})},
+    \iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{\tilde{z}}_{i})}=(\det M_{\vec{\Gamma}(t)})^{d}\iota_{\prod_{i=1}^{n-1}(d^{d}\tilde{z}_{i}d^{d}\bar{z'}_{i})},
     $$
     so the Feynman graph integrand becomes
     \begin{align*}
@@ -1228,17 +1235,18 @@ Now, we can get the following result:
         &\left.\left.p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\otimes \beta\right)\right|_{\tilde{z}_{i}=0,1\leq i\leq n-1}.
     \end{align*}
 
-    Now, we have obtained a better formula for the Feynman graph integral. However, the appearance of exponential functions $e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}$ and $e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}$ make this formula unsuitable for an algebraic setting. We notice that
+    Notice that when applied the exponential, we can trade multiplication by the coordinate function $\tilde{z}^s_e$
+    with the derivative with respect to $\lambda_e^s$: 
     $$
     \tilde{z}^{s}_{e}e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}=\partial_{\lambda_{e}^{s}}e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}},
     $$
-    so 
+    It follows that 
     \begin{align*}
         &p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\tilde{z}_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}\\
         &=
         p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ dy_{e}^{s})\circ dy_{e}^{m(e)})e^{\sum_{i=1}^{n-1}\tilde{z}_{i}\cdot\lambda_{i}+\tilde{z}_{n}\cdot\sum_{1}^{n}\lambda_{i}}.
     \end{align*}
-    We also notice that
+    We also notice that, as operators, one has
     \begin{align*}
         e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}\circ dy_{e}^{s}=d\tilde{y}_{e}^{s}\circ
         e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}},
@@ -1249,7 +1257,7 @@ Now, we can get the following result:
         d\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}\bar{z'}_{j}^{s}\right)+d\left(d^{-1}_{\vec{\Gamma}}(t)_{ej}\right)\partial_{\tilde{z}_{j}^{s}}
         \right)
     $$
-    is an operator. So we have
+    So we have
     \begin{align*}
         &e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}\circ
         p_{(\vec{\Gamma},m,l)}(-dy_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ dy_{e}^{s})\circ dy_{e}^{m(e)})\\
@@ -1257,7 +1265,7 @@ Now, we can get the following result:
         p_{(\vec{\Gamma},m,l)}(-d\tilde{y}_{e}^{m(e)},-(\sum_{s=1}^{d}\partial_{\lambda_{e}^{s}}\circ d\tilde{y}_{e}^{s})\circ d\tilde{y}_{e}^{m(e)})\circ 
         e^{\sum_{s=1}^{d}\sum_{i=1}^{n-1}\partial_{\tilde{z}_{i}^{s}}\partial_{\bar{z'}_{i}^{s}}}.
     \end{align*}
-    The Feynman graph integrand becomes
+    Applying these relations, the Feynman graph integrand becomes
     \begin{align*}
         &W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
         &=(-2\pi i)^{d(n-1)}\left(
@@ -1293,46 +1301,39 @@ Now, we can get the following result:
     \end{align*}
 \end{proof}
 
-Now, we want to prove the Feynman graph integrand is integrable over 
+We have shown that the expression $W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ is a
+well-defined differential form in the variables $t = (t_e) \in (0,+\infty)^{|\Gamma_1|}$.
+Now, we want to prove that this integrand is integrable over 
 $$
-S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})=\{(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in(0,+\infty)^{\vec{\Gamma}_{1}}|\sum_{i=1}^{|\Gamma_{1}|}t_{i}^{2}=1\}.
+S^{+}((0,+\infty)^{|\Gamma_{1}|})=\{(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in(0,+\infty)^{|\Gamma_{1}|}|\sum_{i=1}^{|\Gamma_{1}|}t_{i}^{2}=1\}.
 $$
-We use the compactification technique of Schwinger spaces which is developed in:
-\begin{defn}
-    Let $\vec{\Gamma}$ be a directed graph, $(0,+\infty)^{\vec{\Gamma}_{1}}$ is called the Schwinger space of $\vec{\Gamma}$. The orientation is given by
+We use the compactification technique of Schwinger spaces from \cite{Wang:2024tjf}.
+We refer to $(0,+\infty)^{\vec{\Gamma}_{1}}$ as the \textit{Schwinger space} of the graph $\vec{\Gamma}$. 
+In order to integrate, we fix the orientation by the following 
     $$
-    \int_{(0,L)^{\vec{\Gamma}_{1}}}\prod_{e\in\vec{\Gamma}_{1}}dt_{e}=L^{|\Gamma_{1}|},
+    \int_{(0,L)^{|\Gamma_{1}|}}\prod_{e\in\vec{\Gamma}_{1}}dt_{e}=L^{|\Gamma_{1}|},
     $$
-    where $L>0$.
-\end{defn}
+    where $L>0$. 
 
-There is a natural partial compactification of $(0,+\infty)^{\vec{\Gamma}_{1}}$, which is constructed by iterated real blow up along corners of $[0,+\infty)^{\vec{\Gamma}_{1}}$. We collect basic properties of the partially compactified Schwinger spaces in the Appendix \ref{Schwinger spaces}. We use $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$ to denote the partially compactified Schwinger space of $\vec{\Gamma}$.
-\begin{prop}
-    The closure of $S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})$ in $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$, which we denote by 
+There is a natural partial compactification of $(0,+\infty)^{|\Gamma_{1}|}$, which is constructed by iterated real
+blow up along corners of $[0,+\infty)^{|\Gamma_{1}|}$. We collect basic properties of the partially compactified
+Schwinger spaces in the Appendix \ref{Schwinger spaces}. We use $\widetilde{[0,+\infty)}^{|\Gamma_{1}|}$ to denote the partially compactified Schwinger space of $\vec{\Gamma}$.
+One of the key properties of this partial compactification is that the closure of $S^{+}((0,+\infty)^{|\Gamma_{1}|})$
+in $\widetilde{[0,+\infty)}^{|\Gamma_{1}|}$, which we denote by 
     $$
-    \bar{S}^{+}((0,+\infty)^{\vec{\Gamma}_{1}}),
+    \bar{S}^{+}((0,+\infty)^{|\Gamma_{1}|}),
     $$
     is compact.
-\end{prop}
-\begin{proof}
-    This follows from the construction of $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
-\end{proof}
+    Additionally, we will use the fact that the graphical Green's function 
+    \[
+      d^{-1}_{\vec{\Gamma}}(t)_{ei}, \quad i\in \vec{\Gamma}_{0}-\{n\},\quad e\in \vec{\Gamma}_{1} ,
+    \]
+    which is originally defined on $(0,+\infty)^{|\Gamma_1|}$, can be extended to a smooth function on $\widetilde{[0,
+    +\infty)}^{\vec{\Gamma}_{1}}$, see lemma \ref{extended functions} in the appendix.
 
-One of the most important lemma about $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$ is the following:
-\begin{lem}
-    Let $\vec{\Gamma}$ be a connected directed graph, then the graphic Green's function
-    $$
-    d^{-1}_{\vec{\Gamma}}(t)_{ei}, \quad i\in \vec{\Gamma}_{0}-\{n\},\quad e\in \vec{\Gamma}_{1}
-    $$
-    can be extended to a smooth function on $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
-\end{lem}
-\begin{proof}
-    See Lemma \ref{extended functions}.
-\end{proof}
-
-As a consequence, we have
-\begin{cor}
-    Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
+\begin{prop}
+    Let $(\vec{\Gamma},m,l)$ be a Feynman graph and denote $\Gamma_{0}= I$. 
+    Given 
     $$
     \beta\in \omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}]
     $$
@@ -1349,7 +1350,7 @@ As a consequence, we have
     \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
     $$
     is convergent.
-\end{cor}
+\end{prop}
 \begin{proof}
     By Proposition \ref{explicit formula}, we have an explicit formula for $
     W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
@@ -1363,7 +1364,10 @@ As a consequence, we have
     is convergent.
 \end{proof}
 
-Before we define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, we state the following useful proposition:
+\subsubsection{Properties of Feynman graph integrals}
+
+The next result is about the scaling invariance of the Feynman graph integrals that we are studying.
+
 \begin{prop}\label{useful property}
     Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
     $$
@@ -1375,16 +1379,18 @@ Before we define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{
     $$
     then we have the following consequences:
     \begin{enumerate}
-        \item The Feynman graph integrand
-        $$
-        W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
-        $$
-        induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$. Here the $\mathbb{R}^{+}$ action is given by
+        \item 
+        Let $\mathbb{R}_{+}$ act on Schwinger space by rescaling
         $$
         \lambda\cdot(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})=(\lambda\cdot t_{e_{1}},\dots,\lambda\cdot t_{e_{|\Gamma_{1}|}}),
         $$
-        where $\lambda\in \mathbb{R}^{+}$, $(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in (0,+\infty)^{\vec{\Gamma}_{1}}$.
-        \item Let $S\subset(0,+\infty)^{\vec{\Gamma}_{1}}$ be a submanifold, such that the natural map $S\rightarrow(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$ is a diffeomorphism. Then we have
+        where $\lambda\in \mathbb{R}_+$, $(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in (0,+\infty)^{\vec{\Gamma}_{1}}$.
+        Then, the Feynman graph integrand
+        $$
+        W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})
+        $$
+        is $\mathbb{R}_+$-invariant and hence induces a smooth differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}_+$. 
+        \item Let $S\subset(0,+\infty)^{\vec{\Gamma}_{1}}$ be a submanifold, such that the natural map $S\rightarrow(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}_+$ is a diffeomorphism. Then we have
         $$
         \int_{S}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=
         \int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
@@ -1392,9 +1398,14 @@ Before we define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    (2) is a direct consequence of (1). Let's prove (1).
+  Part (2) of the proposition is a direct consequence of (1). Let's prove (1).
+We need to show that the weight is an equivariant, or basic, differential form with respect to this group action. 
+    Let $ V= V_{1}+ V_{2}$, where $ V_{1}=\sum_{s=1}^{d}\sum_{i=1}^{n-1}\bar{\tilde{z}}_{i}^{s}
+    \partial_{\bar{\tilde{z}}_{i}^{s}}$, $ V_{2}=\sum_{e\in\vec{\Gamma}_{1}}t_{e}\partial_{t_{e}}$. 
+    Notice that $V_2$ is the infinitesimal generaotr for the $\mathbb{R}_+$-action as defined in the statement. 
 
-    Let $ V= V_{1}+ V_{2}$, where $ V_{1}=\sum_{s=1}^{d}\sum_{i=1}^{n-1}\bar{\tilde{z}}_{i}^{s}\partial_{\bar{\tilde{z}}_{i}^{s}}$, $ V_{2}=\sum_{e\in\vec{\Gamma}_{1}}t_{e}\partial_{t_{e}}$. To simplify notations, we define
+    As before, for
+    shorthand notation define
     $$
     \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
     $$
@@ -1407,16 +1418,18 @@ Before we define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{
     $$
     So we can get 
     \begin{align*}
-        L_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{2}}\tilde{W}=-\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{1}}\tilde{W}=0.
+        L_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{2}}\tilde{W}=-\int_{(\mathbb{A}^{d})^{ I-\{n\}}}L_{ V_{1}}\tilde{W}=0
     \end{align*}
+    by Stokes' theorem.
     Similarly,
     $$
-    \iota_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\pm\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\iota_{ V_{1}}\tilde{W}=0.
+    \iota_{ V_{2}}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})=\pm\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\iota_{ V_{1}}\tilde{W}=0
     $$
-    We notice that $ V_{2}$ is the infinitesimal generator of $\mathbb{R}^{+}$ action, so $W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ induces a well-defined differential form on $(0,+\infty)^{\vec{\Gamma}_{1}}/\mathbb{R}^{+}$.
+    by type reasons.
 \end{proof}
-
-Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ on the Feynman graph $(\vec{\Gamma},m,l)$. We have the following result:
+We turn to the dependency of the integration $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta
+e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})$ on the actual Feynman graph $(\vec{\Gamma},m,l)$. 
+This is summarized in the following result.
 \begin{prop}\label{well-defineness}
         Let $(\vec{\Gamma},m,l)$ be a Feynman graph, such that $\vec{\Gamma}_{0}= I$. Given 
     $$
@@ -1463,7 +1476,8 @@ Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    (1) can be verified directly. Let's prove (2). Let's first assume $\vec{\Gamma}_{1}\neq\emptyset$. To simplify notations, we define
+    Part (1) is a direct observation. 
+    We prove part (2). Let's first assume $\vec{\Gamma}_{1}\neq\emptyset$. To simplify notations, we define
     $$
     \tilde{W}=p_{(\vec{\Gamma},m,l)}(-e^{-z_{e}\cdot y_{e}}dy_{e}^{m(e)},-e^{-z_{e}\cdot y_{e}}(z_{e}\cdot dy_{e})dy_{e}^{m(e)})e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\otimes \beta.
     $$
@@ -1471,7 +1485,7 @@ Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((
     $$
     S=S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})\times(0,+\infty)\subset S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}}).
     $$
-    We notice that the natural map from $S$ to $(0,+\infty)^{\vec{\Gamma}'_{1}}/\mathbb{R}^{+}$ is a diffeomophism, so
+    We notice that the natural map from $S$ to $(0,+\infty)^{\vec{\Gamma}'_{1}}/\mathbb{R}_+$ is a diffeomophism, so
     \begin{align*}
         &\sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}})\\
         &=
@@ -1500,31 +1514,41 @@ Now, we study the dependency of $\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((
         &=
         \sum_{s=1}^{d}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}'_{1}})}W((\vec{\Gamma}',m^{s},l),z_{ij}^{s}\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}).
     \end{align*}
-    (3) can be proved by similar arguments.
+    Finally, part (3) can be proved by similar arguments.
 \end{proof}
 
-Now, we can define residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
+\subsection{Higher residues from Feynman graphs}
+
+Finally, we arrive at the definition of the residue on the model $\mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}
+^{d}}[d])^{\boxtimes I})$ for configuration space.
 
 \begin{defn}
     Let
     $$
     \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes\beta\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}),
     $$
-    where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a monomial with coefficient equals $1$. Let
+    where $p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$ is a monomial with coefficient $1$. 
+    Let
     $$
     e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}=e^{\sum_{s=1}^{d}\sum_{i=1}^{n}z^{s}_{i}\lambda^{s}_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I}),
     $$
-    then the residue of $\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}$ is defined by
+    then the \textit{residue} of $\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}$ is defined by
     \begin{align*}
         &\frac{-1}{(-2\pi i)^{d(n-1)}}\oint_{z_{1},\dots z_{n-1}=z_{n}}\alpha e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\\
         &=\frac{(-1)^{\frac{1}{2}(|\Gamma_{1}|-l)(\Gamma_{1}|-l+1)+1}}{(-2\pi i)^{d(n-1)}}\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}W((\vec{\Gamma},m,l),\beta e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}),
     \end{align*}
-    where $(\vec{\Gamma},m,l)$ is a Feynman graph whose corresponding polynomial $p_{(\vec{\Gamma},m,l)}=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})$. We can define residues for general elements in $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$ by linear extension. By Proposition \ref{well-defineness}, residues are well-defined.
+    where $(\vec{\Gamma},m,l)$ is a Feynman graph with corresponding polynomial $p_{(\vec{\Gamma},m,l)}=p(x_{ij}^{s},
+    \mathbf{d}x_{ij}^{s})$, see definition \ref{dfn:poly}. 
+    We define residues for general elements in $\mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes
+    I})$ by linearity. 
 \end{defn}
 
-Finally, let's prove a useful property for residues on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$.
+We observe that by proposition \ref{well-defineness}, residues are well-defined.
+The following proposition highlights key features of our higher residue defined on the Jouanolou model. 
+In part, it implies that the formal $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module structure on $\mathbf{J}^{ I}_{\mathbb{A}^{d}}$ coincides with the action by derivatives on the residues we have just defined.
+
 \begin{prop}\label{residue 0}
-    Let $\alpha\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, $e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I})$, and $1\leq s\leq d$. We have
+    Let $\alpha\in \mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, $e^{\sum_{i=1}^{n}z_{i}\cdot\lambda_{i}}\in C^{\infty}((\mathbb{A}^{d})^{ I}\times (\mathbb{A}^{d})^{ I})$, and $1\leq s\leq d$. We have
     
     \begin{enumerate}
         \item If $i\in I-\{n\}$, then
@@ -1555,13 +1579,12 @@ Finally, let's prove a useful property for residues on $\mathbf{J}_{ I}^{\mathbb
             &=
             -\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}\partial_{z_{i}^{s}}\left(e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\right)\tilde{W}'.
         \end{align*}
-        In other words, the formal $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module structure on $\mathbf{J}_{ I}^{\mathbb{A}^{d}}$ coincide with the actual derivative when we compute residues. 
 
         When $\vec{\Gamma}_{1}'\neq\emptyset$, let
         $$
         S=S^{+}((0,+\infty)^{\vec{\Gamma}_{1}'})\times(0,+\infty)^{2}\subset(0,+\infty)^{|\Gamma_{1}|+1}.
         $$
-        Note the natural map from $S$ to $(0,+\infty)^{|\Gamma_{1}|+1}/\mathbb{R}^{+}$ is a diffeomorphism, we have
+        Note the natural map from $S$ to $(0,+\infty)^{|\Gamma_{1}|+1}/\mathbb{R}_+$ is a diffeomorphism, we have
         \begin{align*}
             &\int_{S^{+}((0,+\infty)^{|\Gamma_{_{1}}|+1})}\int_{(\mathbb{A}^{d})^{ I-\{n\}}}
             e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{0}}}}d(\frac{\bar{z}_{e_{1}}^{s}}{t_{e_{0}}})e^{-\frac{z_{e_{1}}\cdot \bar{z}_{e_{1}}}{t_{e_{1}}}}d(\frac{\bar{z}_{e_{1}}^{m(e_{1})}}{t_{e_{1}}})\tilde{W}'\\
@@ -1581,13 +1604,14 @@ Finally, let's prove a useful property for residues on $\mathbf{J}_{ I}^{\mathbb
 \end{prop}
 \subsection{Construction of the unit chiral algebra on $\omega_{\mathbb{A}^{d}}[d-1]$}.
 
-In this subsection, we will construct the $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ by using residues.
+We culminate this section with a construction of an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ by using residues.
+This is precisely the \textit{unit chiral algebra} in dimension $d$.
 
-We first introduce the following definition:
+We first introduce the following definition.
 \begin{defn}
-    Let $\alpha\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, the shifted $n$ operation
+    Let $\alpha\in \mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})$, the shifted $n$ operation
     $$
-    \tilde{\mu}_{ I}:\mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})\rightarrow \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]
+    \tilde{\mu}_{ I}:\mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I})\rightarrow \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]
     $$
     is given by
     $$
@@ -1596,15 +1620,53 @@ We first introduce the following definition:
     where $\lambda_{\bullet}=\sum_{i=1}^{n}\lambda_{i}$.
 \end{defn}
 \begin{rem}
-    By Proposition \ref{explicit formula}, we know $\tilde{\mu}_{ I}(\alpha)$ is indeed an element of $\omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]$, i.e., $\tilde{\mu}_{ I}(\alpha)$ is a polynomial with respect to $\{\lambda_{i}\}_{i\in I}$.
+    By proposition \ref{explicit formula}, we know $\tilde{\mu}_{ I}(\alpha)$ is a well-defined element of $\omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}]$, i.e., $\tilde{\mu}_{ I}(\alpha)$ is a polynomial with respect to $\{\lambda_{i}\}_{i\in I}$.
 \end{rem}
 \begin{prop}
-    $\tilde{\mu}_{ I}(\alpha)$ is a homological degree $1$ element in $\mathrm{Hom}^{ch}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I},\omega_{\mathbb{A}^{d}}[d])$.
+    $\tilde{\mu}_{ I}(\alpha)$ defines a cohomological degree $1$ of
+    \[
+      \mathrm{Hom}^{ch}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I},\omega_{\mathbb{A}^{d}}[d]) .
+    \]
 \end{prop}
 \begin{proof}
-    We first prove $\tilde{\mu}$ is of homological degree $1$. Assume
+    We first prove that $\tilde{\mu}_{ I}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module map. 
+    First, observe that functions act in the following way:
+    \begin{align*}
+        &\tilde{\mu}_{ I}(\alpha\cdot z_{i}^{s})\\
+        &=
+        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}z_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha \partial_{\lambda_{i}^{s}}e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=(w+\partial_{\lambda_{i}^{s}})\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \tilde{\mu}_{ I}(\alpha)\cdot z_{i}^{s},
+    \end{align*}
+    Similarly, derivatives act as
+    \begin{align*}
+        &\tilde{\mu}_{ I}(\alpha\cdot \partial_{z_{i}^{s}})\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha) e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}\\
+        &-
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\lambda_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
+        &=
+        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}+
+        \tilde{\mu}_{ I}(\alpha)\cdot \partial_{\lambda_{i}^{s}}.
+    \end{align*}
+    Using proposition \ref{residue 0}, the first term is $0$ when $i\neq n$. When $i=n$, the first term is
     $$
-    \alpha=p\otimes\beta\in\mathbf{J}_{ I}^{\mathbb{A}^{d}}\otimes_{\mathcal{O}_{(\mathbb{A}^{d})^{ I}}[(\mathbb{A}^{d})^{ I}]}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}],
+    (-\lambda_{\bullet}+\partial_{w})\frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
+    $$
+    which is zero as an element in
+    $$
+    \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}].
+    $$
+
+    We next check that $\tilde{\mu}$ is of cohomological degree $1$. 
+    Assume
+    $$
+    \alpha=p\otimes\beta\in\mathbf{J}^{ I}_{\mathbb{A}^{d}}\otimes_{\mathcal{O}_{(\mathbb{A}^{d})^{ I}}[(\mathbb{A}^{d})^{ I}]}(\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}[(\mathbb{A}^{d})^{ I}],
     $$
     we use $|p|$ and $|\beta|$ to denote the homological degree of $p$ and $\beta$ respectively. To make sure the integral
     $$
@@ -1618,41 +1680,13 @@ We first introduce the following definition:
     \end{cases}.
     $$
     So $|\tilde{\mu}_{ I}(\alpha)|=-d=|p|+|\beta|+1=|\alpha|+1$.
-
-    Now, let's prove $\tilde{\mu}_{ I}$ is a $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module map. This follows from the following computations:
-    \begin{align*}
-        &\tilde{\mu}_{ I}(\alpha\cdot z_{i}^{s})\\
-        &=
-        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}z_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
-        &=
-        \frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha \partial_{\lambda_{i}^{s}}e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
-        &=(w+\partial_{\lambda_{i}^{s}})\frac{-e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
-        &=
-        \tilde{\mu}_{ I}(\alpha)\cdot z_{i}^{s},
-    \end{align*}
-    \begin{align*}
-        &\tilde{\mu}_{ I}(\alpha\cdot \partial_{z_{i}^{s}})\\
-        &=
-        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha) e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
-        &=
-        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}\\
-        &-
-        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\lambda_{i}^{s}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w}\\
-        &=
-        \frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\partial_{z_{i}^{s}}(\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}})\right)\right|_{z_n=w}+
-        \tilde{\mu}_{ I}(\alpha)\cdot \partial_{\lambda_{i}^{s}}.
-    \end{align*}
-    Using Proposition \ref{residue 0}, the first term is $0$ when $i\neq n$. When $i=n$, the first term is
-    $$
-    (-\lambda_{\bullet}+\partial_{w})\frac{e^{-\lambda_{\bullet}\cdot w}}{(-2\pi i)^{d(n-1)}}\left.\left(\oint_{z_{1},\cdots z_{n-1}=z_{n}}\alpha e^{\sum_{j=1}^{n}z_{j}\cdot \lambda_{j}}\right)\right|_{z_n=w},
-    $$
-    which is zero as an element in
-    $$
-    \omega_{\mathbb{A}^{d}}[d][\mathbb{A}^{d}]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{1},\dots,\lambda_{n}].
-    $$
 \end{proof}
 
-Let's prove $\tilde{\mu}_{ I}$ satisfy the following shifted $L_{\infty}$ relations:
+
+Thus, $\{\tilde \mu_I\}$ defines a chiral operation of the appropriate degree.
+In order for such operations to define a chiral algebra, we need to check that $\tilde{\mu}_{ I}$ satisfy the following shifted $L_{\infty}$ relations.
+This is the main result of this section.
+
 \begin{thm}
     $\{\tilde{\mu}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$ satisfies the following properties:
     \begin{enumerate}
@@ -1704,18 +1738,20 @@ Let's prove $\tilde{\mu}_{ I}$ satisfy the following shifted $L_{\infty}$ relati
     \end{align*}
 \end{proof}
 
-We use the canonical décalage isomorphism
+Finally, using the canonical d\'{e}calage isomorphism
 $$
 \mathrm{Sym}^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d])\cong \wedge^{\boxtimes I}(\omega_{\mathbb{A}^{d}}[d-1])[n],
 $$
-the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
+the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{ I}\}_{ I\in \mathbf{fSet}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
 \begin{defn}
-    The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the unit $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$.
+  The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the \textit{unit} $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{ I}\}_{ I\in \mathbf{fSet}}$.
 \end{defn}
-\subsection{d=2}
-In this subsection, we compute the 2-operation on a special element called propagator. We assume $d=2$ in this subsection.
+
+\subsection{Explicit formulas in dimension two}
+In this subsection, we compute the 2-operation on a special element called propagator. 
+We assume, for concreteness, that $d=2$ in this subsection.
 \begin{defn}
-    The propagator $P_{12}$ is an element of $\mathbf{J}_{\{1,2\}}^{\mathbb{A}^{2}}$, which is given by 
+    The propagator $P_{12}$ is an element of $\mathbf{J}^{\{1,2\}}_{\mathbb{A}^{2}}$, which is given by 
     $$
     P_{12}=x_{12}^1\mathbf{d}x_{12}^{2}-x_{12}^2\mathbf{d}x_{12}^{1}.
     $$
@@ -1726,11 +1762,32 @@ In this subsection, we compute the 2-operation on a special element called propa
         $$
     \end{prop}
     \begin{proof}
-    Note $P_{12}$ contains two terms. We first find the Feynman graphs which correspond to these two monomials. Let $\vec{\Gamma}$ be the directed graph constructed as follows:
+    Note $P_{12}$ contains two terms. We first find the Feynman graphs which correspond to these two monomials. Let
+    $\vec{\Gamma}$ be the directed graph constructed as follows (see figure \ref{fig:kronecker-quiver}):
         \begin{itemize}
             \item $\vec{\Gamma}_{0}=\{1,2\}$ and $\vec{\Gamma}_{1}=\{e_{1},e_{2}\}$.
             \item $t(e_{1})=t(e_{2})=1$ and $h(e_{1})=h(e_{2})=2$.
         \end{itemize}
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[
+    vertex/.style={circle, draw, minimum size=1cm},
+    >={Straight Barb[scale=1.2]},  % arrow style
+    shorten >=2pt,
+    shorten <=2pt,
+    node distance=3cm
+  ]
+  % Nodes
+  \node[vertex] (A) {1};
+  \node[vertex, right=of A] (B) {2};
+
+  % Arrows: two parallel arrows from A to B
+  \draw[->] (A) to[out=45,in=135] (B);
+  \draw[->] (A) to[out=-45,in=-135] (B);
+\end{tikzpicture}
+  \caption{Kronecker graph}
+  \label{fig:kronecker-quiver}
+\end{figure}
         We consider two Feynman graphs $(\vec{\Gamma},m_{1},2)$ and $(\vec{\Gamma},m_{2},2)$, where $m_{1}$ and $m_{2}$ is defined by
         $$
         \begin{cases}
@@ -1738,7 +1795,8 @@ In this subsection, we compute the 2-operation on a special element called propa
             m_{2}(e_{1})=2, m_{2}(e_{2})=1.
         \end{cases}
         $$
-        Then we have $p_{(\vec{\Gamma},m_{1},2)}=x_{12}^1\mathbf{d}x_{12}^{2}$ and $p_{(\vec{\Gamma},m_{2},2)}=x_{12}^{2}\mathbf{d}x_{12}^{1}$. The graphic Green's function can be obtained by Corollary \ref{boundness}:
+        Then we have $p_{(\vec{\Gamma},m_{1},2)}=x_{12}^1\mathbf{d}x_{12}^{2}$ and $p_{(\vec{\Gamma},m_{2},2)}=x_{12}^{2}
+        \mathbf{d}x_{12}^{1}$. The graphical Green's function can be obtained by corollary \ref{boundness}:
         $$
         \begin{cases}
             d^{-1}_{\vec{\Gamma}}(t)_{e_{1}1}=\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}},\\
@@ -1746,7 +1804,7 @@ In this subsection, we compute the 2-operation on a special element called propa
         \end{cases}
         $$
         
-        Let's compute $\mu^{\mathbf{Unit}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By Proposition \ref{explicit formula}, we have
+        Let's compute $\mu^{\mathbf{Unit}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By proposition \ref{explicit formula}, we have
         \begin{align*}
             &\mu^{\mathbf{Unit}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
             &=\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}
@@ -1762,14 +1820,14 @@ In this subsection, we compute the 2-operation on a special element called propa
             &=
         \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
         \end{align*}
-        By Proposition \ref{useful property}, we can get
+        By proposition \ref{useful property}, we can get
         \begin{align*}
             &\mu^{\mathbf{Unit}}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
             &=
         \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
-        &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
-        &=d^{2}w.
+        &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w
         \end{align*}
+        The integral above produces $1$, as desired.
     \end{proof}
 \end{defn}
 \iffalse
@@ -4122,13 +4180,12 @@ $$
 
 \end{proof}
 \fi
-\section{Appendix}
-\subsection{Graph theory background}\label{graph theory}
 
-In this appendix, we introduce some concepts and facts from graph theory.
-These facts will be used in the study of Feynman graph integrals.
+\appendix 
 
+\section{Graph theory background}\label{graph theory}
 
+In this appendix, we introduce some concepts and facts from graph theory used in section \ref{s:feynman}. 
 \begin{defn}
     A directed graph $\vec{\Gamma}$ consists of the following data:
     \begin{enumerate}
@@ -4216,7 +4273,7 @@ integrals.
     $$
 \end{defn}
 
-\begin{cor}
+\begin{prop}[see appendix B of \cite{Li:2011mi}]
   \label{boundness}We have the following equality:
   \begin{eqnarray*}
     &  & d^{-1}_{\vec{\Gamma}}(t)_{ei}\\
@@ -4230,11 +4287,7 @@ integrals.
   In particular, every term of the numerator also appears in the denominator,
   so we have
   \[ \left| d^{-1}_{\vec{\Gamma}}(t)_{ei} \right| \leqslant 2. \]
-\end{cor}
-
-\begin{proof}
-  See {\cite[Appendix B]{Li:2011mi}}.
-\end{proof}
+\end{prop}
 
 \begin{rem}
   If we view graphs as discrete spaces, the incidence matrix can be viewed as
@@ -4272,7 +4325,7 @@ Finally, we introduce the concept of Laman graphs.
   {\cite{budzik2023feynman}}.
 \end{rem}
 
-\subsection{Compactification of Schwinger spaces}\label{Schwinger spaces}
+\section{Compactification of Schwinger spaces}\label{Schwinger spaces}
 
 In this appendix, we review the construction of a compactification of
 Schwinger space in {\cite{wang2024feynman,Wang:2024tjf}}.
@@ -4335,19 +4388,15 @@ Let's consider the following natural inclusion map:
   space, although it is not compact. We will use $\widetilde{[0, + \infty)}^{\vec{\Gamma}_1}$ to denote it.
 \end{rem}
 
-\begin{prop}
+\begin{prop}[\cite{Ammann2019ACO}]
   $\widetilde{[0, L]}^{\vec{\Gamma}_1}$ is a compact manifold with corners.
 \end{prop}
 
-\begin{proof}
-  See {\cite{Ammann2019ACO}}.
-\end{proof}
-
-The matrice $M_{\vec{\Gamma}} (t)^{- 1}_{i j}$ and $d^{-1}_{\vec{\Gamma}}(t)_{ei}$
-defined in Appendix \ref{graph theory} can be extended to smooth functions on
+The matrices $M_{\vec{\Gamma}} (t)^{- 1}_{i j}$ and $d^{-1}_{\vec{\Gamma}}(t)_{ei}$
+defined in appendix \ref{graph theory} admit extensions to matrix-valued smooth functions on
 $\widetilde{[0, + \infty)^{| \Gamma_1 |}}$:
 
-\begin{lem}
+\begin{lem}[\cite{wang2024feynman}]
   \label{extended functions}Given a connected graph $\vec{\Gamma}$, The following functions can be extended to smooth functions on
   $\widetilde{[0, + \infty)}^{ \vec{\Gamma}_1 }$:
   \begin{enumerate}
@@ -4358,11 +4407,6 @@ $\widetilde{[0, + \infty)^{| \Gamma_1 |}}$:
     \leqslant j \leqslant | \Gamma_0 | - 1$.
   \end{enumerate}
 \end{lem}
-
-\begin{proof}
-  See {\cite{wang2024feynman}}.
-\end{proof}
-
 
 Let $\bar{S}^{+}((0,+\infty)^{\vec{\Gamma}_{1}})$ be the closure of 
 $$
@@ -4381,7 +4425,8 @@ $$in $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$, the following proposition giv
 \begin{proof}
   This follows from the construction of $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
 \end{proof}
-\subsection{Proof of Proposition \ref{IdepenW}}\label{ProofIdepenW}
+
+\section{Proof of Proposition \ref{IdepenW}}\label{ProofIdepenW}
 \Gui{Rewrite!}
 
 \begin{proof}
