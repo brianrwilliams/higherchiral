@@ -1744,7 +1744,9 @@ $$
 $$
 the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{ I}\}_{ I\in \mathbf{fSet}}$ on $\omega_{\mathbb{A}^{d}}[d]$ corresponds to an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$.
 \begin{defn}
-  The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the \textit{unit} $L_{\infty}$ chiral algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are denoted by $\{\mu^{\mathbf{Unit}}_{ I}\}_{ I\in \mathbf{fSet}}$.
+  The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the \textit{unit} $L_{\infty}$ chiral
+  algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are
+  denoted by $\{\mu^{\omega}_{ I}\}_{ I\in \mathbf{fSet}}$.
 \end{defn}
 
 \subsection{Explicit formulas in dimension two}
@@ -1758,7 +1760,7 @@ We assume, for concreteness, that $d=2$ in this subsection.
     \begin{prop}
         We have the following identity:
         $$
-        \mu^{\mathbf{Unit}}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})=d^{2}w.
+        \mu^{\omega}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})=d^{2}w.
         $$
     \end{prop}
     \begin{proof}
@@ -1844,131 +1846,172 @@ We assume, for concreteness, that $d=2$ in this subsection.
 \end{thm}
 
 \fi
-\section{Commutative chiral algebras and free ghost chiral algebras}
+\section{Examples of higher chiral algebras}
+
+We provide examples of chiral algebras in the Jouanolou model.
+These include commutative chiral algebras and free ghost chiral algebras.
+Additionally, we provide a construction of a chiral algebra enhancement of the higher-dimensional Kac--Moody algebra as
+constructed in \cite{FHK}.
+This is generalization of the relationship between the (universal) WZW/current chiral algebras and affine Kac--Moody algebras.
+
 \subsection{Commutative chiral algebras}
+
 \begin{defn}
-   Let $\mathcal{A}$ be a chiral algebra on $\mathbb{A}^d$. We say that $\mathcal{A}$ is commutative if the composition
+   Let $\mathcal{A}$ be a chiral algebra with zero differential on $\mathbb{A}^d$. We say that $\mathcal{A}$ is
+   \textit{commutative} if the composition
 $$
-\Gamma\left((\mathbb{A}^d)^{ I},\mathcal{A}^{\boxtimes  I}\right)\hookrightarrow \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{A})\xrightarrow{\mu_{ I}}\mathcal{A}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_I]
+\Gamma\left((\mathbb{A}^d)^{{I}},\mathcal{A}^{\boxtimes {I}}\right)\hookrightarrow \mathbf{J}^{{I}}_{\mathbb{A}^d}(\mathcal{A})\xrightarrow{\mu_{{I}}}\mathcal{A}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_I]
 $$
     vanishes for all $I$ with $|I|\geq 2$.
+    Here, the first map is the inclusion of global sections into derived global sections.
 \end{defn}
 
-
-Start from a graded vector space $L$, we can construct a commutative chiral algebra $\mathcal{B}(L)$ as follows. Consider the commutative algebra
+A graded commutative $\mathcal{D}$-algebra $\mathbf{B}$ is a left $\mathcal{D}$-module with a commutative product
 $$
-\mathrm{Sym}^{\mathrm{Diff}}L:=\mathrm{Sym}(k[\lambda]\otimes L).
+m\colon\mathbf{B}\otimes\mathbf{B}\rightarrow \mathbf{B}
 $$
-It is a left differential $k[\lambda]$-module which $\lambda^s$ acts on $k[\lambda]\otimes L$ by the left multiplication.
-
-\begin{thm}
-  There is a chiral algebra structure on $\mathcal{B}:=\underline{\mathrm{Sym}^{\mathrm{Diff}}L}\otimes \mathbf{Unit}$ which makes $\mathcal{B}$ into a commutative chiral algebra.
-\end{thm}
+which is a $\mathcal{D}$-module map.
+\begin{prop}\label{prop:commop}
+  Let $\mathbf{B}$ be a commutative $\mathcal{D}_{\mathbb{A}^d}$-algebra.
+  There is a chiral algebra structure on $\mathcal{B}:=\mathbf{B}\otimes_{\mathcal{O}_{\mathbb{A}^d}} \omega_{\mathbb{A}^d}^{\blacklozenge}$ which makes $\mathcal{B}$ into a commutative chiral algebra.
+\end{prop}
 \begin{proof}
   We define
   $$
-  \mu^{\mathcal{B}}_{ I}:\mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{B})\rightarrow \mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]
+  \mu^{\mathcal{B}}_{{I}}:\mathbf{J}^{{I}}_{\mathbb{A}^d}(\mathcal{B}^{\boxtimes I})\rightarrow \mathcal{B}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}]
   $$
   to be the composition of the following sequence of maps
   $$
-  \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathcal{B})=  \mathbf{J}_{ I}^{\mathbb{A}^d}(\mathbf{Unit})\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\xrightarrow{\mu^{\mathbf{Unit}}_{ I}\otimes \mathrm{Id}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}
+\mathbf{J}^{{I}}_{\mathbb{A}^d}(\mathcal{B}^{\boxtimes{I}})=  \mathbf{J}^{{I}}_{\mathbb{A}^d}((\omega_{\mathbb{A}^d}^{\blacklozenge})^{\boxtimes I})\otimes_{\mathcal{O}_{(\mathbb{A}^d)^I}} \mathbf{B}^{\boxtimes{I}}\xrightarrow{\mu^{\omega}_{{I}}\otimes \mathrm{Id}}\left(\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}]\right)\otimes_{\mathcal{O}_{(\mathbb{A}^d)^I}}\mathbf{B}^{\boxtimes{I}}
   $$
   $$
-  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}]\otimes_{k[\lambda_{I}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\otimes k[\lambda_{I}]\right)  \xrightarrow{\sim}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda]\otimes L)^{\otimes I}\otimes k[\lambda_{I}]\right)
+  \xrightarrow{\sim}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}]\otimes_{\mathbf{k}[\lambda_{I}]} \left( \mathbf{B}^{\boxtimes I}\otimes \mathbf{k}[\lambda_{I}]\right)  \xrightarrow{\sim}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]} \left( \mathbf{B}^{\otimes{I}}\otimes \mathbf{k}[\lambda_{I}]\right)
   $$
   $$
-  \xrightarrow{\mathbf{\Delta}^{( I)}}\mathbf{Unit}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]} \left( \mathrm{Sym}(k[\lambda_{\bullet}]\otimes L)\otimes k[\lambda_{I}]\right)\xrightarrow{\sim}\mathcal{B}[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}].
+  \xrightarrow{\mathbf{\Delta}^{({I})}}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]} \left( \mathbf{B}\otimes \mathbf{k}[\lambda_{I}]\right)\xrightarrow{\sim}\mathcal{B}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}].
   $$
+  \iffalse
+  $$
+\mathbf{J}^{{I}}_{\mathbb{A}^d}(\mathcal{B}^{\boxtimes{I}})=  \mathbf{J}^{{I}}_{\mathbb{A}^d}((\omega_{\mathbb{A}^d}^{\blacklozenge})^{\boxtimes I})\otimes_{\mathbf{k}} \mathrm{Sym}(\mathbf{k}[\lambda]\otimes L)^{\otimes{I}}\xrightarrow{\mu^{\omega}_{{I}}\otimes \mathrm{Id}}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}]\otimes \mathrm{Sym}(\mathbf{k}[\lambda]\otimes L)^{\otimes{I}}
+  $$
+  $$
+  \xrightarrow{\sim}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}]\otimes_{\mathbf{k}[\lambda_{I}]} \left( \mathrm{Sym}(\mathbf{k}[\lambda]\otimes L)^{\otimes{I}}\otimes \mathbf{k}[\lambda_{I}]\right)  \xrightarrow{\sim}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]} \left( \mathrm{Sym}(\mathbf{k}[\lambda]\otimes L)^{\otimes{I}}\otimes \mathbf{k}[\lambda_{I}]\right)
+  $$
+  $$
+  \xrightarrow{\mathbf{\Delta}^{({I})}}\omega_{\mathbb{A}^d}^{\blacklozenge}\otimes_{\mathbf{k}[\lambda]} \left( \mathrm{Sym}(\mathbf{k}[\lambda]\otimes L)\otimes \mathbf{k}[\lambda_{I}]\right)\xrightarrow{\sim}\mathcal{B}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}].
+  $$
+  \fi
+
+  The fact that $\{\mu_I^{\mathcal{B}}\}$ satisfy the $L_\infty$ relations follows immediately from the
+  $L_\infty$-relations of the unit chiral algebra.
+  \BW{finish}
 \end{proof}
+
 \subsection{Free ghost chiral algebras}
 
-Let $L$ be a graded vector space. Consider the following graded vector space
-
-\begin{defn}{\label{WickContraction}}
-Let $\{1,2\}$ be an ordered two elements set and $M_{\{1,2\}}$ be a left $k[\lambda_{\{1,2\}}]$-module. Given an element $l^{\vee}_1\otimes l^{\vee}_2\otimes m\in (L^{\vee})^{\otimes \{1,2\}}\otimes M_{\{1,2\}}$, we define a map
+The following set of examples are immediate generalizations of familiar $d=1$ ghost-type chiral algebras (of $\beta-\gamma$ or $b-c$
+type).
+Let $F$ be a graded vector space. 
+Consider the following graded commutative $\mathcal{D}$-algebra
 $$
-\left(l^{\vee}_1\otimes l^{\vee}_2\otimes m\right)\vdash:\left(\mathrm{Sym}^{\mathrm{Diff}}L\right)^{\otimes \{1,2\}}\rightarrow \left(\mathrm{Sym}^{\mathrm{Diff}}L\right)^{\otimes \{1,2\}}\otimes M_{\{1,2\}}
+\mathbf{F} =\mathrm{Sym}(\underline{F^{\vee}}_{\mathcal{D}}\otimes\omega^{-1}\oplus \underline{F}_{\mathcal{D}}[1-d]
+\otimes\omega_{\mathcal{D}}\otimes\omega^{-1}).
 $$
-    by mapping $\left(g_1(\lambda)\otimes l_1\right)\otimes \left(g_2(\lambda)\otimes l_2\right)\in \left(k[\lambda]\otimes L\right)\otimes \left(k[\lambda]\otimes L\right)$ to
-    $$
-    \left(l^{\vee}_1\otimes l^{\vee}_2\otimes m\right)\vdash\left(
-\left(g_1(\lambda)\otimes l_1\right)\otimes \left(g_2(\lambda)\otimes l_2\right)\right):=\langle l_1,l^{\vee}_1\rangle\langle l_2,l^{\vee}_2\rangle\cdot  g_1(\lambda_1)g_2(\lambda_2)m\in M_{\{1,2\}}
-$$
-and then extend to $\left(\mathrm{Sym}^{\mathrm{Diff}}L\right)^{\otimes \{1,2\}}$ by the Leibniz rule.
-
-Take $M_{\{1,2\}}=\mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}$, we get a map (by abuse of notation)
-$$
-\left(l^{\vee}_1\otimes l^{\vee}_2\otimes m\right)\vdash:\mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes\{1,2\}} \right)\rightarrow \mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes\{1,2\}} \right)\otimes \mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}\rightarrow \mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes\{1,2\}} \right)
-$$
-where we further use the $\mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}$-module structure on $\mathbf{J}^{\mathbb{A}^d}_{\{1,2\}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes\{1,2\}} \right)$.  We introduce the notation
-$$
-\left(l^{\vee}_1\otimes l^{\vee}_2\otimes m\right)\vdash_{\{i,j\}}:\mathbf{J}^{\mathbb{A}^d}_{\overrightarrow{I}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes \overrightarrow{I}} \right)\rightarrow \mathbf{J}^{\mathbb{A}^d}_{\overrightarrow{I}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L})^{\boxtimes\overrightarrow{I}} \right)
-$$
-for the operator which act on the component label by $\{i,j\}\subset \overrightarrow{I}$.
-
-
-
-
-\end{defn}
-
-Let $L=V^{\vee}\oplus V[1-d]$. Consider the element $\mathrm{Id}_V[d-1]\otimes P$. Denote $$\mathcal{P}_{\{i,j\}}=\mathrm{Id}_V[d-1]\otimes P\vdash_{\{i,j\}},\quad \mathcal{P}_{\overrightarrow{I}}=\sum_{\{i,j\}\subset \overrightarrow{I}}\mathcal{P}_{\{i,j\}}.
-$$
-If $\overrightarrow{I}=\overrightarrow{I'}\bigsqcup \overrightarrow{I''}$, we write ${\mathcal{P}}_{\overrightarrow{I'}\overrightarrow{I''}}=\sum\limits_{i'\in \overrightarrow{I'}, i''\in\overrightarrow{I''} }\mathcal{P}_{\{i',i''\}}.$
-
-
-\begin{defn}
-We define a new set of chiral operations on $\underline{\mathrm{Sym}^{\mathrm{Diff}}L}\otimes \mathbf{Unit}$ as follows.
-
-$$
-\mu^{\mathcal{A}}_{\overrightarrow{I}}=\mu^{\mathcal{B}}_{\overrightarrow{I}}\circ e^{\mathcal{P}_{\overrightarrow{I}}}:\mathbf{J}^{\mathbb{A}^d}_{\overrightarrow{I}}\left((\underline{\mathrm{Sym}^{\mathrm{Diff}}L}\otimes \mathbf{Unit})^{\boxtimes\overrightarrow{I}} \right)\rightarrow (\underline{\mathrm{Sym}^{\mathrm{Diff}}L}\otimes \mathbf{Unit})[\mathbb{A}^d]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I}].
-$$
-
-\end{defn}
-
-We use the following convention
-$$
-\overrightarrow{\mathcal{P}}_{\{i,j\}}(-)=\mathcal{P}_{\{i,j\}}(-)=(-)\overleftarrow{\mathcal{P}}_{\{i,j\}}.
-$$
-
 
 \begin{rem}
-    Strictly speaking, $\underline{V^{\vee}}\oplus\underline{V}[1-d]$ should be $\underline{V^{\vee}}\oplus\underline{V}[1-d]\otimes \omega_{\mathbb{A}^d}$ and the propagator should tensor with a section of $\omega_{\mathbb{A}^d}$.
+  In the case that $F=\mathbf{k}$ (concentrated in degree zero), the chiral algebra we are about to define is associated to the
+  following first-order action functional
+  \begin{equation}\label{}
+    \int_{\mathbb{C}^d} \beta \overline{\partial} \gamma
+  \end{equation}
+  where $\beta$ is a form of Dolbeault type $(d,d-1)$ and $\gamma$ is a smooth function.
 \end{rem}
 
-\iffalse
+\begin{defn}{\label{WickContraction}}
+Define the $\mathcal{D}$-module map
 $$
-\mathbf{L}=\frac{\mathbf{J}_{\mathring{\mathbb{A}^d}}\otimes L^{\vee}[d-1]\oplus \mathbf{J}_{\mathring{\mathbb{A}^d}}(\omega_{\mathbb{A}^d}^{-1})\otimes L}{\mathcal{O}[\mathbb{A}^d]\otimes L^{\vee}[d-1]\oplus \omega_{\mathbb{A}^d}^{-1}[\mathbb{A}^d]\otimes L}
+e^{\mathcal{P}_{12}}\colon \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}(\mathbf{F}^{\boxtimes 2})\rightarrow \mathbf{J}^{\{1,2\}}
+_{\mathbb{A}^d}(\mathbf{F}^{\boxtimes 2})
 $$
-\fi
+by extending the canonical pairing 
+$$
+\mathcal{P}_{12}\colon(\underline{F^{\vee}}\otimes\omega^{-1})\boxtimes \underline{F}[1-d]\rightarrow \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}(\mathcal{O}\boxtimes \mathcal{O})
+$$
+by the Leibniz rule.
+\end{defn}
+
+Denote $$ \mathcal{P}_{{I}}=\sum_{\{i,j\}\subset{I}}\mathcal{P}_{\{i,j\}}.
+$$
+If ${I}={I'}\bigsqcup {I''}$, we write ${\mathcal{P}}_{I}=\sum\limits_{i'\in {I'}, i''\in{I''} }\mathcal{P}_{\{i',i''\}}.$
+
+\begin{defn}
+  We define the chiral operations $\{\mu_I^{\mathcal{F}}\}$ on $\mathcal{F}=\mathbf{F}\otimes_{\mathcal{O}_{\mathbb{A}^d}} \omega_{\mathbb{A}^d}^{\blacklozenge}$ as follows.
+  Let $\{\mu_I^{\cF,comm}\}$ be the commutative chiral operations as constructed in proposition \ref{prop:commop}.
+  Then, define $\mu_I^{\mathcal{F}}$ by the composition:
+$$
+\mu^{\mathcal{F}}_{{I}}=\mu^{\mathcal{F},comm}_{I}\circ e^{\mathcal{P}_{{I}}} \colon \mathbf{J}_{\mathbb{A}^d}^{{I}}\left(\mathcal{A}^{\boxtimes{I}} \right)\rightarrow \mathcal{A}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}].
+$$
+\end{defn}
+
+We have the following lemma.
+
 \begin{lem}
-    Let $\alpha_{ I'}\in \mathbf{J}^{\mathbb{A}^d}_{ I'}(\mathbf{Unit}^{\boxtimes  I'}) $, $b'\in \mathcal{B}^{l\boxtimes  I'}[(\mathbb{A}^d)^{ I'}] $ and $b''\in \mathcal{B}^{l\boxtimes \vec{I''}}[(\mathbb{A}^d)^{\vec{I''}}] $. We have
-    $$
-    \mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{ I'}(\alpha_{ I'})(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}})\right)=e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}\mathbf{\Delta}^{(I')}\left(\mu^{\mathbf{Unit}}_{ I'}(\alpha_{ I'})b'\boxtimes b''\cdot f \right)\in \mathbf{J}_{\bullet\bigsqcup\vec{I''}}^{\mathbb{A}^d}(\mathcal{B}\boxtimes \mathcal{B}^{\boxtimes\vec{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]
-    $$
-    where $f\in \mathbf{J}_{( I'),\vec{{I''}}}^{\mathbb{A}^d}(\mathcal{O}_{\mathbb{A}^d}^{\boxtimes\overrightarrow{I'}}\boxtimes\mathbf{Unit}^{\boxtimes\vec{I''}}).
+    Let $\alpha_{{I'}}\in \mathbf{J}_{\mathbb{A}^d}^{{I'}}((\omega_{\mathbb{A}^d}^{\blacklozenge})^{\boxtimes {I'}}) $,
+    $b'\in \mathbf{F}^{\boxtimes {I'}}$ and $b''\in \mathbf{F}^{\boxtimes {I''}}$. We have
+    \begin{multline}
+    \mathbf{\Delta}^{(I')}\left(\mu^{\omega}_{{I'}}(\alpha_{{I'}})(    e^{{\mathcal{P}}_{{I'}{I''}}}(b'\boxtimes
+    b''\cdot f ))\right)=\\ e^{{\mathcal{P}}_{\{\bullet\}{I''}}}\mathbf{\Delta}^{(I')}\left(\mu^{\omega}_{{I'}}(\alpha_{{I'}})(b'\boxtimes b''\cdot f) \right)\in \mathbf{J}^{\{\bullet\}\bigsqcup{I''}}_{\mathbb{A}^d}(\mathcal{B}\boxtimes \mathcal{B}^{\boxtimes{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]
+  \end{multline}
+    for all $f\in \mathbf{J}^{({I'}),\vec{{I''}}}_{\mathbb{A}^d}(\mathcal{O}_{\mathbb{A}^d}^{\boxtimes{I'}}\boxtimes(\omega_{\mathbb{A}^d}^{\blacklozenge})^{\boxtimes{I''}}).
 $
 \end{lem}
 \begin{proof}
+Since $  e^{{\mathcal{P}}_{{I'}{I''}}}$ is a $\mathcal{D}$-module map, we have
+$$
+\mathbf{\Delta}^{(I')}\left(\mu^{\omega}_{{I'}}(\alpha_{{I'}})(    e^{{\mathcal{P}}_{{I'}{I''}}}(b'\boxtimes b''\cdot f ))\right)=\mathbf{\Delta}^{(I')}\left(e^{{\mathcal{P}}_{{I'}{I''}}}(\mu^{\omega}_{{I'}}(\alpha_{{I'}})(    b'\boxtimes b''\cdot f ))\right).
+$$
+Then the lemma follows from the fact that
+$$
+\mathbf{\Delta}^{(I')}\left(e^{{\mathcal{P}}_{I' \sqcup I''}}-\right)=e^{{\mathcal{P}}_{\{\bullet\} \sqcup I''}}\mathbf{\Delta}^{(I')}\left(-\right).
+$$
+\iffalse
+
     This follows from the following observation
     $$
-    \lambda^s_{i'}\cdot \left(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}\right)=\partial_{z^s_{i'}}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}+b'\boxtimes b''\cdot e^{\overleftarrow{\mathcal{P}}_{ I'\vec{I''}}}\cdot \lambda^s_{i'} \cdot f.
+    \lambda^s_{i'}\cdot \left(b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}\right)=\partial_{z^s_{i'}}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}+b'\boxtimes b''\cdot e^{\overleftarrow{\mathcal{P}}_{\vec{I'}\vec{I''}}}\cdot \lambda^s_{i'} \cdot f.
     $$
+\fi
+
 \end{proof}
-\begin{thm}
-    The chiral operations $\{\mu^{\mathcal{A}}_{ I}\}$ defines a $L_{\infty}$-chiral algebra structure on $\mathcal{A}$.
-\end{thm}
+
+We can now prove the following.
+
+\begin{prop}
+    The chiral operations $\{\mu^{\mathcal{F}}_{{I}}\}$ define an $L_{\infty}$-chiral algebra structure on $\mathcal{F}
+    =\mathbf{F}\otimes_{\mathcal{O}_{\mathbb{A}^d}} \omega_{\mathbb{A}^d}^{\blacklozenge}$ for any graded vector space
+    $F$.
+\end{prop}
 \begin{proof}
+From the definition of  $\{\mu^{\mathcal{F}}_{{I}}\}$ and the above lemma, we have
 \begin{align*}
-&\mu^{\mathcal{A}}_{ I}\left(\mathbf{d}(\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
-&=\mu^{\mathcal{B}}_{ I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\mathbf{d}(\alpha_{ I'}b'\boxtimes b''\cdot f)\right)=\mu^{\mathcal{B}}_{ I}\left(\mathbf{d}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{B}}_{ I'\subset  I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I}}}\alpha_{ I'}b'\boxtimes b''\cdot f\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{B}}_{ I'\subset  I}\left(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{ I'}b'\boxtimes b''\cdot f\cdot e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I'}\overrightarrow{I''}}}e^{\overleftarrow{\mathcal{P}}_{\overrightarrow{I''}}}\right)\\
-&=\sum \mu^{\mathcal{B}}_{\bullet\bigsqcup  I- I'}\circ \left(e^{\overrightarrow{\mathcal{P}}_{\bullet\overrightarrow{I''}}}e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I''}}} \mu^{\mathcal{B}}_{ I'\subset  I}(e^{\overrightarrow{\mathcal{P}}_{\overrightarrow{I'}}}\alpha_{ I'}b'\boxtimes b''\cdot f)\right)\\
-&=\sum \mu^{\mathcal{A}}_{\bullet\bigsqcup  I- I'}\circ \mu^{\mathcal{A}}_{ I'\subset  I}\left(\alpha_{ I'}b'\boxtimes b''\cdot f\right).
+&\mu^{\mathcal{F}}_{{I}}\left(\mathbf{d}(\alpha_{{I'}}b'\boxtimes b''\cdot f)\right)\\
+&=\mu^{\mathcal{F},comm}_{{I}}\left(e^{{\mathcal{P}}_{{I}}}\mathbf{d}(\alpha_{{I'}}b'\boxtimes b''\cdot f)\right)
+=\mu^{\mathcal{F},comm}_{{I}}\left(\mathbf{d}(e^{{\mathcal{P}}_{{I}}}(\alpha_{{I'}}b'\boxtimes b''\cdot f))\right)\\
+&=\sum \mu^{\mathcal{F},comm}_{\bullet\bigsqcup {I}-{I'}}\circ \mu^{\mathcal{F},comm}_{{I'}\subset{I}}\left(e^{{\mathcal{P}}_{{I'}}}e^{{\mathcal{P}}_{{I'}{I''}}}e^{{\mathcal{P}}_{{I''}}}(\alpha_{{I'}}b'\boxtimes b''\cdot f) \right)\\
+&=\sum \mu^{\mathcal{F},comm}_{\bullet\bigsqcup {I}-{I'}}\circ \left(e^{{\mathcal{P}}_{\bullet{I''}}}e^{{\mathcal{P}}
+_{{I''}}} \mu^{\mathcal{F},comm}_{{I'}\subset {I}}(e^{{\mathcal{P}}_{{I'}}}\alpha_{{I'}}b'\boxtimes b''\cdot f)\right)\\
+&=\sum \mu^{\mathcal{F}}_{\bullet\bigsqcup{I}-{I'}}\circ \mu^{\mathcal{A}}_{{I'}\subset {I}}\left(\alpha_{{I'}}b'\boxtimes b''\cdot f\right),
 \end{align*}
-
-
+which proves the theorem.
  \end{proof}
+\begin{rem}
+  This is the Wick theorem in higher dimensions. See \cite{gui2023} for the $d=1$ Wick theorem in the language of chiral algebras.    
+\end{rem}
+\begin{rem}
+  Note that while we used the commutative chiral operations as part of the definition of $\{\mu_I^{\mathcal{F}}\}$,
+  this new chiral algebra is \textit{not} commutative.
+\end{rem}
+
 \subsection{From Lie*-algebra to chiral algebra}
 From a Lie*-algebra $L$, we can define the factorization algebra
 $$
