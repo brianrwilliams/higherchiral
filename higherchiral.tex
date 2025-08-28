@@ -202,8 +202,8 @@
 
 \begin{document}
 
-\title[]{The unit chiral algebra}%
-\author{}%
+\title[]{Higher-dimensional chiral algebras in the Jouanolou model}%
+\author{Zhengping Gui, Minghao Wang, Brian Williams}%
 \address{}%
 \email{}%
 
@@ -216,16 +216,22 @@
 %\commby{}%
 % ----------------------------------------------------------------
 \begin{abstract}
-
+We appeal to the theory of Jouanolou torsors to model the coherent cohomology of configuration spaces of points in
+affine space~$\mathbb{A}^d$.
+Using this model, we develop the operadic notion of chiral operations, thus generalizing the notion of \textit{chiral
+algebras} of \cite{BD} to higher dimensions.
+To produce examples, we use a higher-dimensional conceptualization of the residue which is inspired by Feynman
+graph integrals.
 \end{abstract}
 \maketitle
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 % ----------------------------------------------------------------
 
 
 \section{Introduction}
-\section{Conventions}
+\subsection*{Conventions}
 
 \begin{itemize}
 
@@ -252,7 +258,7 @@ $$
 \section{The Jouanolou model and the unit chiral algebra}
 
 \subsection{The Jouanolou model for configuration space}
-The reference is \cite[Section 4.1.3, pp279]{beilinson2004chiral}. Suppose $\pi:Y\rightarrow X$ is a Juanolou map; i.e., $Y$ is a torsor over $X$ with respect to an action of some vector bundle such that $Y$ is an affine scheme. Then for any quasi-coherent sheaf $\mathcal{F}$ on $X$, the global relative de Rham complex
+The reference is \cite[Section 4.1.3, pp279]{BD}. Suppose $\pi:Y\rightarrow X$ is a Juanolou map; i.e., $Y$ is a torsor over $X$ with respect to an action of some vector bundle such that $Y$ is an affine scheme. Then for any quasi-coherent sheaf $\mathcal{F}$ on $X$, the global relative de Rham complex
 $$
 \Gamma(Y,\Omega_{Y/X}\otimes\pi^*\mathcal{F})
 $$
@@ -350,7 +356,7 @@ _{\mathbb{A}^d}^{{I}}(M_{{I}})$ is a right (respectively, left)$\mathcal{D}_{(\m
 
 \begin{rem}
 One can show that $\mathbf{J}_{\mathbb{A}^d}^{{I}}(M_{{I}})$ represents $\R j_{I*}j^*_IM_{I}$ in the derived category
-of $\mathcal{D}$-modules. In fact, we have the universal Jouanolou model \cite[4.1.3. (ii)]{beilinson2004chiral} which
+of $\mathcal{D}$-modules. In fact, we have the universal Jouanolou model \cite[4.1.3. (ii)]{BD} which
 is defined as the jet algebra $\mathcal{J}_{\mathbb{A}^d}^{{I}}:=\mathscr{J}\mathbf{J}_{\mathbb{A}^d}^{{I}}
 =\Omega^{\bullet}_{\mathscr{J}\mathbf{J}_{\mathbb{A}^d}^{{I},0}/\mathcal{O}_{(\mathbb{A}^d)^I}}$.
 In terms of the universal Jouanolou model, we obtain our Jouanolou model by imposing the relations discussed above 
@@ -381,7 +387,7 @@ _{\mathbb{A}^d}^{{I}}[M]\sim Rj_{I*}j^*_IM_{I}$, see \cite{FGY}.
   higher dimensions.
   In complex dimension one, chiral operations form the operadic structure controlling \textit{chiral
   algebras}. 
-  Indeed, in \cite{beilinson2004chiral}, the authors define the space of chiral operations as
+  Indeed, in \cite{BD}, the authors define the space of chiral operations as
     $$
     \mathrm{Hom}_{\mathcal{D}_{X^{{I}}}}\left(j_{*}j^*M^{\boxtimes{I}},\Delta^{(I)}_*M\right).
     $$
@@ -500,12 +506,14 @@ $$
  z^s_j\mapsto z^s_{j}
                     \end{cases}, \quad s=1,\dots,d, \ i\in {I'}, j,j'\in {I''}
 $$
-which is a map of $k[\lambda_{\bullet}]$-modules. It induces a map (by abuse of notation again)
+which is a map of $k[\lambda_{\bullet}]$-modules. 
+It induces a map (by abuse of notation again)
 $$
 c^{(I')}:\left(\left(M\boxtimes M^{\boxtimes I''}\right)\otimes_{\mathcal{O}_{(\mathbb{A}^d)^I}}\mathbf{J}_{\mathbb{A}^d}^{({I'}),{{I''}}}\right)\otimes_{\mathbf{k}[\lambda_{\bullet}]}\mathbf{k}[\lambda_{I'}]\rightarrow \left(\left(M\boxtimes M^{\boxtimes I''}\right)\otimes_{\mathcal{O}_{(\mathbb{A}^d)^\{\bullet\}\sqcup I''}}\mathbf{J}_{\mathbb{A}^d}^{\{\bullet\}\sqcup I''}\right)\otimes_{\mathbf{k}[\lambda_{\bullet}]}\mathbf{k}[\lambda_{I'}].
 $$
+This morphism $c^{(I')}$ is an explicit model for restriction along the diagonal.
 
-Using map $c^{(I')}$, we can construct the $\mathcal{D}$-module map 
+Using the morphism $c^{(I')}$, we can construct the $\mathcal{D}$-module map 
 $$
 c^{(I')}\circ v^{(I')}:\mathbf{J}^{({I'}),{{I''}}}_{\mathbb{A}^d}(\Delta^{I'}_*M\boxtimes M^{\boxtimes{I''}})\rightarrow \mathbf{J}^{\{\bullet\}\sqcup{{I''}}}_{\mathbb{A}^d}(M\boxtimes M^{\boxtimes{I''}})\otimes_{k[\lambda_{\bullet}]}k[\lambda_{I'}]
 $$
@@ -533,6 +541,31 @@ We conclude this section with our main definition.
 where $\mathcal{L}\!\op{ie}_{\infty}$ is the dg operad controlling $L_\infty$ algebras.
 \end{defn}
 
+\begin{rem}
+  A homotopy Jouanolou chiral algebra defines a $d$-dimensional chiral algebra, up to equivalence, in the sense of
+  \cite{FG}.
+\end{rem}
+
+\begin{rem}
+  In dimension $d=1$, the notion of an $L_\infty$ chiral algebra has recently appeared in \cite{SVhtpy}.
+  When $d=1$, our definition reduces to to that of \textit{loc. cit.}.
+\end{rem}
+
+\begin{rem}
+  Using the method of Thom-Sullivan-Whitney for computing homotopy limits of cosimplicial spaces a different model for
+  configuration spaces has recently been presented in \cite{FGY}.
+  The notion of a chiral algebra in \cite{FGY} is equivalent, in a homotopical sense, is equivalent to the notion we
+  present here.
+  On the other hand, explicit examples are presented quite differently in each respective model.
+  For instance, it is clear from our constructions that the examples of chiral algebras which appear in section
+  \ref{s:example} depend continuously on the input data.
+  
+  Another advantage of our approach is that chiral operations in the Jouanolou model are manifestly related to
+  holomorphic quantum field theory; indeed, our construction of the \textit{unit} chiral algebra uses Feynman graph
+  integrals as we will soon explain.
+  Going the opposite direction, we will see in section \ref{??} how our chiral operations can be used to recover
+  explicit formulas for expectation values in higher-dimensional quantum field theory.
+\end{rem}
 
 \section{Feynman graph integral construction}\label{s:feynman}
 
@@ -619,104 +652,114 @@ Thus, we can directly compute:
 \end{proof}
 
 The special feature in dimension one is that the unit chiral algebra has trivial higher operations.
+Notice that by simple degree reasons, the unit chiral algebra must necessarily have vanishing $k \geq 3$-ary
+operations.
+In fact, the operation $\mu_2$ satisfies the ordinary Jacobi identity.
 
-\begin{prop}
-Let $\mu_{ I}=0$ for $| I|\geq3$. Then $\{\mu_{ I}\}$ defines an $L_{\infty}$-chiral algebra structure on~$\omega_{\mathbb{A}^{1}}$.
+\begin{prop}[\cite{BD}, see also \cite{HLdmodule}]
+The operation $\mu_2$ satisfies the Jacobi identity, hence it defines the structure of a (strict, one-dimensional) chiral
+algebra.f
 \end{prop}
-\begin{proof}
-  By degree reasons there can be no higher operations in dimension one.
-  We need to verify skew-symmetry and the ordinary Jacobi identity.
-  These results are standard, see \cite{YiZhiHuang?} for example. 
-  We give a self-contained argument here.
+%\begin{proof}
+%  By degree reasons there can be no higher operations in dimension one.
+%  We need to verify skew-symmetry and the ordinary Jacobi identity.
+%  These results are standard, see \cite{YiZhiHuang?} for example. 
+%  We give a self-contained argument here.
+%
+%  We first verify $\mu_{2}=-\sigma_{12} \cdot \mu_{2}$.   
+%    Let 
+%$$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2\}}),
+%$$
+%where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$. 
+%Applying the definition, we have
+%\begin{align*}
+%  \mu_{2}(\alpha)
+%    &=
+%    \mu_{2}(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\\
+%    &=
+%    \mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})\\
+%    &=
+%    \frac{1}{2\pi i}\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{1}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\cdot g(z_{1},z_{2})\\
+%    &=
+%     \frac{1}{2\pi i}\left(\oint_{z_{1}=w}\frac{1}{(z_{1}-w)^{n}}e^{\lambda_{1}(z_{1}-w)}dz_{1}\boxtimes dw\right)\cdot g(z_{1},z_{2}).
+%\end{align*}
+%
+%Let $z_{1}=2w-\tilde{z}_2$, we get
+%\begin{align*}
+%  \mu_{2}(\alpha)
+%    &=
+%    -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(w-\tilde{z}_{2})}e^{\lambda_{\bullet}(w-\tilde{z}_{2})}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%    &=
+%     -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=0}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%     &=
+%      -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%      &-
+%     \frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=1}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2}),
+%\end{align*}
+%where $\lambda_{\bullet}=\lambda_{1}+\lambda_{2}$.
+%
+%The first term equals
+%$$
+%-\sigma_{12}\mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})=-\mu_{\{2<1\}}
+%\circ\tau_{\sigma_{12}}(\alpha).
+%$$
+%
+%On the other hand, the second term is
+%\begin{align*}
+%    &-\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
+%     &=
+%     \frac{\lambda_{\bullet}dw}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k-1}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\right)\cdot g(z_{1},z_{2}).
+%\end{align*}
+%Note that $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}
+%k[\lambda_{1},\lambda_{2}]$, so that this equals zero. 
+%So, we proved that the two-ary operation is anti-symmetric $\mu_{\{1,2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
+%
+%We next verify the Jacobi identity.
+%Let $\beta\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2<3\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2,3\}})$. Consider the $3$-chain
+%\begin{align*} 
+%M_{w}=&\{(z_{1},z_{2},z_{3})\in (\mathbb{A}^1)^{1,2<3}|z_{1}+z_{2}+z_{3}=w,|z_{i}-z_{j}|\geq 1,\;i\neq j;\\
+%&\sum_{k=1}^{3}|z_{k}-w|^{2}=100\}.
+%\end{align*}
+%Since $\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}$ is a closed differential form on $M_{w}$, we can use Stokes theorem to get the following result:
+%\begin{equation}
+%\begin{aligned}
+%\label{stokes thm1}
+%    0 &= 
+%    \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{M_{w}}d\left(\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\\
+%    &=
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3},
+%\end{aligned}
+%\end{equation}
+%where $\lambda_{\blacksquare}=\sum_{k=1}^3\lambda_{k}$.
+%The right hand side of $(\ref{stokes thm1})$ is
+%\begin{align*}
+%     &
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\\
+%     &=
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{2}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &-
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &+
+%     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{1}=z_{2}}\oint_{z_{2}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
+%     &=
+%     \mu_{\{\bullet<3\}}\circ \mu_{\{1,2\}\subset\{1,2<3\}}(\beta)\\
+%     &-
+%     \mu_{\{\bullet<2\}}\circ \mu_{\{1<3\}\subset\{1,2<3\}}(\beta)\\
+%     &+
+%     \mu_{\{\bullet<1\}}\circ \mu_{\{2<3\}\subset\{1,2<3\}}(\beta)\\
+%     &=  
+%     \sum_{ I'\subset\{1,2<3\}}\mathrm{sgn}(\sigma_{ I'\subset I})(-1)^{|I'|(|I|-|I'|)}\mu_{\{\bullet\}
+%     \cup I- I'}\circ \mu_{ I'\subset I}(\beta).
+%\end{align*}
+%Thus, $\mu_2$ satisfies the Jacobi identity.
+%\end{proof}
+In the definition of chiral operation for $\omega_{\mathbb{A}^{1}}$, we used the residue. 
+Now we introduce an alternative method to define the residue.
+The advantage of this definition is that it lends itself to a natural higher-dimensional extension.
+Thus, this is the approach we will take in the next section to define the higher-dimensoinal chiral operations (for the
+unit chiral algebra).
+The first step is to prove the following integral representation of the Cauchy kernel.
 
-  We first verify $\mu_{2}=-\sigma_{12} \cdot \mu_{2}$.   
-    Let 
-$$\alpha=\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2}\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2\}}),
-$$
-where $g(z_{1},z_{2})\in k[z_{1},z_{2}]$. 
-Applying the definition, we have
-\begin{align*}
-  \mu_{2}(\alpha)
-    &=
-    \mu_{2}(\frac{g(z_{1},z_{2})}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\\
-    &=
-    \mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})\\
-    &=
-    \frac{1}{2\pi i}\left(e^{-(\lambda_{1}+\lambda_{2})w}\left. \left(\oint_{z_{1}=z_2}\frac{1}{(z_{1}-z_{2})^{n}}e^{\lambda_{1}z_{1}+\lambda_{2}z_{2}}dz_{1}\boxtimes dz_{2}\right)\right|_{z_{2}=w}\right)\cdot g(z_{1},z_{2})\\
-    &=
-     \frac{1}{2\pi i}\left(\oint_{z_{1}=w}\frac{1}{(z_{1}-w)^{n}}e^{\lambda_{1}(z_{1}-w)}dz_{1}\boxtimes dw\right)\cdot g(z_{1},z_{2}).
-\end{align*}
-
-Let $z_{1}=2w-\tilde{z}_2$, we get
-\begin{align*}
-  \mu_{2}(\alpha)
-    &=
-    -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(w-\tilde{z}_{2})}e^{\lambda_{\bullet}(w-\tilde{z}_{2})}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
-    &=
-     -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=0}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
-     &=
-      -\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
-      &-
-     \frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=w}\frac{1}{(w-\tilde{z}_{2})^{n}}e^{\lambda_{2}(\tilde{z}_{2}-w)}\left(\sum_{k=1}^{n-1}\frac{1}{k!}\lambda_{\bullet}^{k}(w-\tilde{z}_{2})^{k} \right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2}),
-\end{align*}
-where $\lambda_{\bullet}=\lambda_{1}+\lambda_{2}$.
-
-The first term equals
-$$
--\sigma_{12}\mu_{2}(\frac{1}{(z_{1}-z_{2})^{n}}dz_{1}\boxtimes dz_{2})\cdot g(z_{1},z_{2})=-\mu_{\{2<1\}}
-\circ\tau_{\sigma_{12}}(\alpha).
-$$
-
-On the other hand, the second term is
-\begin{align*}
-    &-\frac{1}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\boxtimes dw\right)\cdot g(z_{1},z_{2})\\
-     &=
-     \frac{\lambda_{\bullet}dw}{2\pi i}\left(\oint_{\tilde{z}_{2}=0}\left(\sum_{k=1}^{n-1}\frac{1}{k!}(-\tilde{z}_{2})^{k-n} \lambda_{\bullet}^{k-1}e^{\lambda_{2}(\tilde{z}_{2})}\right)d\tilde{z}_{2}\right)\cdot g(z_{1},z_{2}).
-\end{align*}
-Note that $\lambda_{\bullet}dw=0$ in $\omega_{\mathbb{A}^{1}}[\mathbb{A}^{1}]\otimes_{k[\lambda_{\bullet}]}
-k[\lambda_{1},\lambda_{2}]$, so that this equals zero. 
-So, we proved that the two-ary operation is anti-symmetric $\mu_{\{1,2\}}=-\mu_{\{2<1\}}\circ \tau_{\sigma_{12}}.$
-
-We next verify the Jacobi identity.
-Let $\beta\in \mathbf{J}^{\mathbb{A}^1}_{\{1,2<3\}}(\omega_{\mathbb{A}^1}^{\boxtimes\{1,2,3\}})$. Consider the $3$-chain
-\begin{align*} 
-M_{w}=&\{(z_{1},z_{2},z_{3})\in (\mathbb{A}^1)^{1,2<3}|z_{1}+z_{2}+z_{3}=w,|z_{i}-z_{j}|\geq 1,\;i\neq j;\\
-&\sum_{k=1}^{3}|z_{k}-w|^{2}=100\}.
-\end{align*}
-Since $\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}$ is a closed differential form on $M_{w}$, we can use Stokes theorem to get the following result:
-\begin{equation}
-\begin{aligned}
-\label{stokes thm1}
-    0 &= 
-    \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{M_{w}}d\left(\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\\
-    &=
-     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3},
-\end{aligned}
-\end{equation}
-where $\lambda_{\blacksquare}=\sum_{k=1}^3\lambda_{k}$.
-The right hand side of $(\ref{stokes thm1})$ is
-\begin{align*}
-     &
-     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\int_{\partial M_{w}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\\
-     &=
-     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{2}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
-     &-
-     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{2}=z_{3}}\oint_{z_{1}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
-     &+
-     \frac{1}{(2\pi i)^{2}}e^{-\lambda_{\blacksquare }w}\left.\left(\oint_{z_{1}=z_{2}}\oint_{z_{2}=z_{3}}\beta e^{\sum_{k=1}^{3}z_{k}\lambda_{k}}dz_{1}\boxtimes dz_{2}\boxtimes dz_{3}\right)\right|_{z_{3}=w}\\
-     &=
-     \mu_{\{\bullet<3\}}\circ \mu_{\{1,2\}\subset\{1,2<3\}}(\beta)\\
-     &-
-     \mu_{\{\bullet<2\}}\circ \mu_{\{1<3\}\subset\{1,2<3\}}(\beta)\\
-     &+
-     \mu_{\{\bullet<1\}}\circ \mu_{\{2<3\}\subset\{1,2<3\}}(\beta)\\
-     &=  
-     \sum_{ I'\subset\{1,2<3\}}\mathrm{sgn}(\sigma_{ I'\subset I})(-1)^{|I'|(|I|-|I'|)}\mu_{\{\bullet\}
-     \cup I- I'}\circ \mu_{ I'\subset I}(\beta).
-\end{align*}
-Thus, $\mu_2$ satisfies the Jacobi identity.
-\end{proof}
-In the construction of chiral algebra structure on $\omega_{\mathbb{A}^{1}}$, we used the concept of residue. Now we introduce another method to define residues, which can be extended to construct $L_{\infty}$-chiral algebra structure on the canonical bundle of higher dimensional affine spaces.
 \begin{lem}
     $$
     \frac{1}{z}=-\int_{0}^{+\infty}e^{-zy}dy,
@@ -1688,13 +1731,14 @@ In order for such operations to define a chiral algebra, we need to check that $
 This is the main result of this section.
 
 \begin{thm}
-    $\{\tilde{\mu}_{ I}\}_{ I\in \overrightarrow{\mathbf{fSet}}}$ satisfies the following properties:
+    $\{\tilde{\mu}_{ I}\}$ satisfies the following properties:
     \begin{enumerate}
         \item $\tilde{\mu}_{ I}=\tilde{\mu}_{ I_{\sigma_{ii'}}}\circ\tau_{\sigma_{ii'}}$, where $\sigma_{ii'}$ is the permutation of $i\neq i'\in I$.
-        \item 
+        \item For any finite set $I$ one has 
         $$
         -\tilde{\mu}_{ I}\circ \mathbf{d}=\sum_{ I'\subset I}\tilde{\mu}_{\{\bullet\}\cup I- I'}\circ \tilde{\mu}_{ I'\subset I}
         $$
+        where the sum is over subsets $I' \subset I$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1806,9 +1850,9 @@ We assume, for concreteness, that $d=2$ in this subsection.
         \end{cases}
         $$
         
-        Let's compute $\mu^{\mathbf{Unit}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By proposition \ref{explicit formula}, we have
+        Let's compute $\mu^{\mathbf{\omega}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By proposition \ref{explicit formula}, we have
         \begin{align*}
-            &\mu^{\mathbf{Unit}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &\mu^{\omega}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
             &=\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}
         \iota_{d^{2}\tilde{z}_{1}d^{2}\bar{\tilde{z}}_{1}}\right.\\
         &\left.\left.\circ (-d\hat{y}_{e_{1}}^{1})\circ(-(\sum_{s=1}^{2}(\partial_{\lambda_{e_{2}}^{s}}+\tilde{z}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{2})
@@ -1818,13 +1862,13 @@ We assume, for concreteness, that $d=2$ in this subsection.
         \end{align*}
         Similarly, we have
         \begin{align*}
-            &\mu^{\mathbf{Unit}}_{\{1,2\}}(-p_{(\vec{\Gamma},m_{2},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &\mu^{\omega}_{\{1,2\}}(-p_{(\vec{\Gamma},m_{2},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
             &=
         \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
         \end{align*}
         By proposition \ref{useful property}, we can get
         \begin{align*}
-            &\mu^{\mathbf{Unit}}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
+            &\mu^{\omega}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
             &=
         \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
         &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w
@@ -1832,21 +1876,8 @@ We assume, for concreteness, that $d=2$ in this subsection.
         The integral above produces $1$, as desired.
     \end{proof}
 \end{defn}
-\iffalse
-\subsection{Trace map on the compacted supported chiral chain complex}
 
-\begin{thm}
-    There exist a trace map on the compacted supported unit chiral chain complex
-    $$
-    \mathbf{Tr}:C^{ch}_c(\mathbb{A}^d,\omega_{\mathbb{A}^d}[d-1])\rightarrow\mathbb{C}
-    $$
-    $$
-    \mathbf{Tr}\left((\bar{\partial}+\mathbf{d}+d_{\mu_2}+d_{\mu_3}+\cdots)(-)\right)=0.
-    $$
-\end{thm}
-
-\fi
-\section{Examples of higher chiral algebras}
+\section{Examples of higher chiral algebras}\label{s:example}
 
 We provide examples of chiral algebras in the Jouanolou model.
 These include commutative chiral algebras and free ghost chiral algebras.
@@ -1947,7 +1978,7 @@ If ${I}={I'}\bigsqcup {I''}$, we write ${\mathcal{P}}_{I}=\sum\limits_{i'\in {I'
 \begin{defn}
   We define the chiral operations $\{\mu_I^{\mathcal{F}}\}$ on $\mathcal{F}=\mathbf{F}\otimes_{\mathcal{O}_{\mathbb{A}^d}} \omega_{\mathbb{A}^d}^{\blacklozenge}$ as follows.
   Let $\{\mu_I^{\cF,comm}\}$ be the commutative chiral operations as constructed in proposition \ref{prop:commop}.
-  Then, define $\mu_I^{\mathcal{F}}$ by the composition:
+  Then, define the new chiral operations $\mu_I^{\mathcal{F}}$ by the composition:
 $$
 \mu^{\mathcal{F}}_{{I}}=\mu^{\mathcal{F},comm}_{I}\circ e^{\mathcal{P}_{{I}}} \colon \mathbf{J}_{\mathbb{A}^d}^{{I}}\left(\mathcal{A}^{\boxtimes{I}} \right)\rightarrow \mathcal{A}\otimes_{\mathbf{k}[\lambda]}\mathbf{k}[\lambda_{I}].
 $$
@@ -2005,34 +2036,126 @@ _{{I''}}} \mu^{\mathcal{F},comm}_{{I'}\subset {I}}(e^{{\mathcal{P}}_{{I'}}}\alph
 which proves the theorem.
  \end{proof}
 \begin{rem}
-  This is the Wick theorem in higher dimensions. See \cite{gui2023} for the $d=1$ Wick theorem in the language of chiral algebras.    
+  This is the Wick theorem in higher dimensions, which may be more familiar in the context of the operator product
+  expansion for vertex algebras. 
+  See \cite{gui2023} for the $d=1$ Wick theorem in the language of chiral algebras.    
 \end{rem}
 \begin{rem}
   Note that while we used the commutative chiral operations as part of the definition of $\{\mu_I^{\mathcal{F}}\}$,
   this new chiral algebra is \textit{not} commutative.
 \end{rem}
 
-\subsection{From Lie*-algebra to chiral algebra}
-From a Lie*-algebra $L$, we can define the factorization algebra
+Let $h(-)$ denote the de Rham cohomology functor.
+We define a bi-linear map
 $$
-\mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}
+\left(\mathbf{J}^{2,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)^{\otimes_{\mathbf{k}}2}\rightarrow
+\mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes\mathcal{F}\boxtimes \mathcal{O})
 $$
-its fiber over $(z_i)_{i\in I}\in (\mathbb{A}^d)^{ I}$ is the universal enveloping algebra
+We further apply the de Rham cohomology of the chiral operation
 $$
-\left(\mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\right)_{(z_i)_{i\in I}}=U\left(H^{\bullet}(\mathbb{A}^d-(z_i)_{i\in I},h(L))\right)/U\left(h(L)[\mathbb{A}^d]\right).
+(h\boxtimes h\boxtimes 1)\circ\mu_2 \colon \mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}
+\boxtimes\mathcal{F}\boxtimes \mathcal{O})\rightarrow h^{Lie}(\mathcal{F}).
 $$
-The right $\mathcal{D}$-module $\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit}$ is a chiral algebra. The (strict) factorization property gives the isomorphism of $\mathcal{D}$-modules
-$$ \mathbf{J}^{\mathbb{A}^d}_{ I}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\xrightarrow{\sim}\mathbf{J}^{\mathbb{A}^d}_{ I}\left(\mathbf{U}(L)_{\mathbb{A}^d}^{\boxtimes I}\right).
+This induces a bi-linear map
 $$
-The chiral operation then is the composition
+[-,-]:h^{Lie}(\mathcal{F})\otimes_{\mathbf{k}}h^{Lie}(\mathcal{F})\rightarrow h^{Lie}(\mathcal{F}).
 $$
-\mu:\mathbf{J}^{\mathbb{A}^d}_{ I}\left((\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit})^{\boxtimes I}\right)\xrightarrow{\sim} \mathbf{J}^{\mathbb{A}^d}_{ I}(\mathbf{Unit}^{\boxtimes I})\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}\xrightarrow{\mu^{\mathbf{Unit}}}\Delta_*\mathbf{Unit}\otimes \mathbf{U}(L)_{(\mathbb{A}^d)^{ I}}
-$$
-$$
-\xrightarrow{\text{factorization}}\Delta_*\left(\mathbf{U}(L)_{\mathbb{A}^d}\otimes \mathbf{Unit}\right).
-$$
+
+\begin{prop}
+  The triple $(h(\mathcal{F}, d, [-,-])$ is a dg Lie algebra.
+\end{prop}
+
 \subsection{The Faonte-Hennion-Kapranov central extension via chiral operations}
 
+In this section, denote $\mathsf{A}^\bu_d := \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}$ the Jouanolou model for the configuration
+space of two points in~$\mathbb{A}^d$.
+It is a commutative dg algebra model for the derived global sections of the structure sheaf of the punctured affine space $\mathbb{A}^d
+\setminus \{0\}$.
+For a Lie algebra $\mathfrak{g}$, introduce the following dg Lie algebra
+$$
+\mathfrak{g}^{\bullet}_d=\mathfrak{g}\otimes_{\mathbf{k}} \mathsf{A}_d^{\bullet}.
+$$
+This dg Lie algebra was introduced in \cite{FHK} as a higher-dimensional generalization of current algebras which
+appear in symmetries of chiral conformal field theory \cite{GWkm}.
+One of the main results of \cite{FHK} is that invariant polynimials of degree $(d+1)$ on the Lie algebra $\mathfrak{g}$ give
+rise to nontrivial $L_\infty$ central extensions of this dg Lie algebra.
+The centrally extended algebras provide higher-dimensional, or multivariate, generalizations of the famous affine Kac--Moody algebras. 
+
+Tied to the usual affine Kac--Moody algebra is a well-known chiral (and vertex) algebra.
+In fact, it is a special case of a general enveloping algebra construction of a chiral algebra from any Lie$^\star$ algebra.
+The notion of a Lie$^\star$ algebra can be generalized to higher dimensions.
+While we do not purse the construction here, we do expect a universal enveloping-type construction which associates to
+such a higher-dimensional Lie$^\star$ algebra a higher chiral algebra in the sense of this work.
+We leave this problem to future work.
+
+Instead, we will give a more direct interpretation of the higher-dimemnsional Kac--Moody algebra in terms of its "free
+field realization" using the higher Wick's theorem of the previous section.
+
+Let $V$ be a $\mathfrak{g}$-representation.
+We will assume that $V$ is an ordinary vector space, rather than a graded one, for simplicity.
+The free ghost chiral algebra $\mathcal{F}$ associated to $V$, as defined in the previous section, can be identified,
+as graded $\mathcal{D}$-module, with
+$$
+\mathcal{F}=\mathrm{Sym}(\underline{V^{\vee}}_{\mathcal{D}}\otimes\omega^{-1}\oplus \underline{V}_{\mathcal{D}}[1-d]\otimes\omega_{\mathcal{D}}\otimes\omega^{-1})\otimes\omega[d-1].
+$$
+%It contains the Lie* algebra
+%$$
+%\underline{V^{\vee}}_{\mathcal{D}}[d-1]\oplus\underline{V}_{\mathcal{D}}\otimes\omega_{\mathcal{D}}\oplus \omega[d-1].
+%$$
+The $\mathfrak{g}$-representation $V$ defines the cochain map 
+$$
+\rho \colon \mathfrak{g}_d^{\bullet}\rightarrow (V^{\vee}\otimes_{\mathbf{k}} V)\otimes_{\mathbf{k}} \mathsf{A}
+_d^{\bullet}\subset h^{Lie}(\mathcal{F}):=(h\boxtimes 1)\left(\mathbf{J}^{2,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)
+$$
+
+
+\begin{prop}
+    The map $\rho \colon \mathfrak{g}^{\bullet}_d\rightarrow h^{Lie}(\mathcal{F})$ is a map of dg Lie algebras.
+\end{prop}
+\begin{proof}
+    This follows from $L_\infty$-relations. We have
+    $$
+    \sum \mu_2\circ \mu_2\left(a_1\boxtimes a_2\boxtimes a_3\cdot \alpha_{1\ast}\alpha_{2\ast}\alpha_{3\ast}\right)=\mu_3\left(\mathbf{d}(a_1\boxtimes a_2\boxtimes a_3)\cdot \alpha_{1\ast}\alpha_{2\ast}\alpha_{3\ast}\right)=0.
+    $$
+\end{proof}
+
+Now, we move onto the central extension.
+Following \cite{FHK}, we consider the following graded skew-symmetric functional $\gamma_P:\left(\mathfrak{g}_d^{\bullet}[1]\right)^{\otimes_{\mathbf{k}}d+1}\rightarrow \mathbf{k}$
+$$
+\gamma_P\left((x_0\otimes f_0)\otimes(x_1\otimes f_1)\otimes \cdots \otimes (x_d\otimes f_d) \right)=P(x_0,\dots,x_d)\cdot \mathrm{Res}\left(f_0\cdot \partial f_1\wedge\cdots \wedge \partial f_d\right).
+$$
+Here $P$ is given by
+$$
+P(x_0,\dots,x_{d})=\frac{1}{(d+1)!}\sum_{\sigma\in S_{n+1}}\mathrm{tr}_V\left(x_{\sigma(0)}\cdots x_{\sigma(d)}\right).
+$$
+Where $\op{tr}_V$ is the trace taken in the representation $V$.
+
+\begin{prop}
+    Define the map
+    $$
+\gamma^{ch}:\left(\mathbf{J}^{2,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})[1]\right)^{\otimes_{\mathbf{k}} d+1}\rightarrow \mathbf{k}[z^r]^{1\leq r\leq n}
+    $$
+    by sending $\left(f(z_1,z)a_1\boxtimes 1\right)\otimes\cdots \otimes \left(f(z_{d+1},z)a_{d+1}\boxtimes 1\right) $ to    $$\mathrm{Res}\left(\mu_{d+1}(a_1\boxtimes\cdots \boxtimes a_{d+1})\cdot f_1(z_1,z)\cdots f_{d+1}(z_{d+1},z)\right)
+    $$
+    where $\mu_{d+1}$ is the $(d+1)$st chiral operation underlying $\mathcal{F}$ as defined in the previous section.
+    Then the cocycle $\gamma_P$ defined in \cite{FHK} is given by the composition $\gamma^{ch}\circ\iota$.
+\end{prop}
+
+\subsection{Higher Virasoro structures}
+
+Let $\mathfrak{witt}_d^\bu$ denote the Jouanolou model for the configuration space of two points with coefficients in
+the tangent sheaf.
+It is a model for the derived global sections of the tangent sheaf over the punctured affine space $\mathbb{A}^d
+\setminus \{0\}$.
+In \cite{bwvir2} a linear map 
+\begin{equation}\label{}
+  H^{2d+2}(BU(d) ; \mathbb{C}) \to H^2_{\op{Lie}} (\mathfrak{witt}_d^\bu) 
+\end{equation}
+is produced and is conjectured to be an isomorphism.
+In dimension $d=1$, this map is known to be an isomorphism and the universal class $c_1^2$ coincides with the usual
+Virasoro central extension. 
+In general, this map tells us that universal $d$-dimensional characteristic classes of degree $2d+2$ give rise to $L_\infty$ central
+extensions of $\mathfrak{witt}_d^\bu$. 
 
 \section{The unit chiral algebra in $\mathbb{A}^2$ in more detail}
 \Gui{Add introduction}
