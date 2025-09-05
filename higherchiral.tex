@@ -319,7 +319,7 @@ operators on $(\mathbb{A}^d)^{{I}}$. The space of global sections of $\mathcal{D
 by $z^s_{i}$ and $ \partial_{z^s_{i}}$ subject to the usual relations $[\partial_{z^s_{i}},z^s_{i}]=1$. 
 We will mainly deal with quasi-coherent sheaves ($\mathcal{D}$-modules) on $(\mathbb{A}^n)^k$ and to simplify notation we will not distinguish the global section $\Gamma\left((\mathbb{A}^n)^k,\mathcal{F}\right)$ and $\mathcal{F}$ itself.
 
-\begin{prop}
+\begin{prop}\label{prop:dmodulestr}
     The Jouanolou model $\mathbf{J}_{\mathbb{A}^d}^{{I}}$ has a left $\mathcal{D}_{(\mathbb{A}^d)^{{I}}}$-module
     structure where $z^s_i$ acts by multiplication and
     \[
@@ -658,7 +658,7 @@ In fact, the operation $\mu_2$ satisfies the ordinary Jacobi identity.
 
 \begin{prop}[\cite{BD}, see also \cite{HLdmodule}]
 The operation $\mu_2$ satisfies the Jacobi identity, hence it defines the structure of a (strict, one-dimensional) chiral
-algebra.f
+algebra.
 \end{prop}
 %\begin{proof}
 %  By degree reasons there can be no higher operations in dimension one.
@@ -1645,7 +1645,7 @@ In part, it implies that the formal $\mathcal{D}_{(\mathbb{A}^{d})^{ I}}$-module
         Now, (1) follows from the fact that the integral of a total derivative is zero. By dominated convergence theorem for derivatives, we can interchange the order of taking derivative and integration. So we proved (2).
     \end{proof}
 \end{prop}
-\subsection{Construction of the unit chiral algebra on $\omega_{\mathbb{A}^{d}}[d-1]$}.
+\subsection{Construction of the unit chiral algebra on $\mathbb{A}^d$} \label{s:unit}
 
 We culminate this section with a construction of an $L_{\infty}$ chiral algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ by using residues.
 This is precisely the \textit{unit chiral algebra} in dimension $d$.
@@ -1791,90 +1791,6 @@ the shifted $L_{\infty}$ chiral algebra structure $\{\tilde{\mu}_{ I}\}_{ I\in \
   The $L_{\infty}$ algebra structure on $\omega_{\mathbb{A}^{d}}[d-1]$ is called the \textit{unit} $L_{\infty}$ chiral
   algebra structure. We denote it by $\mathbf{Unit}[\mathbb{A}^d]$. The corresponding $L_{\infty}$ operations are
   denoted by $\{\mu^{\omega}_{ I}\}_{ I\in \mathbf{fSet}}$.
-\end{defn}
-
-\subsection{Explicit formulas in dimension two}
-In this subsection, we compute the 2-operation on a special element called propagator. 
-We assume, for concreteness, that $d=2$ in this subsection.
-\begin{defn}
-    The propagator $P_{12}$ is an element of $\mathbf{J}^{\{1,2\}}_{\mathbb{A}^{2}}$, which is given by 
-    $$
-    P_{12}=x_{12}^1\mathbf{d}x_{12}^{2}-x_{12}^2\mathbf{d}x_{12}^{1}.
-    $$
-    \begin{prop}
-        We have the following identity:
-        $$
-        \mu^{\omega}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})=d^{2}w.
-        $$
-    \end{prop}
-    \begin{proof}
-    Note $P_{12}$ contains two terms. We first find the Feynman graphs which correspond to these two monomials. Let
-    $\vec{\Gamma}$ be the directed graph constructed as follows (see figure \ref{fig:kronecker-quiver}):
-        \begin{itemize}
-            \item $\vec{\Gamma}_{0}=\{1,2\}$ and $\vec{\Gamma}_{1}=\{e_{1},e_{2}\}$.
-            \item $t(e_{1})=t(e_{2})=1$ and $h(e_{1})=h(e_{2})=2$.
-        \end{itemize}
-\begin{figure}[ht]
-  \centering
-  \begin{tikzpicture}[
-    vertex/.style={circle, draw, minimum size=1cm},
-    >={Straight Barb[scale=1.2]},  % arrow style
-    shorten >=2pt,
-    shorten <=2pt,
-    node distance=3cm
-  ]
-  % Nodes
-  \node[vertex] (A) {1};
-  \node[vertex, right=of A] (B) {2};
-
-  % Arrows: two parallel arrows from A to B
-  \draw[->] (A) to[out=45,in=135] (B);
-  \draw[->] (A) to[out=-45,in=-135] (B);
-\end{tikzpicture}
-  \caption{Kronecker graph}
-  \label{fig:kronecker-quiver}
-\end{figure}
-        We consider two Feynman graphs $(\vec{\Gamma},m_{1},2)$ and $(\vec{\Gamma},m_{2},2)$, where $m_{1}$ and $m_{2}$ is defined by
-        $$
-        \begin{cases}
-            m_{1}(e_{1})=1, m_{1}(e_{2})=2.\\
-            m_{2}(e_{1})=2, m_{2}(e_{2})=1.
-        \end{cases}
-        $$
-        Then we have $p_{(\vec{\Gamma},m_{1},2)}=x_{12}^1\mathbf{d}x_{12}^{2}$ and $p_{(\vec{\Gamma},m_{2},2)}=x_{12}^{2}
-        \mathbf{d}x_{12}^{1}$. The graphical Green's function can be obtained by corollary \ref{boundness}:
-        $$
-        \begin{cases}
-            d^{-1}_{\vec{\Gamma}}(t)_{e_{1}1}=\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}},\\
-            d^{-1}_{\vec{\Gamma}}(t)_{e_{2}1}=\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}.
-        \end{cases}
-        $$
-        
-        Let's compute $\mu^{\mathbf{\omega}}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})$. By proposition \ref{explicit formula}, we have
-        \begin{align*}
-            &\mu^{\omega}_{\{1,2\}}(p_{(\vec{\Gamma},m_{1},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
-            &=\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}
-        \iota_{d^{2}\tilde{z}_{1}d^{2}\bar{\tilde{z}}_{1}}\right.\\
-        &\left.\left.\circ (-d\hat{y}_{e_{1}}^{1})\circ(-(\sum_{s=1}^{2}(\partial_{\lambda_{e_{2}}^{s}}+\tilde{z}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{2})
-        (d^{2}z_{1}\boxtimes d^{2}z_{2})\right)\right|_{\tilde{z}_{1}=0,\tilde{z}_{2}=w}\\
-        &=
-        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
-        \end{align*}
-        Similarly, we have
-        \begin{align*}
-            &\mu^{\omega}_{\{1,2\}}(-p_{(\vec{\Gamma},m_{2},2)}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
-            &=
-        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
-        \end{align*}
-        By proposition \ref{useful property}, we can get
-        \begin{align*}
-            &\mu^{\omega}_{\{1,2\}}(P_{12}d^{2}z_{1}\boxtimes d^{2}z_{2})\\
-            &=
-        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
-        &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w
-        \end{align*}
-        The integral above produces $1$, as desired.
-    \end{proof}
 \end{defn}
 
 \section{Examples of higher chiral algebras}\label{s:example}
@@ -2157,15 +2073,27 @@ Virasoro central extension.
 In general, this map tells us that universal $d$-dimensional characteristic classes of degree $2d+2$ give rise to $L_\infty$ central
 extensions of $\mathfrak{witt}_d^\bu$. 
 
-\section{The unit chiral algebra in $\mathbb{A}^2$ in more detail}
-\Gui{Add introduction}
-\subsection{Residues as 2-chiral operations}
-\Gui{Revise the convention}
+\section{The unit chiral algebra in $\mathbb{A}^2$ in detail}
+
+In this section we unpack the two-dimensional chiral operations in greater detail.
+For simplicity, we denote by $\mu_k$ the $k$-ary chiral operation for the unit chiral algebra $\omega_{\mathbb{A}^2}[1]
+$ as defined in section \ref{s:unit}.
+
+\subsection{The propagator}
+First, we begin with the definition.
+\begin{defn}\label{dfn:prop}
+    The propagator $P_{12}$ is an element of $\mathbf{J}^{\{1,2\}}_{\mathbb{A}^{2}}$, which is given by 
+    $$
+    P_{12}=x_{12}^1\mathbf{d}x_{12}^{2}-x_{12}^2\mathbf{d}x_{12}^{1}.
+    $$
+  \end{defn}
+
 From now on, we will use the notation
 $$
 (f|g)=f^1g^1+f^2g^2,\quad f\wedge g=f^1g^2-f^2g^1
 $$
-for variables $f,g$ with superscript $1,2$. For variables $(\lambda^1,\lambda^2), (x^1,x^2), (z^1,z^2)$, we have
+for variables $f,g$ with superscript $1,2$. 
+For variables $(\lambda^1,\lambda^2), (x^1,x^2), (z^1,z^2)$, we define the antisymmetric symbols
 $$
 \lambda\wedge z=\lambda^1z^2-\lambda^2z^1=z^2\lambda^1-z^1\lambda^2=-z\wedge\lambda
 $$
@@ -2173,12 +2101,80 @@ and
 $$
 \lambda\wedge x=\lambda^1x^2-\lambda^2x^1=x^2\lambda^1+x^1x^2-x^1\lambda^2-x^1x^2=-x\wedge\lambda.
 $$
-We will denote by $\boldsymbol{\theta}_i,i\in  I$ the shifted top form
+We will denote by $d\mathbf{z}^{\blacklozenge}_i,i\in {I}$ the shifted top form
 $$
-\boldsymbol{\theta}_i=dz_i^1\wedge dz^2_i[1].
+d\mathbf{z}^{\blacklozenge}_i=dz_i^1\wedge dz^2_i[1],\quad d\mathbf{z}^{\blacklozenge}_I:=\boxtimes_{i\in I}d\mathbf{z}^{\blacklozenge}_i.
 $$
 
-We introduce new formal variables $\mathfrak{z}_{12}=(\mathfrak{z}_{12}^1,\mathfrak{z}^2_{12})$ to form a generating power series
+Our first result is the simplest nontrivial computation of the chiral two-ary operation.
+    \begin{prop}
+        We have the following identity:
+        $$
+        \mu_{2}(P_{12}
+        d \mathbf{z}_{1}^{\blacklozenge} \boxtimes d \mathbf{z}^{\blacklozenge}_{2}) 
+        = d \mathbf{z}
+        ^{\blacklozenge} .
+        $$
+    \end{prop}
+    \begin{proof}
+    Note $P_{12}$ contains two terms. We first find the Feynman graphs which correspond to these two monomials. Let
+    $\vec{\Gamma}$ be the directed graph constructed as follows:
+        \begin{itemize}
+            \item $\vec{\Gamma}_{0}=\{1,2\}$ and $\vec{\Gamma}_{1}=\{e_{1},e_{2}\}$.
+            \item $t(e_{1})=t(e_{2})=1$ and $h(e_{1})=h(e_{2})=2$.
+        \end{itemize}
+        We consider two Feynman graphs $(\vec{\Gamma},m_{1},2)$ and $(\vec{\Gamma},m_{2},2)$, where $m_{1}$ and $m_{2}$ is defined by
+        $$
+        \begin{cases}
+            m_{1}(e_{1})=1, m_{1}(e_{2})=2.\\
+            m_{2}(e_{1})=2, m_{2}(e_{2})=1.
+        \end{cases}
+        $$
+        Then we have $p_{(\vec{\Gamma},m_{1},2)}=x_{12}^1\mathbf{d}x_{12}^{2}$ and $p_{(\vec{\Gamma},m_{2},2)}=x_{12}^{2}
+        \mathbf{d}x_{12}^{1}$. The graphical Green's function is:
+        $$
+        \begin{cases}
+            d^{-1}_{\vec{\Gamma}}(t)_{e_{1}1}=\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}},\\
+            d^{-1}_{\vec{\Gamma}}(t)_{e_{2}1}=\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}.
+        \end{cases}
+        $$
+        
+          By proposition \ref{explicit formula}, we have
+        \begin{align*}
+            &\mu_{2}(p_{(\vec{\Gamma},m_{1},2)} d \mathbf{z}^{\blacklozenge}_{1}\boxtimes d \mathbf{z}^{\blacklozenge}_{2}) \\
+            &=\left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}
+        \iota_{d^{2}\tilde{z}_{1}d^{2}\bar{\tilde{z}}_{1}}\right.\\
+        &\left.\left.\circ (-d\hat{y}_{e_{1}}^{1})\circ(-(\sum_{s=1}^{2}(\partial_{\lambda_{e_{2}}^{s}}+\tilde{z}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{s})\circ d\hat{y}_{e_{2}}^{2})
+        (d^{2}z_{1}\boxtimes d^{2}z_{2})\right)\right|_{\tilde{z}_{1}=0,\tilde{z}_{2}=w}\\
+        &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
+        \end{align*}
+        Similarly, we have
+        \begin{align*}
+            &\mu^{\omega}_{\{1,2\}}(-p_{(\vec{\Gamma},m_{2},2)} 
+            d \mathbf{z}^{\blacklozenge}_{1}\boxtimes d \mathbf{z}^{\blacklozenge}_{2})\\
+            &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w.
+        \end{align*}
+        Combining these computations, and using proposition \ref{useful property}, we can get
+        \begin{align*}
+            &\mu_{2}(P_{12}
+            d \mathbf{z}^{\blacklozenge}_{1}\boxtimes d \mathbf{z}^{\blacklozenge}_{2})\\
+            &=
+        \left(\int_{S^{+}((0,+\infty)^{\vec{\Gamma}_{1}})}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w\\
+        &=\left(\int_{\{(t_{e_{1}},t_{e_{2}})\in (0,+\infty)^2|t_{e_{1}}+t_{e_{2}}=1\}}\left(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}})-\frac{t_{e_{2}}}{t_{e_{1}}+t_{e_{2}}}d(\frac{t_{e_{1}}}{t_{e_{1}}+t_{e_{2}}})\right)\right)d^{2}w
+        \end{align*}
+        The integral above produces $1$, as desired.
+    \end{proof}
+
+\subsection{Residues as two-ary chiral operations}
+
+Our next result is to compute the value of the two-ary chiral operation on arbitrary derivatives of the propagator.
+To do this, we will introduce a generating function expression for derivatives of the propagator~$P_{12}$.
+Instead an explicit Feynman diagram calculation, we will characterize the expression by using the $D$-module relations
+(together with the computation from the previous section).
+
+Introduce new formal variables $\mathfrak{z}_{12}=(\mathfrak{z}_{12}^1,\mathfrak{z}^2_{12})$ and form the generating series
 $$
 P_{12}(\mathfrak{z}_{12}):=\sum_{r,s\geq 0}\frac{1}{r!s!}(\partial_{z^1_1})^r(\partial_{z^s_1})^sP_{12}(\mathfrak{z}^1_{12})^r(\mathfrak{z}^2_{12})^s.
 $$
@@ -2192,24 +2188,50 @@ $$
 \end{lem}
 
 \begin{proof}
-  We have
+  From proposition \ref{prop:dmodulestr}, we have
   $$
   (-x^{i_1}_{12})\cdots (-x^{i_k}_{12})\cdot P_{12}=\frac{\partial_{z^{i_1}_1}\cdots \partial_{z^{i_k}_1}P_{12}}{  (k+1)!},\quad   (-x^{i_1}_{12})\cdots (-x^{i_k}_{12})\cdot x^s_{12}=\frac{\partial_{z^{i_1}_1}\cdots \partial_{z^{i_k}_1}x^s_{12}}{  k!},\quad s=1,2
   $$
   and the lemma follows.
 \end{proof}
 
-There is a canonical chiral 2-operation  given by residue [FHK]
-$$
-\mathbf{J}^{\mathbb{A}^2}_{\{1,2\}}(\mathbf{Unit}^{\boxtimes\{1,2\} })\rightarrow \mathbf{Unit}[\mathbb{A}^2]\otimes_{k[\lambda_{\bullet}]}k[\lambda_{\{1,2\}}].
-$$
-
 \begin{prop}
-We the following formula for $\mu_2$
+We have the following explicit formula for $\mu_2$
 $$
-\mu_2\left(P_{12}(\mathfrak{z}_{12})\cdot  \boldsymbol{\theta}_1\boxtimes  \boldsymbol{\theta}_2\right)=\boldsymbol{\theta}_{\bullet}\otimes e^{-(\lambda_1|\mathfrak{z}_{12})}.
+\mu_2\left(P_{12}(\mathfrak{z}_{12})\cdot  
+  d \mathbf{z}_{1}^{\blacklozenge} \boxtimes d \mathbf{z}^{\blacklozenge}_{2}
+  \right)
+=d\mathbf{z}^{\blacklozenge}\otimes e^{-(\lambda_1|\mathfrak{z}_{12})}.
 $$
 \end{prop}
+\begin{proof}
+We only need to determine the value of 
+$$
+\mu_2\left((x^1_{12})^{m_1}\cdot (x^2_{12})^{m_2}\mathbf{d}x^1_{12}\cdot  
+  d \mathbf{z}_{1}^{\blacklozenge} \boxtimes d \mathbf{z}^{\blacklozenge}_{2}
+\right),\quad m_1,m_2\geq 1
+$$
+Note that
+\begin{align*}
+&\partial_{z^1_1}\left((x^1_{12})^{m_1-1}\cdot (x^2_{12})^{m_2}\mathbf{d}x^1_{12}\right)\\
+&=\left(-(m_1-1)-m_2-2\right)\cdot (x^1_{12})^{m_1}\cdot (x^2_{12})^{m_2}\mathbf{d}x^1_{12}.
+\end{align*}
+We find
+$$
+(x^1_{12})^{m_1}\cdot (x^2_{12})^{m_2}\mathbf{d}x^1_{12}=\frac{-1}{m_1+m_2+1}\cdots\frac{-1}{m_2+1}\partial^m_1\left((x^2_{12})^{m_2}\mathbf{d}x^1_{12}\right).
+$$
+If $m_2>1$, we can further reduce $\mu_2\left((x^2_{12})^{m_2}\mathbf{d}x^1_{12}\right)$ to $-m_2\cdot\mu_2\left(x^1_{12}\cdot(x^2_{12})^{m_2-1}\mathbf{d}x^2_{12}\right)$. Repeat the same calculation, we have
+$$
+\partial_{z^2_{1}}\left(x^1_{12}\cdot (x^2_{12})^{m_2-2}\mathbf{d}x^2_{12}\right)
+$$
+$$
+=(-1-m_2+2-2)\cdot \left(x^1_{12}\cdot (x^2_{12})^{m_2-1}\mathbf{d}x^2_{12}\right).
+$$
+Thus 
+$$
+\left(x^1_{12}\cdot (x^2_{12})^{m_2-1}\mathbf{d}x^2_{12}\right)=\frac{-1}{m_2+1}\cdots \frac{-1}{3}\partial^{m_2-1}_{z^2_1} \left(x^1_{12}\cdot \mathbf{d}x^2_{12}\right).
+$$
+\end{proof}
 
 \begin{prop}[Arnold relation]
   $$
@@ -2217,11 +2239,10 @@ $$
   $$
 \end{prop}
 \begin{proof}
-
   \begin{align*}
    P_{12}P_{13}  &=P_{12}P_{13}(x^1_{23}z^1_{23}+x^2_{23}z^2_{23})  \\
      & =P_{12}P_{13}\left(x^1_{23}(z^1_{13}-z^1_{12})+x^2_{23}(z^1_{13}-z^1_{12})\right)\\
-     &=P_{13}\cdot \mathbf{d}x_{12}\wedge x_{23}+P_{12}\cdot \mathbf{d}x_{13}\wedge x_{23}.
+     &=P_{13}\cdot dx_{12}\wedge x_{23}+P_{12}\cdot dx_{13}\wedge x_{23}.
   \end{align*}
 \end{proof}
 \begin{cor}\label{RecursiveLemma}
@@ -2229,139 +2250,575 @@ $$
   P_{12}P_{13}P_{23}=\mathbf{d}\left(P_{23}P_{13}\cdot x_{12}\wedge x_{23}+P_{23}P_{12}\cdot x_{13}\wedge x_{23}\right).
   $$
 \end{cor}
-\subsection{Formulas for chiral operations}
-\Gui{Write the introduction of the section}
-\subsubsection{Recursive formula for Type 1 Laman graphs}
-\Gui{Explain that a graph corresponds to an element in the derived section.}
 
-\Gui{Write down the notion of Type 1 Lamman graph and Hennerberg move}
-Given a type 1 Laman graph $\Gamma$, we choose a vertex $o\in V(\Gamma)$ as the base point and fix an edge $e\in E(\Gamma)$ such that $V(e)=\{o,v\}$. From the triple $(\Gamma,o,e)$, one can obtain a poset $\mathbf{H}_{\Gamma}(o,e)$ such that its underlying set is $V(\Gamma)$. For each $u\in \mathbf{H}_{\Gamma}(o,e)-\{o,v\}$, the lower cover set $C_u$ has cardinality 2. Furthermore, let $C_{<u}=\{v_1,v_2\}$ , we have $v_1\in C_{<v_2}$ or $v_2\in C_{<v_1}$.
+\begin{rem}
+  The (derived) Arnold relation holds for general $\mathbb{C}^n,n\geq 2$ as well. This is proved in \cite{FGY} for the polysimplicial model. 
+  To compare, one can replace $x^l_{ij}$ with $\frac{u^l_{ij}}{z^l_{ij}}$ to obtain the Arnold relation in the Jouanolou model.
+\end{rem}
+
+\subsection{Formulas for chiral operations}
+
+
+In previous section, we construct a series of chiral operations using Feynman integrals and show that they satisfy a
+$L_{\infty}$-relation. In the case of $\mathbb{A}^2$, the $L_{\infty}$-relation puts a very strong constraint on chiral
+operations and sometimes can completely fix them. In this section, we derive recursive formulas for some chiral
+operations purely from the $L_{\infty}$-relation and find perfect match with previous calculation in physics
+\cite{Gaiotto:2024gii}.
+\subsubsection{Recursive formula for Type 1 Laman graphs}
+For the standard graph terminology used in this paper we refer the reader to \cite{graver1993combinatorial}.
+
+\begin{defn}[Laman]
+Let $\Gamma=\left(V(\Gamma),E(\Gamma)\right)$ be a graph with vertices $V(\Gamma)$ and edges $E(\Gamma)$. 
+We say $\Gamma$ is a \textit{Laman graph} if $|E(\Gamma)|=2|V(\Gamma)|-3$ and $|E(\Gamma')|\leq 2|V(\Gamma')| -3$ for every subgraph $\Gamma'$ of $\Gamma$.
+\end{defn}
+
+\begin{rem}
+  When $d = 2$, the concept of Laman graph originate from Laman's
+  characterization of generic rigidity of graphs embeded in two dimensional
+  real linear space (see {\cite{Laman1970OnGA}}). Our definition appears in
+  {\cite{budzik2023feynman}}.
+\end{rem}
+
+Starting with a single edge, a Laman graph can be constructed by a sequence of following two types of  Henneberg operations (see Fig. \ref{HennebergI&II}):
+
+\begin{itemize}
+  \item Henneberg I: the new vertex is connected via two new edges to two old vertices.
+  \item Henneberg II: remove an edge and and add a new vertex connected to its two endpoints and to some other vertex.
+\end{itemize}
+\begin{figure}[htp]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,294); %set diagram left start at 0, and has height of 294
+
+%Shape: Circle [id:dp4412438273029411]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (145.08,51.04) .. controls (145.08,35.6) and (157.6,23.08) .. (173.04,23.08) .. controls (188.48,23.08) and (201,35.6) .. (201,51.04) .. controls (201,66.48) and (188.48,79) .. (173.04,79) .. controls (157.6,79) and (145.08,66.48) .. (145.08,51.04) -- cycle ;
+%Straight Lines [id:da6719764672917108]
+\draw    (158.08,47.34) ;
+\draw [shift={(158.08,47.34)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6181455657572694]
+\draw    (185,40) ;
+\draw [shift={(185,40)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Shape: Circle [id:dp41907435303254537]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (128.08,159.04) .. controls (128.08,143.6) and (140.6,131.08) .. (156.04,131.08) .. controls (171.48,131.08) and (184,143.6) .. (184,159.04) .. controls (184,174.48) and (171.48,187) .. (156.04,187) .. controls (140.6,187) and (128.08,174.48) .. (128.08,159.04) -- cycle ;
+%Straight Lines [id:da5231318408198586]
+\draw    (141.08,155.34) ;
+\draw [shift={(141.08,155.34)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da9725080832536028]
+\draw    (168,148) ;
+\draw [shift={(168,148)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da061078107428172324]
+\draw    (211.08,164.49) -- (168,148) ;
+\draw [shift={(211.08,164.49)}, rotate = 200.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da17622572078106158]
+\draw    (211.08,164.49) -- (141.08,155.34) ;
+\draw [shift={(211.08,164.49)}, rotate = 187.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Shape: Circle [id:dp1077185002346912]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (402.08,50.04) .. controls (402.08,34.6) and (414.6,22.08) .. (430.04,22.08) .. controls (445.48,22.08) and (458,34.6) .. (458,50.04) .. controls (458,65.48) and (445.48,78) .. (430.04,78) .. controls (414.6,78) and (402.08,65.48) .. (402.08,50.04) -- cycle ;
+%Straight Lines [id:da28100620385230446]
+\draw    (415.08,46.34) -- (442,39) ;
+\draw [shift={(415.08,46.34)}, rotate = 344.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da7852320174709764]
+\draw    (442,39) ;
+\draw [shift={(442,39)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Shape: Circle [id:dp9682088462436504]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (385.08,158.04) .. controls (385.08,142.6) and (397.6,130.08) .. (413.04,130.08) .. controls (428.48,130.08) and (441,142.6) .. (441,158.04) .. controls (441,173.48) and (428.48,186) .. (413.04,186) .. controls (397.6,186) and (385.08,173.48) .. (385.08,158.04) -- cycle ;
+%Straight Lines [id:da3379441985669185]
+\draw    (398.08,154.34) ;
+\draw [shift={(398.08,154.34)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da3518764950782256]
+\draw    (425,147) ;
+\draw [shift={(425,147)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da4393606767678726]
+\draw    (468.08,163.49) -- (425,147) ;
+\draw [shift={(468.08,163.49)}, rotate = 200.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da9869108008194412]
+\draw    (468.08,163.49) -- (398.08,154.34) ;
+\draw [shift={(468.08,163.49)}, rotate = 187.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da2857165447033456]
+\draw    (401.08,172.49) -- (468.08,163.49) ;
+\draw [shift={(401.08,172.49)}, rotate = 352.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da5326196973625403]
+\draw    (416.08,62.49) ;
+\draw [shift={(416.08,62.49)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+% Text Node
+\draw (140,233) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {Henneberg I};
+% Text Node
+\draw (408,230) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {Henneberg II};
+
+
+\end{tikzpicture}
+  \caption{}\label{HennebergI&II}
+\end{figure}
+
+
+In this section we consider the following variant of Henneberg I.
+\begin{defn}[Henneberg I']
+We define the following type operation:
+\begin{itemize}
+  \item Henneberg I': the new vertex is connected via two new edges to two old vertices which are end points of an old edge.
+\end{itemize}
+See Fig. \ref{HennebergI'}.
+\end{defn}
+\begin{figure}[htp]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,237); %set diagram left start at 0, and has height of 237
+
+%Shape: Circle [id:dp8497132848830529]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (307.08,51.04) .. controls (307.08,35.6) and (319.6,23.08) .. (335.04,23.08) .. controls (350.48,23.08) and (363,35.6) .. (363,51.04) .. controls (363,66.48) and (350.48,79) .. (335.04,79) .. controls (319.6,79) and (307.08,66.48) .. (307.08,51.04) -- cycle ;
+%Straight Lines [id:da1298783031017614]
+\draw    (320.08,47.34) -- (347,40) ;
+\draw [shift={(320.08,47.34)}, rotate = 344.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da31719465998079976]
+\draw    (347,40) ;
+\draw [shift={(347,40)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Shape: Circle [id:dp6065999172970378]
+\draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ] (290.08,159.04) .. controls (290.08,143.6) and (302.6,131.08) .. (318.04,131.08) .. controls (333.48,131.08) and (346,143.6) .. (346,159.04) .. controls (346,174.48) and (333.48,187) .. (318.04,187) .. controls (302.6,187) and (290.08,174.48) .. (290.08,159.04) -- cycle ;
+%Straight Lines [id:da560617837118635]
+\draw    (303.08,155.34) -- (330,148) ;
+\draw [shift={(303.08,155.34)}, rotate = 344.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da15372564810261813]
+\draw    (330,148) ;
+\draw [shift={(330,148)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da5947345721631685]
+\draw    (373.08,164.49) -- (330,148) ;
+\draw [shift={(373.08,164.49)}, rotate = 200.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da37990258557512435]
+\draw    (373.08,164.49) -- (303.08,155.34) ;
+\draw [shift={(373.08,164.49)}, rotate = 187.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+
+
+
+\end{tikzpicture}
+  \caption{Henneberg I' operation}\label{HennebergI'}
+\end{figure}
+We will mainly focus on a special class of Laman graphs which we call Type I'.
+\begin{defn}[Type I' Laman graphs]
+  A Laman graph is called \textit{Type I'} if it can be constructed by a sequence of Henneberg I' operations.
+\end{defn}
+\iffalse
+Given a type 1 Laman graph $\Gamma$, we choose a vertex $o\in V(\Gamma)$ as the base point and fix an edge $e\in E(\Gamma)$ such that $V(e)=\{o,v\}$. From the triple $(\Gamma,o,e)$, one can obtain a poset $\mathbf{H}_{\Gamma}(o,e)$ such that its underlying set is $V(\Gamma)$. For each $u\in \mathbf{H}_{\Gamma}(o,e)-\{o,v\}$, the lower cover set $C_u=\{u',u''\}$ has cardinality 2 and $u',u''$ are comparable. Furthermore, let $C_{<u}=\{v_1,v_2\}$ , we have $v_1\in C_{<v_2}$ or $v_2\in C_{<v_1}$.
 
 From the poset $\mathbf{H}_{\Gamma}(o,e)$, we can choose a total order extension $\vec{\mathbf{H}}_{\Gamma}(o,e)$. Each total order extension corresponds to a sequence of Hennerberg moves which starts from $(o,e)$ and results in $\Gamma$.
+\fi
 
-The main theorem of this section is the following recursive formula.
+Suppose $\Gamma$ is a Type I' Laman graph. We fix a vertex $o\in V(\Gamma)$ and an edge $e=[ov]\in E(\Gamma)$, the Laman graph $\Gamma$ can be constructed by a following sequence of Hennerberg operations
+$$
+\mathbf{H}_{\Gamma}(o,e)=[(e_0=e,v_1),(e_1,v_2),\dots,(e_{k-1},v_k)].
+$$
+
+
+
+Here $V(\Gamma)=\{o,v,v_1,\dots,v_k\}$. We start from an edge $e_0=e=[ov]$, then add a new vertex $v_1$ and draw two edges connecting $v_1$ and $o,v$. Repeat this procedure, we add a new vertex $v_i$ and choose an edge $e_{i-1}$ of the graph (we allow $e_{i-1}=e_{i'},i'<i-1$) and then connect $v_i$ and the vertices of $e_{i-1}$ by two edges. This can be illustrated by the picture as follows.
+\begin{figure}[htb]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,284); %set diagram left start at 0, and has height of 284
+
+%Straight Lines [id:da34453016663335045]
+\draw    (38,116) -- (49.7,186.71) ;
+\draw [shift={(50.08,189.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(38,116)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da23846351567234625]
+\draw    (38,116) -- (134.08,116.02) ;
+%Straight Lines [id:da7317472081316405]
+\draw    (53,188) -- (134.08,116.02) ;
+\draw [shift={(134.08,116.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da8790829958723019]
+\draw    (134.08,116.02) -- (119.08,44.02) ;
+%Straight Lines [id:da45626839654630835]
+\draw    (38,116) -- (119.08,44.02) ;
+\draw [shift={(119.08,44.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da3217032538202462]
+\draw    (38,116) -- (213.08,178.02) ;
+%Straight Lines [id:da32856352918813814]
+\draw    (134.08,116.02) -- (213.08,178.02) ;
+\draw [shift={(213.08,178.02)}, rotate = 38.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da03364381956453277]
+\draw    (366,124) -- (377.7,194.71) ;
+\draw [shift={(378.08,197.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(366,124)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da960646497046205]
+\draw    (366,124) -- (462.08,124.02) ;
+%Straight Lines [id:da46893865125491563]
+\draw    (381,196) -- (462.08,124.02) ;
+\draw [shift={(462.08,124.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6409845547594162]
+\draw    (462.08,124.02) -- (447.08,52.02) ;
+%Straight Lines [id:da07678649560674611]
+\draw    (366,124) -- (447.08,52.02) ;
+\draw [shift={(447.08,52.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da46958944924801593]
+\draw    (366,124) -- (541.08,186.02) ;
+%Straight Lines [id:da2186402512738781]
+\draw    (462.08,124.02) -- (541.08,186.02) ;
+\draw [shift={(541.08,186.02)}, rotate = 38.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da03447631332638146]
+\draw    (462.08,124.02) -- (639.08,104.02) ;
+%Straight Lines [id:da31435411391819534]
+\draw    (447.08,52.02) -- (639.08,104.02) ;
+\draw [shift={(639.08,104.02)}, rotate = 15.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da7131917586733014]
+\draw    (217,117) -- (308.08,117.02) ;
+\draw [shift={(310.08,117.02)}, rotate = 180.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (23,183.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (9,105.4) node [anchor=north west][inner sep=0.75pt]    {$v$};
+% Text Node
+\draw (140,92.4) node [anchor=north west][inner sep=0.75pt]    {$v_{1}$};
+% Text Node
+\draw (26,149.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (89,25.4) node [anchor=north west][inner sep=0.75pt]    {$v_{2}$};
+% Text Node
+\draw (72,97.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e_{1} =e_{2}$};
+% Text Node
+\draw (210,148.4) node [anchor=north west][inner sep=0.75pt]    {$v_{3}$};
+% Text Node
+\draw (351,191.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (337,113.4) node [anchor=north west][inner sep=0.75pt]    {$v$};
+% Text Node
+\draw (468,100.4) node [anchor=north west][inner sep=0.75pt]    {$v_{1}$};
+% Text Node
+\draw (354,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (417,33.4) node [anchor=north west][inner sep=0.75pt]    {$v_{2}$};
+% Text Node
+\draw (400,105.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e_{1} =e_{2}$};
+% Text Node
+\draw (538,156.4) node [anchor=north west][inner sep=0.75pt]    {$v_{3}$};
+% Text Node
+\draw (458,76.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e_{3}$};
+% Text Node
+\draw (619,63.4) node [anchor=north west][inner sep=0.75pt]    {$v_{4}$};
+% Text Node
+\draw (237,90.4) node [anchor=north west][inner sep=0.75pt]    {$( e_{3} ,v_{4})$};
+
+
+\end{tikzpicture}
+  \caption{}\label{}
+\end{figure}
+
+
+A Type I' Laman graph can be constructed from different sequences of Hennerberg moves $\mathbf{H}_{\Gamma}(o,e),
+\mathbf{H}'_{\Gamma}(o,e)$ starting from $o, e$. 
+Using the Arnold relation, we can show $W_{\Gamma}$ is exact in the
+Jouanolou model and thus by the $L_{\infty}$-relation for chiral operations we reduce to the chiral operation for small
+graphs. 
+The Type I' condition ensure that the smaller graphs are still Type I' Laman. 
+In this section, we will give the detailed construction of this outline thus providing an explicit recursive formula for the chiral operation on Type I' Laman graphs.
 
 \begin{thm}\label{MainTheoremRecursiveRS}
-Given a pair $\mathbf{H}_{\Gamma}=(\Gamma,\mathbf{H}_{\Gamma}(o,e))$, there are polynomial functions $f^{\mathbf{H}_{\Gamma}}_{i,\vec{e}}$ in real variables $\{r_k,s_k\}_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|}\in ([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|}$ such that
+Given a Type I' Laman graph $\Gamma$ and a sequence of Henneberg I' operations $\mathbf{H}_{\Gamma}(o,e)$ which constructs $\Gamma$, there are polynomial functions $$
+\{f^{\Gamma,\mathbf{H}_{\Gamma}(o,e)}_{v,\vec{e}}\}_{v\in V(\Gamma)-\{o\}}\in \mathbb{C}[r_k,s_k]_{k=1,\dots,|V(\Gamma)|-2},\quad \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\in \mathbb{C}[r_k,s_k,\lambda^l_i]^{i\in V(\Gamma)-\{o\},l=1,2}_{k=1,\dots,|V(\Gamma)|-2},$$
+  such that
 $$
 \mu_{V(\Gamma)}\left(W_{\Gamma}(\mathfrak{z}_{\vec{e}})\right)=\int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|}}e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}}\cdot \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
 $$
-where $\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}$ is a polynomial in $\{r_k,s_k\}_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|}$ and $\{\lambda^s_i\}^{s=1,2}_{i\in V(\Gamma)-o}$ and
+where
 $$
-    \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}}):=\sum_{v\in V(\Gamma)-o}(\lambda_v|\sum_{e\in E(\Gamma)}f^{\mathbf{H}_{\Gamma}}_{v,\vec{e}}\mathfrak{z}_{\vec{e}}).
+    \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}}):=\sum_{v\in V(\Gamma)-\{o\}}(\lambda_v|\sum_{e\in E(\Gamma)}f^{\Gamma,\mathbf{H}_{\Gamma}(o,e)}_{v,\vec{e}}\mathfrak{z}_{\vec{e}}).
 $$
-We can construct a new graph $\Gamma^{\star}$ using the first Hennerberg move and we denote the new vertex by $\star$. Then we have the following formulas for $\mu_{V(\Gamma)}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)$:
+We can construct a new graph $\Gamma^{\star}$ using a Henneberg I' operations $\mathbf{H}_{\Gamma^{\star}}(o,e)=[\mathbf{H}_{\Gamma}(o,e),(e^\triangleright,\star)]$. Then we have the following recursive formulas for $\mu_{V(\Gamma^{\star})}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)$:
 
-  1) If $\star$ is joint with $i,j$, then
+  1) If $\star$ is connected to $i,j$ (i.e., $\vec{e^\triangleright}=ij$), then we introduce new variables
+  $$
+  \begin{cases}
+    \mathfrak{z}^\triangleright_{ij}=\mathfrak{z}_{ij}+(1-r_{\star})(\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}), & \\
+   \mathfrak{z}^\triangleright_{\vec{e}}=\mathfrak{z}_{\vec{e}} , & \mbox{if}\ \vec{e}\neq ij,\\
+   \lambda^\triangleright_i= \lambda_i+(1-s_{\star})\lambda_{\star},&\\
+   \lambda^\triangleright_j= \lambda_j+s_{\star}\lambda_{\star},&\\
+   \lambda^\triangleright_v=\lambda_v,& \mbox{if}\ v\neq i,j.
+  \end{cases}
+  $$
+ \iffalse
+  $$
+\mu_{V(\Gamma^{\star})}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)=\int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}}e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}}\cdot \mathbf{G}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}\cdot (dr_{\star}\wedge ds_{\star})\bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma^{\star}}(o,e)|} (dr_k\wedge ds_k)
+$$
+\fi
+  \iffalse
 \begin{align*}
 & \mu_{V(\Gamma)}\left(W^{r,s}_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)  = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
    & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
    &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
 \end{align*}
-
+\fi
+\begin{align*}
+      \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)} &= \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}}) -\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}\right) \\
+   & =\sum_{v\in V(\Gamma)-o}(\lambda^\triangleright_v|\sum_{e\in E(\Gamma)}f^{\mathbf{H}_{\Gamma}}_{v,\vec{e}}\mathfrak{z}^\triangleright_{\vec{e}})-\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}\right).
+\end{align*}
+\begin{align*}
+  \mathbf{G}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)} &= \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}})\wedge\lambda_{\star}\right)\cdot  r_{\star}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright) \\
+   & =\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}})\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot
+\end{align*}
+\iffalse
   2) If $\star$ is joint with $i,o$, then
 \begin{align*}
 & \mu_{V(\Gamma)}\left(W^{r,s}_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)  = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)} \\
    & \cdot e^{\left((1-s_{\star})\partial_{\lambda_i}(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
    &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
 \end{align*}
+\fi
+  1)If $\star$ is connected to $i,o$ (i.e., $\vec{e^\triangleright}=io$), then we introduce new variables
+  $$
+  \begin{cases}
+    \mathfrak{z}^\triangleright_{io}=\mathfrak{z}_{io}+(1-r_{\star})(\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}), & \\
+   \mathfrak{z}^\triangleright_{\vec{e}}=\mathfrak{z}_{\vec{e}} , & \mbox{if}\ \vec{e}\neq io,\\
+   \lambda^\triangleright_i= \lambda_i+(1-s_{\star})\lambda_{\star},&\\
+   \lambda^\triangleright_v=\lambda_v,& \mbox{if}\ v\neq i.
+  \end{cases}
+  $$
+ \iffalse
+  $$
+\mu_{V(\Gamma^{\star})}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)=\int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}}e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}}\cdot \mathbf{G}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}\cdot (dr_{\star}\wedge ds_{\star})\bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma^{\star}}(o,e)|} (dr_k\wedge ds_k)
+$$
+\fi
+  \iffalse
+\begin{align*}
+& \mu_{V(\Gamma)}\left(W^{r,s}_{\Gamma^{\star}}(\mathfrak{z}_{\vec{e}})\right)  = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
+   & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
+   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
+\end{align*}
+\fi
+\begin{align*}
+      \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)} &= \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}}) -\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star o}\right)\\
+   & =\sum_{v\in V(\Gamma)-o}(\lambda^\triangleright_v|\sum_{e\in E(\Gamma)}f^{\mathbf{H}_{\Gamma}}_{v,\vec{e}}\mathfrak{z}^\triangleright_{\vec{e}})-\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star o}\right).
+\end{align*}
+\begin{align*}
+  \mathbf{G}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)} &= \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}})\wedge\lambda_{\star}\right)\cdot  r_{\star}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright) \\
+   & =\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}})\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n})\cdot
+\end{align*}
+
 \end{thm}
 
-
+\iffalse
 We have following corollaries.
 \begin{cor}
   The value $\mu_{V(\Gamma)}\left(W_{\Gamma}(\mathfrak{z}_{\vec{e}})\right)$ for a type 1 Lamman graph is determined by the chiral 2-operation.
 \end{cor}
+\fi
 
-\begin{cor}
-  The 3-operation is given by the formula
+Using the above formula, we can write the formulas for some loop diagrams and match with results in \cite{Gaiotto:2024gii}. 
+The remarkable thing is that, the chiral operation on Type I' Laman graph is completely constrained by the $L_{\infty}
+$-relations and can be solved recursively without knowing Feynman integrals. 
+In other words, the recursive formula gives another way to compute the complicated Feynman integrals. 
+We provide some explicit examples.
+
+\subsection{Example: one-loop diagrams}
+
+\begin{figure}[htp]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,251); %set diagram left start at 0, and has height of 251
+
+%Straight Lines [id:da9500111546942909]
+\draw    (121,84) -- (132.7,154.71) ;
+\draw [shift={(133.08,157.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(121,84)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da10944203577966927]
+\draw    (437,91) -- (448.7,161.71) ;
+\draw [shift={(449.08,164.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(437,91)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da8673939939674462]
+\draw    (437,91) -- (533.08,91.02) ;
+%Straight Lines [id:da2921829490754293]
+\draw    (452,163) -- (533.08,91.02) ;
+\draw [shift={(533.08,91.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da8223860172487036]
+\draw    (257,107) -- (348.08,107.02) ;
+\draw [shift={(350.08,107.02)}, rotate = 180.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (106,151.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (109,117.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (422,158.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (533,63.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+% Text Node
+\draw (425,124.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (277,80.4) node [anchor=north west][inner sep=0.75pt]    {$( e,2)$};
+% Text Node
+\draw (102,74.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (412,73.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+
+
+\end{tikzpicture}
+  \caption{}\label{}
+\end{figure}
+
+
+%\Gui{Fill in the proof}
+We start from
+$$
+\lineW(\lambda;\mathfrak{z}_{\vec{e}})  =-(\lambda_1|\mathfrak{z}_{1o}).
+$$
+By the recursive formula, we have
 \begin{align*}
-&\mu_{\{1,2<3\}}\left(P_{13}(\mathfrak{z}_{13})P_{12}(\mathfrak{z}_{12})P_{23}(\mathfrak{z}_{23})\boldsymbol{\theta}_1\boxtimes \boldsymbol{\theta}_2\boxtimes \boldsymbol{\theta}_3\right)
-\\
-&=- e^{-(\lambda_2|\mathfrak{z}_{23})-(\lambda_1|\mathfrak{z}_{13})}\cdot \lambda_1\wedge\lambda_2\left(\frac{1}{(\lambda_1|\mathfrak{z})(\lambda_2|\mathfrak{z})}-\frac{e^{-(\lambda_1|\mathfrak{z})}}{(\lambda_1|\mathfrak{z})((\lambda_1+\lambda_2)|\mathfrak{z})}-\frac{e^{(\lambda_2|\mathfrak{z})}}{(\lambda_2|\mathfrak{z})((\lambda_1+\lambda_2)|\mathfrak{z})}\right)\\
-&=- e^{-(\lambda_2|\mathfrak{z}_{23})-(\lambda_1|\mathfrak{z}_{13})}\cdot \lambda_1\wedge\lambda_2\cdot \int_{l_1+l_2\leq 1}e^{-l_1(\lambda_1|\mathfrak{z})+l_2(\lambda_2|\mathfrak{z})}dl_1dl_2
+  \triangleW(\lambda;\mathfrak{z}_{\vec{e}})  &=-(\lambda^\triangleright_1|\mathfrak{z}^\triangleright_{1o})-  (1-s_{2})\left(\lambda_{2}|\mathfrak{z}_{21 }\right)-s_2\left(\lambda_{2}|\mathfrak{z}_{2 o}\right)\\
+   & =-\left(\lambda_1+(1-s_2)\lambda_2|\mathfrak{z}_{1o}+(1-r_2)(\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})\right)-  (1-s_{2})\left(\lambda_{2}|\mathfrak{z}_{21 }\right)-s_2\left(\lambda_{2}|\mathfrak{z}_{2 o}\right)\\
+   & =-\left(\lambda_1|\mathfrak{z}_{1o}\right)-\left(\lambda_1|(1-r_2)(\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})\right)-\left((1-s_2)\lambda_2|(1-r_2)(\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})\right)\\
+   &-\left((1-s_2)\lambda_2|\mathfrak{z}_{1o}\right)-  (1-s_{2})\left(\lambda_{2}|\mathfrak{z}_{21 }\right)-s_2\left(\lambda_{2}|\mathfrak{z}_{2 o}\right)\\
+   &=-(\lambda_1|\mathfrak{z}_{1o})-(\lambda_2|\mathfrak{z}_{2o})-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right).
 \end{align*}
-where $\mathfrak{z}=\mathfrak{z}_{12}+\mathfrak{z}_{23}-\mathfrak{z}_{13}$.
 
-\end{cor}
-\begin{proof}
-\Gui{Fill in the proof} The detail is in the Appendix.
+
+\iffalse
  \begin{align*}
 &\triangleW(\lambda)  =\lineW(\lambda)+(1-r_{2})\left(\partial_{\mathfrak{z}_{1o}}\lineW(\lambda)|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)-(1-s_{2})\left(\mathfrak{z}_{21 }|\lambda_{2}\right)\\
 &-s_2\left(\mathfrak{z}_{2 o}|\lambda_{2}\right)+\left(((1-s_2)\partial_{\lambda_1})(\lineW(\lambda)+(1-r_{2})(\partial_{\mathfrak{z}_{1o}}\lineW(\lambda)|\mathfrak{z}_{2 o}-\mathfrak{z}_{21 }-\mathfrak{z}_{1o}))|\lambda_{2}\right)\\
 &=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)
 \end{align*}
+\fi
 $$
-(\partial_{\mathfrak{z}_{1o}}\lineW)\wedge \lambda_2=\lambda_1\wedge\lambda_2.
+\triangleG=r_2\cdot (\partial_{\mathfrak{z}_{1o}}\lineW)\wedge \lambda_2=r_2\cdot \lambda_1\wedge\lambda_2.
 $$
-\end{proof}
+  The 3-operation is given by the formula
+\begin{align*}
+&\mu_{\{o,1,2\}}\left(P_{1o}(\mathfrak{z}_{1o})P_{12}(\mathfrak{z}_{12})P_{2o}(\mathfrak{z}_{2o})d\mathbf{z}^{\blacklozenge}_{\{o,1,2\}}\right)
+\\
+&=\int_{[0,1]\times[0,1]}e^{\triangleW(\lambda;\mathfrak{z}_{\vec{e}})}\cdot \triangleG\cdot dr_2ds_2\cdot d\mathbf{z}^{\blacklozenge}_o\\
+&=- e^{-(\lambda_2|\mathfrak{z}_{2o})-(\lambda_1|\mathfrak{z}_{1o})}\cdot \lambda_1\wedge\lambda_2\left(\frac{1}{(\lambda_1|\mathfrak{z})(\lambda_2|\mathfrak{z})}-\frac{e^{-(\lambda_1|\mathfrak{z})}}{(\lambda_1|\mathfrak{z})((\lambda_1+\lambda_2)|\mathfrak{z})}-\frac{e^{(\lambda_2|\mathfrak{z})}}{(\lambda_2|\mathfrak{z})((\lambda_1+\lambda_2)|\mathfrak{z})}\right)\cdot d\mathbf{z}^{\blacklozenge}_o\\
+&=- e^{-(\lambda_2|\mathfrak{z}_{2o})-(\lambda_1|\mathfrak{z}_{1o})}\cdot \lambda_1\wedge\lambda_2\cdot \int_{l_1+l_2\leq 1}e^{-l_1(\lambda_1|\mathfrak{z})+l_2(\lambda_2|\mathfrak{z})}dl_1dl_2\cdot d\mathbf{z}^{\blacklozenge}_o,
+\end{align*}
+where $\mathfrak{z}=\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}$.
+
+\subsection{Example: two-loop diagrams}
+
+\begin{figure}[htp]
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,251); %set diagram left start at 0, and has height of 251
+
+%Straight Lines [id:da890181873775316]
+\draw    (95,88) -- (106.7,158.71) ;
+\draw [shift={(107.08,161.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(95,88)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da9223610071211295]
+\draw    (95,88) -- (191.08,88.02) ;
+%Straight Lines [id:da11189533180737254]
+\draw    (110,160) -- (191.08,88.02) ;
+\draw [shift={(191.08,88.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da9409890176578246]
+\draw    (257,107) -- (348.08,107.02) ;
+\draw [shift={(350.08,107.02)}, rotate = 180.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da35422393324899293]
+\draw    (392,71) -- (403.7,141.71) ;
+\draw [shift={(404.08,144.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(392,71)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da5782568358604838]
+\draw    (392,71) -- (488.08,71.02) ;
+%Straight Lines [id:da607564063352144]
+\draw    (407,143) -- (488.08,71.02) ;
+\draw [shift={(488.08,71.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da8902609955225234]
+\draw    (488.08,71.02) -- (502.08,146.9) ;
+%Straight Lines [id:da2789811171892176]
+\draw    (407.08,145.9) -- (502.08,146.9) ;
+\draw [shift={(502.08,146.9)}, rotate = 0.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+% Text Node
+\draw (80,155.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (191,60.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+% Text Node
+\draw (83,121.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (277,80.4) node [anchor=north west][inner sep=0.75pt]    {$([ 2o] ,3)$};
+% Text Node
+\draw (70,70.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (377,138.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (488,43.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+% Text Node
+\draw (380,104.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (367,53.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (517,146.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+
+
+\end{tikzpicture}
+  \centering
+  \caption{}\label{}
+\end{figure}
+
+ \begin{align*}
+&   \agraphW  = \triangleW(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}}) -\left(\lambda_{3}|(1-s_{3})\mathfrak{z}_{3 2}+s_{3}\mathfrak{z}_{3 o}\right)\\
+&=-(\lambda_1|\mathfrak{z}_{1o})-(\lambda_2|\mathfrak{z}_{2o})-\left(\lambda_{3}|\mathfrak{z}_{3o}\right)+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}-(1-r_3)(1-r_2)\mathfrak{z}_{[32o]}\right)\\
+&+\left(\lambda_2|(1-r_{3})(r_2(1-s_2)-1)\mathfrak{z}_{[3 2o]}+r_2(1-s_2)\mathfrak{z}_{[2 1o]}\right)\\
+&+\left(\lambda_3|r_2(1-s_2)(1-s_3)\mathfrak{z}_{[21o]}+(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[32o]}\right)\\
+\end{align*}
+\begin{align*}
+ \agraphG&=( \partial_{\mathfrak{z}_{2o}}\triangleW)\wedge\lambda_3\cdot r_3\cdot \triangleG(\lambda^\triangleright)\\
+   &= -\left(\left((1-r_2)\lambda_1+(1-r_2(1-s_2))\lambda_2\right)\wedge \lambda_3\right)\cdot r_3r_2\cdot \left(\lambda_1\wedge\left(\lambda_2+(1-s_3)\lambda_3\right) \right)\\
+     &
+  \end{align*}
+We have the following result
+    \begin{align*}
+&\mu_{\{o,1,2,3\}}\left(P_{3o}(\mathfrak{z}_{3o})P_{32}(\mathfrak{z}_{32})P_{1o}(\mathfrak{z}_{1o})P_{12}(\mathfrak{z}_{12})P_{2o}(\mathfrak{z}_{2o})d\mathbf{z}^{\blacklozenge}_{\{o,1,2,3\}}\right)
+\\
+&=\int_{([0,1]\times[0,1])^2}e^{\agraphW}\cdot \agraphG\cdot dr_2ds_2dr_3ds_3\cdot d\mathbf{z}^{\blacklozenge}_o.
+  \end{align*}
+    In particular, the constant term (when $\mathfrak{z}_{\vec{e}}=0$) is
+    \begin{align*}
+&\mu_{\{o,1,2,3\}}\left(P_{3o}P_{32}P_{1o}P_{12}P_{2o}d\mathbf{z}^{\blacklozenge}_{\{o,1,2,3\}}\right)
+\\
+&=\int_{([0,1]\times[0,1])^2}\agraphG\cdot dr_2ds_2dr_3ds_3\cdot d\mathbf{z}^{\blacklozenge}_o\\
+&=\frac{1}{24}(\lambda_1\wedge(\lambda_3+2\lambda_2))\cdot (\lambda_3\wedge(\lambda_1+2\lambda_2))\cdot d\mathbf{z}^{\blacklozenge}_o.
+  \end{align*}
+
+  %  $$
+    %\mu_{\{1<2<3<4\}}\left(P_{14}P_{12}P_{24}P_{32}P_{34}\right)=\frac{1}{24}(\lambda_1\wedge(\lambda_3+2\lambda_2))\cdot (\lambda_3\wedge(\lambda_1+2\lambda_2))
+   % $$
 
 \iffalse
-\begin{proof}
-
-
-\begin{tabular}{|c|c|c|}
-\hline
-  & $\displaystyle \lambda _{1}$ & $\displaystyle \lambda _{2}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{1o}$ & $\displaystyle \boxed{r_1-1=l_{1o} -1}$ & $ $$\displaystyle -t_{1} =\boxed{-l_{12} +l_{1o} +1=-l_{2o}}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{2o}$ & $\displaystyle \boxed{-l_{1o}}$ & $\displaystyle -1+t_{1} =\boxed{-l_{2o} -1}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{12}$ & $\displaystyle \boxed{-l_{1o}}$ & $\displaystyle t_{1} =\boxed{-l_{21} -l_{1o} +1=l_{o2}}$ \\
- \hline
-\end{tabular}
-
-$$
-\agraphW
-$$
-  \begin{align*}
-     & F_{o,2o}\wedge F_{o,21} \\
-     & =l_{1o}\cdot \lambda_1\wedge\lambda_2.
-  \end{align*}
-  $$
-   \mathbf{L}_{\Gamma,\mathbf{H}(o,e)}=\frac{l_{1o}-1}{(l_{2o}-l_{21})(l_{2o}-l_{21}+1)}=\frac{1}{l_{1o}}.
-  $$
-\end{proof}
-\fi
-\begin{cor}
-    We have the following result
-    \begin{align*}
-&\mu_{\{1,2<3<4\}}\left(P_{14}(\mathfrak{z}_{14})P_{12}(\mathfrak{z}_{12})P_{24}(\mathfrak{z}_{24})P_{32}(\mathfrak{z}_{32})P_{34}(\mathfrak{z}_{34})\boldsymbol{\theta}_1\boxtimes \boldsymbol{\theta}_2\boxtimes\boldsymbol{\theta}_3\boxtimes \boldsymbol{\theta}_4\right)\\
-&=\int_{\Delta_2\times\Delta_1\times\Delta_1}e^{   (\lambda_1|-\tilde{s}_1(1-t_1)\mathfrak{z}_{[124]}+\tilde{s}_1t_3\mathfrak{z}_{[324]})+ (\lambda_2|t_1\mathfrak{z}_{[124]}+t_3 \mathfrak{z}_{[324]})+      (\lambda_3|\tilde{s}_3t_1\mathfrak{z}_{[124]}-\tilde{s}_3(1-t_3)\mathfrak{z}_{[324]})}(1-t_3-t_1)\\
-   &\cdot(\lambda_3\wedge(\tilde{s}_1\lambda_1+\lambda_2))\cdot (\lambda_1\wedge(\tilde{s}_3\lambda_3+\lambda_2)) \cdot dt_1dt_3d\tilde{s}_1d\tilde{s}_3\cdot e^{-(\lambda_1|\mathfrak{z}_{14})-(\lambda_2|\mathfrak{z}_{24})-(\lambda_3|\mathfrak{z}_{34})}.
-      \end{align*}
-    In particular, the constant term is
-    $$
-    \mu_{\{1,2<3<4\}}\left(P_{14}P_{12}P_{24}P_{32}P_{34}\right)=\frac{1}{24}(\lambda_1\wedge(\lambda_3+2\lambda_2))\cdot (\lambda_3\wedge(\lambda_1+2\lambda_2))
-    $$
-\end{cor}
-\begin{proof}
-  \Gui{Fill in the proof}
-
   \begin{align*}
 &   \agraphW  =\triangleW+(1-r_{3})\left(\partial_{\mathfrak{z}_{2o}}\triangleW|\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}\right)-\left((1-s_{3})\mathfrak{z}_{3 2}|\lambda_{3}\right)\\
 &-\left(s_3\mathfrak{z}_{3o}|\lambda_{3}\right)+\left(((1-s_{3})\partial_{\lambda_2})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{3})(\partial_{\mathfrak{z}_{2o}}\triangleW|\mathfrak{z}_{3 o}-\mathfrak{z}_{3 2}-\mathfrak{z}_{2o}))|\lambda_{3}\right)\\
 &=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)\\
 &+(1-r_{3})\left(-\lambda_2-(1-r_2)\lambda_1+r_2(1-s_2)\lambda_2|\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}\right)-\left((1-s_{3})\mathfrak{z}_{3 2}|\lambda_{3}\right)-\left(s_3\mathfrak{z}_{3o}|\lambda_{3}\right)\\
 &+(1-s_3)\left(-\mathfrak{z}_{2o}+r_2(1-s_2)(\mathfrak{z}_{2o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})|\lambda_3\right)-(1-s_3)(1-r_3)(1-r_2(1-s_2))\left(\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}|\lambda_3\right)\\
-&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}|\lambda_{3}\right)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)\\
-&+(1-r_{3})\left(-\lambda_2-(1-r_2)\lambda_1+r_2(1-s_2)\lambda_2|\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}\right)+(1-s_{3})\left(\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}|\lambda_{3}\right)\\
-&+(1-s_3)\left(r_2(1-s_2)(\mathfrak{z}_{2o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})|\lambda_3\right)-(1-s_3)(1-r_3)(1-r_2(1-s_2))\left(\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}|\lambda_3\right)\\
-&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}|\lambda_{3}\right)+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{[2 1o]}\right)\\
-&+(1-r_{3})\left(-(1-r_2)\lambda_1+(r_2(1-s_2)-1)\lambda_2|\mathfrak{z}_{[3 2o]}\right)+(1-s_{3})\left(\lambda_{3}|\mathfrak{z}_{[32o]}\right)\\
-&+r_2(1-s_2)(1-s_3)\left(\lambda_3|\mathfrak{z}_{[21o]}\right)-(1-s_3)(1-r_3)(1-r_2(1-s_2))\left(\lambda_3|\mathfrak{z}_{[32o]}\right)\\
+%%&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}|\lambda_{3}\right)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)\\
+%%&+(1-r_{3})\left(-\lambda_2-(1-r_2)\lambda_1+r_2(1-s_2)\lambda_2|\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}\right)+(1-s_{3})\left(\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}|\lambda_{3}\right)\\
+%%&+(1-s_3)\left(r_2(1-s_2)(\mathfrak{z}_{2o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o})|\lambda_3\right)-(1-s_3)(1-r_3)(1-r_2(1-s_2))\left(\mathfrak{z}_{3 o}-\mathfrak{z}_{32}-\mathfrak{z}_{2o}|\lambda_3\right)\\
+%%&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}|\lambda_{3}\right)+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{[2 1o]}\right)\\
+%%&+(1-r_{3})\left(-(1-r_2)\lambda_1+(r_2(1-s_2)-1)\lambda_2|\mathfrak{z}_{[3 2o]}\right)+(1-s_{3})\left(\lambda_{3}|\mathfrak{z}_{[32o]}\right)\\
+%%&+r_2(1-s_2)(1-s_3)\left(\lambda_3|\mathfrak{z}_{[21o]}\right)-(1-s_3)(1-r_3)(1-r_2(1-s_2))\left(\lambda_3|\mathfrak{z}_{[32o]}\right)\\
 &=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}|\lambda_{3}\right)+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}-(1-r_3)(1-r_2)\mathfrak{z}_{[32o]}\right)\\
 &+\left(\lambda_2|(1-r_{3})(r_2(1-s_2)-1)\mathfrak{z}_{[3 2o]}+r_2(1-s_2)\mathfrak{z}_{[2 1o]}\right)\\
 &+\left(\lambda_3|r_2(1-s_2)(1-s_3)\mathfrak{z}_{[21o]}+(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[32o]}\right)\\
 \end{align*}
-
-
-  \begin{align*}
- ( \partial_{\mathfrak{z}_{2o}}\triangleW)\wedge\lambda_3  &= -\left((1-r_2)\lambda_1+(1-r_2(1-s_2))\lambda_2\right)\wedge \lambda_3 \\
-     &
-  \end{align*}
-
+\fi
+\iffalse
   Let
   $$
 t_1=r_2(1-s_2),t_3=(1-r_3)(1-t_1),\tilde{s}_1=\frac{(1-r_2)}{1-r_2(1-s_2)}=\frac{1-r_2}{1-t_1},\tilde{s}_3=1-s_3.
@@ -2386,7 +2843,8 @@ Finally
 &=\frac{1}{6}(\lambda_3\wedge(\frac{1}{2}\lambda_1+\lambda_2))\cdot (\lambda_1\wedge(\frac{1}{2}\lambda_3+\lambda_2))\\
 &=\frac{1}{24}(\lambda_3\wedge(\lambda_1+2\lambda_2))\cdot (\lambda_1\wedge(\lambda_3+2\lambda_2)).
       \end{align*}
-\end{proof}
+      \fi
+
 \iffalse
 \begin{proof}
 $$
@@ -2442,16 +2900,104 @@ $$
 
 \end{proof}
 \fi
-\begin{cor}
+
+\subsection{Example: 3-loop diagrams}
+\begin{figure}[htp]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,251); %set diagram left start at 0, and has height of 251
+
+%Straight Lines [id:da8477288815799091]
+\draw    (257,107) -- (348.08,107.02) ;
+\draw [shift={(350.08,107.02)}, rotate = 180.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da19883481117548785]
+\draw    (84,65) -- (95.7,135.71) ;
+\draw [shift={(96.08,138.02)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(84,65)}, rotate = 80.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6884477566281739]
+\draw    (84,65) -- (180.08,65.02) ;
+%Straight Lines [id:da8067150471550517]
+\draw    (99,137) -- (180.08,65.02) ;
+\draw [shift={(180.08,65.02)}, rotate = 318.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da7279525719966016]
+\draw    (180.08,65.02) -- (194.08,140.9) ;
+%Straight Lines [id:da874142011205592]
+\draw    (99.08,139.9) -- (194.08,140.9) ;
+\draw [shift={(194.08,140.9)}, rotate = 0.6] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6454806350471596]
+\draw    (381.08,76.13) -- (402.53,155.15) ;
+\draw [shift={(403.14,157.42)}, rotate = 74.82] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+\draw [shift={(381.08,76.13)}, rotate = 74.82] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6618500472761442]
+\draw    (381.08,76.13) -- (438.31,37.42) ;
+%Straight Lines [id:da9255829903454396]
+\draw    (404.67,155.03) -- (438.31,37.42) ;
+\draw [shift={(438.31,37.42)}, rotate = 285.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da026400001424949693]
+\draw    (438.31,37.42) -- (480.08,70.42) ;
+%Straight Lines [id:da3023640696608898]
+\draw    (406.14,157.42) -- (480.08,70.42) ;
+\draw [shift={(480.08,70.42)}, rotate = 310.36] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da32497524909403896]
+\draw    (407.08,158.42) -- (495.08,116.42) ;
+\draw [shift={(495.08,116.42)}, rotate = 334.49] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6118969901897813]
+\draw    (480.08,70.42) -- (495.08,116.42) ;
+\draw [shift={(495.08,116.42)}, rotate = 71.94] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+% Text Node
+\draw (277,80.4) node [anchor=north west][inner sep=0.75pt]    {$([ 3o] ,4)$};
+% Text Node
+\draw (69,132.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (180,37.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+% Text Node
+\draw (72,98.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+% Text Node
+\draw (59,47.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (209,140.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+% Text Node
+\draw (369,54.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (424,14.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+% Text Node
+\draw (489,42.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+% Text Node
+\draw (509,114.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+% Text Node
+\draw (386,151.4) node [anchor=north west][inner sep=0.75pt]    {$o$};
+% Text Node
+\draw (375,115.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$e$};
+
+
+\end{tikzpicture}
+  \caption{}\label{}
+\end{figure}
+\iffalse
 The 5-point function is given by
 \begin{align*}
    \bgraphW=& \int^1_0dr_2\int^1_0ds_4\int^1_0ds_2\int^1_0ds_1\int_{t_1+t_4\leq 1}dt_1dt_4\left(\lambda_1\wedge (s_4\lambda_4+s_4s_2\lambda_2+\lambda_3) \right)\left( (\lambda_4+s_2\lambda_2)\wedge (s_1\lambda_1+\lambda_3)\right)  \\
    & \cdot \left(\lambda_2\wedge (-s_1t_4\lambda_1-t_4\lambda_3+(s_4(1-t_4)-1)\lambda_4)\right)\cdot(1-t_4-t_1) r_2\cdot e^{\mathbf{W}_{\Gamma,\mathbf{H}(o,e)}(\lambda)}
 \end{align*}
+\fi
 
-\end{cor}
-\begin{proof}
-  \Gui{Fill in the proof, add the maple code in the appendix}
+\iffalse
+  \begin{align*}
+        \bgraphW&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\left(\mathfrak{z}_{3o}+(1-r_4)\mathfrak{z}_{[43o]}|\lambda_{3}+(1-s_4)\lambda_4\right)\\
+        &+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}-(1-r_3)(1-r_2)\mathfrak{z}_{[32o]}-(1-r_4)(1-r_3)(1-r_2)\mathfrak{z}_{[43o]}\right)\\
+&+\left(\lambda_2|(1-r_4)(1-r_{3})(r_2(1-s_2)-1)\mathfrak{z}_{[43o]}+(1-r_{3})(r_2(1-s_2)-1)\mathfrak{z}_{[3 2o]}+r_2(1-s_2)\mathfrak{z}_{[2 1o]}\right)\\
+&+\left(\lambda_3|r_2(1-s_2)(1-s_3)\mathfrak{z}_{[21o]}+(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[32o]}\right)\\
+&+\left(\lambda_3|(1-r_4)(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[43o]}\right)\\
+&+(1-s_4)\left(\lambda_4|r_2(1-s_2)(1-s_3)\mathfrak{z}_{[21o]}+(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[32o]}\right)\\
+&+(1-s_4)\left(\lambda_4|(1-r_4)(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[43o]}\right)\\
+&-\left((1-s_4)\mathfrak{z}_{43}+s_4\mathfrak{z}_{4o}|\lambda_4\right)
+  \end{align*}
+
   We change the order of vertex to match the computation of [Gaiotto]
   $$
   \lambda_1\rightarrow\lambda_1,\lambda_2\rightarrow \lambda_3, \lambda_3\rightarrow \lambda_4
@@ -2469,17 +3015,35 @@ $$
      &  \\
      \agraphG& =(1-t_4-t_1)\cdot(\lambda_4\wedge(\tilde{s}_1\lambda_1+\lambda_2))\cdot (\lambda_1\wedge(\tilde{s}_4\lambda_4+\lambda_3)) \cdot dt_1dt_4d\tilde{s}_1d\tilde{s}_4
   \end{align*}
-  
+
   Then
   \begin{align*}
  &\bgraphG =  (1-t_4-t_1)r_2\cdot((\lambda_4+\tilde{s}_2\lambda_2)\wedge(\tilde{s}_1\lambda_1+\lambda_2))\cdot (\lambda_1\wedge(\tilde{s}_4(\lambda_4+\tilde{s}_2\lambda_2)+\lambda_3)) \\ &\cdot  (\lambda_2\wedge \partial_{\mathfrak{z}_{4o}}\agraphW)\cdot dt_1dt_4d\tilde{s}_1d\tilde{s}_4d\tilde{s}_2dr_2 \\
-     & 
+     &
   \end{align*}
-\end{proof}
+\fi
 
-Now we turn to the proof of Theorem \ref{MainTheoremRecursiveRS}. We need some lemmas.
+By the same but tedious computation, one can obtain the formula for $\bgraphW$. Here we only compute $\bgraphG$.
+We have
+\begin{align*}
+   \bgraphG&= r_4\cdot \agraphG(\lambda^\triangleright) \cdot(\partial_{\mathfrak{z}_{3o}}\agraphW)\wedge \lambda_4  \\
+   &=r_4r_3r_2\cdot \left(\left((1-r_2)\lambda_1+(1-r_2(1-s_2))\lambda_2\right)\wedge (\lambda_3+(1-s_4)\lambda_4)\right) \\
+   & \cdot\left(\lambda_1\wedge\left(\lambda_2+(1-s_3)\lambda_3+(1-s_3)(1-s_4)\lambda_4\right) \right)\\ &\cdot  \left(-(1-r_3)(1-r_2)\lambda_1+(1-r_3)(r_2(1-s_2)-1)\lambda_2+(-s_3-(1-s_3)(1-r_3)(1-r_2(1-s_2)))\lambda_3\right)\wedge \lambda_4
+\end{align*}
+The constant term (when $\mathfrak{z}_{\vec{e}}=0$) is
+    \begin{align*}
+&\mu_{\{o,1,2,3,4\}}\left(P_{4o}P_{43}P_{3o}P_{32}P_{1o}P_{12}P_{2o}d\mathbf{z}^{\blacklozenge}_{\{o,1,2,3,4\}}\right)
+\\
+&=\int_{([0,1]\times[0,1])^3}\bgraphG\cdot dr_2ds_2dr_3ds_3dr_4ds_4\cdot d\mathbf{z}^{\blacklozenge}_o\\
+&=F(\lambda_1,\lambda_2,\lambda_3,\lambda_4)\cdot d\mathbf{z}^{\blacklozenge}_o.
+  \end{align*}
+  The polynomial $F(\lambda_1,\lambda_2,\lambda_3,\lambda_4)$ can be computed using computer and matches the
+  computation in \cite{Gaiotto:2024gii}. See the maple code attached in the Appendix.
+
+  \subsection{Proof of theorem \ref{MainTheoremRecursiveRS}} 
+  Now we turn to the proof of Theorem \ref{MainTheoremRecursiveRS}. We need some lemmas.
 \begin{lem}\label{IntegralXP}
-\Gui{Revise the lemma, wording}
+We have the following integral formula for the product of derivatives of $x^i_{12}(\mathfrak{z})$ and $P_{12}(\mathfrak{w})$
   $$
 G(\partial_{z^1_{1}},\partial_{z^2_{1}})x^i_{12}(\mathfrak{z})\cdot\left( F(\partial_{z^1_{1}},\partial_{z^2_{1}})\cdot P_{12}(\mathfrak{w})\right)=G(\partial_{\mathfrak{z}^1},\partial_{\mathfrak{z}^2})F(\partial_{\mathfrak{w}^1},\partial_{\mathfrak{w}^2})(-\partial_{\mathfrak{w}^i})\int^1_0P_{12}\left((1-s)\mathfrak{z}+s\mathfrak{w}\right)ds
   $$
@@ -2497,6 +3061,7 @@ G(\partial_{z^1_{1}},\partial_{z^2_{1}})P_{12}(\mathfrak{z})\cdot\left( F(\parti
 \end{lem}
 
 \begin{proof}
+The lemma follows from the following direct computation
   \begin{align*}
 &      G(\partial_{z^1_{1}},\partial_{z^2_{1}})x^i_{12}(\mathfrak{z})\cdot\left( F(\partial_{z^1_{1}},\partial_{z^2_{1}})\cdot P_{12}(\mathfrak{w})\right)  \\ &=G(\partial_{\mathfrak{z}^1},\partial_{\mathfrak{z}^2})F(\partial_{\mathfrak{w}^1},\partial_{\mathfrak{w}^2})\left(x^i_{12}(\mathfrak{z})P_{12}(\mathfrak{w})\right)\\
      & =G(\partial_{\mathfrak{z}^1},\partial_{\mathfrak{z}^2})F(\partial_{\mathfrak{w}^1},\partial_{\mathfrak{w}^2})\left(\frac{x^i_{12}(\mathfrak{z})P_{12}(\mathfrak{z})}{\left(1+(x_{12}(\mathfrak{z})|\mathfrak{w}-\mathfrak{z})\right)^2}\right)\\
@@ -2521,11 +3086,11 @@ G(\partial_{z^1_{1}},\partial_{z^2_{1}})P_{12}(\mathfrak{z})\cdot\left( F(\parti
 
 
 \begin{lem}\label{IntegralR}
-  Suppose that we have a graph with vertices $\{1,\dots,n\}$ and $i,j\subset \{1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Then
+  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and $i,j\subset \{o,1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Then
   $$
-  \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot x^l_{ij}\right)=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0F(\lambda_1,\dots,\lambda_{n-1};\dots,s\mathfrak{z}_{ij},\dots)ds,
+  \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot x^l_{ij}\right)=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0F(\lambda_1,\dots,\lambda_{n};\dots,r\mathfrak{z}_{ij},\dots)dr,
   $$
-  where $F(\lambda_1,\dots,\lambda_{n-1};\mathfrak{z}_e):=\mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\right)$
+  where $F(\lambda_1,\dots,\lambda_{n};\mathfrak{z}_e):=\mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\right)$
 \end{lem}
 \begin{figure}[htp]
   \centering
@@ -2590,47 +3155,48 @@ G(\partial_{z^1_{1}},\partial_{z^2_{1}})P_{12}(\mathfrak{z})\cdot\left( F(\parti
   \caption{}\label{}
 \end{figure}
 \begin{proof}
-\Gui{Fill in the proof}
+
 Using Lemma \ref{IntegralXP}, we have
 $$
-x^l_{ij}P_{ij}(\mathfrak{z}_{ij})=-\partial_{\mathfrak{z}_{ij}}\int^1_0P_{ij}(s\mathfrak{z}_{ij})ds.
+x^l_{ij}P_{ij}(\mathfrak{z}_{ij})=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0P_{ij}(r\mathfrak{z}_{ij})dr.
 $$
 Then
 \begin{align*}
-   \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot x^l_{ij}\right)  &=\mu_{\{1\dots n\}}\left(-\partial_{\mathfrak{z}_{ij}}\int^1_0W_{\Gamma}(\dots,s\mathfrak{z}_{ij},\dots)ds\right)  \\
-   & =-\partial_{\mathfrak{z}_{ij}}\int^1_0\mu_{\{1\dots n\}}\left(W_{\Gamma}(\dots,s\mathfrak{z}_{ij},\dots)\right)ds\\
-   &=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0F(\lambda_1,\dots,\lambda_{n-1};\dots,s\mathfrak{z}_{ij},\dots)ds.
+   \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot x^l_{ij}\right)  &=\mu_{\{o,1,\dots, n\}}\left(-\partial_{\mathfrak{z}^l_{ij}}\int^1_0W_{\Gamma}(\dots,r\mathfrak{z}_{ij},\dots)dr\right)  \\
+   & =-\partial_{\mathfrak{z}^l_{ij}}\int^1_0\mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\dots,r\mathfrak{z}_{ij},\dots)\right)dr\\
+   &=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0F(\lambda_1,\dots,\lambda_{n};\dots,r\mathfrak{z}_{ij},\dots)dr.
 \end{align*}
 \end{proof}
 
 
 \begin{lem}\label{IntegralS}
-  Suppose that we have a graph with vertices $\{1,\dots,n\}$ and $i,j\subset \{1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Then
+  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and $i,j\subset \{o,1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Let $\mu_{\{o,1,\dots, n\}}\left(\alpha\right)=F_{\alpha}(\lambda)$. Then
   $$
-  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n-1};\mathfrak{z}_e)\cdot s_{\star}\lambda^l_{\star}ds_{\star}
+  \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n};\mathfrak{z}_e)\cdot s_{\star}\lambda^l_{\star}ds_{\star}
   $$
     $$
-  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(\alpha\cdot x^l_{\star j}P_{\star i }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n-1};\mathfrak{z}_e)\cdot(1-s_{\star})\lambda^l_{\star}ds_{\star}
+  \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star j}P_{\star i }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n};\mathfrak{z}_e)\cdot(1-s_{\star})\lambda^l_{\star}ds_{\star}
   $$
   Similarly, if $\star$ is joint with $(o,i)\in E_{\Gamma}$, then
   $$
-  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(\alpha\cdot x^l_{\star i}P_{\star o }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n};\mathfrak{z}_e)\cdot s_{\star}\lambda^l_{\star}ds_{\star}
+  \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star o }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n};\mathfrak{z}_e)\cdot s_{\star}\lambda^l_{\star}ds_{\star}
   $$
    $$
-  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(\alpha\cdot x^l_{\star o}P_{\star i}\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n};\mathfrak{z}_e)\cdot(1-s_{\star})\lambda^l_{\star}ds_{\star}
+  \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star o}P_{\star i}\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n};\mathfrak{z}_e)\cdot(1-s_{\star})\lambda^l_{\star}ds_{\star}
   $$
+  See Fig. \ref{TwoMultOperation} for an illustration of $\mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)$.
 \end{lem}
 \begin{proof}
   Write
   $$
-   \mu_{\{1\dots n\}}\left(\alpha\right)=F_{\alpha}(\lambda)=\sum G(\lambda_i)H(\lambda_j).
+\mu_{\{o,1,\dots, n\}}\left(\alpha\right)=F_{\alpha}(\lambda)=\sum G(\lambda_i)H(\lambda_j).
   $$
   Then
   \begin{align*}
-   &  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)=  \mu_{\{\star\bullet\}}\left(\sum G(\lambda_i-\partial_{z_{\star}})x^l_{\star\bullet}\cdot H(\lambda_j-\partial_{z_{\star}})P_{\star\bullet}\right)\\
-     &=\mu_{\{\star\bullet\}}\left(\int^1_0\sum G(\lambda_i-(1-s)\partial_{z_{\star}}) H(\lambda_j-s\partial_{z_{\star}})(-s\partial_{z^l_{\star}})P_{\star\bullet}ds\right)\quad \text{using Lemma \ref{IntegralXP}}\\
+   &  \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)=  \mu_{\{\star,\bullet\}}\left(\sum G(\lambda_i-\partial_{z_{\star}})x^l_{\star\bullet}\cdot H(\lambda_j-\partial_{z_{\star}})P_{\star\bullet}\right)\\
+     &=\mu_{\{\star,\bullet\}}\left(\int^1_0\sum G(\lambda_i-(1-s)\partial_{z_{\star}}) H(\lambda_j-s\partial_{z_{\star}})(-s\partial_{z^l_{\star}})P_{\star\bullet}ds\right)\quad \text{using Lemma \ref{IntegralXP}}\\
      &=\int^1_0\sum G(\lambda_i+(1-s)\lambda_{\star}) H(\lambda_j+s\lambda_{\star})(s\lambda^l_{\star})ds\\
-     &=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n-1};\mathfrak{z}_e)\cdot(s_{\star}\lambda^l_{\star})ds_{\star}.
+     &=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n};\mathfrak{z}_e)\cdot(s_{\star}\lambda^l_{\star})ds_{\star}.
   \end{align*}
 \end{proof}
 \begin{figure}[htp]
@@ -2832,9 +3398,9 @@ Then
 
 
 \end{tikzpicture}
-  \caption{}\label{}
+  \caption{$\mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)$}\label{TwoMultOperation}
 \end{figure}
-
+\iffalse
 \begin{figure}[htp]
   \centering
 
@@ -3031,7 +3597,7 @@ Then
   \caption{Three cases}\label{}
 \end{figure}
 
-
+\fi
 Now we are ready to prove Theorem \ref{MainTheoremRecursiveRS}.
 \begin{proof}
 \begin{figure}[htp]
@@ -3357,7 +3923,7 @@ Now we are ready to prove Theorem \ref{MainTheoremRecursiveRS}.
 
 
 \end{tikzpicture}
-  \caption{}\label{}
+  \caption{$W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}$ is exact by the Arnold relation}\label{dExactGraph}
 \end{figure}
 \begin{figure}[htp]
   \centering
@@ -3628,20 +4194,20 @@ Now we are ready to prove Theorem \ref{MainTheoremRecursiveRS}.
 
 
 \end{tikzpicture}
-  \caption{}\label{}
+  \caption{Some cancellations}\label{Cancellations}
 \end{figure}
-We first notice that
+We will only prove the formula in the case when $\star$ is joint with $i,j\in V(\Gamma)-\{o\}$ as the proof for the other case is similar. We first notice that
 
 \begin{align*}
-\mu_{\{1\dots n\star\}}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{e})\right)   &=\mu_{\{1\dots n\star\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot P_{\star i}(\mathfrak{z}_{\star i})P_{\star j}(\mathfrak{z}_{\star j})\right)     \\
-   & =\mu_{\{1\dots n\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right)\cdot e^{(\lambda_i|\mathfrak{z}_{i\star})+(\lambda_j|\mathfrak{z}_{j\star})}
+\mu_{\{o,1,\dots ,n,\star\}}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{e})\right)   &=\mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot P_{\star i}(\mathfrak{z}_{\star i})P_{\star j}(\mathfrak{z}_{\star j})\right)     \\
+   & =\mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right)\cdot e^{(\lambda_i|\mathfrak{z}_{i\star})+(\lambda_j|\mathfrak{z}_{j\star})}
 \end{align*}
 here
 $$
 \begin{cases}
 \tilde{\mathfrak{z}}_e=\mathfrak{z}_e+\mathfrak{z}_{\star i}  , & \mbox{if } i\in V(e),e\neq ij, \\
 \tilde{\mathfrak{z}}_e=\mathfrak{z}_e+\mathfrak{z}_{\star j}  , & \mbox{if } j\in V(e),e\neq ij,\\
-\tilde{\mathfrak{z}}_e=\mathfrak{z}_e-\mathfrak{z}_{\star i}-\mathfrak{z}_{\star j}   , &  \mbox{if} e=ij,\\
+\tilde{\mathfrak{z}}_e=\mathfrak{z}_e-\mathfrak{z}_{\star i}-\mathfrak{z}_{\star j}   , &  \mbox{if} \ e=ij,\\
 \tilde{\mathfrak{z}}_e=\mathfrak{z}_e  , & \mbox{otherwise}.
 \end{cases}
 $$
@@ -3649,706 +4215,84 @@ Using Lemma \ref{RecursiveLemma}, we have
 $$
   P_{\star i}P_{\star j}P_{ij}(\tilde{\mathfrak{z}}_{ij})=\mathbf{d}\left(P_{ij}(\tilde{\mathfrak{z}}_{ij})P_{\star j}\cdot x_{\star i}\wedge x_{ij}+P_{ij}(\tilde{\mathfrak{z}}_{ij})P_{\star i}\cdot x_{\star j}\wedge x_{ij}\right)
 $$
-Then
+Substituting this into $\mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right)$, we obtain (see Fig. \ref{dExactGraph} and Fig. \ref{Cancellations})
 \begin{align*}
-  \mu_{\{1\dots n\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right) &=\mu_{\{1\dots n\star\}}\left(\mathbf{d}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})P_{\star j}\cdot x_{\star i}\wedge x_{ij}+W_{\Gamma}(\tilde{\mathfrak{z}}_{e})P_{\star i}\cdot x_{\star j}\wedge x_{ij}\right)\right)  \\
-   &= \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)+\mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)\\
-   &+ \underbrace{ \mu_{\{1\dots n\}}\circ\mu_{\{\star i\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)}_{=0}+\underbrace{\mu_{\{1\dots n\}}\circ\mu_{\{\star j\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)}_{0}.
+& \mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right)\\
+  &= \mu_{\{o,1,\dots, n,\star\}}\left(\mathbf{d}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})P_{\star j}\cdot x_{\star i}\wedge x_{ij}+W_{\Gamma}(\tilde{\mathfrak{z}}_{e})P_{\star i}\cdot x_{\star j}\wedge x_{ij}\right)\right)  \\
+   &= \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)+\mu_{\{\star,\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)\\
+   &+ \underbrace{ \mu_{\{o,1,\dots ,n\}}\circ\mu_{\{\star, i\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)}_{=0}+\underbrace{\mu_{\{o,1,\dots ,n\}}\circ\mu_{\{\star, j\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)}_{=0}.
 \end{align*}
 We will prove a stronger statement by induction. In fact, we will prove that
 $$
- \sum_{\vec{e},v\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}=-\lambda_v.
+ \sum_{\vec{e},v\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}=-\lambda_v.
 $$
+Assume the above is true for $\mathbf{H}_{\Gamma}(o,e)$, we have
 \begin{align*}
-   &  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)\\
-   & =\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\tilde{\mathfrak{z}}_{\vec{e}})-(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;{\mathfrak{z}}_{\vec{e}})|\tilde{\mathfrak{z}}_{ij}\right)\\
-   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}+\left(\sum_{\vec{e},i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star i}\right)+\left(\sum_{\vec{e},j\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star j}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)\\
-   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)
+   &  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)\\
+   & =\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\tilde{\mathfrak{z}}_{\vec{e}})-(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;{\mathfrak{z}}_{\vec{e}})|\tilde{\mathfrak{z}}_{ij}\right)\\
+   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+\left(\sum_{\vec{e},i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star i}\right)+\left(\sum_{\vec{e},j\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)\\
+   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)\\
+   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda;\mathfrak{z}^\triangleright_{\vec{e}})-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right).
 \end{align*}
+For simplicity of notation, we write $ \int_{\Box_{\mathbf{H}_{\Gamma}(o,e)}} $ instead of $\int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|}} \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)$. By Lemma \ref{IntegralR}, we have (for $l=1,2$)
+      \begin{align*}
+     &   \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot x^s_{ij}\right)\\
+     &= -{\partial_{ \tilde{\mathfrak{z}}^l_{ij}}}\int^1_0\int_{\Box_{\mathbf{H}_{\Gamma}(o,e)}}  e^{   \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)} \cdot \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\cdot dr_{\star}\\
+     &= -\int^1_0\int_{\Box_{\mathbf{H}_{\Gamma}(o,e)}}  e^{   \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)} {\partial_{ {\mathfrak{z}}^l_{ij}}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}\cdot \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\cdot r_{\star}dr_{\star}\\
+     &= -\int^1_0\int_{\Box_{\mathbf{H}_{\Gamma}(o,e)}}  e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\mathfrak{z}_{\vec{e}}^\triangleright)-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\cdot \partial_{\mathfrak{z}^l_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\cdot r_{\star}dr_{\star}.
+     \end{align*}
+    Now we Lemma \ref{IntegralS} to get
     \begin{align*}
-     &   \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j }\right) \\
-     & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};s,r)\cdot e^{   \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)}dr_{\star}\cdot (\overleftarrow{\partial_{ \tilde{\mathfrak{z}}_{ij}}}\wedge x_{\star i})P_{\star j }\right)\quad (\text{by Lemma \ref{IntegralR}})\\
-     & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};s,r)\cdot e^{   \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{ij},\dots)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge x_{\star i}\right)P_{\star j}\cdot r_{\star}dr_{\star}\right)\\
-          & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};s,r)\cdot e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)}\right.\\
-      &    \left.\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge x_{\star i}\right) P_{\star j}\cdot r_{\star}dr_{\star}\right)\quad (\text{then use Lemma \ref{IntegralS}})\\
-                     &= \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot s_{\star}\\
+     &   \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j }\right) \\
+        & = \int^1_0\int^1_0\int_{\Box_{\mathbf{H}_{\Gamma}(o,e)}}  e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^{\triangleright};\mathfrak{z}_{\vec{e}}^\triangleright)-\left(\lambda^{\triangleright}_i|\mathfrak{z}_{\star i}\right)-\left(\lambda^{\triangleright}_j|\mathfrak{z}_{\star j}\right)}\cdot\mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^{\triangleright})\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^{\triangleright})\wedge \lambda_{\star }\right)\cdot r_{\star}s_{\star}dr_{\star}\wedge ds_{\star}\\
+                     &= \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}})-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot s_{\star}\\
    &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
 \end{align*}
-
-
-%Recall $\tilde{\mathfrak{z}}_{ij}=\mathfrak{z}_{[\star ij]},\tilde{\mathfrak{z}}_{in}=\mathfrak{z}_{in}-\mathfrak{z}_{i\star}, \tilde{\mathfrak{z}}_{jn}=\mathfrak{z}_{jn}-\mathfrak{z}_{j\star}$.
-
-Multiplying $e^{(\lambda_i|\mathfrak{z}_{i\star})+(\lambda_j|\mathfrak{z}_{j\star})}$, we get
-\begin{align*}
-& = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot s_{\star}\\
-   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
-\end{align*}
-  Similarly, we have
+Here we use $\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^{\triangleright})\wedge \lambda_{\star }=\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)\wedge \lambda_{\star }$ as $\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}$ is a linear function in $\lambda$. Similarly, we have
   \begin{align*}
-     & \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)  \\
-& = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot (1-s_{\star})\\
-   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)\end{align*}
+     & \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)  \\
+                &= \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}})-\left(\lambda_i|\mathfrak{z}_{\star i}\right)-\left(\lambda_j|\mathfrak{z}_{\star j}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot(1-s_{\star})\\
+   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k).\end{align*}
   We get the final expression
   \begin{align*}
-     & \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)+\mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)   \\
-& = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
+&  \mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma^{\star}}(\mathfrak{z}_{e})\right) \\
+     &=\mu_{\{o,1,\dots, n,\star\}}\left(W_{\Gamma}(\tilde{\mathfrak{z}}_{e})\cdot P_{\star i}P_{\star j}\right)\cdot e^{(\lambda_i|\mathfrak{z}_{i\star})+(\lambda_j|\mathfrak{z}_{j\star})}\\&= \left(\mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star j})P_{\star i }\right)+\mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{ij}\wedge x_{\star i})P_{\star j}\right)  \right)\cdot e^{(\lambda_i|\mathfrak{z}_{i\star})+(\lambda_j|\mathfrak{z}_{j\star})} \\
+                &= \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}})-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)} \cdot \left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
    &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
   \end{align*}
   We finish the induction step by showing that
  $$
- \sum_{\vec{e}\in E(\Gamma^{\star}),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star}}=-\lambda_i,\quad  \sum_{\vec{e}\in E(\Gamma^{\star}),j\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star}}=-\lambda_j,\quad  \sum_{\vec{e}\in E(\Gamma^{\star}),\star\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star}}=-\lambda_{\star}
+ \sum_{\vec{e}\in E(\Gamma^{\star}),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=-\lambda_i,\quad  \sum_{\vec{e}\in E(\Gamma^{\star}),j\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=-\lambda_j,\quad  \sum_{\vec{e}\in E(\Gamma^{\star}),\star\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=-\lambda_{\star},
 $$
 here
-  \begin{align*}
- \mathbf{W}^{r,s}_{\Gamma^{\star}}&=     \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right) \\
-   &\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)\\
-  \end{align*}
-  \begin{align*}
-     \sum_{\vec{e}\in E(\Gamma^{\star}),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star}} &= \sum_{\vec{e}\in E(\Gamma),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}    \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)} +(1-s_{\star})\lambda_{\star}+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\sum_{\vec{e}\in E(\Gamma),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}    \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)})|\lambda_{\star}\right)  \\
-     &=-\lambda_i +(1-s_{\star})\lambda_{\star}+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(-\lambda_i)|\lambda_{\star}\right)\\
+$$
+\mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)} = \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}}) -\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}\right).
+$$
+%%  \begin{align*}
+ %%\mathbf{W}^{r,s}_{\Gamma^{\star}}&=     \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right) \\
+   %%&\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)\\
+  %\end{align*}
+  We can write
+  $$
+  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=\left(1+(\lambda_{\star}|(1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})\right)\left(1+(1-r_{\star})(\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}|\partial_{\mathfrak{z}_{ij}})\right)\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}
+  $$
+  $$
+  -\left(\lambda_{\star}|(1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}\right)
+  $$
+  Then we can compute
+    \begin{align*}
+&     \sum_{\vec{e}\in E(\Gamma^{\star}),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}\\ &=\left(1+(\lambda_{\star}|(1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})\right)\left(1+(1-r_{\star})(\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}|\partial_{\mathfrak{z}_{ij}})\right)     \sum_{\vec{e}\in E(\Gamma),i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}    \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)} +(1-s_{\star})\lambda_{\star}\\
+&=\left(1+(\lambda_{\star}|(1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})\right)(-\lambda_i)+(1-s_{\star})\lambda_{\star}\\
      &=-\lambda_i.
   \end{align*}
-Case 2. $\star$ is joint with $i,o$.
-$$
- \sum_{\vec{e},v\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}=-\lambda_v.
-$$
-\begin{align*}
-   &  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{io},\dots)\\
-   & =\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\tilde{\mathfrak{z}}_{\vec{e}})-(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;{\mathfrak{z}}_{\vec{e}})|\tilde{\mathfrak{z}}_{io}\right)\\
-   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}+\left(\sum_{\vec{e},i\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)\\
-   &=\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}-\left(\lambda_i|\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)
+We have similar computation for $\sum_{\vec{e}\in E(\Gamma^{\star}),j\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=-\lambda_j$. And
+    \begin{align*}
+&     \sum_{\vec{e}\in E(\Gamma^{\star}),\star\in \vec{e}} \partial_{\mathfrak{z}_{\vec{e}}}  \mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=(\partial_{\mathfrak{z}_{\star i}}+\partial_{\mathfrak{z}_{\star j}})\mathbf{W}^{r,s}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}=-\lambda_{\star}.\\
 \end{align*}
-
- \begin{align*}
-     &   \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{io}\wedge x_{\star i})P_{\star o }\right) \\
-     & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};\tilde{\mathfrak{z}}_e)\cdot e^{ \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{io},\dots)}dr_{\star}\cdot (\overleftarrow{\partial_{ \tilde{\mathfrak{z}}_{io}}}\wedge x_{\star i})P_{\star o }\right)\\
-     & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};\tilde{\mathfrak{z}}_e)\cdot e^{ \mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}(\lambda;\dots,r_{\star}\tilde{\mathfrak{z}}_{io},\dots)}\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}    \wedge x_{\star i}\right)\cdot P_{\star o}\cdot r_{\star}dr_{\star}\right)\\
-            & =\mu_{\{\star\bullet\}}\left(\int^1_0G(\lambda_1,\dots,\lambda_{n};s,r)\cdot e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}-\left(\lambda_i|\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o}\right)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)}\right.\\
-      &    \left.\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge x_{\star i}\right) P_{\star j}\cdot r_{\star}dr_{\star}\right)\\
-                     &= \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left(\lambda_i|\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o}\right)-(1-s_{\star})\left(\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left((1-s_{\star})\partial_{\lambda_i}(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot s_{\star}\\
-   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
-                          \end{align*}
-
-Multiplying $e^{-(\lambda_{\star}|\mathfrak{z}_{\star o})+(\lambda_i|\mathfrak{z}_{\star i}-\mathfrak{z}_{\star o})}$, we get
-\begin{align*}
-&  = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left((1-s_{\star})\partial_{\lambda_i}(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\cdot s_{\star}\\
-   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
-\end{align*}
-
-As before, we get
-\begin{align*}
-   &   \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{io}\wedge x_{\star i})P_{\star o }\right) +  \mu_{\{\star\bullet\}}\circ \mu_{\{1\dots n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot (x_{io}\wedge x_{\star o})P_{\star i }\right) \\
- &  = \int_{([0,1]\times[0,1])^{|\mathbf{H}_{\Gamma}(o,e)|+1}} e^{\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)} \\
-   & \cdot e^{\left((1-s_{\star})\partial_{\lambda_i}(\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)}\cdot \left(\partial_{\mathfrak{z}_{io}}\mathbf{W}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}\wedge\lambda_{\star}\right)\cdot r_{\star}\\
-   &\cdot  \mathbf{G}^{r,s}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_{n})\cdot (dr_{\star}\wedge ds_{\star})\cdot \bigwedge_{k=1,\dots,|\mathbf{H}_{\Gamma}(o,e)|} (dr_k\wedge ds_k)
-\end{align*}
-
-  \end{proof}
-  \iffalse
-\begin{table}
-  \centering
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-  & $\displaystyle \lambda _{1}$   &  & $\displaystyle \lambda _{i}$ &   $\displaystyle \lambda _{j}$ &  $\displaystyle \lambda _{\star }$ \\
-\hline
- $\displaystyle \mathfrak{z}_{e}$ & $\displaystyle f_{1,e}$   &  & $\displaystyle f_{i,e}$ &  $\displaystyle f_{j,e}$ &   $\displaystyle (1-s_{\star})f_{i,e} +s_{\star}f_{j,e}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{ij}$ & $\displaystyle r_{\star}f_{1,[ ij]}$   &  & $\displaystyle r_{\star}f_{i,[ ij]}$   & $\displaystyle r_{\star}f_{j,[ ij]}$   & $\displaystyle (1-s_{\star})r_{\star}f_{i,[ ij]} +s_{\star} r_{\star}f_{j,[ ij]}$ \\
-\hline
-  &  &  &  &  &   \\
-\hline
-  &  &  &  &  &   \\
-\hline
- $\displaystyle \mathfrak{z}_{\star i}$ & $\displaystyle -( 1-r_{\star}) f_{1,[ ij]}$   & &  $\displaystyle -( 1-r_{\star}) f_{i,[ ij]}$  & $\displaystyle -( 1-r_{\star}) f_{j,[ ij]}$ &   $\displaystyle (1-s_{\star})( -1-( 1-r_{\star}) f_{i,[ ij]}) -s_{\star}( 1-r_{\star}) f_{j,[ ij]}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{\star j}$ & $\displaystyle ( 1-r_{\star}) f_{1,[ ij]}$ &  &   $\displaystyle ( 1-r_{\star}) f_{i,[ ij]}$  & $\displaystyle ( 1-r_{\star}) f_{j,[ ij]}$ &  $\displaystyle (1-s_{\star})( 1-r_{\star}) f_{i,[ ij]} +s_{\star}( -1+( 1-r_{\star}) f_{j,[ ij]}$) \\
- \hline
-\end{tabular}
-
-  \caption{}\label{}
-\end{table}
-\begin{table}
-  \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-  & $\displaystyle \lambda _{1}$ &  &  & $\displaystyle \lambda _{i}$ &  & $\displaystyle \lambda _{k}$ &  & $\displaystyle \lambda _{\star }$ \\
-\hline
- $\displaystyle \mathfrak{z}_{e}$ & $\displaystyle f_{1,e}$ &  &  & $\displaystyle f_{i,e}$ &  & $\displaystyle f_{k,e}$ &  & $\displaystyle (1-s_{\star})f_{i,e}$ \\
-\hline
- $\displaystyle \mathfrak{z}_{io}$ & $\displaystyle r_{\star}f_{1,[ io]}$ &  &  & $\displaystyle r_{\star}f_{i,[ io]}$ &  & $\displaystyle r_{\star}f_{k,[ io]}$ &  & $\displaystyle (1-s_{\star})r_{\star}f_{i,[ io]}$ \\
-\hline
-  &  &  &  &  &  &  &  &  \\
-\hline
-  &  &  &  &  &  &  &  &  \\
-\hline
- $\displaystyle \mathfrak{z}_{\star i}$ & $\displaystyle -( 1-r_{\star}) f_{1,[ io]}$ &  &  & $\displaystyle -( 1-r_{\star}) f_{i,[ io]}$ &  & $\displaystyle -( 1-r_{\star}) f_{k,[ io]}$ &  & $\displaystyle (1-s_{\star})( -1-( 1-r_{\star}) f_{i,[ io]})$ \\
-\hline
- $\displaystyle \mathfrak{z}_{\star o}$ & $\displaystyle ( 1-r_{\star}) f_{1,[ io]}$ &  &  & $\displaystyle ( 1-r_{\star}) f_{i,[ io]}$ &  & $\displaystyle ( 1-r_{\star}) f_{k,[ io]}$ &  & $\displaystyle -1-(1-s_{\star})( -1-( 1-r_{\star}) f_{i,[ io]})$ \\
- \hline
-\end{tabular}
-
-  \caption{}\label{}
-\end{table}
-\fi
-
-\subsubsection{Closed formulas in terms of length variables}
-The above lemma leads to the following definition.
-
-
-\begin{defn}
-  Given a Laman graph $\Gamma$ of type 1 with a vertex $o\in v(\Gamma)$ and an edge $e\in e(\Gamma)$. Suppose that $\Gamma$ can be constructed by Henneberg moves $\mathbf{H}=\{v_1,v_2,\dots,v_n\}$. We recursively define \Gui{Define $\mathbf{F}[l]$}
-  $$
-    \mathbf{W}_{\Gamma,\mathbf{H}(o,e)}(\lambda):=\sum_{v\in v(\Gamma)-o}(\lambda_v|\sum_{e\in e(\Gamma)}f^{\Gamma}_{v,e}\mathfrak{z}_e)\in k[\lambda_v]_{v\in v(\Gamma)-o}\otimes \mathbf{F}[l^{\Gamma}_e]_{e\in e(\Gamma)}
-  $$
-  as follows.
-
-  1) $\mathbf{W}_{\Gamma_0,\mathbf{H}^{\Gamma_0}(o,e)}(\lambda)=-(\mathfrak{z}_{1o}|\lambda_1)$.
-
-  2) Suppose that $\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)$ is defined, we define \Gui{Two cases, rules for variable change}
-when $\star$ is joint with $i,o$
-\begin{align*}
-& \mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)  :=\mathbf{W}^{\Gamma\rightarrow \Gamma^{\star}}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{\Gamma\rightarrow \Gamma^{\star}}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)\\
-&+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}^{\Gamma\rightarrow \Gamma^{\star}}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}^{\Gamma\rightarrow \Gamma^{\star}}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)
-\end{align*}
-where
-$$
-l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-1=l^{\Gamma}_{[ ij]},\quad r_{\star}=\frac{l^{\Gamma^\star}_{[ ij]}-1}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-2},\quad s_{\star}=\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]}}
-$$
-$$
-0\leq 1-l^{\Gamma^\star}_{[ ij]}\leq 2-(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}).
-$$
-When $\star$ is joint with $i,o$
- \begin{align*}
-& \mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)  =\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)\\
-&-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left(((1-s_{\star})\partial_{\lambda_i})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)\\
-\end{align*}
-where
-$$
-l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ io]}-1=l^{\Gamma}_{[ io]},\quad r_{\star}=\frac{l^{\Gamma^\star}_{[ io]}-1}{l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ io]}-2},\quad s_{\star}=\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ o\star ]}}
-$$
-$$
-0\leq 1-l^{\Gamma^\star}_{[ io]}\leq 2-(l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ io]}).
-$$
-\end{defn}
-\Gui{Define $\mathbf{H}_k$}
-
-Denote $C_{e<}:=C_{v_1<}\cap C_{v_2<}$. Let $v\in C_{e<}$, define
-$$
-L^{\mathbf{H}_{\Gamma}(o,e_o)}_{e,v}=\sum_{e'\in E(U_{v})}l^{\Gamma}_{e'}
-$$
-where $U_v=\{u|v\leq u\}$ is the upper set of $v$ and $E(U_{v})$ is the set of edges that contain a vertex in $U_v$.
-\begin{defn}
-%For $e\in E(\Gamma)$, the graph can be represented as a disjoint Hennerberg moves
-%$$
-%\Gamma=\sqcup_{k\in I_e}\mathbf{H}_k=\sqcup_{k\in I_e}\{k,k_1,k_2,\dots,\}
-%$$
-We define the following domain
-$$
-\square_{\Gamma}:=\{l^{\Gamma}_e\in [0,1]|\sum_{e\in E}l^{\Gamma}_e=|V(\Gamma)|-2\ \text{and}\ \forall e\in E(\Gamma),v\in C^{\mathbf{H}_{\Gamma}(o,e_o)}_{e<},L^{\mathbf{H}_{\Gamma}(o,e_o)}_{e,v}\leq |U^{\mathbf{H}_{\Gamma}(o,e_o)}_{v}|\}\subset [0,1]^{E(\Gamma)}
-$$
-
-\end{defn}
-\begin{prop}\Gui{rewrite and rewrite the proof}
-  The domain of the variables $l^{\Gamma}_e$ is $\square_{\Gamma}$.
-\end{prop}
-\begin{proof}
-every time we introduce new variables, we have
-$$
-0\leq l^{\Gamma^{\star}}_e\leq 1,\quad 0\leq r_{\star} =\frac{1-l^{\Gamma^{\star}}_e}{2-l^{\Gamma^{\star}}_e-l^{\Gamma^{\star}}_{e'}-l^{\Gamma^{\star}}_{e''}}\leq 1,\quad 0\leq l^{\Gamma}_e=l^{\Gamma^{\star}}_e+l^{\Gamma^{\star}}_{e'}+l^{\Gamma^{\star}}_{e''}-1\leq 1.
-$$
-The new constraints are
-$$
-0\leq l^{\Gamma^{\star}}_e,l^{\Gamma^{\star}}_{e'},l^{\Gamma^{\star}}_{e''}\leq 1,\quad l^{\Gamma^{\star}}_{e'}+l^{\Gamma^{\star}}_{e''}\leq 1
-$$
-the constraint
-$$
-1\leq l^{\Gamma^{\star}}_e+l^{\Gamma^{\star}}_{e'}+l^{\Gamma^{\star}}_{e''}
-$$
-can be deduced from
-$$
-l^{\Gamma^{\star}}_e+l^{\Gamma^{\star}}_{e'}+l^{\Gamma^{\star}}_{e''}=|V(\Gamma)|-1-\sum_{k\in I^{\Gamma}_e}\sum_{e'\in E(\mathbf{H}_k)}l^{\Gamma}_{e'}\geq |V(\Gamma)|-1-\sum_{k\in I^{\Gamma}_e}|\mathbf{H}_k|= 1.
-$$
-
+The proof is completed.
 \end{proof}
-\begin{prop}{\label{IdepenW}}
-   The element
-  $$
-  \mathbf{W}_{\Gamma,\mathbf{H}(o,e)}(\lambda):=\sum_{v\in v(\Gamma)-o}(\lambda_v|\sum_{e\in e(\Gamma)}f^{\Gamma}_{v,e}\mathfrak{z}_e)\in k[\lambda_v]_{v\in v(\Gamma)-o}\otimes \mathbf{F}[l^{\Gamma}_e]_{e\in e(\Gamma)}=\frac{k[\lambda_v]_{v\in v(\Gamma)}}{\sum\limits_{v\in v(\Gamma)}\lambda_v=0}\otimes \mathbf{F}[l^{\Gamma}_e]_{e\in e(\Gamma)}
-  $$
-  is independent of the data $(\Gamma,\mathbf{H}(o,e))$.
-
-\end{prop}
-\begin{proof}
-  See Appendix \ref{ProofIdepenW}.
-\end{proof}
-
-
-\begin{exa}
-\Gui{add details. change base point}
-$$
-\triangleW=-l_{1o}(\lambda_1|\mathfrak{z}_{12}+\mathfrak{z}_{2o}-\mathfrak{z}_{1o})+l_{2o}(\lambda_2|\mathfrak{z}_{12}+\mathfrak{z}_{2o}-\mathfrak{z}_{1o})-(\lambda_2|\mathfrak{z}_{2o})-(\lambda_1|\mathfrak{z}_{1o})
-$$
-$$
-=(\mathfrak{z}_{1o}|(l_{1o}-1)\lambda_1-l_{2o}\lambda_2)+(\mathfrak{z}_{2o}|-l_{1o}\lambda_1+(l_{2o}-1)\lambda_2)+(\mathfrak{z}_{12}|-l_{1o}\lambda_1+l_{2o}\lambda_2).
-$$
-We can verify that
-$$
-(\mathfrak{z}_{1o}|(l_{1o}-1)\lambda_1-l_{2o}\lambda_2)+(\mathfrak{z}_{2o}|-l_{1o}\lambda_1+(l_{2o}-1)\lambda_2)+(\mathfrak{z}_{12}|-l_{1o}\lambda_1+l_{2o}\lambda_2)
-$$
-$$
-=(\mathfrak{z}_{1o}|(l_{1o}+l_{2o}-1)\lambda_1+l_{2o}\lambda_o)+(\mathfrak{z}_{2o}|(-l_{1o}-l_{2o}+1)\lambda_1-(l_{2o}-1)\lambda_o)+(\mathfrak{z}_{12}|(-l_{1o}-l_{2o})\lambda_1-l_{2o}\lambda_o)
-$$
-$$
-=(\mathfrak{z}_{1o}|-l_{12}\lambda_1+l_{2o}\lambda_o)+(\mathfrak{z}_{o2}|-l_{12}\lambda_1+(l_{2o}-1)\lambda_o)+(\mathfrak{z}_{12}|(l_{12}-1)\lambda_1-l_{2o}\lambda_o)
-$$
-$$
-\mathbf{L}=\frac{1-l_{[1o]}}{(l_{[2o]}+l_{[12]})(1-l_{[2o]}-l_{[12]})}
-$$
-\end{exa}
-
-\begin{exa}
-\Gui{add 4-point}
-
-\begin{align*}
-\agraphW=   & \left(\mathfrak{z}_{1o}|(l_{[1o]}-1)\lambda_1+(1-l_{[12]}-l_{[1o]})\lambda_2+\frac{l_{[3o]}(1-l_{[12]}-l_{[1o]})}{l_{[3o]}+l_{[23]}}\lambda_3\right) \\
-   & +\left(\mathfrak{z}_{2o}|\frac{l_{[1o]}(l_{[2o]}-1)}{l_{[12]}+l_{[1o]}}\lambda_1+(l_{2o}-1)\lambda_2+\frac{l_{[3o]}(l_{[2o]}-1)}{l_{[3o]+l_{[23]}}}\lambda_3\right)\\
-   &+\left(\mathfrak{z}_{12}|l_{[1o]}\lambda_1+(1-l_{[12]}-l_{[1o]})\lambda_2+\frac{l_{[3o]}(1-l_{[12]}-l_{[1o]})}{l_{[3o]}+l_{[32]}}\lambda_3\right)\\
-      & +\left(\mathfrak{z}_{32}|\frac{l_{[1o]}(1-l_{[3o]}-l_{[32]})}{l_{[12]}+l_{[1o]}}\lambda_1+(1-l_{[3o]}-l_{[32]})\lambda_2+l_{[3o]}\lambda_3\right)\\
-       & +\left(\mathfrak{z}_{3o}|-\frac{l_{[1o]}(1-l_{[3o]}-l_{[32]})}{l_{[12]}+l_{[1o]}}\lambda_1-(1-l_{[3o]}-l_{[32]})\lambda_2+(l_{[3o]}-1)\lambda_3\right)
-\end{align*}
-\end{exa}
-
-\begin{defn}\Gui{Explain two notations $\mathbf{H}$ , $U$}
-  We define $\mathbf{L}_{\Gamma,\mathbf{H}(o,e)}$ as follows
-$$
-\mathbf{L}_{\Gamma,\mathbf{H}(o,e)}:=\frac{1-l_e^{\Gamma}}{\prod\limits_{k\in I_e}(L_{e,k}-|\mathbf{H}_{e,k}|+1)(|\mathbf{H}_{e,k}|-L_{e,k})}\cdot \frac{1}{\prod\limits_{e'\in E(\Gamma)-e}\left(\prod\limits_{k\in I_{e'}:e\notin \mathbf{H}_{e',k}}(L_{e',k}-|\mathbf{H}_{e',k}|+1)(|\mathbf{H}_{e',k}|-L_{e',k})\right)}
-$$
-$$
-=\frac{1-l_e^{\Gamma}}{\prod\limits_{v\in C^{\mathbf{H}_{\Gamma}(o,e_o)}_{e'<}}\prod\limits_{e'\in E(\Gamma)}(L_{e',v}-|U^{\mathbf{H}_{\Gamma}(o,e_o)}_{v}|+1)(|U^{\mathbf{H}_{\Gamma}(o,e_o)}_{v}|-L_{e',v})}
-$$
-\iffalse
-   1) If $\star$ is joint with $i,j$, then
-  $$
-\mathbf{L}_{\Gamma^{\star},\mathbf{H}(o,e)}:=\mathbf{L}_{\Gamma,\mathbf{H}(o,e)}(,l_{\star i}-l_{\star j}-l_{ij}+1,)\cdot   \frac{1}{(l_{\star i}-l_{\star j})(l_{\star i}-l_{\star j}+1)}
-  $$
-
-  \fi
-\end{defn}
-
-\begin{lem}\label{lVariableInv}
-\Gui{Delete?}
-  We have
-  $$
-  L^{\Gamma}_{e,k}-|\mathbf{H}^{\Gamma}_{e,k}|+1=L^{\Gamma^{\star}}_{e,k}-|\mathbf{H}^{\Gamma^{\star}}_{e,k}|+1
-  $$
-\end{lem}
-\begin{proof}
-  Suppose that $e'=[ij]\in \mathbf{H}^{\Gamma}_{e,k}$, then
-  $$
-  l^{\Gamma}_{e'}=l^{\Gamma^{\star}}_{[\star i]}+l^{\Gamma^{\star}}_{[\star j]}+l^{\Gamma^{\star}}_{[ij]}-1.
-  $$
-\end{proof}
-\begin{lem}
-\Gui{Rewrite, change the fraction}
-
-  $$
-  \frac{\mathbf{L}_{\Gamma,\mathbf{H}(o,2o)}}{\mathbf{L}_{\Gamma,\mathbf{H}(o,1o)}}=\frac{\frac{1-l^{\Gamma}_{2o}}{(L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|+1)\cdot(L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|) } }{\frac{1-l^{\Gamma}_{1o}}{(L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|+1)\cdot(L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|)} }
-  $$
-
-\end{lem}
-\begin{proof}
-  If $1o\notin H_{e,k}$, then $2o\notin H_{2,k}$. We have
-  $$
-  \frac{\mathbf{L}_{\Gamma,\mathbf{H}(o,2o)}}{\mathbf{L}_{\Gamma,\mathbf{H}(o,1o)}}=\frac{\frac{1-l_{2o}^{\Gamma}}{\prod\limits_{k\in I_{2o}}(L_{2o,k}-|\mathbf{H}_{2o,k}|+1)(|\mathbf{H}_{2o,k}|-L_{2o,k})\left(\prod\limits_{k\in I_{1o}:k\neq 2}(L_{1o,k}-|\mathbf{H}_{1o,k}|+1)(|\mathbf{H}_{1o,k}|-L_{1o,k})\right)}}{\frac{1-l_{1o}^{\Gamma}}{\prod\limits_{k\in I_{1o}}(L_{1o,k}-|\mathbf{H}_{1o,k}|+1)(|\mathbf{H}_{1o,k}|-L_{1o,k})\left(\prod\limits_{k\in I_{2o}:k\neq 1}(L_{2o,k}-|\mathbf{H}_{2o,k}|+1)(|\mathbf{H}_{2o,k}|-L_{2o,k})\right)}}
-  $$
-  $$
-  =\frac{\frac{1-l^{\Gamma}_{2o}}{(L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|+1)\cdot(L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|) } }{\frac{1-l^{\Gamma}_{1o}}{(L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|+1)\cdot(L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|)} }.
-  $$
-
-\end{proof}
-\begin{prop}
-
-  The element
-  $$
-  \mathbf{G}_{\Gamma,\mathbf{H}(o,e)}(\lambda):=\mathbf{L}_{\Gamma,\mathbf{H}(o,e)}\cdot\prod^n_{i=1}(\sum_{v\in v(\Gamma)-v(e_o)}f^{\Gamma}_{v,e'_i}\lambda_v)\wedge(\sum_{v\in v(\Gamma)-v(e_o)}f^{\Gamma}_{v,e''_i}\lambda_v)
-  $$
-  $$
-  =\mathbf{L}_{\Gamma,\mathbf{H}(o,e)}\cdot\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}
-  $$
-  $$
-  \in k[\lambda_v]_{v\in v(\Gamma)-o}\otimes \mathbf{F}[l^{\Gamma}_e]_{e\in e(\Gamma)}=\frac{k[\lambda_v]_{v\in v(\Gamma)}}{\sum\limits_{v\in v(\Gamma)}\lambda_v=0}\otimes \mathbf{F}[l^{\Gamma}_e]_{e\in e(\Gamma)}
-  $$
-  is independent of the data $(\Gamma,\mathbf{H}(o,e))$.
-\end{prop}
-
-\begin{proof}
-
-%%First it is easy to see that $\mathbf{W}_{\Gamma,\mathbf{H}(o,e)}(\lambda)$ does not depend on the choice of the base point $o\in e$. We now prove that for a fixed edge $e$, $\mathbf{W}_{\Gamma,\mathbf{H}(o,e)}(\lambda)$ is independent of the Hennerberg move $\mathbf{H}_{\Gamma^{\star},(o,e_o)}$ starting from $e_o$.
-
-
-  By induction, we have \Gui{Add details}
-$$
-  \partial_{\mathfrak{z}_{1o}}\mathbf{W}_{\Gamma}=\frac{1-l^{\Gamma}_{1o}}{L^{\Gamma}_{1o,2}-|\mathbf{H}^{\Gamma}_{1o,2}|+1}\left((L^{\Gamma}_{1o,2}-|\mathbf{H}^{\Gamma}_{1o,2}|+1)\rho^{\Gamma}(\lambda)+(L^{\Gamma}_{2o,1}-|\mathbf{H}^{\Gamma}_{2o,1}|)\phi^{\Gamma}(\lambda)\right)
-  $$
-$$
-  \partial_{\mathfrak{z}_{2o}}\mathbf{W}_{\Gamma}=\frac{1-l^{\Gamma}_{2o}}{L^{\Gamma}_{2o,1}-|\mathbf{H}^{\Gamma}_{2o,1}|+1}\left((L^{\Gamma}_{1o,2}-|\mathbf{H}^{\Gamma}_{1o,2}|)\rho^{\Gamma}(\lambda)+(L^{\Gamma}_{2o,1}-|\mathbf{H}^{\Gamma}_{2o,1}|+1)\phi^{\Gamma}(\lambda)\right)
-  $$
-$$
-\partial_{\mathfrak{z}_{12}}\mathbf{W}_{\Gamma}=c^{\Gamma}(l_e^{\Gamma})\cdot \left((L^{\Gamma}_{1o,2}-|\mathbf{H}^{\Gamma}_{1o,2}|)\rho^{\Gamma}(\lambda)+(L^{\Gamma}_{2o,1}-|\mathbf{H}^{\Gamma}_{2o,1}|)\phi^{\Gamma}(\lambda)\right)
-$$
-By Lemma \ref{lVariableInv}, we only need to prove when $\star$ is joint with $1o$ or $2o$. We have
-\begin{align*}
-   &   \partial_{\mathfrak{z}_{1o}}\mathbf{W}_{\Gamma^{\star}}=\frac{r_{\star}(1-l^{\Gamma}_{1o})}{L^{\Gamma^{\star}}_{1o,2}-|\mathbf{H}^{\Gamma^{\star}}_{1o,2}|+1}\left((L^{\Gamma^{\star}}_{1o,2}-|\mathbf{H}^{\Gamma^{\star}}_{1o,2}|+1)\rho^{\Gamma}(\lambda_1+s_{\star}\lambda_{\star})+(L^{\Gamma^{\star}}_{2o,1}-|\mathbf{H}^{\Gamma^{\star}}_{2o,1}|)\phi^{\Gamma}(\lambda_1+s_{\star}\lambda_{\star})\right) \\
-   & =\frac{1-l^{\Gamma^{\star}}_{1o}}{L^{\Gamma^{\star}}_{1o,2}-|\mathbf{H}^{\Gamma^{\star}}_{1o,2}|+1}\left((L^{\Gamma^{\star}}_{1o,2}-|\mathbf{H}^{\Gamma^{\star}}_{1o,2}|+1)\rho^{\Gamma}(\lambda_1+s_{\star}\lambda_{\star})+(L^{\Gamma^{\star}}_{2o,1}-|\mathbf{H}^{\Gamma^{\star}}_{2o,1}|)\phi^{\Gamma}(\lambda_1+s_{\star}\lambda_{\star})\right)
-\end{align*}
-Recall that
-$$
-r_{\star}=\frac{l^{\Gamma^\star}_{[ 1o]}-1}{l^{\Gamma^\star}_{[ \star o]}+l^{\Gamma^\star}_{[ \star 1]}+l^{\Gamma^\star}_{[ 1o]}-2}=\frac{1-l^{\Gamma^\star}_{[ 1o]}}{1-l^{\Gamma}_{[ 1o]}}
-$$
-  $$
-  \frac{ \partial_{\mathfrak{z}_{2o}}\mathbf{W}_{\Gamma}\wedge  \partial_{\mathfrak{z}_{12}}\mathbf{W}_{\Gamma}}{ \partial_{\mathfrak{z}_{1o}}\mathbf{W}_{\Gamma}\wedge  \partial_{\mathfrak{z}_{12}}\mathbf{W}_{\Gamma}}=\frac{\frac{1-l^{\Gamma}_{2o}}{L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|+1}\cdot(L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|) }{\frac{1-l^{\Gamma}_{1o}}{L^{\Gamma}_{1o,2}-|\mathbf{H}_{1o,2}|+1}\cdot(L^{\Gamma}_{2o,1}-|\mathbf{H}_{2o,1}|) }=\frac{\mathbf{L}_{\Gamma,\mathbf{H}(o,2o)}}{\mathbf{L}_{\Gamma,\mathbf{H}(o,1o)}}
-  $$
-  \iffalse
-  Now we prove the claim by induction. Suppose that we have the same base vertex $o$ with different colored edges $e_o,\tilde{e}_o$. We first assume that $e_o,\tilde{e}_o$ belong to a triangle.
-  \begin{align*}
-      \mathbf{G}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e_o)}&=\mathbf{G}_{\Gamma,\mathbf{H}_{\Gamma}(o,e_o)}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\lambda_j+s_{\star}\lambda_{\star},\dots)\cdot (\sum\limits_{k=1}^{n}f_{k,[ij]}\lambda_k)\wedge \lambda_{\star }\cdot\frac{\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e} \cdot r_{\star}dr_{\star}ds_{\star}}{\bigwedge_{e\neq e_{o}}dl^{\Gamma^\star}_{e} }\\
-     & =\mathbf{G}_{\Gamma,\mathbf{H}_{\Gamma}(o,\tilde{e}_o)}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\lambda_j+s_{\star}\lambda_{\star},\dots)\cdot (\sum\limits_{k=1}^{n}f_{k,[ij]}\lambda_k)\wedge \lambda_{\star }\cdot\frac{\bigwedge_{e\neq \tilde{e}_{o}}dl^{\Gamma}_{e} \cdot r_{\star}dr_{\star}ds_{\star}}{\bigwedge_{e\neq \tilde{e}_{o}}dl^{\Gamma^\star}_{e} }\\
-     &=\mathbf{G}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,\tilde{e}_o)}
-  \end{align*}
-\fi
-
-
-\end{proof}
-
-\begin{thm}
-  $$
-  \mu(W_{\Gamma})=\int_{\square_{\Gamma}}e^{\mathbf{W}_{\Gamma}(\lambda)}\cdot \mathbf{G}_{\Gamma}(\lambda)\cdot\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}
-  $$
-\end{thm}
-\begin{proof}
-
-Case 1. We express $\mathbf{W}_{\Gamma}$ in terms of $\mathbf{W}_{\Gamma^{\star}}$ as follows
-$$
-\mathbf{W}_{\Gamma}=\mathbf{W}_{\Gamma^{\star}}|_{\substack{\lambda_{\star}=0\\ \mathfrak{z}_{\star i}=0\\\mathfrak{z}_{\star j}=0}}-(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}(\mathbf{W}_{\Gamma^{\star}}|_{\substack{\lambda_{\star}=0\\ \mathfrak{z}_{\star i}=0\\\mathfrak{z}_{\star j}=0}})|\mathfrak{z}_{ij}\right)
-$$
-$$
-\mathbf{W}_{\Gamma}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\lambda_j+s_{\star}\lambda_{\star},\dots)=\mathbf{W}_{\Gamma^{\star}}|_{\substack{ \mathfrak{z}_{\star i}=0\\\mathfrak{z}_{\star j}=0}}-(1-\frac{1}{r_{\star}})\left(\partial_{\mathfrak{z}_{ij}}(\mathbf{W}_{\Gamma^{\star}}|_{\substack{ \mathfrak{z}_{\star i}=0\\\mathfrak{z}_{\star j}=0}})|\mathfrak{z}_{ij}\right)
-$$
- We have the new integrand factor
-\begin{align*}
-   & =\mathbf{G}_{\Gamma,\mathbf{H}(o,e_o)}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\lambda_j+s_{\star}\lambda_{\star},\dots)\cdot(\sum\limits_{k=1}^{n}f^{\Gamma}_{k,ij}\lambda_k)\wedge \lambda_{\star }\cdot\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e} \cdot r_{\star}dr_{\star}ds_{\star}\\
-   &=\mathbf{L}_{\Gamma}\cdot\prod^n_{i=1}\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i',[ij]})\cdot\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\right)\wedge\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i'',[ij]})\cdot\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\\
-   &\cdot  \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{ r_{\star}}{1- r_{\star}} dr_{\star}ds_{\star}
-   \end{align*}
-
-Recall that
-$$
- r_{\star}=\frac{l^{\Gamma^\star}_{[ ij]}-1}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-2},\quad s_{\star}=\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]}}.
-$$
-
-
-Since in Case 1, $[ij]$ is in one of the Hennerberg moves
-\begin{align*}
-   &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{1}{1- r_{\star}} dr_{\star}ds_{\star} \\
-\end{align*}
-
-
-Then we compute
-\begin{align*}
-   & \bigwedge_{e\neq e_{o},[ij]}dl^{\Gamma}_{e} \cdot \frac{dl^{\Gamma}_{[ij]}}{1-r_{\star}}dr_{\star}ds_{\star} \\
-   & =\bigwedge_{e\neq e_{o},[ij]}dl^{\Gamma^{\star}}_{e} \cdot\frac{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-2}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}-1}d(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-1)d\left(\frac{l^{\Gamma^\star}_{[ ij]}-1}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-2}\right)d\left(\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]}}\right)\\
-   & =\bigwedge_{e\neq e_{o},[ij]}dl^{\Gamma^{\star}}_{e} \cdot\frac{d(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]}-1)dl^{\Gamma^\star}_{[ ij]}d\left(\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]}}\right)}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}-1}\\
-   &=\bigwedge_{e\neq e_{o},[ij]}dl^{\Gamma^{\star}}_{e} \cdot\frac{d(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]})dl^{\Gamma^\star}_{[ ij]}d\left(\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]}}\right)}{l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}-1}\\
-      &= \frac{1}{(l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]})(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}-1)}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}
-\end{align*}
-Finally we get
-\begin{align*}
-   &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \frac{1}{(l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ j\star ]})(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}-1)}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e} \\
-   &=\mathbf{L}_{\Gamma^{\star}}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\right) \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}\\
-   &=\mathbf{G}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}.
-\end{align*}
-
-Case 2, $\star$ is joint with $i,o$ and $e_o\neq [io]$. The proof is almost the same.
-Recall that
-$$
- r_{\star}=\frac{l^{\Gamma^\star}_{[ io]}-1}{l^{\Gamma^\star}_{[ \star o]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ io]}-2},\quad s_{\star}=\frac{l^{\Gamma^\star}_{[ \star i]}}{l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ \star o]}}.
-$$
-
-
-\begin{align*}
-   & =\mathbf{G}_{\Gamma,\mathbf{H}(o,e_o)}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots)\cdot(\sum\limits_{k=1}^{n}f_{k,[io]}\lambda_k)\wedge \lambda_{\star }\cdot\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e} \cdot r_{\star}dr_{\star}ds_{\star}\\
-&=\mathbf{L}_{\Gamma}\cdot\prod^n_{i=1}\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i',[ij]})\cdot\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\right)\wedge\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i'',[ij]})\cdot\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\\
-   &\cdot  \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{ r_{\star}}{1- r_{\star}} dr_{\star}ds_{\star}\\
-     &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{1}{1- r_{\star}} dr_{\star}ds_{\star}\\
-     &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o},[io]}dl^{\Gamma}_{e} \cdot \frac{dl^{\Gamma}_{[io]}}{1-r_{\star}}dr_{\star}ds_{\star}\\
-     &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot\frac{1}{(l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ o\star ]})(l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star i]}-1)}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}\\
-      &=\mathbf{G}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}.
-\end{align*}
-
-
-Case 3.  $\star$ is joint with $e_o=[1o]$
-\begin{align*}
-   & =\mathbf{G}_{\Gamma,\mathbf{H}(o,e_o)}(\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots)\cdot(\sum\limits_{k=1}^{n}f_{k,[io]}\lambda_k)\wedge \lambda_{\star }\cdot\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e} \cdot r_{\star}dr_{\star}ds_{\star}\\
-&=\mathbf{L}_{\Gamma}\cdot\prod^n_{i=1}\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i',[ij]})\cdot\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\right)\wedge\left((1-(1-\frac{1}{r_{\star}})\delta_{e_i'',[ij]})\cdot\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\\
-   &\cdot  \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star j}}\mathbf{W}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{ r_{\star}}{1- r_{\star}} dr_{\star}ds_{\star}\\
-     &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{r_{\star}}{1- r_{\star}} dr_{\star}ds_{\star}\\
-    \end{align*}
-
-\begin{align*}
-   & \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot \frac{r_{\star}}{1-r_{\star}}dr_{\star}ds_{\star} \\
-   & =\frac{l_{io}^{\Gamma^{\star}}-1}{l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star i}-1}\bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot d\left(\frac{l_{io}^{\Gamma^{\star}}-1}{l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star i}+l_{io}^{\Gamma^{\star}}-2}\right)d\left(\frac{l^{\Gamma^{\star}}_{\star i}}{l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star i}}\right)\\
-   &=\frac{l_{1o}^{\Gamma^{\star}}-1}{(l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star 1}+l_{1o}^{\Gamma^{\star}}-2)(l^{\Gamma^\star}_{[ \star 1]}+l^{\Gamma^\star}_{[ o\star ]})(l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star 1]}-1)}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}
-\end{align*}
-Since
-$$
-2-(l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star 1}+l_{1o}^{\Gamma^{\star}})=1-l^{\Gamma}_{[1o]}
-$$
-$$
-\mathbf{L}_{\Gamma}\cdot \frac{l_{1o}^{\Gamma^{\star}}-1}{(l^{\Gamma^{\star}}_{o\star }+l^{\Gamma^{\star}}_{\star 1}+l_{1o}^{\Gamma^{\star}}-2)(l^{\Gamma^\star}_{[ \star 1]}+l^{\Gamma^\star}_{[ o\star ]})(l^{\Gamma^\star}_{[ o\star]}+l^{\Gamma^\star}_{[ \star 1]}-1)}=\mathbf{L}_{\Gamma^{\star}}.
-$$
-we have
-\begin{align*}
-   &=\mathbf{L}_{\Gamma}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\cdot  \frac{r_{\star}}{1- r_{\star}} dr_{\star}ds_{\star} \\
-   & =\mathbf{L}_{\Gamma^{\star}}\cdot\left(\prod^n_{i=1}\partial_{\mathfrak{z}_{e_i'}}\mathbf{W}_{\Gamma^{\star}}\wedge\partial_{\mathfrak{z}_{e_i''}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot  \left( \partial_{\mathfrak{z}_{\star i}}\mathbf{W}_{\Gamma^{\star}}\wedge \partial_{\mathfrak{z}_{\star o}}\mathbf{W}_{\Gamma^{\star}}\right)\cdot \bigwedge_{e\neq e_{o}}dl^{\Gamma}_{e}\\
-   &=\mathbf{G}_{\Gamma^{\star}}\cdot \bigwedge_{e\neq e_{o},e\in E(\Gamma^{\star})}dl^{\Gamma^{\star}}_{e}.
-\end{align*}
-\end{proof}
-\iffalse
-\begin{proof}
-The constant term is given by
-  \begin{align*}
-     & \int^1_0dt_4\int^1_0ds_4\int^1_0ds_2\int^1_0ds_1\int_{t_1+t_2\leq 1}dt_1dt_2\left(\lambda_1\wedge (s_4\lambda_4+s_4s_2\lambda_2+\lambda_3) \right)\left( (\lambda_4+s_2\lambda_2)\wedge (s_1\lambda_1+\lambda_3)\right)  \\
-   & \cdot \left(\lambda_2\wedge (-s_1t_2\lambda_1-t_2\lambda_3+(s_4(1-t_2)-1)\lambda_4)\right)\cdot(1-t_2-t_1) (1-t_4)\\
-   &= \frac{1}{864}\left(\lambda_1 \wedge \lambda_2\right)^3+\frac{1}{288}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2+\frac{1}{288}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2 \\
-& -\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)}_{\boxed{1}} \\
-& -\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)+\frac{1}{144}\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) \\
-& -\frac{1}{288}\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2-\frac{1}{288}\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2+\frac{1}{288}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_1 \wedge \lambda_2\right) \\
-& +\frac{1}{288}\left(\lambda_2 \wedge \lambda_3\right)^2\left(\lambda_1 \wedge \lambda_2\right)+\underbrace{\frac{7}{96}\left(\lambda_3 \wedge \lambda_4\right)^2\left(\lambda_1 \wedge \lambda_2\right)}_{\boxed{2}}+\frac{1}{144}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) \\
-& \underbrace{-\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)}_{\boxed{3}}+\underbrace{\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)^2\left(\lambda_2 \wedge \lambda_4\right)}_{\boxed{3'}}-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_4\right) \\
-& +\underbrace{\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)^2}_{\boxed{5}}\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)^2}_{\boxed{4}}\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_3\right)}_{\boxed{6}} \\
-& \underbrace{-\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)}_{\boxed{6'}}+\underbrace{\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right) }_{\boxed{5'}}\\
-& -\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right)+\underbrace{\frac{1}{16}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right) }_{\boxed{2'}}\\
-& -\frac{1}{48}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) }_{\boxed{1'}}\\
-& +\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)^2+\underbrace{\frac{1}{48}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right) }_{\boxed{4'}}\\
-& \underbrace{-\frac{1}{8}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)}_{\boxed{2''}}
-\end{align*}
-
-\begin{align*}
-&\boxed{2}+\boxed{2'}+\boxed{2''}\\
-   & =\frac{7}{96}\left(\lambda_3 \wedge \lambda_4\right)^2\left(\lambda_1 \wedge \lambda_2\right) +\frac{1}{16}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right) -\frac{1}{8}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)\\
-   & = \frac{7}{96}\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_1\right)\left(\lambda_4 \wedge \lambda_2\right)- \frac{7}{96}\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_2\right)\left(\lambda_4 \wedge \lambda_1\right)\\
-    &+\frac{6}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right) -\frac{12}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)\\
-    &=\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right) -\frac{5}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)}_{\boxed{\tilde{2}}}
-\end{align*}
-
-\begin{align*}
-&\boxed{3}+\boxed{3'}\\
-   &= -{\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)}+{\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)^2\left(\lambda_2 \wedge \lambda_4\right)} \\
-   &=-\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_2\right)\\
-   &=\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)}_{\boxed{\tilde{3}}}
-\end{align*}
-\begin{align*}
-&\boxed{4}+\boxed{4'}\\
-   &= -{\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)^2}+{\frac{1}{48}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right) } \\
-   & =-\frac{1}{96}\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_2\right)\left(\lambda_2 \wedge \lambda_4\right)+\frac{1}{48}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\\
-    &=\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)}_{\boxed{\tilde{4}}}
-\end{align*}
-
-Then
- \begin{align*}
-= & \frac{1}{864}\left(\lambda_1 \wedge \lambda_2\right)^3+\frac{1}{288}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2+\frac{1}{288}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2 \\
-& -\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)}_{\boxed{1}} \\
-& -\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)+\frac{1}{144}\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) \\
-& -\frac{1}{288}\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2-\frac{1}{288}\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2+\frac{1}{288}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_1 \wedge \lambda_2\right) \\
-& +\frac{1}{288}\left(\lambda_2 \wedge \lambda_3\right)^2\left(\lambda_1 \wedge \lambda_2\right)+\frac{1}{144}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) \\
-& \underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)}_{\boxed{\tilde{3}}}-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_4\right) \\
-& +\underbrace{\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)^2}_{\boxed{5}}\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_3\right)}_{\boxed{6}} \\
-& \underbrace{-\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)}_{\boxed{6'}}+\underbrace{\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right) }_{\boxed{5'}}\\
-& -\frac{1}{48}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right)\\
-& -\frac{1}{48}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right) }_{\boxed{1'}}\\
-& +\frac{1}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)^2\\
-&\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right) -\frac{5}{96}\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right)}_{\boxed{\tilde{2}}}\\
-&\underbrace{-\frac{1}{96}\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)+\frac{1}{96}\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)}_{\boxed{\tilde{4}}}
-\end{align*}
-On the other hand, we have
-$$
-\int^1_0dt_4\int^1_0ds_4\int^1_0ds_2\int^1_0ds_1\int_{t_1+t_2\leq 1}dt_1dt_2\left(\lambda_1\wedge (s_4\lambda_4+s_4s_2\lambda_2+\lambda_3) \right)\left( (\lambda_4+s_2\lambda_2)\wedge (s_1\lambda_1+\lambda_3)\right)
-$$
-$$
-\cdot \left(\lambda_2\wedge (-s_1t_2\lambda_1-t_2\lambda_3+(s_4(1-t_2)-1)\lambda_4)\right)\cdot(1-t_2-t_1) (1-t_4)
-$$
-we list
-$$
-\left(\lambda_1 \wedge \lambda_2\right)^3:  s_4s_2(-s_2s_1)s_1t_2(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{3}\frac{1}{3}\frac{1}{24}\frac{1}{2}=-\frac{1}{864}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2:-s_2s_1s_1t_2(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{3}\frac{1}{24}\frac{1}{2}=-\frac{1}{288}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2:s_4(-s_2s_1)s_1t_2(1-t_2-t_1)(1-t_4)+s_4s_2(-s_1)s_1t_2(1-t_2-t_1)(1-t_4)
-$$
-$$
--2s_4(-s_2s_1)s_1t_2(1-t_2-t_1)(1-t_4)=2\frac{1}{2}\frac{1}{2}\frac{1}{3}\frac{1}{24}\frac{1}{2}=-\frac{1}{288}
-$$
-
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right):(s_2(s_1t_2)+(s_2s_1)t_2)(1-t_2-t_1)(1-t_4)=2\frac{1}{2}\frac{1}{2}\frac{1}{24}\frac{1}{2}=\frac{1}{96}
-$$
-
-
-
-
-$$
-\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right):\underline{(s_4(-s_2s_1)s_4(1-t_2)+s_4s_2(-s_1)s_4(1-t_2))(1-t_2-t_1)(1-t_4)}
-$$
-$$
--(s_4(-s_2s_1)+s_4s_2(-s_1))(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{3}\frac{1}{8}\frac{1}{2}+\frac{1}{2}\frac{1}{2}\frac{1}{6}\frac{1}{2}=\frac{1}{96}
-$$
-
-$$
-\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right):\underline{(s_4s_2)s_2s_4(1-t_2)(1-t_2-t_1)(1-t_4)}
-$$
-$$
--(s_4s_2)s_2(1-t_2-t_1)(1-t_4)=\frac{1}{3}\frac{1}{3}\frac{1}{8}\frac{1}{2}-\frac{1}{2}\frac{1}{3}\frac{1}{6}\frac{1}{2}=-\frac{1}{144}
-$$
-$$
-\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)^2:((s_4s_2)(-s_2s_1)(-t_2)+(s_4s_2)s_2s_1t_2)(1-t_2-t_1)(1-t_4)=\frac{1}{2}\frac{1}{3}\frac{1}{24}\frac{1}{2}=\frac{1}{288}
-$$
-$$
-\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)^2:(s_4s_2)(-s_1s_2)s_4(1-t_2)(1-t_2-t_1)(1-t_4)
-$$
-$$
--(s_4s_2)(-s_1s_2)(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{3}\frac{1}{2}\frac{1}{8}\frac{1}{2}+\frac{1}{2}\frac{1}{2}\frac{1}{3}\frac{1}{6}\frac{1}{2}=\frac{1}{288}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_1 \wedge \lambda_2\right):s_4(-s_1)(t_2s_1)(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{3}\frac{1}{24}\frac{1}{2}=-\frac{1}{288}
-$$
-$$
-\left(\lambda_2 \wedge \lambda_3\right)^2\left(\lambda_1 \wedge \lambda_2\right):s_4s_2s_2(-t_2)(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{2}\frac{1}{24}\frac{1}{2}=-\frac{1}{288}
-$$
-
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right):s_1(-s_1)t_2(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{24}\frac{1}{2}=-\frac{1}{144}
-$$
-$$
-\boxed{\tilde{3}}:\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right): (-s_1)(-t_2)(1-t_2-t_1)(1-t_4)=\frac{1}{2}\frac{1}{24}\frac{1}{2}=\frac{1}{96}
-$$
-$$
-\boxed{\tilde{3}}:\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right):s_1(-1)t_2(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{24}\frac{1}{2}=-\frac{1}{96}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_4\right):s_4(-s_1)(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{2}\frac{1}{8}\frac{1}{2}+\frac{1}{2}\frac{1}{2}\frac{1}{6}\frac{1}{2}=\frac{1}{96}
-$$
-$$
-\boxed{\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)^2}:s_4s_2(-t_2)(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{2}\frac{1}{24}\frac{1}{2}=-\frac{1}{96\times 2}
-$$
-$$
-\boxed{\tilde{4}}:\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right):(s_4s_2)(-1)(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{2}\frac{1}{8}\frac{1}{2}+\frac{1}{2}\frac{1}{2}\frac{1}{6}\frac{1}{2}=\frac{1}{96}
-$$
-$$
-\boxed{\tilde{4}}:\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right):s_4s_2(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{96}
-$$
-$$
-\boxed{\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_4\right)}:s_4s_2(-t_2)(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{2}\frac{1}{24}\frac{1}{2}=-\frac{1}{96\times 2}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right):
-$$
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right):
-$$
-$$
-\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right):(-1)(-t_2)(1-t_2-t_1)(1-t_4)=\frac{1}{24}\frac{1}{2}=\frac{1}{48}
-$$
-$$
-\boxed{\tilde{2}}:\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_4\right):s_4(-1)(-t_2)(1-t_2-t_1)(1-t_4)=\frac{1}{2}\frac{1}{24}\frac{1}{2}=\frac{1}{96}
-$$
-
-$$
-\boxed{\tilde{2}}:\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right):(-1)(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{2}\frac{1}{8}\frac{1}{2}+\frac{1}{6}\frac{1}{2}
-$$
-$$
-=-\frac{3}{32\times 3}+\frac{8}{2\times 6\times 8}=\frac{5}{96}
-$$
-$$
-\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_3 \wedge \lambda_4\right): s_4(-1)(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{3}\frac{1}{8}\frac{1}{2}+\frac{1}{2}\frac{1}{6}\frac{1}{2}=\frac{1}{48}
-$$
-
-Now we turn to $\boxed{1}+\boxed{1'}$
-$$
-\underbrace{\left(\lambda_1 \wedge \lambda_2\right)^2\left(\lambda_3 \wedge \lambda_4\right)}_{=Y-X}=\underbrace{\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)}_{=Y}-\underbrace{\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)}_{=X}
-$$
-$$
-X=\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right): (s_4s_2s_1t_2+s_4(-s_2s_1)(-t_2)+s_4s_2s_1t_2)(1-t_2-t_1)(1-t_4)
-$$
-$$
-=3\times \frac{1}{2^4}\frac{1}{24}.
-$$
-$$
-Y=\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right):(-s_2s_1)(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)=-\frac{1}{2^4}\frac{1}{8}+\frac{1}{8}\frac{1}{6}
-$$
-$$
-=-\frac{3}{2^4\times 8\times 3}+\frac{2^3}{8\times 2^4\times 3}=+\frac{5}{2^4\times 8\times 3}
-$$
-$$
-Y-X=\left(\lambda_1 \wedge \lambda_2\right)^2\left(\lambda_3 \wedge \lambda_4\right):s_4s_2(-1)s_1t_2(1-t_2-t_1)(1-t_4)=-\frac{1}{2^4\times 24}
-$$
-$$
-\frac{3}{2^4\times 24}X+\frac{5}{2^4\times 24}Y-\frac{1}{2^4\times 24}(Y-X)=\frac{1}{4\times 24}X+\frac{1}{4\times 24}Y
-$$
-
-We turn to $\boxed{5}+\boxed{5'}=\frac{1}{96}(Y-X)+\frac{1}{48}Y=-\frac{1}{96}X+\frac{1}{32}Y$
-$$
-\underbrace{\left(\lambda_2 \wedge \lambda_3\right)^2\left(\lambda_1 \wedge \lambda_4\right)}_{=Y-X}=\underbrace{\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_1\right)\left(\lambda_3 \wedge \lambda_4\right)}_{=-X}-\underbrace{\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_3 \wedge \lambda_1\right)\left(\lambda_2 \wedge \lambda_4\right)}_{=-Y}
-$$
-$$
-X=\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right):(s_4s_2)(-1)(-t_2)(1-t_2-t_1)(1-t_4)=\frac{1}{2^3\times 24}
-$$
-$$
-Y=\left(\lambda_2 \wedge \lambda_3\right)\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right):s_2(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)
-$$
-$$
-=\frac{1}{8\times 8}-\frac{1}{8\times 3}=-\frac{5}{8\times 8\times 3}
-$$
-$$
-Y-X=\left(\lambda_2 \wedge \lambda_3\right)^2\left(\lambda_1 \wedge \lambda_4\right):s_4s_2(-t_2)(1-t_2-t_1)(1-t_2)=-\frac{1}{8\times 24}
-$$
-$$
--\frac{1}{8\times 24}(Y-X)+\frac{1}{8\times 24}X-\frac{5}{8\times 24}Y=\frac{1}{96}X-\frac{1}{32}Y
-$$
-
-
-We turn to $\boxed{6}+\boxed{6'}=-\frac{1}{96}(Y-X)-\frac{1}{48}Y=\frac{1}{96}X-\frac{1}{32}Y$
-$$
-\underbrace{\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_3\right)}_{=Y-X}=\underbrace{\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_4 \wedge \lambda_3\right)}_{=-X}-\underbrace{\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_4 \wedge \lambda_2\right)}_{=-Y}
-$$
-$$
-X=\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_2\right)\left(\lambda_3 \wedge \lambda_4\right):(s_4)(-1)(s_1t_2)(1-t_2-t_1)(1-t_4)=-\frac{1}{2^3\times 24}
-$$
-$$
-Y=\left(\lambda_1 \wedge \lambda_4\right)\left(\lambda_1 \wedge \lambda_3\right)\left(\lambda_2 \wedge \lambda_4\right):-s_1(s_4(1-t_2)-1)(1-t_2-t_1)(1-t_4)
-$$
-$$
-=-\frac{1}{8\times 8}+\frac{1}{8\times 3}=\frac{5}{8\times 8\times 3}
-$$
-$$
-Y-X=\left(\lambda_1 \wedge \lambda_4\right)^2\left(\lambda_2 \wedge \lambda_3\right):s_4(-s_1)(-t_2)(1-t_2-t_1)(1-t_2)=\frac{1}{8\times 24}
-$$
-$$
-\frac{1}{8\times 24}(Y-X)-\frac{1}{8\times 24}X+\frac{5}{8\times 24}Y=-\frac{1}{96}X+\frac{1}{32}Y
-$$
-
-\end{proof}
-\fi
 
 \appendix 
-
 \section{Graph theory background}\label{graph theory}
 
 In this appendix, we introduce some concepts and facts from graph theory used in section \ref{s:feynman}. 
@@ -4462,34 +4406,34 @@ integrals.
   the importance of $d^{-1}_{\vec{\Gamma}}(t)_{ei}$.
 \end{rem}
 
-Finally, we introduce the concept of Laman graphs.
-
-\begin{defn}
-  \label{Laman graph1}Given a connected directed graph $\vec{\Gamma}$, and a nonnegative integer 
-  $d$, we call $\vec{\Gamma}$ a $d$ dimensional Laman graph, if the following conditions hold:
-  \begin{enumerate}
-    \item For any subgraph $\vec{\Gamma}'$ such that $| \Gamma'_0 | \geqslant 2$, we
-    have the following inequality:
-    \begin{equation}
-      d | \Gamma'_0 | \geqslant (d - 1) | \Gamma_1' | + d +
-      1. \label{Laman condition1}
-    \end{equation}
-    \item The following equality holds:
-    \begin{equation}
-      d | \Gamma_0 | = (d - 1) | \Gamma_1 | + d + 1.
-      \label{Laman condition2}
-    \end{equation}
-  \end{enumerate}
-  We use the notation $\mathrm{Laman} (\vec{\Gamma})$ to denote all the Laman
-  subgraphs of $\vec{\Gamma}$.
-\end{defn}
-
-\begin{rem}
-  When $d = 2$, the concept of Laman graph originate from Laman's
-  characterization of generic rigidity of graphs embeded in two dimensional
-  real linear space (see {\cite{Laman1970OnGA}}). Our definition appears in
-  {\cite{budzik2023feynman}}.
-\end{rem}
+%Finally, we introduce the concept of Laman graphs.
+%
+%\begin{defn}
+%  \label{Laman graph1}Given a connected directed graph $\vec{\Gamma}$, and a nonnegative integer 
+%  $d$, we call $\vec{\Gamma}$ a $d$ dimensional Laman graph, if the following conditions hold:
+%  \begin{enumerate}
+%    \item For any subgraph $\vec{\Gamma}'$ such that $| \Gamma'_0 | \geqslant 2$, we
+%    have the following inequality:
+%    \begin{equation}
+%      d | \Gamma'_0 | \geqslant (d - 1) | \Gamma_1' | + d +
+%      1. \label{Laman condition1}
+%    \end{equation}
+%    \item The following equality holds:
+%    \begin{equation}
+%      d | \Gamma_0 | = (d - 1) | \Gamma_1 | + d + 1.
+%      \label{Laman condition2}
+%    \end{equation}
+%  \end{enumerate}
+%  We use the notation $\mathrm{Laman} (\vec{\Gamma})$ to denote all the Laman
+%  subgraphs of $\vec{\Gamma}$.
+%\end{defn}
+%
+%\begin{rem}
+%  When $d = 2$, the concept of Laman graph originate from Laman's
+%  characterization of generic rigidity of graphs embeded in two dimensional
+%  real linear space (see {\cite{Laman1970OnGA}}). Our definition appears in
+%  {\cite{budzik2023feynman}}.
+%\end{rem}
 
 \section{Compactification of Schwinger spaces}\label{Schwinger spaces}
 
@@ -4592,157 +4536,10 @@ $$in $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$, the following proposition giv
   This follows from the construction of $\widetilde{[0,+\infty)}^{\vec{\Gamma}_{1}}$.
 \end{proof}
 
-\section{Proof of Proposition \ref{IdepenW}}\label{ProofIdepenW}
-\Gui{Rewrite!}
-
-\begin{proof}
-  Step 1.  $  \mathbf{W}_{\Gamma,\mathbf{H}(o,e)}$ is independent of disconnected Hennerberg  moves.
-  \begin{align*}
-& \mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)  =\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)\\
-&+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)
-\end{align*}
-We compute
-$$
-\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma^*,\mathbf{H}_{\Gamma}(o,e)}(\lambda)=r_{\star}\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+r_{\star}\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda))|\lambda_{\star}\right)
-$$
-\begin{align*}
-   & \left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma}(o,e)}(\lambda))|\lambda_{\star'}\right) \\
-   & =   \left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda))|\lambda_{\star'}\right)\\
-   &+(1-r_{\star})\left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij})|\lambda_{\star'}\right)
-\end{align*}
-\begin{align*}
-   & (1-r_{\star'})   \left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij})|\lambda_{\star'}\right) \\
-   &=  (1-r_{\star'})   r_{\star} \left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij})|\lambda_{\star'}\right)
-\end{align*}
-
-
-
-  Then
-  \begin{align*}
-& \mathbf{W}_{\Gamma^{\star\star'},\mathbf{H}_{\Gamma^{\star\star'}}(o,e)}(\lambda)  =\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)\\
-&+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)\\
-&+(1-r_{\star'})r_{\star}\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij}\right)-\left((1-s_{\star'})\mathfrak{z}_{\star' i}+s_{\star'}\mathfrak{z}_{\star' j}|\lambda_{\star'}\right)\\
-&+(1-r_{\star'})r_{\star}\left((((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda))|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij})|\lambda_{\star}\right)\\
- &  +\left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star'})r_{\star}(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star'}\right)\\
-   &+(1-r_{\star})\left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij})|\lambda_{\star'}\right)
-\end{align*}
-
-Recall that
-$$
-r_{\star}=\frac{1-l^{\Gamma^\star}_{[ ij]}}{2-(l^{\Gamma^\star}_{[ j\star]}+l^{\Gamma^\star}_{[ \star i]}+l^{\Gamma^\star}_{[ ij]})}=\frac{2-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})},
-$$
-$$
-\quad 1-r_{\star}=\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}
-$$
-$$
-r_{\star'}=\frac{1-l^{\Gamma^{\star\star'}}_{[ ij]}}{2-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star' i]}+l^{\Gamma^{\star\star'}}_{[ ij]})},\quad 1-r_{\star'}=\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star' i]})}{2-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star' i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}
-$$
-$$
-r_{\star}(1-r_{\star'})=\frac{2-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}\cdot\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star' i]})}{2-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star' i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}
-$$
-$$=\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}
-$$
-  Then
-  \begin{align*}
-& \mathbf{W}_{\Gamma^{\star\star'},\mathbf{H}_{\Gamma^{\star\star'}}(o,e)}(\lambda)  =\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}\cdot\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}\right)\\
-&+\left(((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star}\right)\\
-&+\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}\cdot\left(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij}\right)\\
-&+\frac{1-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]})}{3-(l^{\Gamma^{\star\star'}}_{[ j\star']}+l^{\Gamma^{\star\star'}}_{[ \star 'i]}+l^{\Gamma^{\star\star'}}_{[ j\star]}+l^{\Gamma^{\star\star'}}_{[ \star i]}+l^{\Gamma^{\star\star'}}_{[ ij]})}\cdot \left((((1-s_{\star})\partial_{\lambda_i}+s_{\star}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda))|\mathfrak{z}_{\star' j}-\mathfrak{z}_{\star' i}-\mathfrak{z}_{ij})|\lambda_{\star}\right)\\
- &  +\left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star'})r_{\star}(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij}))|\lambda_{\star'}\right)\\
-   &+(1-r_{\star})\left(((1-s_{\star'})\partial_{\lambda_i}+s_{\star'}\partial_{\lambda_j})(\partial_{\mathfrak{z}_{ij}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star j}-\mathfrak{z}_{\star i}-\mathfrak{z}_{ij})|\lambda_{\star'}\right)\\
-   &-\left((1-s_{\star})\mathfrak{z}_{\star i}+s_{\star}\mathfrak{z}_{\star j}|\lambda_{\star}\right)-\left((1-s_{\star'})\mathfrak{z}_{\star' i}+s_{\star'}\mathfrak{z}_{\star' j}|\lambda_{\star'}\right).
-\end{align*}
-
-
-Step 2. $  \mathbf{W}_{\Gamma,\mathbf{H}(o,e)}$ is independent of the choice of the base point $o$. We only need to prove the case when $\star$ is joint with $io=e$
-  \begin{align*}
-& \mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)  =\underbrace{\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)}_{\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)}-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)\\
-&-\left((1-(1-s_{\star}))\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left(((1-s_{\star})\partial_{\lambda_i})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)\\
-&=\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left(((1-s_{\star})\partial_{\lambda_i})\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_{\star}\right)
-\end{align*}
-$$
-\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)=\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-\left(\partial_{\lambda_i}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n\right)
-$$
-this implies that
-$$
-\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)=\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-\left(\partial_{\lambda_i}\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n\right)
-$$
-We want to prove that
-
-\begin{align*}
-   &\mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(i,e)}(\lambda)=\mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)-\left(\partial_{\lambda_i}\mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n+\lambda_{\star}\right)  \\
-   & =\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left(((1-s_{\star})\partial_{\lambda_i})\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_{\star}\right)\\
-   &-\left(\partial_{\lambda_i}\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n+\lambda_{\star}\right)  \\
-    &  =\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)-\left((s_{\star}\partial_{\lambda_i})\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_{\star}\right)\\
-   &-\left(\partial_{\lambda_i}\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma^{\star}}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n\right)
-\end{align*}
-
-  \begin{align*}
-& \mathbf{W}_{\Gamma^{\star},\mathbf{H}_{\Gamma^{\star}}(i,e)}(\lambda)  =\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)+(1-r_{\star})\left(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}\right)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)\\
-&-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left((s_{\star}\partial_{\lambda_o})(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)+(1-r_{\star})(\partial_{\mathfrak{z}_{io}}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)|\mathfrak{z}_{\star o}-\mathfrak{z}_{\star i}-\mathfrak{z}_{io}))|\lambda_{\star}\right)\\
-&=\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)-\left((1-s_{\star})\mathfrak{z}_{\star i}|\lambda_{\star}\right)-\left(s_{\star}\mathfrak{z}_{\star o}|\lambda_{\star}\right)+\left((s_{\star}\partial_{\lambda_o})\mathbf{W}^{\blacktriangle}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)|\lambda_{\star}\right)
-\end{align*}
-Note that $\partial_{\lambda_o}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)=0$,
-\begin{align*}
-   & (s_{\star}\partial_{\lambda_o})\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(i,e)}(\lambda)=   (s_{\star}\partial_{\lambda_o})\left(\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)-(\partial_{\lambda_i}\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)|\lambda_o+\lambda_1+\cdots+\lambda_n)\right) \\
-   & =  -(s_{\star}\partial_{\lambda_i})\mathbf{W}_{\Gamma,\mathbf{H}_{\Gamma}(o,e)}(\lambda)
-\end{align*}
-
-Step 3. $\mathbf{W}$ is independent of the choice of $e$.
-$$
-\lineW=\mathbf{W}_{\Gamma_0,\mathbf{H}^{\Gamma_0}(o,e)}(\lambda)=-(\mathfrak{z}_{1o}|\lambda_1)
-$$
- \begin{align*}
-&\triangleW(\lambda)  =\lineW(\lambda)+(1-r_{2})\left(\partial_{\mathfrak{z}_{1o}}\lineW(\lambda)|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)-(1-s_{2})\left(\mathfrak{z}_{21 }|\lambda_{2}\right)\\
-&-s_2\left(\mathfrak{z}_{2 o}|\lambda_{2}\right)+\left(((1-s_2)\partial_{\lambda_1})(\lineW(\lambda)+(1-r_{2})(\partial_{\mathfrak{z}_{1o}}\lineW(\lambda)|\mathfrak{z}_{2 o}-\mathfrak{z}_{21 }-\mathfrak{z}_{1o}))|\lambda_{2}\right)\\
-&=-(\mathfrak{z}_{1o}|\lambda_1)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)-(1-s_{2})\left(\mathfrak{z}_{21 }|\lambda_{2}\right)\\
-&-s_2\left(\mathfrak{z}_{2 o}|\lambda_{2}\right)-(1-s_2)\left(\mathfrak{z}_{1o}|\lambda_{2}\right)-(1-s_2)(1-r_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)\\
-&=-(\mathfrak{z}_{1o}|\lambda_1)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)-(1-s_{2})\left(\mathfrak{z}_{21 }|\lambda_{2}\right)\\
-&-(\mathfrak{z}_{2o}|\lambda_2)+(1-s_2)\left(\mathfrak{z}_{2 o}|\lambda_{2}\right)-(1-s_2)\left(\mathfrak{z}_{1o}|\lambda_{2}\right)-(1-s_2)(1-r_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)\\
-&=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-(1-r_{2})\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+r_2(1-s_2)\left(\lambda_2|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)
-\end{align*}
-$$
-r_2=\frac{1-\trianglel_{[1o]}}{2-\trianglel_{[1o]}-\trianglel_{[21]}-\trianglel_{[2o]}}=1-\trianglel_{[1o]},\quad s_2=\frac{\trianglel_{[21]}}{\trianglel_{[21]}+\trianglel_{[2o]}}
-$$
-$$
-r_2(1-s_2)=(1-\trianglel_{[1o]})\cdot \frac{\trianglel_{[2o]}}{\trianglel_{[21]}+\trianglel_{[2o]}}=\trianglel_{[2o]}.
-$$
-$$
-\triangleW(\lambda)=-(\mathfrak{z}_{1o}|\lambda_1)-(\mathfrak{z}_{2o}|\lambda_2)-\trianglel_{[1o]}\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)+\trianglel_{[2o]}\left(\lambda_1|\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}\right)
-$$
-\end{proof}
-
-\subsection{Maple code for the chiral 5-operation}
-
-\Gui{Add}
-\iffalse
-\begin{lstlisting}
-`&lambda;_1` := [x_1, y_1];
-`&lambda;_2` := [x_2, y_2];
-`&lambda;_3` := [x_3, y_3];
-`&lambda;_4` := [x_4, y_4];
-wedge := (a, b) -> a[1]*b[2] - a[2]*b[1];
-result := wedge(`&lambda;_1`, `&lambda;_2`);
-
-int((s__4*wedge(`&lambda;_1`, `&lambda;_4`) + s__4*s__2*wedge(`&lambda;_1`, `&lambda;_2`)
-
- + wedge(`&lambda;_1`, `&lambda;_3`))*(wedge(`&lambda;_4`, `&lambda;_3`)
-
- +  s__1*wedge(`&lambda;_4`, `&lambda;_1`) + s__2*wedge(`&lambda;_2`, `&lambda;_3`)
-
-+s__1*s__2*wedge(`&lambda;_2`, `&lambda;_1`))*(-s__1*t__2*wedge(`&lambda;_2`, `&lambda;_1`)
-
- - t__2*wedge(`&lambda;_2`, `&lambda;_3`) + (s__4*(1 - t__2) - 1)
-
- *wedge(`&lambda;_2`, `&lambda;_4`))*(1 - t__1 - t__2)*(1 - t__4),
-
-  [t__1 = 0 .. 1 - t__2, t__2 = 0 .. 1, s__1 = 0 .. 1, s__2 = 0 .. 1, s__4 = 0 .. 1, t__4 = 0 .. 1])
-
-  + 1/864*wedge(`&lambda;_1`, `&lambda;_2`)^3 + 1/96*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_3`)^2 - 1/96*wedge(`&lambda;_1`, `&lambda;_4`)^2*wedge(`&lambda;_2`, `&lambda;_3`) + 1/96*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_3`)^2 - 1/96*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`)^2 - 1/96*wedge(`&lambda;_1`, `&lambda;_4`)^2*wedge(`&lambda;_2`, `&lambda;_4`) + 1/96*wedge(`&lambda;_1`, `&lambda;_3`)^2*wedge(`&lambda;_2`, `&lambda;_4`) - 1/8*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_3`, `&lambda;_4`) + 1/48*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`) - 1/48*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_3`, `&lambda;_4`) - 1/96*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_1`, `&lambda;_2`) - 1/48*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_3`, `&lambda;_4`) + 1/16*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_3`, `&lambda;_4`) - 1/48*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_4`) + 1/48*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`) + 1/144*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_1`, `&lambda;_2`) - 1/48*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_3`) - 1/96*wedge(`&lambda;_1`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_2`) - 1/96*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_2`) - 1/96*wedge(`&lambda;_1`, `&lambda;_4`)*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_1`, `&lambda;_2`) + 1/144*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_1`, `&lambda;_2`) - 1/288*wedge(`&lambda;_2`, `&lambda;_4`)*wedge(`&lambda;_1`, `&lambda;_2`)^2 + 7/96*wedge(`&lambda;_3`, `&lambda;_4`)^2*wedge(`&lambda;_1`, `&lambda;_2`) - 1/288*wedge(`&lambda;_2`, `&lambda;_3`)*wedge(`&lambda;_1`, `&lambda;_2`)^2 + 1/288*wedge(`&lambda;_1`, `&lambda;_4`)^2*wedge(`&lambda;_1`, `&lambda;_2`) + 1/288*wedge(`&lambda;_1`, `&lambda;_2`)^2*wedge(`&lambda;_1`, `&lambda;_4`) + 1/288*wedge(`&lambda;_1`, `&lambda;_2`)^2*wedge(`&lambda;_1`, `&lambda;_3`) + 1/288*wedge(`&lambda;_2`, `&lambda;_3`)^2*wedge(`&lambda;_1`, `&lambda;_2`);
-\end{lstlisting}
-\fi
-% ----------------------------------------------------------------
 \bibliographystyle{amsplain}
 \bibliography{HigherChiral}
 \end{document}
-% ---------------------------------------------------------------- 
+
+
+
+
