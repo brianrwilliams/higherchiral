@@ -215,7 +215,7 @@
 \begin{document}
 
 \title[]{Higher-dimensional chiral algebras in the Jouanolou model}%
-\author{Zhengping Gui, Minghao Wang, Brian Williams}%
+\author{Zhengping Gui, Minghao Wang, Brian R. Williams}%
 \address{}%
 \email{}%
 
@@ -276,7 +276,8 @@ For $\mathcal{D}$-module $\mathcal{A}$ defined on an algebraic curve $X$, the sp
 \begin{equation}\label{}
   \mathrm{Hom}_{\mathcal{D}_{X^{{I}}}}\left(j_{*}j^*\mathcal{A}^{\boxtimes{n}},\Delta_* \mathcal{A}\right)
 \end{equation}
-where $j \colon \mathrm{Conf}_n(X) \to X \times \cdots \times X$ is inclusion and $\Delta \colon X \to X \times \cdots \times X$ is the diagonal inclusion.
+where $j \colon \mathrm{Conf}_n(X) \to X \times \cdots \times X$ is open immersion and $\Delta \colon X \to X \times
+\cdots \times X$ is the diagonal embedding.
 Combining chiral operations of all arities results in an operad.
 In genealizing this to $X = \mathbb{A}^d$ we use the Jouanolou trick to provide an explicit model for the $\mathcal{D}
 $-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}$.
@@ -442,7 +443,7 @@ $$
 \mathbf{J}_{\mathbb{A}^d}^{{I}}[M]\xleftarrow{\sim}\mathcal{J}_{\mathbb{A}^d}^{{I}}[M]\xrightarrow{\sim}\mathbf{P}_{\mathbb{A}^d}^{{I}}[M].
 $$
 The claim that  $\mathbf{J}_{\mathbb{A}^d}^{{I}}[M]\sim \R j_{I*}j^*_IM_{I}$ follows from the fact that $\mathbf{P}
-_{\mathbb{A}^d}^{{I}}[M]\sim Rj_{I*}j^*_IM_{I}$, see \cite{FGY}.
+_{\mathbb{A}^d}^{{I}}[M]\sim \mathbf{R}j_{I*}j^*_IM_{I}$, see \cite{FGY}.
   \end{rem}
     
   Our main motivation for the Jouanolou model is in order to formulate the concept of \textit{chiral operations} in
@@ -465,7 +466,8 @@ _{\mathbb{A}^d}^{{I}}[M]\sim Rj_{I*}j^*_IM_{I}$, see \cite{FGY}.
 
     \subsection{The definition of higher chiral algebras}
 
-Let ${I}\in {\mathbf{fSet}}$ and $M$ be a right $\mathcal{D}_{\mathbb{A}^d}$-module. Then the space of global sections of the diagonal pushforward of $M$ has the following expression
+Let ${I}\in {\mathbf{fSet}}$ and $M$ be a right $\mathcal{D}_{\mathbb{A}^d}$-module. Then the space of global sections
+of the diagonal $\mathcal{D}$-module pushforward of $M$ has the following expression
 $$
 \Gamma\left((\mathbb{A}^d)^{{I}},\Delta_*^{({I})}M\right)=M\otimes_{k[\lambda_{\bullet}]}k[\lambda_I].
 $$
@@ -482,11 +484,14 @@ The right $\mathcal{D}_{(\mathbb{A}^d)^{{I}}}$-module structure on $M\otimes_{k[
 $$
 n\otimes F(\lambda^s_i)\cdot z^t_k=n \cdot z^t\otimes F(\lambda^s_i)+n\otimes \partial_{\lambda^t_k}F(\lambda^s_i),\quad n\otimes F(\lambda^s_i)\cdot \partial_{z^t_k}=n\otimes F(\lambda^s_i)\lambda^t_k.
 $$
-For a non-empty finite set $I$ with $|I|=k$, the Jouanolou chiral $I$-operations are the chain complex of $\mathbf{k}-$vector spaces
+For a non-empty finite set $I$ with $|I|=k$, we define the space of $d$-dimensional chiral $I$-operations, in the Jouanolou model,
+to be the dg vector space
 $$
-\mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](I\rightarrow \{\star\})=\mathrm{Hom}_{\mathcal{D}_{(\mathbb{A}^d)^{I}}}\left(\mathbf{J}_{\mathbb{A}^d}^{I}(M^{\boxtimes I}),\Delta^{I/\{\star\}}_*M\right).
+\mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](I\rightarrow \{\star\})=\mathrm{Hom}_{\mathcal{D}_{(\mathbb{A}^d)^{I}}}\left(\mathbf{J}_{\mathbb{A}^d}^{I}(M^{\boxtimes I}),\Delta^{I/\{\star\}}_*M\right)
 $$
-These vector spaces form a dg $S$-module.
+where $\Delta^{I/\{\star\}} \colon (\mathbb{A}^d)^{\star} = \mathbb{A}^d \to (\mathbb{A}^d)^{I}$ is the diagonal
+embedding.
+These vector spaces are naturally cochain complexes in representations for the symmetric group $S_k$.
 \begin{defn}
     We define the action of the symmetric group $S_{|I|}$ on $\mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](I\rightarrow \{\star\})$ by
 $$
@@ -508,18 +513,22 @@ where
 \end{itemize}
 \end{defn}
 
-\begin{prop}
-Given a right $\mathcal{D}_{\mathbb{A}^d}$-module $M$, the dg S-module defined by
+\begin{thm}
+  For a right $\mathcal{D}_{\mathbb{A}^d}$-module $M$, the collection 
+  \[
+    \{ \mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](k) \}_{k \geq 0},
+  \]
+  where we define the dg $S_k$-module
 $$
 \mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](k)=\begin{cases}
   0,\quad \text{if}\ k=0;\\
 \mathrm{Hom}_{\mathcal{D}_{(\mathbb{A}^d)^{k}}}\left(\mathbf{J}_{\mathbb{A}^d}^{k}(M^{\boxtimes k}),\Delta^{\{1,\dots,k\}/\{\star\}}_*M\right),\quad k\geq 1.
 \end{cases}
 $$
-has a dg operad structure.
-\end{prop}
+has the structure of a dg operad.
+\end{thm}
 \begin{proof}
-    The construction of the operad structure is completely parallel to [FGY]. Here we only spell out how to compose two chiral operations.
+  The construction of the operad structure is completely parallel to \cite{FGY}. Here we only spell out how to compose two chiral operations.
 
     Suppose that ${I}={I'}\bigsqcup {I''}$ and we are given two chiral operations $\mu_{{I'}}\in   \mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](I'\twoheadrightarrow \{\bullet\}),\mu_{\{\bullet\}\sqcup I''}\in \mathcal{P}^{ch,\mathbf{J}}_{\mathbb{A}^d}[M](\{\bullet\}\sqcup I''\twoheadrightarrow \{\star\})$, we would like to define the corresponding partial composition
     $$
@@ -604,6 +613,9 @@ We conclude this section with our main definition.
 where $\mathcal{L}\!\op{ie}_{\infty}$ is the dg operad controlling $L_\infty$ algebras.
 \end{defn}
 
+Explicitly, then, to construct a chiral algebra we must product a collection of $\mathcal{D}$-module maps $\{\mu_I\}$
+which satisfy the $L_\infty$ relations.
+
 \begin{rem}
   A homotopy chiral algebra in the Jouanolou defines a $d$-dimensional chiral algebra, up to equivalence, in the sense of
   \cite{FG}.
@@ -626,34 +638,50 @@ where $\mathcal{L}\!\op{ie}_{\infty}$ is the dg operad controlling $L_\infty$ al
   Another advantage of our approach is that chiral operations in the Jouanolou model are manifestly related to
   holomorphic quantum field theory; indeed, our construction of the \textit{unit} chiral algebra uses Feynman graph
   integrals as we will soon explain.
-  Going the opposite direction, we will see in section \ref{??} how our chiral operations can be used to recover
+  Going the opposite direction, we will see in section \ref{s:A2} how our chiral operations can be used to recover
   explicit formulas for expectation values in higher-dimensional quantum field theory.
 \end{rem}
 
 Before we move on, we point out a general construction which mimics a construction for ordinary, $d=1$, chiral
 algebras.
 Let $h(-)$ denote the de Rham cohomology functor.
-Thus, to a $\cD$-module $\cA$, we obtain the sheaf $h(\cA) = \Omega^\bu_{\mathbb{A}^d} \otimes_{\mathcal{\cD}} \cA$.
-We will show that for $\cA$ a chiral algebra in the Jouanolou model the chiral operations endow $h(\mathcal{A})$ with
+Thus, to a dg $\mathcal{D}$-module $\mathcal{A}$, we obtain the cochain complex of sheaves $h(\mathcal{A}) = \Omega^\bu_{\mathbb{A}^d}
+\otimes_{\mathcal{\mathcal{D}}} \cA$.
+For $\mathcal{A}$ a chiral algebra in the Jouanolou model the chiral operations endow $h(\mathcal{A})$ with
 the structure of a sheaf of $L_\infty$ algebras.
 
-Define the $m$-linear map
+Let $I = \{1,\ldots,m\}$.
+Observe that there is a natural map 
+\begin{equation}\label{}
+  \mathcal{A}^{\boxtimes m} \to \mathbf{J}^I_{\mathbb{A}^d} (\mathcal{A}^{\boxtimes I}).
+\end{equation}
+We can post compose this map with the chiral operation $\mu_I$ to obtain the map of dg $\mathcal{D}$-modules
+\begin{equation}\label{}
+  \mathcal{A}^{\boxtimes m} \to \Delta_*^{I \slash \{\star\}} \mathcal{A} 
+\end{equation}
+Applying the de Rham functor $h(-)$, we obtain the $m$-linear map
+\begin{equation}\label{}
+  h(\mathcal{A} \boxtimes \cdots \boxtimes \mathcal{A}) \to \Delta_{\cdot}^I h(\mathcal{A})
+\end{equation}
+where now $\Delta_\cdot$ denotes the sheaf-theoretic pushforward.
+Applying adjunction, we obtain the $m$-linear map
 $$
-\left(\mathbf{J}^{m,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)^{\otimes_{\mathbf{k}}2}\rightarrow
-\mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes\mathcal{F}\boxtimes \mathcal{O})
+[-]_m \colon h(\mathcal{A}) \times \cdots \times h(\mathcal{A})\rightarrow h(\mathcal{A}).
 $$
-We further apply the de Rham cohomology of the chiral operation
-$$
-(h\boxtimes h\boxtimes 1)\circ\mu_2 \colon \mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}
-\boxtimes\mathcal{F}\boxtimes \mathcal{O})\rightarrow h^{Lie}(\mathcal{F}).
-$$
-This induces the $m$-linear map
-$$
-[-]_m \colon h^{Lie}(\mathcal{F}) \times \cdots \times h^{Lie}(\mathcal{F})\rightarrow h^{Lie}(\mathcal{F}).
-$$
+%$$
+%\left(\mathbf{J}^{m,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)^{\otimes_{\mathbf{k}}2}\rightarrow
+%\mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes\mathcal{F}\boxtimes \mathcal{O})
+%$$
+%We further apply the de Rham cohomology of the chiral operation
+%$$
+%(h\boxtimes h\boxtimes 1)\circ\mu_2 \colon \mathbf{J}^{\{1,2\}\times\{\ast\},\bullet}_{\mathbb{A}^d}(\mathcal{F}
+%\boxtimes\mathcal{F}\boxtimes \mathcal{O})\rightarrow h^{Lie}(\mathcal{F}).
+%$$
+The $L_\infty$ relations which are satisfied by the chiral operations $\{\mu_I\}$ defining $\mathcal{A}$ immediately
+yield the following.
 
-\begin{prop}
-  The operations $[-]_m$ endow $h(\mathcal{A})$ with the structure of an $L_\infty$ algebra.
+\begin{prop}\label{prop:derham}
+  The operations $\{[-]_m\}$ endow $h(\mathcal{A})$ with the structure of an $L_\infty$ algebra.
 \end{prop}
 
 \section{Feynman graph integral construction}\label{s:feynman}
@@ -1946,20 +1974,28 @@ which is a $\mathcal{D}$-module map.
 
 The following set of examples are immediate generalizations of familiar $d=1$ ghost-type chiral algebras (of $\beta-\gamma$ or $b-c$
 type).
-Let $F$ be a graded vector space. 
-Consider the following graded commutative $\mathcal{D}$-algebra
+Let $F$ be sheaf of locally free $\mathbb{Z}$-graded $\mathcal{O}_{\mathbb{A}^d}$-modules and $F_{\mathcal{D}} =
+\mathcal{D} \otimes_{\mathcal{O}} F$ the induced dg $\mathcal{D}$-module.
+We assume that $F$ is equipped with a non-degenerate, graded skew-symmetric, pairing of graded $\mathcal{O}$-modules
+\begin{equation}\label{eq:pairing}
+  \langle - , - \rangle \colon F \otimes_{\mathcal{O}} F \to \omega [d-1] .
+\end{equation}
+We introduce the following graded commutative $\mathcal{D}$-algebra
 $$
-\mathbf{F} =\mathrm{Sym}(\underline{F^{\vee}}_{\mathcal{D}}\otimes\omega^{-1}\oplus \underline{F}_{\mathcal{D}}[1-d]
-\otimes\omega_{\mathcal{D}}\otimes\omega^{-1}).
+\mathbf{F} =\mathrm{Sym}\left(F_{\mathcal{D}} \otimes \omega^{-1}\right)
 $$
 
 \begin{rem}
-  In the case that $F=\mathbf{k}$ (concentrated in degree zero), the chiral algebra we are about to define is associated to the
-  following first-order action functional
+  In the case that $F= \omega \oplus \mathcal{O}[1-d]$, with the obvious pairing, the chiral algebra we are about to define is associated to the
+  following first-order action functional in physics
   \begin{equation}\label{}
     \int_{\mathbb{C}^d} \beta \overline{\partial} \gamma
   \end{equation}
   where $\beta$ is a form of Dolbeault type $(d,d-1)$ and $\gamma$ is a smooth function.
+  Indeed, when $d=1$ this returns the ordinary $\beta-\gamma$ system used in superstring theory.
+  To obtain the $b-c$ system we must introduce an additional $\mathbb{Z}/2$ grading and consider the parity shift of this
+  example.
+  The same generalization can be made in the higher-dimensional setting as well, though we will not pursue it here.
 \end{rem}
 
 \begin{defn}{\label{WickContraction}}
@@ -1968,9 +2004,9 @@ $$
 e^{\mathcal{P}_{12}}\colon \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}(\mathbf{F}^{\boxtimes 2})\rightarrow \mathbf{J}^{\{1,2\}}
 _{\mathbb{A}^d}(\mathbf{F}^{\boxtimes 2})
 $$
-by extending the canonical pairing 
+by extending the $\langle - , - \rangle$ pairing 
 $$
-\mathcal{P}_{12}\colon(\underline{F^{\vee}}\otimes\omega^{-1})\boxtimes \underline{F}[1-d]\rightarrow \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}(\mathcal{O}\boxtimes \mathcal{O})
+\mathcal{P}_{12} = \langle - , - \rangle \colon(\underline{F^{\vee}}\otimes\omega^{-1})\boxtimes \underline{F}[1-d]\rightarrow \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}(\mathcal{O}\boxtimes \mathcal{O})
 $$
 by the Leibniz rule.
 \end{defn}
@@ -2049,10 +2085,15 @@ which proves the theorem.
   this new chiral algebra is \textit{not} commutative.
 \end{rem}
 
-In \ref{prop:s }
-\begin{prop}
-  The triple $(h(\mathcal{F}, d, [-,-])$ is a dg Lie algebra.
-\end{prop}
+From proposition \ref{prop:derham} we know that the de Rham functor applied to $\mathcal{F}$ yields an $L_\infty$
+algebra $h(\mathcal{F})$.
+In this case, this $L_\infty$ algebra is, in fact, a graded Lie algebra.
+Explicitly, this graded Lie algebra has underlying graded vector space 
+\begin{equation}\label{}
+  \mathrm{Sym} \left(F \otimes \omega^{-1}\right) \otimes \omega [d-1] . 
+\end{equation}
+The bracket is the natural extension of $\langle - , - \rangle$ by the graded Leibniz rule.
+In particular, $h(\mathcal{F})$ is a graded Poisson algebra.
 
 \subsection{The Faonte-Hennion-Kapranov central extension via chiral operations}
 
@@ -2080,8 +2121,13 @@ We leave this problem to future work.
 Instead, we will give a more direct interpretation of the higher-dimemnsional Kac--Moody algebra in terms of its "free
 field realization" using the higher Wick's theorem of the previous section.
 
-Let $V$ be a $\mathfrak{g}$-representation.
-We will assume that $V$ is an ordinary vector space, rather than a graded one, for simplicity.
+Let $V$ be a $\mathfrak{g}$-representation and consider the graded $\mathcal{O}$-module 
+\[
+  F = \underline{V^*} \oplus \underline{V} \otimes
+\omega [d-1] = V^* \otimes \mathcal{O}\oplus V \otimes \omega [d-1]
+\]
+equipped with the obvious pairing in the sense of \eqref{eq:pairing}.
+(We will assume that $V$ is an ordinary vector space, rather than a graded one, for simplicity.)
 The free ghost chiral algebra $\mathcal{F}$ associated to $V$, as defined in the previous section, can be identified,
 as graded $\mathcal{D}$-module, with
 $$
@@ -2150,6 +2196,7 @@ extensions of $\mathfrak{witt}_d^\bu$.
 as we did above for KM, purely in terms of chiral operations.}
 
 \section{The unit chiral algebra in $\mathbb{A}^2$ in detail}
+\label{s:A2}
 
 In this section we unpack the two-dimensional chiral operations in greater detail.
 For simplicity, we denote by $\mu_k$ the $k$-ary chiral operation for the unit chiral algebra $\omega_{\mathbb{A}^2}[1]
@@ -2335,10 +2382,13 @@ $$
 \subsection{Formulas for chiral operations}
 
 
-In previous section, we construct a series of chiral operations using Feynman integrals and show that they satisfy a
-$L_{\infty}$-relation. In the case of $\mathbb{A}^2$, the $L_{\infty}$-relation puts a very strong constraint on chiral
-operations and sometimes can completely fix them. In this section, we derive recursive formulas for some chiral
-operations purely from the $L_{\infty}$-relation and find perfect match with previous calculation in physics
+In section \ref{s:feynman}, we constructed a series of chiral operations using Feynman integrals and show that they satisfy a
+$L_{\infty}$-relation--this was precisely the $L_\infty$ relations underlying the unit chiral algebra on $\mathbb{A}
+^d$.  
+In the case of $\mathbb{A}^2$, the $L_{\infty}$-relation puts a very strong constraint on the chiral
+operations and sometimes can sometimes completely fix them. In this section, we derive recursive formulas for chiral
+operations purely from the $L_{\infty}$-relation and find a perfect match with numerous calculations that have appeared
+in the work of physics
 \cite{Gaiotto:2024gii}.
 \subsubsection{Recursive formula for Type 1 Laman graphs}
 For the standard graph terminology used in this paper we refer the reader to \cite{graver1993combinatorial}.
@@ -2488,14 +2538,17 @@ Given a type 1 Laman graph $\Gamma$, we choose a vertex $o\in V(\Gamma)$ as the 
 From the poset $\mathbf{H}_{\Gamma}(o,e)$, we can choose a total order extension $\vec{\mathbf{H}}_{\Gamma}(o,e)$. Each total order extension corresponds to a sequence of Hennerberg moves which starts from $(o,e)$ and results in $\Gamma$.
 \fi
 
-Suppose $\Gamma$ is a Type I' Laman graph. We fix a vertex $o\in V(\Gamma)$ and an edge $e=[ov]\in E(\Gamma)$, the Laman graph $\Gamma$ can be constructed by a following sequence of Hennerberg operations
+Suppose $\Gamma$ is a Type I' Laman graph. 
+We fix a vertex $o\in V(\Gamma)$ and an edge $e=[ov]\in E(\Gamma)$.
+Then, $\Gamma$ can be constructed by a following sequence of Hennerberg operations
 $$
 \mathbf{H}_{\Gamma}(o,e)=[(e_0=e,v_1),(e_1,v_2),\dots,(e_{k-1},v_k)].
 $$
 
 
-
-Here $V(\Gamma)=\{o,v,v_1,\dots,v_k\}$. We start from an edge $e_0=e=[ov]$, then add a new vertex $v_1$ and draw two edges connecting $v_1$ and $o,v$. Repeat this procedure, we add a new vertex $v_i$ and choose an edge $e_{i-1}$ of the graph (we allow $e_{i-1}=e_{i'},i'<i-1$) and then connect $v_i$ and the vertices of $e_{i-1}$ by two edges. This can be illustrated by the picture as follows.
+Here, the vertex set of the graph is $V(\Gamma)=\{o,v,v_1,\dots,v_k\}$. 
+From the edge $e_0=e=[ov]$ we add a new vertex $v_1$ and draw two edges connecting $v_1$ and $o,v$. 
+Repeating, at the $i$th stage we add a new vertex $v_i$ and choose an edge $e_{i-1}$ of the graph (we allow $e_{i-1}=e_{i'},i'<i-1$) and then connect $v_i$ and the vertices of $e_{i-1}$ by two edges. This can be illustrated by the picture as follows.
 \begin{figure}[htb]
   \centering
 
@@ -3117,7 +3170,9 @@ The constant term (when $\mathfrak{z}_{\vec{e}}=0$) is
   computation in \cite{Gaiotto:2024gii}. See the maple code attached in the Appendix.
 
   \subsection{Proof of theorem \ref{MainTheoremRecursiveRS}} 
-  Now we turn to the proof of Theorem \ref{MainTheoremRecursiveRS}. We need some lemmas.
+  Now we turn to the proof of theorem \ref{MainTheoremRecursiveRS}. 
+  To begin, we start with the following lemma.
+
 \begin{lem}\label{IntegralXP}
 We have the following integral formula for the product of derivatives of $x^i_{12}(\mathfrak{z})$ and $P_{12}(\mathfrak{w})$
   $$
@@ -3126,14 +3181,7 @@ G(\partial_{z^1_{1}},\partial_{z^2_{1}})x^i_{12}(\mathfrak{z})\cdot\left( F(\par
   $$
   =\int^1_0G\left((1-s)\partial_{z^1_1},(1-s)\partial_{z^2_1}\right)F\left(s\partial_{z^1_1},s\partial_{z^2_1}\right)(-s\partial_{z^i_1})P_{12}\left((1-s)\mathfrak{z}+s\mathfrak{w}\right)ds,
   $$
-  \iffalse
-$$
-G(\partial_{z^1_{1}},\partial_{z^2_{1}})P_{12}(\mathfrak{z})\cdot\left( F(\partial_{z^1_{1}},\partial_{z^2_{1}})\cdot x^i_{12}(\mathfrak{w})\right)=G(\partial_{\mathfrak{z}^1},\partial_{\mathfrak{z}^2})F(\partial_{\mathfrak{w}^1},\partial_{\mathfrak{w}^2})(-\partial_{\mathfrak{z}^i})\int^1_0P_{12}\left((1-s)\mathfrak{z}+s\mathfrak{w}\right)ds
-  $$
-  $$
-  =\int^1_0G\left((1-s)\partial_{z^1_1},(1-s)\partial_{z^2_1}\right)F\left(s\partial_{z^1_1},s\partial_{z^2_1}\right)(-(1-s)\partial_{z^i_1})P_{12}\left((1-s)\mathfrak{z}+s\mathfrak{w}\right)ds.
-  $$
-  \fi
+  where $F,G$ are arbitrary polynomials in two variables.
 \end{lem}
 
 \begin{proof}
@@ -3159,10 +3207,12 @@ The lemma follows from the following direct computation
   \fi
 \end{proof}
 
-
+The next lemma is an immediate consequence of the above formula.
+It relates the weights of Feynman diagrams when one modifies an edge by multiplying by a coordinate function.
 
 \begin{lem}\label{IntegralR}
-  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and $i,j\subset \{o,1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Then
+  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and let $i,j \in \{o,1,\dots,n\}$ be vertices such that
+  $(i,j)\in E_{\Gamma}$ is an edge. Then
   $$
   \mu_{\{o,1,\dots, n\}}\left(W_{\Gamma}(\mathfrak{z}_{e})\cdot x^l_{ij}\right)=-\partial_{\mathfrak{z}^l_{ij}}\int^1_0F(\lambda_1,\dots,\lambda_{n};\dots,r\mathfrak{z}_{ij},\dots)dr,
   $$
@@ -3246,7 +3296,8 @@ Then
 
 
 \begin{lem}\label{IntegralS}
-  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and $i,j\subset \{o,1,\dots,n\}$ such that $(i,j)\in E_{\Gamma}$. Let $\mu_{\{o,1,\dots, n\}}\left(\alpha\right)=F_{\alpha}(\lambda)$. Then
+  Suppose that we have a graph with vertices $\{o,1,\dots,n\}$ and $i,j\in \{o,1,\dots,n\}$ such that $(i,j)\in
+  E_{\Gamma}$. Set $\mu_{\{o,1,\dots, n\}}\left(\alpha\right)=F_{\alpha}(\lambda)$. Then
   $$
   \mu_{\{\star,\bullet\}}\circ \mu_{\{o,1,\dots, n\}}\left(\alpha\cdot x^l_{\star i}P_{\star j }\right)=\int^1_0 F_{\alpha}(\lambda_1,\dots,\lambda_i+(1-s_{\star})\lambda_{\star},\dots,\lambda_j+s_{\star}\lambda_{\star},\lambda_{n};\mathfrak{z}_e)\cdot s_{\star}\lambda^l_{\star}ds_{\star}
   $$
@@ -3674,7 +3725,8 @@ Then
 \end{figure}
 
 \fi
-Now we are ready to prove Theorem \ref{MainTheoremRecursiveRS}.
+
+Now we are ready to prove theorem \ref{MainTheoremRecursiveRS}.
 \begin{proof}
 \begin{figure}[htp]
   \centering
