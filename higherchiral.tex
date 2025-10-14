@@ -175,6 +175,7 @@
 \hfuzz2pt % Don't report over-full h-boxes if over-edge is small
 % THEOREMS -------------------------------------------------------
 \newtheorem{thm}{Theorem}[section]
+\newtheorem*{thm*}{Theorem}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
@@ -204,7 +205,10 @@
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\del}{\partial}
-
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dbar}{\overline{\partial}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\lie}{\mathfrak}
 \newcommand{\Gui}[1]{(\textcolor{red}{ZG: #1})}
 
 \newcommand{\gui}[1]{(\textcolor{blue}{Note: #1})}
@@ -267,32 +271,79 @@ for the configuration space.
 When the number of points is $n=2$ we have $\mathrm{Conf}_2(\mathbb{A}^d) = \mathbb{A}^d - \{0\}$ and this model is used in \cite{FHK} to give a definition of the dg Lie algebra of
 derived currents valued in a Lie algebra (so, it plays the role of Laurent series when $d=1$).
 
-
-\subsection*{Overview}
-
-Section \ref{s:Jouanolou} begins with an overview of the Jouanolou construction applied to the configuration space of
-points in $\mathbb{A}^d$.
+Chiral algebras are defined within the context of $\mathcal{D}$-modules.
 For $\mathcal{D}$-module $\mathcal{A}$ defined on an algebraic curve $X$, the space of $n$-ary chiral operations, following \cite{BD}, is 
 \begin{equation}\label{}
-  \mathrm{Hom}_{\mathcal{D}_{X^{{I}}}}\left(j_{*}j^*\mathcal{A}^{\boxtimes{n}},\Delta_* \mathcal{A}\right)
+  \mathrm{Hom}_{\mathcal{D}_{X^{n}}}\left(j_{*}j^*\mathcal{A}^{\boxtimes{n}},\Delta_* \mathcal{A}\right)
 \end{equation}
-where $j \colon \mathrm{Conf}_n(X) \to X \times \cdots \times X$ is open immersion and $\Delta \colon X \to X \times
+where $j \colon \mathrm{Conf}_n(X) \to X \times \cdots \times X$ is the open immersion and $\Delta \colon X \to X \times
 \cdots \times X$ is the diagonal embedding.
-Combining chiral operations of all arities results in an operad.
+Combining chiral operations of all arities results in an operad, and a chiral algebra is simply a Lie algebra object in
+this operad.
 In genealizing this to $X = \mathbb{A}^d$ we use the Jouanolou trick to provide an explicit model for the $\mathcal{D}
-$-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}$.
-From this, we argue that the higher-dimensional derived chiral operations form a dg opeard.
-We end the section with a definition of a homotopy chiral algebra in this Jouanolou model.
+$-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}^{\boxtimes n}$.
+Our main theorem is the following.
 
-The next goal of this article is to provide explicit descriptions and examples of chiral algebras in higher dimensions.
-Namely, we aim to describe the chiral operations underlying the \textit{unit} chiral algebra on $\mathbb{A}^d$.
-To motivate our construction, we recall how the Cauchy residue encodes the chiral operation of the unit chiral algebra
+\begin{thm*}
+  Let $\mathcal{A}$ be an $\mathcal{D}$-module on $\mathbb{A}^d$.
+  Then, for any finite set $I$, the Jouanolou model $\mathbf{J}_{\mathbb{A}^d}^I[\mathcal{A}]$ (see definition
+  \ref{dfn:jmodel}) is a model for the $\mathcal{D}$-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}
+  ^{\boxtimes I}$.
+  Furthermore, as the set $I$~runs over finite sets, the collection 
+  \begin{equation}\label{}
+    \left\{\op{Hom}_{\mathcal{D}_{(\mathbb{A}^{d})^I}} \left(\mathbf{J}^I_{\mathbb{A}^d} [\mathcal{A}] \; ,
+    \; \Delta_*^I \mathcal{A} \right) \right\}_{I} 
+  \end{equation}
+  forms a dg operad.
+\end{thm*}
+
+Denote this dg operad by $\mathcal{P}_d$. We define a $d$-dimensional \textit{homotopy chiral algebra} in the Jouanolou
+model to be a map of dg operads 
+  \begin{equation}\label{}
+  \mathcal{L} \mathrm{ie}_\infty \to \mathcal{P}_d [\mathcal{A}] 
+  \end{equation}
+  where $\mathcal{L}\mathrm{ie}_\infty$ is the dg operad of $L_\infty$ algebras.
+
+The next main goal of this article is to provide explicit descriptions and examples of chiral algebras in higher dimensions.
+Firstly, we describe, in explicit detail, the chiral operations underlying the \textit{unit} chiral algebra on $\mathbb{A}^d$.
+As is familiar from the theory of vertex algebras, the Cauchy residue encodes the chiral operation of the unit chiral algebra
 when $d=1$.
-In the main part of section \ref{s:feynman}, we generlize the residue to higher-dimensional configuration spaces in the
-Jouanolou model.
+We generlize the residue to higher-dimensional configuration spaces in the Jouanolou model.
 The key to our definition of the residue is the use of Feynman graph integrals in higher-dimensional holomorphic quantum field theory.
 The analysis which underlies the convergence of such graph integrals uses the compactification of Schwinger spaces
-following \cite{wang2024feynman}.  
+following \cite{wang2024feynman}.
+A peculiar fact is that in dimensions $d > 1$ the unit chiral algebra (in the Jouanolou model) has nontrivial chiral
+operations of arity $k$ for all $k = 1,2,3,\ldots$.
+
+The next part of this paper explores further examples of higher-dimensional chiral algebras in the Jouanolou model.
+Using the higher-dimensional residue, we formulate a higher-dimensional version of Wick's theorem for
+chiral algebras in section \ref{s:example}
+This leads to explicit descriptions of so-called \textit{free} chiral algebras (those which come from free holomorphic
+quantum field theories).
+As an application, we provide a higher-dimensional free-field realization of the higher-dimensional Kac--Moody algebra
+of \cite{FHK}.
+
+In the last part of the paper we flip our logic in reverse, in the following sense.
+As we have stated, we use inspiration from holomorphic quantum field theory to define the higher-dimensional residue in
+the Jouanolou model.
+Explicitly, our residues are given as sums over weights of Feynman graph integrals.
+We show in section \ref{s:feynman}, that these residues satisfy an appropriate $L_\infty$-relation.
+In section \ref{s:recursive}, we utilize the $L_\infty$-relations to formulate a \textit{recursive} formula for weights
+of Feynman graph integrals.
+The formula holds for graphs of a special type, which we refer to as Laman type I'; we define this in section \ref{s:A2}.
+We can state the recursive formula, heuristically, as follows.
+We refer to theorem \ref{thm:??} for a precise statement.
+
+\begin{thm*}
+  Suppose that a graph $\Gamma^*$ is constructed using a so-called Henneberg operation from a Laman type I' graph
+  $\Gamma$ by adjoining a single additional vertex.
+  Then, there is an explicit formula for the weight of the graph $\Gamma^*$ which can be expressed \textit{explicitly}
+  in terms of the weight of the graph $\Gamma$.
+\end{thm*}
+
+As an application of this recursive formula, we explore a class of graph integrals when $d=2$.
+FINISH-which diagram should we higlight?
+
 
 \subsection*{Conventions}
 
@@ -406,7 +457,7 @@ We only need to show that $\partial_{z^t_j}$ preserves the ideal $\langle \sum\l
     $$
 \end{rem}
 
-\begin{defn}
+\begin{defn}\label{dfn:jmodel}
 Given a finite set ${I}$ and an $\mathcal{O}_{(\mathbb{A}^d)^{{I}}}$-module $M_{{I}}$, the \textit{Jouanolou model of
 $M_{{I}}$} is the following dg $\mathcal{O}_{(\mathbb{A}^d)^{{I}}}$-module
 \[
@@ -2097,10 +2148,11 @@ In particular, $h(\mathcal{F})$ is a graded Poisson algebra.
 
 \subsection{The Faonte-Hennion-Kapranov central extension via chiral operations}
 
-In this section, denote $\mathsf{A}^\bu_d := \mathbf{J}^{\{1,2\}}_{\mathbb{A}^d}$ the Jouanolou model for the configuration
-space of two points in~$\mathbb{A}^d$.
-It is a commutative dg algebra model for the derived global sections of the structure sheaf of the punctured affine space $\mathbb{A}^d
-\setminus \{0\}$.
+In this section, denote $\mathsf{A}^\bu_d := \mathbf{J}_{\mathring{\mathbb{A}}^d}$ the Jouanolou model of
+punctured affine space~$\mathring{\mathbb{A}}^d = \mathbb{A}^d \setminus \{0\}$.
+Equivalently, this is the quotient of the Jouanolou model of two points in $\mathbb{A}^d$ by the translations.
+It is a commutative dg algebra model for the derived global sections of the structure sheaf of the punctured affine
+space $\mathring{\mathbb{A}}^d$.
 For a Lie algebra $\mathfrak{g}$, introduce the following dg Lie algebra
 $$
 \mathfrak{g}^{\bullet}_d=\mathfrak{g}\otimes_{\mathbf{k}} \mathsf{A}_d^{\bullet}.
@@ -2131,7 +2183,7 @@ equipped with the obvious pairing in the sense of \eqref{eq:pairing}.
 The free ghost chiral algebra $\mathcal{F}$ associated to $V$, as defined in the previous section, can be identified,
 as graded $\mathcal{D}$-module, with
 $$
-\mathcal{F}=\mathrm{Sym}(\underline{V^{\vee}}_{\mathcal{D}}\otimes\omega^{-1}\oplus \underline{V}_{\mathcal{D}}[1-d]\otimes\omega_{\mathcal{D}}\otimes\omega^{-1})\otimes\omega[d-1].
+\mathcal{F}=\mathrm{Sym}(\underline{V^{\vee}}_{\mathcal{D}}\otimes\omega^{-1}\oplus \underline{V} [1-d]\otimes\omega_{\mathcal{D}}\otimes\omega^{-1})\otimes\omega[d-1].
 $$
 %It contains the Lie* algebra
 %$$
@@ -2176,7 +2228,15 @@ Where $\op{tr}_V$ is the trace taken in the representation $V$.
     Then the cocycle $\gamma_P$ defined in \cite{FHK} is given by the composition $\gamma^{ch}\circ\iota$.
 \end{prop}
 
+\begin{proof}
+  The only Feynman graph which contributes non-trivially to the residue is the wheel graph with $(d+1)$-vertices, where there is a single Wick contraction between neighboring vertices.
+  In \cite{GWkm} we have evaluated the weight of this diagram in line with the stated result.
+  For another computation of the case when $d=2$, see section \ref{s:2d1loop}. 
+\end{proof}
+
+
 \subsection{Higher Virasoro structures}
+
 
 Let $\mathfrak{witt}_d^\bu$ denote the Jouanolou model for the configuration space of two points with coefficients in
 the tangent sheaf.
@@ -2188,9 +2248,26 @@ In \cite{bwvir2} a linear map
 \end{equation}
 is produced and is conjectured to be an isomorphism.
 In dimension $d=1$, this map is known to be an isomorphism and the universal class $c_1^2$ coincides with the usual
-Virasoro central extension. 
+Virasoro central extension.
+The proof of this conjecture for $d=2$ is presented here.
 In general, this map tells us that universal $d$-dimensional characteristic classes of degree $2d+2$ give rise to $L_\infty$ central
 extensions of $\mathfrak{witt}_d^\bu$.
+The conjecture is that these characteristic classes exhaust all possible central extensions of the higher-dimensional
+Witt algebra.
+
+\begin{thm}
+  There is an isomorphism $H^{2}_{\op{Lie}} (\mathfrak{witt}_2^\bu) \cong \C^2$.
+\end{thm}
+
+\begin{proof}
+  We consider the spectral sequence arising from the differential $\dbar$ in the Jouanolou model $\mathfrak{witt}_2$.
+  The $E_1$-page of this spectral sequence is given by the following Chevalley--Eilenberg cochain complex
+  \begin{equation}\label{}
+    C^\bu\left(\mathfrak{w}_2 \; ; \; \op{Sym} (\Omega^2 \otimes_{\cO} \Omega^1) \right)
+  \end{equation}
+  Where $\mathfrak{w}_2$ is the Lie algebra of formal vector fields on the formal two-disk and $\Omega^i$ is the
+  $\mathfrak{w}_2$-module of $i$-forms on the formal disk.
+\end{proof}
 
 \BW{We can define what a higher Virasoro structure is. But, it'd be nice to have a computation of the central extension,
 as we did above for KM, purely in terms of chiral operations.}
@@ -2750,7 +2827,7 @@ $-relations and can be solved recursively without knowing Feynman integrals.
 In other words, the recursive formula gives another way to compute the complicated Feynman integrals. 
 We provide some explicit examples.
 
-\subsection{Example: one-loop diagrams}
+\subsection{Example: one-loop diagrams}\label{s:2d1loop}
 
 \begin{figure}[htp]
   \centering
