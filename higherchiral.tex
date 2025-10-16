@@ -295,14 +295,16 @@ Our main theorem is the following.
     \; \Delta_*^I \mathcal{A} \right) \right\}_{I} 
   \end{equation}
   forms a dg operad.
-\end{thm*}
+  Denote this dg operad by $\mathcal{P}_d$. 
 
-Denote this dg operad by $\mathcal{P}_d$. We define a $d$-dimensional \textit{homotopy chiral algebra} in the Jouanolou
+  We define a $d$-dimensional \textit{\textbf{homotopy chiral algebra}} in the Jouanolou
 model to be a map of dg operads 
   \begin{equation}\label{}
   \mathcal{L} \mathrm{ie}_\infty \to \mathcal{P}_d [\mathcal{A}] 
   \end{equation}
   where $\mathcal{L}\mathrm{ie}_\infty$ is the dg operad of $L_\infty$ algebras.
+\end{thm*}
+
 
 The next main goal of this article is to provide explicit descriptions and examples of chiral algebras in higher dimensions.
 Firstly, we describe, in explicit detail, the chiral operations underlying the \textit{unit} chiral algebra on $\mathbb{A}^d$.
@@ -323,27 +325,44 @@ quantum field theories).
 As an application, we provide a higher-dimensional free-field realization of the higher-dimensional Kac--Moody algebra
 of \cite{FHK}.
 
-In the last part of the paper we flip our logic in reverse, in the following sense.
-As we have stated, we use inspiration from holomorphic quantum field theory to define the higher-dimensional residue in
+In the last part of the paper we focus on the case of complex dimension $d=2$.
+We flip much of the logic of the bulk of this paper in reverse, by using the $L_\infty$ relations to explicitly
+characterize Feynman graph integrals. 
+As we have stated, holomorphic quantum field theory provides our inspiration for the definition of the higher-dimensional residue in
 the Jouanolou model.
 Explicitly, our residues are given as sums over weights of Feynman graph integrals.
-We show in section \ref{s:feynman}, that these residues satisfy an appropriate $L_\infty$-relation.
-In section \ref{s:recursive}, we utilize the $L_\infty$-relations to formulate a \textit{recursive} formula for weights
-of Feynman graph integrals.
-The formula holds for graphs of a special type, which we refer to as Laman type I'; we define this in section \ref{s:A2}.
+We show in section \ref{s:feynman} that these residues satisfy an appropriate $L_\infty$-relation, this is the essential
+structure underlying the unit chiral algebra in higher dimensions.
+In section \ref{s:A2}, we utilize the $L_\infty$-relations to formulate a \textit{recursive} formula for weights
+of Feynman graph integrals in complex dimension two.
+The formula holds for graphs of a special type, which we refer to as Laman type I'.\footnote{The term Laman graph is derived
+from \cite{Laman1970OnGA}.}
 We can state the recursive formula, heuristically, as follows.
-We refer to theorem \ref{thm:??} for a precise statement.
 
-\begin{thm*}
-  Suppose that a graph $\Gamma^*$ is constructed using a so-called Henneberg operation from a Laman type I' graph
-  $\Gamma$ by adjoining a single additional vertex.
-  Then, there is an explicit formula for the weight of the graph $\Gamma^*$ which can be expressed \textit{explicitly}
-  in terms of the weight of the graph $\Gamma$.
+\begin{thm*}[see theorem \ref{MainTheoremRecursiveRS} for the precise formulation]
+  Suppose the complex dimension is $d=2$, and suppose that a chiral algebra has two-ary operation expressed in terms
+  of the residue
+  as we have defined it.
+Then, the chiral operation associated to an arbitrary graph $\Gamma$ of type Laman I' is completely fixed by the $L_\infty$
+relations. 
+Namely, there is a recursive formula for the chiral operation associated to $\Gamma$ constructed using the residue. 
 \end{thm*}
 
 As an application of this recursive formula, we explore a class of graph integrals when $d=2$.
-FINISH-which diagram should we higlight?
-
+We compute, in full generality and explicitly, the weight of Laman I' Feynman graphs at loop orders one, two, and three (the latter using
+\texttt{Mathematica}).
+At lowest order in derivatives, we find an exact agreement with the work of physicists in \cite{Gaiotto:2024gii}.
+For example, in the case of the two-loop $\Theta$-diagram, in complex dimension $d=2$, we find the chiral operation
+\begin{equation}\label{}
+  \mu_4 (P_{30} P_{32} P_{10} P_{12}P_{20} d \mathbf{z}_{0,1,2,3}) = \frac{1}{24} \left(\lambda_1 \wedge (\lambda_3 + 2 \lambda_2)) \cdot
+    (\lambda_3 \wedge (\lambda_1 + 2 \lambda_2) \right)\cdot d \mathbf{z}_0^{\blacklozenge} , 
+\end{equation}
+to lowest order in derivatives.
+We introduce the notations in the main part of the text.
+(for example,  $d \mathbf{z}^{\blacklozenge}$ denotes the holomorphic volume form shifted in cohomological degree, and
+$P$ denotes the propagator). 
+Our compution is logically independent and more general than \cite{Gaiotto:2024gii} in the sense that we also include arbitrary derivative insertions
+at vertices.
 
 \subsection*{Conventions}
 
