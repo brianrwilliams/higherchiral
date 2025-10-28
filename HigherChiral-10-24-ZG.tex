@@ -182,6 +182,7 @@
 \theoremstyle{definition}
 \newtheorem{exa}[thm]{Example}
 \newtheorem{defn}[thm]{Definition}
+\newtheorem*{defn*}{Definition}
 \newtheorem{exe}[thm]{Exercise}
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
@@ -283,9 +284,7 @@ Combining chiral operations of all arities results in an operad, and a chiral al
 this operad.
 In genealizing this to $X = \mathbb{A}^d$ we use the Jouanolou trick to provide an explicit model for the $\mathcal{D}
 $-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}^{\boxtimes n}$.
-Our main theorem is the following.
 
-\begin{thm*}
   Let $\mathcal{A}$ be an $\mathcal{D}$-module on $\mathbb{A}^d$.
   Then, for any finite set $I$, the Jouanolou model $\mathbf{J}_{\mathbb{A}^d}^I[\mathcal{A}]$ (see definition
   \ref{dfn:jmodel}) is a model for the $\mathcal{D}$-module derived pushforward $\mathbf{R} j_* j^* \mathcal{A}
@@ -297,17 +296,21 @@ Our main theorem is the following.
   \end{equation}
   forms a dg operad.
   Denote this dg operad by $\mathcal{P}_d$.
+  Notice that by construction this operad is $GL(d)$-equivariant.
+  This is the main advantage of the Jouanolou model as compared to the \v{C}ech--Thom--Sullivan cosimplicial model for configuration spaces used in \cite{FGY}.
 
-  We define a $d$-dimensional \textit{\textbf{homotopy chiral algebra}} in the Jouanolou
-model to be a map of dg operads
+  \begin{defn*}
+  A $d$-dimensional \textit{\textbf{homotopy chiral algebra}}, in the Jouanolou
+model, is map of dg operads
   \begin{equation}\label{}
   \mathcal{L} \mathrm{ie}_\infty \to \mathcal{P}_d [\mathcal{A}]
   \end{equation}
   where $\mathcal{L}\mathrm{ie}_\infty$ is the dg operad of $L_\infty$ algebras.
-\end{thm*}
-\Gui{This is not our main result? This is the main notion...}
+\end{defn*}
 
-\Gui{Emphasize the GLn equivariance? that is one difference from Thom-Sullivan model}
+Homotopy chiral algebras in the Jouanolou model define chiral algebras in the sense of \cite{FG}, but we make no
+assertion that the resulting $\infty$-category of Jouanolou chiral algebras is equivalent to the $\infty$-categorical
+description of \cite{FG}.
 
 The next main goal of this article is to provide explicit descriptions and examples of chiral algebras in higher dimensions.
 Firstly, we describe, in explicit detail, the chiral operations underlying the \textit{unit} chiral algebra on $\mathbb{A}^d$.
@@ -364,11 +367,10 @@ to lowest order in derivatives.
 We introduce the notations in the main part of the text.
 (for example,  $d \mathbf{z}^{\blacklozenge}$ denotes the holomorphic volume form shifted in cohomological degree, and
 $P$ denotes the propagator).
-Our compution is logically independent and more general than \cite{Gaiotto:2024gii} in the sense that we also include arbitrary derivative insertions
-at vertices. \Gui{The formula is in \cite{budzik2023feynman} not in \cite{Gaiotto:2024gii} }
+Our compution is logically independent and more general than \cite{budzik2023feynman} in the sense that we also include arbitrary derivative insertions
+at vertices. 
 
 \subsection*{Conventions}
-\Gui{When refer to equation, proposition, we use capitals or not?}
 \begin{itemize}
 
   \item Let $\mathbf{k}$ be a field with $\mathrm{char}(\mathbf{k})=0$.  %which $\mathrm{char}(k)=0$.
@@ -655,9 +657,9 @@ $$
 $$
 which is a map of $k[\lambda_{\bullet}]$-modules.
 It induces a map (by abuse of notation again)
-$$
+\[
 c^{(I')}:\left(\left(M\boxtimes M^{\boxtimes I''}\right)\otimes_{\mathcal{O}_{(\mathbb{A}^d)^I}}\mathbf{J}_{\mathbb{A}^d}^{({I'}),{{I''}}}\right)\otimes_{\mathbf{k}[\lambda_{\bullet}]}\mathbf{k}[\lambda_{I'}]\rightarrow \left(\left(M\boxtimes M^{\boxtimes I''}\right)\otimes_{\mathcal{O}_{(\mathbb{A}^d)^\{\bullet\}\sqcup I''}}\mathbf{J}_{\mathbb{A}^d}^{\{\bullet\}\sqcup I''}\right)\otimes_{\mathbf{k}[\lambda_{\bullet}]}\mathbf{k}[\lambda_{I'}].
-$$
+\]
 This morphism $c^{(I')}$ is an explicit model for restriction along the diagonal.
 
 Using the morphism $c^{(I')}$, we can construct the $\mathcal{D}$-module map
@@ -708,12 +710,12 @@ which satisfy the $L_\infty$ relations.
   present here.
   On the other hand, explicit examples are presented quite differently in each respective model.
   For instance, it is clear from our constructions that the examples of chiral algebras which appear in section
-  \ref{s:example} depend continuously on the input data. Additionally, the Jouanolou model has a $\mathrm{GL}_d$-symmetry and our later construction is $\mathrm{GL}_d$-equivariant .
+  \ref{s:example} depend continuously on the input data. 
+  Additionally, the Jouanolou model has a $\mathrm{GL}_d$-symmetry which endows the Jouanolou operad with a
+  $GL_d$-equivariant structure.
+  Furthermore, our later construction of the unit chiral algebra is $\mathrm{GL}_d$-equivariant, which is not true for
+  the model given in \cite{FGY}.
   
-  \Gui{Comparsion: 1)In polysimplicial model it is relatively easy to prove the existence, but no continuous construction is known.2) Thom-Sullivan does not have the Gln action. 3) the equivalence is not obvious, $\Delta_*\omega$ is not an injective object.}
-
-  \Gui{However...}
-
   Another advantage of our approach is that chiral operations in the Jouanolou model are manifestly related to
   holomorphic quantum field theory; indeed, our construction of the \textit{unit} chiral algebra uses Feynman graph
   integrals as we will soon explain.
@@ -769,8 +771,15 @@ In section \ref{s:feynman1d}, we recall the standard chiral operation in dimensi
 Of course, here, the chiral operations of the unit chiral algebra are strict in the $L_\infty$ sense.
 In higher dimensions, we largely use the techniques developed in \cite{wang2024feynman}.
 
-We will work over $\mathbf{k}=\mathbb{C}$ throughout this section. Affine variety $\mathbb{A}^d$ is understood as $\mathbb{C}^d$ with analytic topology. For example, $\mathcal{O}_{\mathbb{A}^d}$ is the sheaf of holomorphic functions on $\mathbb{C}$.
-\Gui{Since this section is very long, state the main theorem here}
+We will work over $\mathbf{k}=\mathbb{C}$ throughout this section. The affine variety $\mathbb{A}^d$ is understood as $\mathbb{C}^d$ with analytic topology. For example, $\mathcal{O}_{\mathbb{A}^d}$ is the sheaf of holomorphic functions on $\mathbb{C}$.
+
+\begin{thm}
+  The $\mathcal{D}$-module $\omega_{\mathbb{A}^d}[d-1]$ carries the structure of a $GL_d$-equivariant homotopy chiral
+  algebra in the Jouanolou model.
+  For each $k$, its $k$-ary operation is expressed in terms of the higher dimensional residue, see
+  definition \ref{dfn:res}.
+  It is a model for the \textit{unit} homotopy chiral algebra.
+\end{thm}
 
 \subsection{The unit chiral algebra on $\mathbb{A}^1$} \label{s:feynman1d}
 We begin by reviewing the one-dimensional unit chiral algebra $\omega_{\mathbb{A}^1}$ and how Feynman graph integrals
@@ -1111,7 +1120,7 @@ In the following discussion, we identify the elements of $\mathbf{J}^{ I}_{\math
 \subsubsection{Schwinger space}
 
 In our previous discussion of residues when $d=1$, we represented the residue kernel $\frac{1}{z}$ as an integral over Schwinger parameters.
-Now our goal is to introduce similar integral representations opf $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$:\Gui{rewording?$\checkmark$}
+Now our goal is to introduce similar integral representations opf $i(x_{ij}^{s})$ and $i(\mathbf{d}x_{ij}^{s})$:
 
 \begin{lem}
     We have the following equalities:
@@ -1550,7 +1559,7 @@ Now, we want to prove that this integrand is integrable over
 $$
 S^{+}((0,+\infty)^{|\Gamma_{1}|})=\{(t_{e_{1}},\dots,t_{e_{|\Gamma_{1}|}})\in(0,+\infty)^{|\Gamma_{1}|}|\sum_{i=1}^{|\Gamma_{1}|}t_{i}^{2}=1\}.
 $$
-We use the compactification technique of Schwinger spaces from \cite{Wang:2024tjf}.\Gui{Also \cite{wang2024feynman}? update the reference}
+We use the compactification technique of Schwinger spaces from \cite{Wang:2024tjf,wang2024feynman}.
 We refer to $(0,+\infty)^{\vec{\Gamma}_{1}}$ as the \textit{Schwinger space} of the graph $\vec{\Gamma}$.
 In order to integrate, we fix the orientation by the following
     $$
@@ -1765,7 +1774,7 @@ This is summarized in the following result.
 Finally, we arrive at the definition of the residue on the model $\mathbf{J}^{ I}_{\mathbb{A}^{d}}((\omega_{\mathbb{A}
 ^{d}}[d])^{\boxtimes I})$ for configuration space.
 
-\begin{defn}
+\begin{defn}\label{dfn:res}
     Let
     $$
     \alpha=p(x_{ij}^{s},\mathbf{d}x_{ij}^{s})\otimes\beta\in \mathbf{J}_{ I}^{\mathbb{A}^{d}}((\omega_{\mathbb{A}^{d}}[d])^{\boxtimes I}),
@@ -2301,13 +2310,16 @@ Let $\mathfrak{witt}_d^\bu$ denote the Jouanolou model for the configuration spa
 the tangent sheaf.
 It is a model for the derived global sections of the tangent sheaf over the punctured affine space $\mathbb{A}^d
 \setminus \{0\}$.
-In \cite{bwvir2} a linear map \Gui{Seems this reference is not in the bib...}
+In the case $d=2$, there is a linear map
 \begin{equation}\label{}
-  H^{2d+2}(BU(d) ; \mathbb{C}) \to H^2_{\op{Lie}} (\mathfrak{witt}_d^\bu)
+  H^{6}(BU(2) ; \mathbb{C}) \to H^2_{\op{Lie}} (\mathfrak{witt}_2^\bu)
 \end{equation}
-is produced and is conjectured to be an isomorphism.
-In dimension $d=1$, this map is known to be an isomorphism and the universal class $c_1^2$ coincides with the usual
-Virasoro central extension.
+and in \cite{bwac} it is conjectured to be an isomorphism.
+More generally, we expect based on the work of \cite{Fuks} we expect an isomorphism $H^{2d+2}(BU(d)) \cong
+H^2_{\op{Lie}} (\mathfrak{witt}_d)$, thus completely characterizing central extensions of the $d$-dimensional Witt
+algebra in terms of universal characteristic classes.
+In dimension $d=1$, the map is an isomorphism and the universal class $c_1^2$ coincides with the usual
+Virasoro central extension (up to a factor of $\frac{1}{12}$).
 The proof of this conjecture for $d=2$ is presented here.
 In general, this map tells us that universal $d$-dimensional characteristic classes of degree $2d+2$ give rise to $L_\infty$ central
 extensions of $\mathfrak{witt}_d^\bu$.
@@ -2617,7 +2629,8 @@ In the case of $\mathbb{A}^2$, the $L_{\infty}$-relation puts a very strong cons
 operations and sometimes can sometimes completely fix them. In this section, we derive recursive formulas for chiral
 operations purely from the $L_{\infty}$-relation and find a perfect match with numerous calculations that have appeared
 in the work of physics
-\cite{Gaiotto:2024gii}.\Gui{Again, seems in \cite{budzik2023feynman} instead}
+\cite{budzik2023feynman}.
+
 \subsubsection{Recursive formula for Type 1 Laman graphs}
 For the standard graph terminology used in this section we refer the reader to \cite{graver1993combinatorial}. Here we change our convention of graphs used in section \ref{s:feynman}, now a graph $\Gamma$ is simply a pair $\Gamma=(V(\Gamma),E(\Gamma))$ of vertices and edges (we do not allow multiple edges between two vertices anymore).
 
@@ -2976,7 +2989,7 @@ We have following corollaries.
     The parameters $r$ and $s$ here are closely related to the Schwinger parameters in the previous section. However, the precise relation is complicated, which we left to future investigation.
 \end{rem}
 
-Using the above formula, we can write the formulas for some loop diagrams and match with results in \cite{Gaiotto:2024gii}.\Gui{Again, seems in \cite{budzik2023feynman} instead}
+Using the above formula, we can write the formulas for some loop diagrams and match with results in \cite{budzik2023feynman}.
 The remarkable thing is that, the chiral operation on Type I' Laman graph is completely constrained by the $L_{\infty}
 $-relations and can be solved recursively without knowing Feynman integrals.
 In other words, the recursive formula gives another way to compute the complicated Feynman integrals.
@@ -3390,7 +3403,7 @@ The constant term (when $\mathfrak{z}_{\vec{e}}=0$) is
 &=F(\lambda_1,\lambda_2,\lambda_3,\lambda_4)\cdot d\mathbf{z}^{\blacklozenge}_o.
   \end{align*}
   The polynomial $F(\lambda_1,\lambda_2,\lambda_3,\lambda_4)$ can be computed using computer and matches the
-  computation in \cite{Gaiotto:2024gii}.\Gui{Again here } See the Mathematica code attached in the Appendix \ref{MathematicaCode}.
+  computation in \cite{budzik2023feynman}.
 
   \subsection{Proof of theorem \ref{MainTheoremRecursiveRS}}
   Now we turn to the proof of theorem \ref{MainTheoremRecursiveRS}.
