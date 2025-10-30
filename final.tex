@@ -2308,7 +2308,7 @@ Where $\op{tr}_V$ is the trace taken in the representation $V$.
 
 Let $\mathfrak{witt}_d^\bu$ denote the Jouanolou model of the derived global sections of the tangent sheaf on
 punctured affine space $\mathring{\mathbb{A}}^d$.
-When $d=2$, a two-dimensional space of central extensions of $\mathfrak{witt}_2^\bu$ is studied; the resulting algebras
+When $d=2$, a two-dimensional space of central extensions of $\mathfrak{witt}_2^\bu$ is studied in \cite{bwac}; the resulting algebras
 are higher-dimensional analogs of the ordinary Virasoro algebra.
 This two-dimensional space is naturally identified with span of the universal characteristic classes $c_1^3, c_1c_2 \in
 H^6(BU(2))$.
@@ -2317,15 +2317,16 @@ free-field realization as above.
 
 Recall that $\mathfrak{witt}^{\bullet}_{2}\simeq \mathbf{J}^{\bullet}_{\mathring{\mathbb{A}}^2}\cdot \partial_{z^1}\oplus\mathbf{J}^{\bullet}_{\mathring{\mathbb{A}}^2}\cdot \partial_{z^2}$. We take $V=\mathbb{C}\cdot \mathbf{v}$ to be a one-dimensional vector space and denote $\mathcal{F}$ to be the corresponding free ghost chiral algebra defined by (\ref{GhostChiralV}). We construct the following map
 $$
-\rho_{vir}:\mathfrak{witt}^{\bullet}_{2}\rightarrow h^{Lie}(\mathcal{F}):=(h\boxtimes 1)\left(\mathbf{J}^{2,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)
+\rho_{vir}\colon \mathfrak{witt}^{\bullet}_{2}\rightarrow h^{Lie}(\mathcal{F}):=(h\boxtimes 1)\left(\mathbf{J}^{2,\bullet}_{\mathbb{A}^d}(\mathcal{F}\boxtimes \mathcal{O})\right)
 $$
+defined by
 $$
 \rho_{vir}(\sum^2_{s=1}T^s(z)\partial_{z^s})=\sum^2_{s=1}T^s(z-w)\cdot(\mathbf{v}^{\vee}\otimes \partial_{z^s})\cdot \mathbf{v}\boxtimes 1,\quad T^s(z)\in \mathbf{J}^{\bullet}_{\mathring{\mathbb{A}}^2}.
 $$
 
 Parallel to the previous section, we define
 $$
-\gamma_{vir}:\wedge^3 \mathfrak{witt}^{\bullet}_{2}\rightarrow \mathbb{C}
+\gamma_{vir}\colon \wedge^3 \mathfrak{witt}^{\bullet}_{2}\rightarrow \mathbb{C}
 $$
 by the formula
 $$
@@ -2350,11 +2351,12 @@ Using the explicit result in the next section, $\gamma_{vir}$ can be computed ex
     Direct computation by using the result in section \ref{s:2d1loop}.
 \end{proof}
 
-\begin{rmk}
-  This result is compatible with a local universal index theorem in the spirit of \cite{BDmumford}.
+\begin{rem}
+This result is compatible with a local universal index theorem in the spirit of \cite{Beilinson:1986zw}.
   Indeed, up to an overall factor, this central extension corresponds to the degree six part of the universal Todd class
-  $\op{Td}_6 = \frac{1}{24} c_1 c_2 = - \frac{1}{24} (c_1^3 - c_1 \op{ch}_2)$.
-\end{rmk}
+  $\op{Td}_6 = \frac{1}{24} c_1 c_2 = \frac{1}{24} (c_1^3 - c_1 \op{ch}_2)$, where $\op{ch}_2$ is the second component
+  of the universal Chern character. 
+\end{rem}
 \begin{figure}[htbp]
     \centering
 
@@ -2448,10 +2450,12 @@ Using the explicit result in the next section, $\gamma_{vir}$ can be computed ex
 %  \end{equation}
 %\end{proof}
 
-More generally, in dimension $d$, we expect an isomorphism $H^{2d+2}(BU(d)) \cong
+\begin{rem} 
+  More generally, in dimension $d$, we expect an isomorphism $H^{2d+2}(BU(d)) \cong
 H^2_{\op{Lie}} (\mathfrak{witt}_d)$.
 Thus, we conjecture a complete characterization of central extensions of the $d$-dimensional Witt
 algebra in terms of universal characteristic classes.
+\end{rem}
 
 \section{The unit chiral algebra in $\mathbb{A}^2$ in detail}
 \label{s:A2}
@@ -3156,13 +3160,15 @@ where $\mathfrak{z}=\mathfrak{z}_{2 o}-\mathfrak{z}_{21}-\mathfrak{z}_{1o}$.
   \centering
   \caption{}\label{}
 \end{figure}
-
+Now, we start from the expression
  \begin{align*}
 &   \agraphW  = \triangleW(\lambda^\triangleright;\mathfrak{z}^\triangleright_{\vec{e}}) -\left(\lambda_{3}|(1-s_{3})\mathfrak{z}_{3 2}+s_{3}\mathfrak{z}_{3 o}\right)\\
 &=-(\lambda_1|\mathfrak{z}_{1o})-(\lambda_2|\mathfrak{z}_{2o})-\left(\lambda_{3}|\mathfrak{z}_{3o}\right)+\left(\lambda_1|-(1-r_{2})\mathfrak{z}_{[2 1o]}-(1-r_3)(1-r_2)\mathfrak{z}_{[32o]}\right)\\
 &+\left(\lambda_2|(1-r_{3})(r_2(1-s_2)-1)\mathfrak{z}_{[3 2o]}+r_2(1-s_2)\mathfrak{z}_{[2 1o]}\right)\\
 &+\left(\lambda_3|r_2(1-s_2)(1-s_3)\mathfrak{z}_{[21o]}+(1-s_3)(1-(1-r_3)(1-r_2(1-s_2)))\mathfrak{z}_{[32o]}\right)\\
 \end{align*}
+  Here, we have defined the loop momentum $\mathfrak{z}_{[21o]} = \mathfrak{z}_{21} - \mathfrak{z}_{2o} - \mathfrak{z}
+  _{1o}$, for example.
 \begin{align*}
  \agraphG&=( \partial_{\mathfrak{z}_{2o}}\triangleW)\wedge\lambda_3\cdot r_3\cdot \triangleG(\lambda^\triangleright)\\
    &= -\left(\left((1-r_2)\lambda_1+(1-r_2(1-s_2))\lambda_2\right)\wedge \lambda_3\right)\cdot r_3r_2\cdot \left(\lambda_1\wedge\left(\lambda_2+(1-s_3)\lambda_3\right) \right)\\
